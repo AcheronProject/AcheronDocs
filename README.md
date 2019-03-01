@@ -1,2 +1,3 @@
-# AcheronProject
-The repository page for the Acheron Project.
+# The Acheron Project Wiki
+
+See the Wiki for details.
