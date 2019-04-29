@@ -4,9 +4,9 @@
 Overview
 ******************
 
-The Acheron project is a group of keyboard Printed Circuit Boards (PCBs) designed by Álvaro "Gondolindrim" Volpato with collaborators Felipe "MrKeebs" Gonçalves, Raphael "ArcticFox" Hochheim and Steve from WoodCables.
+The **Acheron Project** is a group of keyboard Printed Circuit Boards (PCBs) designed by Álvaro "Gondolindrim" Volpato with collaborators.
 
-The aim of the project is to build a database of freely available keyboard PCBs that comply with Open-Source Hardware principles.
+The aim of the project is to build a database of freely available keyboard PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
 Codenames and standard naming
 -----------------------------
@@ -39,11 +39,17 @@ How to reach Gondolindrim
 
 You can hit me up at:
 
+- Email: alvaro.augusto.volpato@gmail.com
 - Discord: Gondolindrim#9478
 - reddit: u/gondolindrim_
 - Geekhack (Gondolindrim)
 
 Feel free to ask me questions and interact!
+
+About this documentation
+------------------------
+
+This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project Github repository.
 
 Indices and tables
 ------------------

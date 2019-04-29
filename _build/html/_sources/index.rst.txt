@@ -18,6 +18,7 @@ Welcome to the Acheron Project documentation page!
 
 	shark/shark.rst
 	shark/bom.rst
+	shark/changelog.rst
 
 Indices and tables
 ------------------

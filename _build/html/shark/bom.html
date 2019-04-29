@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
     <link rel="prev" title="Features" href="shark.html" /> 
 </head>
 
@@ -87,7 +88,13 @@
 <p class="caption"><span class="caption-text">Shark PCB</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shark.html">Features</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Bill of Materials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bill of Materials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-order-components-from-lcsc">How to order components from LCSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bom-table">BOM table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#component-choosing">Component choosing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
             
@@ -156,38 +163,280 @@
 <img alt="../_images/acheronDocs1.svg" src="../_images/acheronDocs1.svg" /></div>
 <div class="section" id="bill-of-materials">
 <h1>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h1>
-<p>In the ./bom/ folder there is an .xlsx file that can be uploaded directly into the LCSC site. The file contains all LCSC part numbers, quantities and descriptions.</p>
+<div class="section" id="how-to-order-components-from-lcsc">
+<h2>How to order components from LCSC<a class="headerlink" href="#how-to-order-components-from-lcsc" title="Permalink to this headline">¶</a></h2>
+<p>In the ./bom/ folder there is ax .xlsx sheet file that can be uploaded directly into the LCSC site. The file contains all LCSC part numbers, quantities and descriptions.</p>
+<p>For exact instructions on how to order the components from LCSC using the sheet file , please see <a class="reference external" href="https://www.youtube.com/watch?v=eFgOC5_1VYU">this video</a>.</p>
 <p>If you don’t want to order them from LCSC, the table below can be used.</p>
+</div>
+<div class="section" id="bom-table">
+<h2>BOM table<a class="headerlink" href="#bom-table" title="Permalink to this headline">¶</a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Please note that some items may be out of stock when you are ordering them. Feel free to edit the BOM (making sure to substitute the components for compatible ones) if you know what you are doing or feel free to hit me up so I can redo the list with available components.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you don’t have experience with electronic design, do not attemp to change the components in this table. Doing so may hinder some features of the PCB and even inutilize it!</p>
+</div>
 <table class="docutils align-center">
 <colgroup>
-<col style="width: 35%" />
-<col style="width: 18%" />
-<col style="width: 23%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
 <col style="width: 25%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Description</p></th>
-<th class="head"><p>Value</p></th>
-<th class="head"><p>Package</p></th>
-<th class="head"><p>Quantity</p></th>
+<tr class="row-odd"><th class="head"><p class="centered">
+<strong>Description</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Value</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Package</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Quantity</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>J1</p></td>
+<tr class="row-even"><td><p class="centered">
+<strong>J1</strong></p></td>
 <td></td>
-<td><p>31-M-12</p></td>
+<td><p class="centered">
+<strong>31-M-12 <sup>(2)</sup></strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>C1 and C2</strong></p></td>
+<td><p class="centered">
+<strong>22pF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>2</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>- C7</strong></p><p class="centered">
+<strong>- C9</strong></p><p class="centered">
+<strong>- CRST1</strong></p><p class="centered">
+<strong>- CRST2</strong></p></td>
+<td><p class="centered">
+<strong>4.7nF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>4</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>(Poly)Fuse <sup>(3)</sup></strong></p></td>
+<td><p class="centered">
+<strong>1.5A trip</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>R5 and R6</strong></p></td>
+<td><p class="centered">
+<strong>1MOhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>2</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>- CSin1</strong></p><p class="centered">
+<strong>- CSout1,</strong></p><p class="centered">
+<strong>- CVBus1-3</strong></p><p class="centered">
+<strong>- CA1</strong></p><p class="centered">
+<strong>- CB1</strong></p></td>
+<td><p class="centered">
+<strong>100nF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>7</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>Q1</strong></p></td>
+<td><p class="centered">
+<strong>AO4406AL</strong></p></td>
+<td><p class="centered">
+<strong>SOIC8</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>CVBus4</strong></p></td>
+<td><p class="centered">
+<strong>1uF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>CVBus5</strong></p></td>
+<td><p class="centered">
+<strong>4.7uF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>DF1</strong></p></td>
+<td><p class="centered">
+<strong>RB060M-60TR</strong></p></td>
+<td><p class="centered">
+<strong>SOD-123</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>QRST</strong></p></td>
+<td><p class="centered">
+<strong>BC846 NPN BJT</strong></p></td>
+<td><p class="centered">
+<strong>SOT-23</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>RCC</strong></p></td>
+<td><p class="centered">
+<strong>5.1kOhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>RD+ and RD-</strong></p></td>
+<td><p class="centered">
+<strong>22ROhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>2</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>RD+Up</strong></p></td>
+<td><p class="centered">
+<strong>1.5kOhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>RPGate, RB1/2, RA1/2</strong></p></td>
+<td><p class="centered">
+<strong>10kOhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>5</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>RRST</strong></p></td>
+<td><p class="centered">
+<strong>100kOhm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>RSGate</strong></p></td>
+<td><p class="centered">
+<strong>100 Ohm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>SWRST</strong></p></td>
+<td><p class="centered">
+<strong>SMD Push Button</strong></p></td>
 <td></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>U1</strong></p></td>
+<td><p class="centered">
+<strong>STM32F303CCT6</strong></p></td>
+<td><p class="centered">
+<strong>LQFP48 <sup>(4)</sup></strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>U2</strong></p></td>
+<td><p class="centered">
+<strong>MCP1700-330 LDO</strong></p></td>
+<td><p class="centered">
+<strong>SOT23</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>Y1</strong></p></td>
+<td><p class="centered">
+<strong>8MHz 4 pin</strong></p></td>
+<td><p class="centered">
+<strong>5032</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>RGB</strong></p></td>
+<td><p class="centered">
+<strong>WS2812B</strong></p></td>
+<td></td>
+<td><p class="centered">
+<strong>8</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>RL1-RL48</strong></p></td>
+<td><p class="centered">
+<strong>360 Ohm</strong></p></td>
+<td><p class="centered">
+<strong>1206</strong></p></td>
+<td><p class="centered">
+<strong>50</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>D1-48, DS1 and DRST</strong></p></td>
+<td><p class="centered">
+<strong>1N4148W</strong></p></td>
+<td><p class="centered">
+<strong>SOD-123</strong></p></td>
+<td><p class="centered">
+<strong>52</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>ROT1</strong></p></td>
+<td><p class="centered">
+<strong>ALPS EC11Ex <sup>(1)</sup></strong></p></td>
+<td></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
 </tr>
 </tbody>
 </table>
-<ol class="arabic simple">
-<li><p>Any EC11Ex rotary encoder should be fine, as the models differ only on shaft shape and size but their footprints are the same. In the render I used the ALPS EC11E 15244G1.</p></li>
-</ol>
-<ul class="simple">
-<li><p><a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+</div>
+<div class="section" id="component-choosing">
+<h2>Component choosing<a class="headerlink" href="#component-choosing" title="Permalink to this headline">¶</a></h2>
+<p><strong>(1)</strong> The rotary encoder was chosen because it was available at LCSC, Digikey and Mouser electronics. Its cheap, readily available and easu to solder. It also offers mechanical endurance through auxiliary legs that are soldered into the PCB.</p>
+<p>The encoder series EC11Ex looks to be a very versatile encoder in the sense that any rotary encoder in the series fits the footprint and has the sae pinout, as the models differ only on shaft shape and size but their footprints are the same. In the render I used the ALPS EC11E 15244G1.</p>
+<p><strong>(2)</strong> This connector seems to not be available in the european or american markets, only asian. It was chosen because, while being USBC, it has simplified pins and can easily be handsoldered. I have yet to find a good substitute for this connector that can be bought worldwide.</p>
+<p><strong>(3)</strong> Any fuse that fits the footprint will work, but I personally prefer polyfuses. Make sure that is has a minimum 1.5A trip current, as the LEDs and the high current microprocessor can sum 1A current easily.</p>
+<p><strong>(4)</strong> Please make sure that you order this exact package, since the footprint will not support anything different than this.</p>
+</div>
 </div>
 
 
@@ -197,6 +446,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="shark.html" class="btn btn-neutral float-left" title="Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
