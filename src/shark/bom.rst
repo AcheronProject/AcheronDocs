@@ -1,25 +1,20 @@
-.. figure:: ../images/acheronDocs.svg
-
-.. _instructions: https://www.youtube.com/watch?v=eFgOC5_1VYU
-
+*****************
 Bill of Materials
-=================
+*****************
 
 How to order components from LCSC
 ---------------------------------
 
-In the ./bom/ folder there is ax .xlsx sheet file that can be uploaded directly into the LCSC site. The file contains all LCSC part numbers, quantities and descriptions.
-
-For exact instructions on how to order the components from LCSC using the sheet file , please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
+:download:`This SharkPCB Bill of Materials file <https://github.com/Gondolindrim/SharkPCB/raw/master/bom/shark_LCSC.xlsx>` contains all the components for the Shark PCB, quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
 
 If you don't want to order them from LCSC, the table below can be used.
 
 BOM table
 ---------
 
-.. Hint:: Please note that some items may be out of stock when you are ordering them. Feel free to edit the BOM (making sure to substitute the components for compatible ones) if you know what you are doing or feel free to hit me up so I can redo the list with available components.
+.. Hint:: Please note that some items may be out of stock when you are ordering them. Feel free to edit the BOM (making sure to substitute the components for compatible ones) if you know what you are doing. Also don't hesitate to hit me up, if you don't feel confident to change the components, so I can redo the list with available components.
 
-.. Attention:: If you don't have experience with electronic design, do not attemp to change the components in this table. Doing so may hinder some features of the PCB and even inutilize it!
+.. Attention:: If you don't have experience with electronic design, do not attemp to swap or change the components in this table. Doing so may hinder some features of the PCB and even inutilize it!
 
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: Description           | .. centered:: Value                 | .. centered:: Package           | .. centered:: Quantity   |
@@ -28,20 +23,14 @@ BOM table
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: C1 and C2             | .. centered:: 22pF                  | .. centered:: 0805              | .. centered:: 2          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: - C7                  |                                     |                                 |                          |
-| .. centered:: - C9                  |                                     |                                 |                          |
-| .. centered:: - CRST1               |                                     |                                 |                          |
-| .. centered:: - CRST2               | .. centered::  4.7nF                | .. centered:: 0805              | .. centered:: 4          |
+| .. centered:: C7, C9, CRST1, CRST2  | .. centered::  4.7nF                | .. centered:: 0805              | .. centered:: 4          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: (Poly)Fuse :sup:`(3)` |  .. centered:: 1.5A trip            | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: R5 and R6             | .. centered:: 1MOhm                 | .. centered:: 1206              | .. centered:: 2          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: - CSin1               |                                     |                                 |                          |
-| .. centered:: - CSout1,             |                                     |                                 |                          |
-| .. centered:: - CVBus1-3            |                                     |                                 |                          |
-| .. centered:: - CA1                 |                                     |                                 |                          |
-| .. centered:: - CB1                 | .. centered:: 100nF                 | .. centered:: 0805              | .. centered:: 7          |
+| .. centered:: CSin, CSout, CVBus1-3,|                                     |                                 |                          |
+| .. centered:: CA, CB                | .. centered:: 100nF                 | .. centered:: 0805              | .. centered:: 7          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: Q1                    | .. centered:: AO4406AL              | .. centered:: SOIC8             | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
@@ -75,15 +64,15 @@ BOM table
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: RGB                   | .. centered:: WS2812B               |                                 | .. centered::  8         |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RL1-RL48              | .. centered:: 360 Ohm               | .. centered:: 1206              | .. centered::  50        |
+| .. centered:: RL1-48                | .. centered:: 360 Ohm               | .. centered:: 1206              | .. centered::  50        |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: D1-48, DS1 and DRST   | .. centered:: 1N4148W               | .. centered:: SOD-123           | .. centered::  52        |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: ROT1                  | .. centered:: ALPS EC11Ex :sup:`(1)`|                                 | .. centered::  1         |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 
-Component choosing
-------------------
+Notes on the BOM 
+----------------
 
 **(1)** The rotary encoder was chosen because it was available at LCSC, Digikey and Mouser electronics. Its cheap, readily available and easu to solder. It also offers mechanical endurance through auxiliary legs that are soldered into the PCB. 
 

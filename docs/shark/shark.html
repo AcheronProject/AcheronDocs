@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Features &mdash; Acheron Project 1.0.0 documentation</title>
+  <title>Introduction &mdash; Acheron Project 1.0.0 documentation</title>
   
 
   
@@ -50,9 +50,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Acheron Project
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,12 +89,15 @@
 </ul>
 <p class="caption"><span class="caption-text">Shark PCB</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Features</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#project-contributors">Project contributors</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">The Shark Cases</a></li>
 </ul>
 
             
@@ -137,7 +143,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Features</li>
+      <li>Introduction</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,11 +163,16 @@
            <div itemprop="articleBody">
             
   <div class="figure align-center">
-<img alt="../_images/acheronDocs1.svg" src="../_images/acheronDocs1.svg" /></div>
-<div class="toctree-wrapper compound">
-</div>
+<img alt="../_images/shark.svg" src="../_images/shark.svg" /></div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The SharkPCB was conceived as an alternative 40% ortho keyboard that could be easily built and sold in difficult-to-reach markets like Brazil.</p>
+<p>When I was some years into the Mechanical Keyboard hobby, I wanted to try a 40% ortho layout. Unfortunately none were available in the Brazilian market; the Planck was (and still is) pretty much the only option in the market when it comes to that layout, and it was only available in the US market and EU through Massdrop.</p>
+<p>Due to the proxy prices, Paypal fees and importing taxes, I would not be able to get a Planck since I simply did not have the money. So I set myself to design a keyboard that I could easily build and customize. My idea was to use a Blue Pill breakout board, using simple THT components for diodes and resistors.</p>
+<p>In the next weeks, Steve from WoodCables came along and funded the project. We made a little revision of the design plan as a default SMD-component based PCB was needed to compete on the market. And thus Shark was born.</p>
+<p>The name comes from a dear friend of mine, Gustavo, who at the time did not have a nickname. I suggested the nickname “Shark” because he used a shark image for his avatar; after much thinking, he decided to adopt the Undecided Shark alias, from whence the Shark PCB was named.</p>
 <div class="section" id="features">
-<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <p>The SharkPCB is a freely available, open-source 40% keyboard Printed Circuit Board (PCB) supporting three layouts: full grid, 1x2U spacebar and 2x2U spacebar. All resources and software used to design this board are open-source and/or freely available.</p>
 <p>Here’s a list of the board’s features:</p>
 <ul class="simple">
@@ -177,13 +188,20 @@
 </ul>
 <p>Additionally, plate gerber files are also available so that the user can order them made from the same manufacturer as the PCBs and out of the same material (FR4, a fiberglass enhanced resin laminate). This makes production cheaper and faster.</p>
 <p>There are four plate designs available: one for each supported layout and a universal one that supports all three of them.</p>
+<p>The idea to make a Open-Sourcea Hardware compliant board was that it could be widely customizable from the start, so anyone could take a SharkPCB, give their thoughts, feedback and even modify it to their liking. It was designed for that purpose.</p>
+<p>In that sense, the Shark uses an STM32 microprocessor that can be programmed in many ways, be it through the QMK firmware, Arduino IDE or any ensemble of software able to flash an STM32.</p>
+<p>Also, following the customizable principle, all unused pins were exposed so that the user can add anything hardware-wise he or she wishes.</p>
+</div>
 <div class="section" id="project-contributors">
 <h2>Project contributors<a class="headerlink" href="#project-contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Steve from WoodCables</p></li>
-<li><p>Gustavo “Undecided Shark” Reinert</p></li>
-<li><p>Felipe “MrKeebs” Coury</p></li>
-<li><p>Raphael “ArcticFox” Hochheim</p></li>
+<li><p><strong>Steve</strong> from WoodCables. Steve funded the prototypes, is currently running the GB, talked to PCB and case factories;</p></li>
+<li><p><strong>Gustavo “Undecided Shark” Reinert</strong> was an active part in the design process and named the PCB. I take special pride in this as I gave him his nickname.</p></li>
+<li><p><strong>Felipe “MrKeebs” Coury</strong>, the guy whose will to help is second only to his will to spend money on keyboards and stream himself while doing it.</p></li>
+<li><p><strong>Raphael “ArcticFox” Hochheim</strong>. The most high-end guys out there, always giving hints and thoughts.</p></li>
+<li><p>User <strong>garbo</strong> from GeekHack, who helped immensely in this design by giving me hints and information, always opinating and giving feedback with christian patience. Walkerstop also helped by recommendations like using the STM32 family of processors and a USBC connector.</p></li>
+<li><p>User <strong>u/ajp10204</strong> from Reddit. Now this guy read the README and the documentation thoroughly and pointed inconsistencies and errors several times. He gave me good reasons to make a nice documentation and he helped me immensely by this.</p></li>
+<li><p><strong>Jack Humbert</strong>, from OLKB, and <strong>ishtob</strong> from the QMK Discord Server. Jack was always very amicable and helpful; the 3D CAD files for the Planck Cases and plate came from the QMK parts Git repo. ishtob was always very accessible and helping with some design questions; in fact, some of the footprints and symbols used were based off of some of his own. In this regard many people in the Discord server helped with small hints (like yanfali, Upas and MechMerlin).</p></li>
 </ul>
 </div>
 </div>

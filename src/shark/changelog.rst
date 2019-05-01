@@ -1,5 +1,3 @@
-.. figure:: ../images/acheronDocs.svg
-
 *********
 Changelog
 *********

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Acheron Project 1.0.0 documentation</title>
+  <title>The Shark Cases &mdash; Acheron Project 1.0.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Bill of Materials" href="bom.html" /> 
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,9 +49,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Acheron Project
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -85,14 +88,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Shark PCB</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="shark.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shark.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v3-0-1-01-12-2019">V3.0.1 (01/12/2019)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v3-0-2-01-13-2019">V3.0.2 (01/13/2019)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v3-0-3-01-14-2019">V3.0.3 (01/14/2019)</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Shark Cases</a></li>
 </ul>
 
             
@@ -138,13 +138,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Changelog</li>
+      <li>The Shark Cases</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/shark/changelog.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/shark/cases.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -157,28 +157,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="figure align-center">
-<img alt="../_images/acheronDocs1.svg" src="../_images/acheronDocs1.svg" /></div>
-<div class="section" id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v3-0-1-01-12-2019">
-<h2>V3.0.1 (01/12/2019)<a class="headerlink" href="#v3-0-1-01-12-2019" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Started porting the version 2 from the ATMEGA32U4 processor to a more modern ARM Cortex M4 STM32F303CCT6 processor.</p>
-</div></blockquote>
-</div>
-<div class="section" id="v3-0-2-01-13-2019">
-<h2>V3.0.2 (01/13/2019)<a class="headerlink" href="#v3-0-2-01-13-2019" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Added USBC connector.</p>
-</div></blockquote>
-</div>
-<div class="section" id="v3-0-3-01-14-2019">
-<h2>V3.0.3 (01/14/2019)<a class="headerlink" href="#v3-0-3-01-14-2019" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Added RGB underglow with the WS2812B &lt;/h6&gt;</p>
-</div></blockquote>
-</div>
+  <div class="section" id="the-shark-cases">
+<h1>The Shark Cases<a class="headerlink" href="#the-shark-cases" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/tree/master/case">case folder of the GitHub repo</a> has the .stp and .stl files for the custom cases being designed, one being a low-profile (switches are exposed) and another a high-profile. The cases are not ready and were not prototyped; also feedback from the community is still underway so we are still setting on some matters before releasing them.</p>
+<p>The case was designed in Fusion360, which is not open-source but is freely available. I had a hard time with 3D modelling in Blender, specially because it was not designed to interact with CAD and parts manufacturing; for example, it does not output its files in the STEP format, which is a major problem since that is the standard file extension used in the industry.</p>
+<p>Steve and I will soon make an IC post where users can input their feedback. In any case, anyone can contact me directly through Reddit or Discord.</p>
+<p>If you want to fork or create a case based on this one, you can check the public links for the <a class="reference external" href="https://myhub.autodesk360.com/ue2d0e419/g/shares/SH7f1edQT22b515c761e412cd5b215194de6?mode=embed&amp;viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C1cBOAMwgA4AbAGMARgFouuGF3EAWUaNlcATAGYJgiBB4B2ACb6YjflLQBfEAF0gA">low profile</a> and for the <a class="reference external" href="https://myhub.autodesk360.com/ue2d0e419/g/shares/SH7f1edQT22b515c761e0bc166c9ba566c91?mode=embed&amp;viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0AWAdgDNOYAJlzcAtBBgxeozhAi5RAIwDGANgDMoxpwCsMNZwAcjdb0NoAviAC6QA">high profile</a> cases. With these links you can download the project files like F3D, STL, STEP and so on.</p>
 </div>
 
 
@@ -190,7 +174,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="bom.html" class="btn btn-neutral float-left" title="Bill of Materials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
