@@ -39,3 +39,9 @@ Mechanical specifications
 In order to machine the cases, many factories will need the mechanical drawing of the product to effectively and precisely manufacture it. The Shark case files also contain the mechanical drawings of the cases.
 
 :download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the Low Shark case.
+
+<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761e412cd5b215194de6?mode=embed" width="800" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761e0bc166c9ba566c91?mode=embed" width="800" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+
