@@ -48,20 +48,3 @@ The idea to make a Open-Sourcea Hardware compliant board was that it could be wi
 In that sense, the Shark uses an STM32 microprocessor that can be programmed in many ways, be it through the QMK firmware, Arduino IDE or any ensemble of software able to flash an STM32.
 
 Also, following the customizable principle, all unused pins were exposed so that the user can add anything hardware-wise he or she wishes.
-
-Project contributors
---------------------
-
-- **Steve** from WoodCables. Steve funded the prototypes, is currently running the GB, talked to PCB and case factories;
-
-- **Gustavo "Undecided Shark" Reinert** was an active part in the design process and named the PCB. I take special pride in this as I gave him his nickname.
-
-- **Felipe "MrKeebs" Coury**, the guy whose will to help is second only to his will to spend money on keyboards and stream himself while doing it.
-
-- **Raphael "ArcticFox" Hochheim**. The most high-end guys out there, always giving hints and thoughts.
-
-- User **garbo** from GeekHack, who helped immensely in this design by giving me hints and information, always opinating and giving feedback with christian patience. Walkerstop also helped by recommendations like using the STM32 family of processors and a USBC connector.
-
-- User **u/ajp10204** from Reddit. Now this guy read the README and the documentation thoroughly and pointed inconsistencies and errors several times. He gave me good reasons to make a nice documentation and he helped me immensely by this.
-
-- **Jack Humbert**, from OLKB, and **ishtob** from the QMK Discord Server. Jack was always very amicable and helpful; the 3D CAD files for the Planck Cases and plate came from the QMK parts Git repo. ishtob was always very accessible and helping with some design questions; in fact, some of the footprints and symbols used were based off of some of his own. In this regard many people in the Discord server helped with small hints (like yanfali, Upas and MechMerlin).
