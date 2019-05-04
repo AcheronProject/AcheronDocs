@@ -22,6 +22,7 @@ Welcome to the Acheron Project documentation page!
 	shark/faq.rst
 	shark/cases.rst
 	shark/ack.rst
+	shark/gallery.rst
 
 Indices and tables
 ------------------
