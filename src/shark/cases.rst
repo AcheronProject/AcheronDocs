@@ -4,6 +4,8 @@ The Shark Cases
 
 The `case folder of the GitHub repo <https://github.com/Gondolindrim/SharkPCB/tree/master/case>`_ has the .stp, .stl and .f3d files for the custom cases being designed, one being a low profile or "short" (switches are exposed) and another a high-profile or "tall".
 
+If you want to check the 3D models of the cases, see the bottom of this page for in-browser renders.
+
 .. Attention:: The cases are not ready and were not prototyped; also feedback from the community is still underway so we are still setting on some matters before releasing them.
 
 Why not use Blender?
@@ -45,10 +47,19 @@ In order to machine the cases, many factories will need the mechanical drawing o
 Embedded Links
 --------------
 
+	To see these Embedded Links, you will need to enable WebGL on your browser. On the bottom of the embedded windows there is an options to do full-screen.
+
+	Use the mouse left click to rotate your view and the middle button to pan it.
+
+**High Shark**
+
 .. raw:: html
 
-	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761e5a677fa9c5eb599b?mode=embed" width="600" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761efa05feefe1ab2286?mode=embed" width="740" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+
+**Short Shark**
 
 .. raw:: html
 
-	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761ef225076af2c3fdea?mode=embed" width="600" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761e412cd5b215194de6?mode=embed" width="740" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
