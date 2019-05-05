@@ -39,10 +39,10 @@ How to reach Gondolindrim
 
 You can hit me up at:
 
-- Email: alvaro.augusto.volpato@gmail.com
-- Discord: Gondolindrim#9478
-- reddit: u/gondolindrim_
-- Geekhack (Gondolindrim)
+- Email: ``alvaro.augusto.volpato@gmail.com``
+- Discord: ``Gondolindrim#9738``
+- reddit: ``u/gondolindrim_``
+- Geekhack: ``Gondolindrim``
 
 Feel free to ask me questions and interact!
 
@@ -50,10 +50,3 @@ About this documentation
 ------------------------
 
 This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project Github repository.
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

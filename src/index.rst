@@ -10,7 +10,7 @@ Welcome to the Acheron Project documentation page!
 	:caption: The Acheron Project
 	:maxdepth: 2
 
-	overview
+	overview.rst
 
 .. toctree::
 	:maxdepth: 2
@@ -23,10 +23,3 @@ Welcome to the Acheron Project documentation page!
 	shark/cases.rst
 	shark/ack.rst
 	shark/gallery.rst
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

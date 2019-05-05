@@ -1,21 +1,28 @@
+|pcbBadge|
+|protoBadge|
+|firmwareBadge|
+
 .. figure:: ../images/shark.svg
 
 ************
 Introduction
 ************
 
+Overview
+========
+
 The SharkPCB was conceived as an alternative 40% ortho keyboard that could be easily built and sold in difficult-to-reach markets like Brazil. 
 
 When I was some years into the Mechanical Keyboard hobby, I wanted to try a 40% ortho layout. Unfortunately none were available in the Brazilian market; the Planck was (and still is) pretty much the only option in the market when it comes to that layout, and it was only available in the US market and EU through Massdrop.
 
-Due to the proxy prices, Paypal fees and importing taxes, I would not be able to get a Planck since I simply did not have the money. So I set myself to design a keyboard that I could easily build and customize. My idea was to use a Blue Pill breakout board, using simple THT components for diodes and resistors.
+Due to the proxy prices, PayPal fees and importing taxes, I would not be able to get a Planck since I simply did not have the money. So I set myself to design a keyboard that I could easily build and customize. My idea was to use a Blue Pill breakout board, using simple THT components for diodes and resistors.
 
 In the next weeks, Steve from WoodCables came along and funded the project. We made a little revision of the design plan as a default SMD-component based PCB was needed to compete on the market. And thus Shark was born.
 
 The name comes from a dear friend of mine, Gustavo, who at the time did not have a nickname. I suggested the nickname "Shark" because he used a shark image for his avatar; after much thinking, he decided to adopt the Undecided Shark alias, from whence the Shark PCB was named.
 
 Features
---------
+========
 
 The SharkPCB is a freely available, open-source 40% keyboard Printed Circuit Board (PCB) supporting three layouts: full grid, 1x2U spacebar and 2x2U spacebar. All resources and software used to design this board are open-source and/or freely available.
 
@@ -48,3 +55,7 @@ The idea to make a Open-Sourcea Hardware compliant board was that it could be wi
 In that sense, the Shark uses an STM32 microprocessor that can be programmed in many ways, be it through the QMK firmware, Arduino IDE or any ensemble of software able to flash an STM32.
 
 Also, following the customizable principle, all unused pins were exposed so that the user can add anything hardware-wise he or she wishes.
+
+.. |pcbBadge| image:: https://img.shields.io/badge/PCB%20Version-v3.1.6-blue.svg?style=flat
+.. |protoBadge| image:: https://img.shields.io/badge/Prototype%20Version-3.0.1-red.svg?style=flat
+.. |firmwareBadge| image:: https://img.shields.io/badge/Firmware-not%20available-inactive.svg?style=flat

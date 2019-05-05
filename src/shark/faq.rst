@@ -14,7 +14,7 @@ How can I obtain this PCB? Is there an IC or a GB thread?
 
 There is an `IC thread <https://geekhack.org/index.php?topic=98934.0>`_ on GeekHack, where many users have contributed to the design and given their thoughts. Any help or opinion is highly appreciated. There is also a `GB thread on Reddit <https://www.reddit.com/r/mechmarket/comments/b0sn8f/gb_shark_pcb_a_new_40_ortho_kit/>`_ and a `GB thread on Geekhack <https://geekhack.org/index.php?topic=99753)>`_. For updated information please always check the GeekHack IC thread or this project's page.
 
-Additionally, you can order the PCBs from a manufacturer like JLCPCB (for instructions see `this link <https://www.youtube.com/watch?v=0u9Io4pw-b0>`_ starting at 1:02:00) and the components from LCSC (how to do that in `this link <https://www.youtube.com/watch?v=eFgOC5_1VYU&t=176s)>`_ and build the board. See the `Bill of Materials <bom.html>`_ page for the bill of materials and notes on component choosing.
+Additionally, you can order the PCBs from a manufacturer like JLCPCB (for instructions see the video in `this link <https://www.youtube.com/watch?v=0u9Io4pw-b0>`_ starting at 1:02:00) and the components from LCSC (how to do that in `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU&t=176s)>`_ and build the board. See the `Bill of Materials <bom.html>`_ page for the bill of materials and notes on component choosing.
 
 .. Attention:: Building the PCB yourself takes some expertise in electronics though, as the SMD parts require knowledge and specialized tools and supplies. Do not attempt to solder the little SMD parts if you don't have either knowledge and equipment to do so -- this is why me and Steve hold Group Buys. Also manufacturers generally have a Minimum Order Quantity of 5 or 10 PCBs. Feel free to arranje a group buy with your circle of friends.
 
@@ -75,4 +75,4 @@ The renders and animations are made in Blender.
 How can I follow your design process and learn from this project?
 -----------------------------------------------------------------
 
-I try to stream the design process when I can. I generally do it at tuesdays and thursdays at 3PM PST (8PM BRT). In the streams I answer general electronics questions, and show how the board is designed. I stream at my `Twitch channel <http://twitch.tv/gondolindrim_>`_. The past streams can be seen in my Youtube channel.
+ try to stream the design process when I can. I generally do it at tuesdays and thursdays at 3PM PST (8PM BRT). In the streams I answer general electronics questions, and show how the board is designed. I stream at my `Twitch channel <http://twitch.tv/gondolindrim_>`_. The past streams can be seen in my Youtube channel.
