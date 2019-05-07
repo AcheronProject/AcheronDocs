@@ -5,7 +5,7 @@ Bill of Materials
 How to order components from LCSC
 ---------------------------------
 
-:download:`This SharkPCB Bill of Materials file <https://github.com/Gondolindrim/SharkPCB/raw/master/bom/shark_LCSC.xlsx>` contains all the components for the Shark PCB, quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
+:download:`This file <https://github.com/Gondolindrim/SharkPCB/raw/master/bom/shark_LCSC.xlsx>` contains trhe Bill of Materials -- all the components for the Shark PCB -- quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
 
 If you don't want to order them from LCSC, the table below can be used.
 

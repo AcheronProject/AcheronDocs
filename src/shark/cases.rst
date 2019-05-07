@@ -46,3 +46,25 @@ In order to machine the cases, many factories will need the mechanical drawing o
 :download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the Low Shark case.
 
 :download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/case/highSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the High Shark case.
+
+3D previews of the cases
+========================
+
+	Below are embedded 3D views of the cases. Beware that they take long enough to load. To see these Embedded Links, you will need to enable WebGL on your browser. On the bottom of the embedded windows there is an options to do full-screen.
+
+	Use the mouse left click to rotate your view and the middle button to pan it. They also work on mobile (I tested it on an Android phone); pan with two fingers and rotate with one.
+
+**High Shark**
+--------------
+
+.. raw:: html
+
+	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761efa05feefe1ab2286?mode=embed" width="740" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+
+**Short Shark**
+---------------
+
+.. raw:: html
+
+	<iframe src="https://myhub.autodesk360.com/ue2d0e419/shares/public/SH7f1edQT22b515c761e412cd5b215194de6?mode=embed" width="740" height="400" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>

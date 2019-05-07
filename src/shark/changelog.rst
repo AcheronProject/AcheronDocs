@@ -15,7 +15,7 @@ V3.0
 ====
 
 V3.0.1 :sub:`(01/12/2019)` 
---------------------------
+----------------------------------
 
 	- [Update] Started porting the version 2 from the ATMEGA32U4 processor to a more modern ARM Cortex M4 STM32F303CCT6 processor.
 
@@ -105,7 +105,9 @@ V3.1.6 :sub:`(2019/03/21)`
 
 	- [Update] The BOM had minor problems like components out of stock and incongruent information (e.g., 0805 resistors when they should be 1206). This has all been fixed and checked. Double checked. I dare you to find a problem. I double dare you, MFer.
 
-V3.1.7 :sub:`(2019/04/10)`
+V3.1.7 :sub:`(2019/05/07)`
 --------------------------
 
 	- [Update] The plate files were adjusted to fit the custom case.
+
+	- [Fix] Added plate DXF files so that they can be ordered from a shop that does laser cutting and CNC. The first versions of these files, that were imported from KiCad directly, did not have any screw holes -- strange, yes. I fixed this by exporting the plate files to SVG, and from Inkscape exporting to AutoCad 14 DXF files, which worked. For this I used the Front Silkscreen layer, which is why in the plate KiCad files there are rings on these layers that coincide with the screw holes.
