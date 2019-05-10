@@ -86,7 +86,12 @@
               <p class="caption"><span class="caption-text">The Acheron Project</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#codenames-and-standard-naming">Codenames and standard naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codenames-and-versioning">Codenames and versioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#codenames">Codenames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#versioning">Versioning</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#project-contributors">Project contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-reach-gondolindrim">How to reach Gondolindrim</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#about-this-documentation">About this documentation</a></li>
@@ -101,7 +106,9 @@
 <li class="toctree-l1"><a class="reference internal" href="shark/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shark/cases.html">The Shark Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shark/ack.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shark/gallery.html">SharkPCB gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shark/prototypes.html">Prototypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shark/renders.html">Renders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shark/gerbers.html">Gerber files</a></li>
 </ul>
 
             
@@ -167,13 +174,26 @@
            <div itemprop="articleBody">
             
   <div class="figure align-center">
-<img alt="_images/acheronDocs.svg" src="_images/acheronDocs.svg" /></div>
+<img alt="_images/acheronLong.svg" src="_images/acheronLong.svg" /></div>
 <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>The <strong>Acheron Project</strong> is a group of keyboard Printed Circuit Boards (PCBs) designed by Álvaro “Gondolindrim” Volpato with collaborators.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Acheron Project</strong> is a group of resources for custom keyboards, that include</p>
+<ul class="simple">
+<li><p>Printed Circuit Boards (PCBs);</p></li>
+<li><p>KiCad footprints and symbols;</p></li>
+<li><p>Graphic</p></li>
+</ul>
+<blockquote>
+<div><p>designed by Álvaro “Gondolindrim” Volpato with collaborators.</p>
+</div></blockquote>
 <p>The aim of the project is to build a database of freely available keyboard PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.</p>
-<div class="section" id="codenames-and-standard-naming">
-<h2>Codenames and standard naming<a class="headerlink" href="#codenames-and-standard-naming" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="codenames-and-versioning">
+<h2>Codenames and versioning<a class="headerlink" href="#codenames-and-versioning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="codenames">
+<h3>Codenames<a class="headerlink" href="#codenames" title="Permalink to this headline">¶</a></h3>
 <p>Although each board has a codename to which it is commonly referred, each board in the Acheron project has a standard naming which comprises seven characteristics, which summarize each board’s main features:</p>
 <ol class="arabic simple">
 <li><p><strong>Size</strong>. The board size in percentage or abbreviation, e.g., 40, 50, 75, 100, WKL, (E) for ergo, (S) for split.</p></li>
@@ -184,10 +204,19 @@
 <li><p><strong>Wired</strong>: if the keyboard is wired, use (WI). If it is a Bluetooth, use (BT).</p></li>
 </ol>
 </div>
+<div class="section" id="versioning">
+<h3>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
+<p>This naming serves two purposes. First is identifying the boards in the Acheron Project, given that each board is a project on its own.</p>
+<p>Second is that these rules give us a criterion on when a change is a full version change or simply a minor revision. For example, the SharkPCB V3.1 (Acheron 40-O-STM32-MX-HS-WI) goes from MX support switches to MX-Alps compatible. Then this new Alps-compatible board will be V4.0.</p>
+<p>If, however, a change to the board did not change any of these listed parameters, than the sub-version changes. For example, again, if the SharkPCB V3.1 had a minor change to routing or edges, than the new version will be V3.2.</p>
+<p>Finally, if a minor change was made – say one of the component silkscreen designators were changed, then the sub-subversion was changed, like going from V3.1.0 to V3.1.1.</p>
+<p>This process makes it easier to know if a change in versions was significant. It means that all commits have a version attached to them, making them easier to follow.</p>
+</div>
+</div>
 <div class="section" id="project-contributors">
 <h2>Project contributors<a class="headerlink" href="#project-contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Gustavo “Undecided Shark” Reinert</p></li>
+<li><p>Raphael “BlindJoker” Nepomuceno</p></li>
 <li><p>Felipe “MrKeebs” Coury</p></li>
 <li><p>Raphael “ArcticFox” Hochheim</p></li>
 </ul>
@@ -205,7 +234,7 @@
 </div>
 <div class="section" id="about-this-documentation">
 <h2>About this documentation<a class="headerlink" href="#about-this-documentation" title="Permalink to this headline">¶</a></h2>
-<p>This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project Github repository.</p>
+<p>This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project <a class="reference external" href="https://github.com/Gondolindrim/AcheronProject">Github repository</a>.</p>
 </div>
 </div>
 

@@ -111,7 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-4-2019-03-16">V3.1.4 <sub>(2019/03/16)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-5-2019-03-19">V3.1.5 <sub>(2019/03/19)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-03-21">V3.1.6 <sub>(2019/03/21)</sub></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#v3-1-7-2019-05-07">V3.1.7 <sub>(2019/05/07)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-05-07">V3.1.6 <sub>(2019/05/07)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-05-09">V3.1.6 <sub>(2019/05/09)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-1-7-2019-05-09">V3.1.7 <sub>(2019/05/09)</sub></a></li>
 </ul>
 </li>
 </ul>
@@ -323,12 +325,30 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="v3-1-7-2019-05-07">
-<h3>V3.1.7 <sub>(2019/05/07)</sub><a class="headerlink" href="#v3-1-7-2019-05-07" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="v3-1-6-2019-05-07">
+<h3>V3.1.6 <sub>(2019/05/07)</sub><a class="headerlink" href="#v3-1-6-2019-05-07" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>[Update] The plate files were adjusted to fit the custom case.</p></li>
 <li><p>[Fix] Added plate DXF files so that they can be ordered from a shop that does laser cutting and CNC. The first versions of these files, that were imported from KiCad directly, did not have any screw holes – strange, yes. I fixed this by exporting the plate files to SVG, and from Inkscape exporting to AutoCad 14 DXF files, which worked. For this I used the Front Silkscreen layer, which is why in the plate KiCad files there are rings on these layers that coincide with the screw holes.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="v3-1-6-2019-05-09">
+<h3>V3.1.6 <sub>(2019/05/09)</sub><a class="headerlink" href="#v3-1-6-2019-05-09" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>[Fix] The plate files had a problem where the middle hole was 4mm wide, when it should be 2mm. This was fixed.</p></li>
+<li><p>[Fix] The case files also had a minor issue. The USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="v3-1-7-2019-05-09">
+<h3>V3.1.7 <sub>(2019/05/09)</sub><a class="headerlink" href="#v3-1-7-2019-05-09" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>[Update] The mounting pegs for the PCB and plates were made larger in both cases. The PCB pegs are now 6mm wide and the plate pegs are 5mm (they were 4mm wide, both). This was done after some mechanical stress simulations were done, and I found 5mm to be the best radius for the plate pegs.</p></li>
+<li><p>[Update] Following the wider pegs in the case, the PCB has three holes for these mounting pegs of the plates. Such holes were made larger - they had 2.8mm radius and now have 3mm. This was done in order to free up space so the pegs can be made wider.</p></li>
 </ul>
 </div></blockquote>
 </div>

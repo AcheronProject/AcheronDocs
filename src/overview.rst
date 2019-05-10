@@ -1,15 +1,29 @@
-.. figure:: images/acheronDocs.svg
+.. figure:: images/acheronLong.svg
 
-******************
+********
 Overview
-******************
+********
 
-The **Acheron Project** is a group of keyboard Printed Circuit Boards (PCBs) designed by Álvaro "Gondolindrim" Volpato with collaborators.
+Introduction
+============
+
+The **Acheron Project** is a group of resources for custom keyboards, that include
+
+- Printed Circuit Boards (PCBs);
+
+- KiCad footprints and symbols;
+
+- Graphic 
+
+ designed by Álvaro "Gondolindrim" Volpato with collaborators.
 
 The aim of the project is to build a database of freely available keyboard PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
-Codenames and standard naming
------------------------------
+Codenames and versioning
+========================
+
+Codenames
+---------
 
 Although each board has a codename to which it is commonly referred, each board in the Acheron project has a standard naming which comprises seven characteristics, which summarize each board's main features:
 
@@ -25,17 +39,30 @@ Although each board has a codename to which it is commonly referred, each board 
 
 6. **Wired**: if the keyboard is wired, use (WI). If it is a Bluetooth, use (BT).
 
-Project contributors
---------------------
+Versioning
+----------
 
-- Gustavo "Undecided Shark" Reinert
+This naming serves two purposes. First is identifying the boards in the Acheron Project, given that each board is a project on its own.
+
+Second is that these rules give us a criterion on when a change is a full version change or simply a minor revision. For example, the SharkPCB V3.1 (Acheron 40-O-STM32-MX-HS-WI) goes from MX support switches to MX-Alps compatible. Then this new Alps-compatible board will be V4.0.
+
+If, however, a change to the board did not change any of these listed parameters, than the sub-version changes. For example, again, if the SharkPCB V3.1 had a minor change to routing or edges, than the new version will be V3.2.
+
+Finally, if a minor change was made -- say one of the component silkscreen designators were changed, then the sub-subversion was changed, like going from V3.1.0 to V3.1.1.
+
+This process makes it easier to know if a change in versions was significant. It means that all commits have a version attached to them, making them easier to follow.
+
+Project contributors
+====================
+
+- Raphael "BlindJoker" Nepomuceno
 
 - Felipe "MrKeebs" Coury
 
 - Raphael "ArcticFox" Hochheim
 
 How to reach Gondolindrim
--------------------------
+=========================
 
 You can hit me up at:
 
@@ -47,6 +74,6 @@ You can hit me up at:
 Feel free to ask me questions and interact!
 
 About this documentation
-------------------------
+========================
 
-This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project Github repository.
+This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project `Github repository <https://github.com/Gondolindrim/AcheronProject>`_.

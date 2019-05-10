@@ -105,9 +105,23 @@ V3.1.6 :sub:`(2019/03/21)`
 
 	- [Update] The BOM had minor problems like components out of stock and incongruent information (e.g., 0805 resistors when they should be 1206). This has all been fixed and checked. Double checked. I dare you to find a problem. I double dare you, MFer.
 
-V3.1.7 :sub:`(2019/05/07)`
+V3.1.6 :sub:`(2019/05/07)`
 --------------------------
 
 	- [Update] The plate files were adjusted to fit the custom case.
 
 	- [Fix] Added plate DXF files so that they can be ordered from a shop that does laser cutting and CNC. The first versions of these files, that were imported from KiCad directly, did not have any screw holes -- strange, yes. I fixed this by exporting the plate files to SVG, and from Inkscape exporting to AutoCad 14 DXF files, which worked. For this I used the Front Silkscreen layer, which is why in the plate KiCad files there are rings on these layers that coincide with the screw holes.
+
+V3.1.6 :sub:`(2019/05/09)`
+--------------------------
+
+	- [Fix] The plate files had a problem where the middle hole was 4mm wide, when it should be 2mm. This was fixed.
+
+	- [Fix] The case files also had a minor issue. The USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.
+
+V3.1.7 :sub:`(2019/05/09)`
+--------------------------
+
+	- [Update] The mounting pegs for the PCB and plates were made larger in both cases. The PCB pegs are now 6mm wide and the plate pegs are 5mm (they were 4mm wide, both). This was done after some mechanical stress simulations were done, and I found 5mm to be the best radius for the plate pegs. 
+
+	- [Update] Following the wider pegs in the case, the PCB has three holes for these mounting pegs of the plates. Such holes were made larger - they had 2.8mm radius and now have 3mm. This was done in order to free up space so the pegs can be made wider.
