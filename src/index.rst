@@ -11,6 +11,7 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 
 	overview.rst
+	license.rst
 
 .. toctree::
 	:maxdepth: 2
