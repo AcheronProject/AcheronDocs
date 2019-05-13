@@ -117,7 +117,11 @@ V3.1.6 :sub:`(2019/05/09)`
 
 	- [Fix] The plate files had a problem where the middle hole was 4mm wide, when it should be 2mm. This was fixed.
 
-	- [Fix] The case files also had a minor issue. The USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.
+	- [Fix] The case files also had two issues.
+
+		- First, the USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.
+
+		- Second, the SharkPCB has a little protrusion to support the USB connector, but the SharkPCB USB cutout was not tall enough to acocomodade that protrusion; this was such that the protrusion touched the case, making the PCB and the plate not align perfectly on the mounting holes. This was fixed making the USB cutout taller to accomodate for the protrusion.
 
 V3.1.7 :sub:`(2019/05/09)`
 --------------------------
