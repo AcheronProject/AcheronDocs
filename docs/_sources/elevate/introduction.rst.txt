@@ -7,7 +7,7 @@ History
 
 	The Elevate is a joint project between me (Gondolindrim), MrKeebs and Tesletron from Framework; I am the PCB designer, MrKeebs is the runner and Tesletron the case designer. Although the case is not open-source, I really wanted to open-source the PCB so I could improve it for next revisions with feedback from the community.
 
-	My intention with this board is to make a Bluetooth keyboard, and learning the know-how involved in such technology. This is in order to apply that know how to every other component of the Acheron Project.
+	My intention with this board is to make a Bluetooth keyboard 
 
 	The keyboard consists of a 50% bluetooth board, supporting three layouts, among them a split spacebar.
 

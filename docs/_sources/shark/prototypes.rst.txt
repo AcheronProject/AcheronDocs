@@ -26,3 +26,16 @@ Thanks to u/ajp10304 for sharing pictures of his prototypes!
 | .. figure:: gallery/ajp1.jpg	| ..  figure:: gallery/ajp2.jpg		| ..  figure:: gallery/ajp3.jpg		|
 | 	:width: 100 %		| 	:width: 100 %			| 	:width: 100 %			|
 +-------------------------------+---------------------------------------+---------------------------------------+
+
+Case prototypes
+===============
+
+Short case
+----------
+
+These were aluminum prototypes made through CNC machining in may 2019.
+
++---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
+| .. figure:: gallery/shortCase1.jpg	| ..  figure:: gallery/shortCase2.jpg	| .. figure:: gallery/shortCase3.jpg	| ..  figure:: gallery/shortCase4.jpg	|
+| 	:width: 100 %			| 	:width: 100 %			| 	:width: 100 %			| 	:width: 100 %			|
++---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+

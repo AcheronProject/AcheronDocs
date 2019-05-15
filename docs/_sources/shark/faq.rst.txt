@@ -7,7 +7,7 @@ Is this design functional and tested?
 
 Yes. Version 3.1 was prototyped and is proven to work. `Click here <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.1>`_ to go directly to the release page for version 3.1 on GitHub.
 
-.. Attention:: I am currently prototyping version 3.1.6, which is the intended Group Buy version, and building its firmware. As such I cannot say it has been fully tested, so take care if you want to order some PCBs before I have thoroughly prototyped them.
+.. Attention:: I am currently prototyping version 3.1.7, which is the intended Group Buy version, and building its firmware. As such I cannot say it has been fully tested, so take care if you want to order some PCBs before I have thoroughly prototyped them.
 
 How can I obtain this PCB? Is there an IC or a GB thread?
 ---------------------------------------------------------

@@ -7,7 +7,7 @@ In the ``./gerbers`` folders you can find the plot files for the PCB and the pla
 PCB Gerber files
 ----------------
 
-:download:`This zipped folder <https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/SharkPCB.zip>` contains the Gerber files for the last (V3.1.6) PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.
+:download:`This zipped folder <https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/SharkPCB.zip>` contains the Gerber files for the last PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.
 
 .. Attention:: The `SharkPCB introduction page <./shark.html>`_ contains badges to show the last prototyped version of the PCB. I will release un-prototyped Gerbers in order to prototype them. Always check if the version you are downloading was prototyped!
 

@@ -86,8 +86,14 @@
               <p class="caption"><span class="caption-text">The Acheron Project</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">The Acheron Open Hardware License (AOHL) V1.0</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Shark PCB</span></p>
+<p class="caption"><span class="caption-text">Acheron Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/3dmodels.html">The 3D models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Shark</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shark.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
@@ -125,6 +131,19 @@
 <li class="toctree-l1"><a class="reference internal" href="prototypes.html">Prototypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gerbers.html">Gerber files</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Elevate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/bom.html">Bill of Materials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ArcticPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KeebsPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keebs/intro.html">Introduction</a></li>
 </ul>
 
             
@@ -338,9 +357,16 @@
 <div class="section" id="v3-1-6-2019-05-09">
 <h3>V3.1.6 <sub>(2019/05/09)</sub><a class="headerlink" href="#v3-1-6-2019-05-09" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><ul class="simple">
+<div><ul>
 <li><p>[Fix] The plate files had a problem where the middle hole was 4mm wide, when it should be 2mm. This was fixed.</p></li>
-<li><p>[Fix] The case files also had a minor issue. The USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.</p></li>
+<li><p>[Fix] The case files also had two issues.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>First, the USB cutouts were wide enough to acomodate some connectors, but not wide enough to accomodade the wider connectors. The cutouts were made wider and taller to accomodate those big connectors.</p></li>
+<li><p>Second, the SharkPCB has a little protrusion to support the USB connector, but the SharkPCB USB cutout was not tall enough to acocomodade that protrusion; this was such that the protrusion touched the case, making the PCB and the plate not align perfectly on the mounting holes. This was fixed making the USB cutout taller to accomodate for the protrusion.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </div></blockquote>
 </div>
@@ -357,7 +383,7 @@
 <h3>V3.1.7 <sub>(2019/10/09)</sub><a class="headerlink" href="#v3-1-7-2019-10-09" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li><p>[Update] I changed the fillets of the USB cutout to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.</p></li>
+<li><p>[Update] I changed the fillets of the USB cutouts of both cases to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.</p></li>
 </ul>
 </div></blockquote>
 </div>

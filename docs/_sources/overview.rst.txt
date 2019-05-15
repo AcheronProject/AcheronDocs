@@ -7,17 +7,19 @@ Overview
 Introduction
 ============
 
-The **Acheron Project** is a group of resources for custom keyboards, that include
+The **Acheron Project** is a compendium of resources for custom keyboards, that include
 
 - Printed Circuit Boards (PCBs);
 
 - KiCad footprints and symbols;
 
-- Graphic 
+- Graphic resources like logos;
 
- designed by Álvaro "Gondolindrim" Volpato with collaborators.
+- 3D models
 
-The aim of the project is to build a database of freely available keyboard PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
+	All of which designed by Álvaro "Gondolindrim" Volpato with collaborators.
+
+	The aim of the project is to build a database of freely available resources for keyboard enthusiasts, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
 Codenames and versioning
 ========================
@@ -25,7 +27,7 @@ Codenames and versioning
 Codenames
 ---------
 
-Although each board has a codename to which it is commonly referred, each board in the Acheron project has a standard naming which comprises seven characteristics, which summarize each board's main features:
+	Although each board has a codename to which it is commonly referred, each board in the Acheron project has a standard naming which comprises seven characteristics, which summarize each board's main features:
 
 1. **Size**. The board size in percentage or abbreviation, e.g., 40, 50, 75, 100, WKL, (E) for ergo, (S) for split.
 
@@ -42,15 +44,15 @@ Although each board has a codename to which it is commonly referred, each board 
 Versioning
 ----------
 
-This naming serves two purposes. First is identifying the boards in the Acheron Project, given that each board is a project on its own.
+	This naming system serves two purposes. First is identifying the boards in the Acheron Project, given that each board is a project on its own.
 
-Second is that these rules give us a criterion on when a change is a full version change or simply a minor revision. For example, the SharkPCB V3.1 (Acheron 40-O-STM32-MX-HS-WI) goes from MX support switches to MX-Alps compatible. Then this new Alps-compatible board will be V4.0.
+	Second is that these rules give us a criterion on when a change is a full version change or simply a minor revision. For example, the SharkPCB V3.1 (Acheron 40-O-STM32-MX-HS-WI) goes from MX support switches to MX-Alps compatible. Then this new Alps-compatible board will be V4.0.
 
-If, however, a change to the board did not change any of these listed parameters, than the sub-version changes. For example, again, if the SharkPCB V3.1 had a minor change to routing or edges, than the new version will be V3.2.
+	If, however, a change to the board did not change any of these listed parameters, than the sub-version changes. For example, again, if the SharkPCB V3.1 had a minor change to routing or edges, than the new version will be V3.2.
 
-Finally, if a minor change was made -- say one of the component silkscreen designators were changed, then the sub-subversion was changed, like going from V3.1.0 to V3.1.1.
+	Finally, if a minor change was made -- say one of the component silkscreen designators were changed, then the sub-subversion was changed, like going from V3.1.0 to V3.1.1.
 
-This process makes it easier to know if a change in versions was significant. It means that all commits have a version attached to them, making them easier to follow.
+	This process makes it easier to know if a change in versions was significant. It means that all commits have a version attached to them, making them easier to follow.
 
 Project contributors
 ====================
@@ -77,3 +79,5 @@ About this documentation
 ========================
 
 This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project `Github repository <https://github.com/Gondolindrim/AcheronProject>`_.
+
+	The idea behind writing this documentation came from the other collaborators, not me particularly. Truth is I have never imagined that the Acheron Project and its components grew big enough for other people to use it, and hence I needed to document the design process.

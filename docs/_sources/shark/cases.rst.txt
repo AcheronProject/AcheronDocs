@@ -9,7 +9,7 @@ The `case folder of the GitHub repo <https://github.com/Gondolindrim/SharkPCB/tr
 
 If you want to check the 3D models of the cases, see the `gallery <gallery.html#d-previews-of-the-cases>`_ for in-browser renders.
 
-.. Attention:: The cases are not ready and were not prototyped; also feedback from the community is still underway so we are still setting on some matters before releasing them.
+.. Attention:: The short case was prototyped and is proven to fit the PCB and the plate. The tall case is in the prototyping process.
 
 Why not use Blender?
 ====================
