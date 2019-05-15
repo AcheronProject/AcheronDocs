@@ -133,4 +133,4 @@ V3.1.7 :sub:`(2019/05/09)`
 V3.1.7 :sub:`(2019/10/09)`
 --------------------------
 
-	- [Update] I changed the fillets of the USB cutout to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.
+	- [Update] I changed the fillets of the USB cutouts of both cases to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.
