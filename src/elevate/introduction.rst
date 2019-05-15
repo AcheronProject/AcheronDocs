@@ -1,3 +1,9 @@
+|pcbBadge|
+|protoBadge|
+|firmwareBadge|
+
+.. figure:: ../images/elevateLogoInside.svg
+
 ************
 Introduction
 ************
@@ -46,3 +52,7 @@ Here's a list of the board's features:
 - In switch LEDs;
 
 - Three status indicator LEDs: battery, bluetooth and VCC.
+
+.. |pcbBadge| image:: https://img.shields.io/badge/PCB%20Version-v1.0-blue.svg?style=flat
+.. |protoBadge| image:: https://img.shields.io/badge/Prototype-not%20available-inactive.svg?style=flat
+.. |firmwareBadge| image:: https://img.shields.io/badge/Firmware-not%20available-inactive.svg?style=flat

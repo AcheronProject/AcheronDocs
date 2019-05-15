@@ -1,3 +1,9 @@
+|pcbBadge|
+|protoBadge|
+|firmwareBadge|
+
+.. figure:: ../images/elevateLogoInside.svg
+
 ************
 Introduction
 ************
@@ -7,7 +13,7 @@ History
 
 	The Elevate is a joint project between me (Gondolindrim), MrKeebs and Tesletron from Framework; I am the PCB designer, MrKeebs is the runner and Tesletron the case designer. Although the case is not open-source, I really wanted to open-source the PCB so I could improve it for next revisions with feedback from the community.
 
-	My intention with this board is to make a Bluetooth keyboard 
+	My intention with this board is to make a Bluetooth keyboard, and learning the know-how involved in such technology. This is in order to apply that know how to every other component of the Acheron Project.
 
 	The keyboard consists of a 50% bluetooth board, supporting three layouts, among them a split spacebar.
 
@@ -46,3 +52,7 @@ Here's a list of the board's features:
 - In switch LEDs;
 
 - Three status indicator LEDs: battery, bluetooth and VCC.
+
+.. |pcbBadge| image:: https://img.shields.io/badge/PCB%20Version-v1.0-blue.svg?style=flat
+.. |protoBadge| image:: https://img.shields.io/badge/Prototype-not%20available-inactive.svg?style=flat
+.. |firmwareBadge| image:: https://img.shields.io/badge/Firmware-not%20available-inactive.svg?style=flat
