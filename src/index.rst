@@ -40,6 +40,8 @@ Welcome to the Acheron Project documentation page!
 
 	elevate/introduction.rst
 	elevate/bom.rst
+	elevate/gerbers.rst
+	elevate/changelog.rst
 
 .. toctree::
 	:maxdepth: 2
