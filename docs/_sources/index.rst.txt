@@ -11,7 +11,13 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 
 	overview.rst
-	license.rst
+	faq.rst
+
+.. toctree::
+	:caption: Acheron OHL
+	:maxdepth: 2
+
+	license/license.rst
 
 .. toctree::
 	:maxdepth: 2
@@ -27,7 +33,6 @@ Welcome to the Acheron Project documentation page!
 	shark/shark.rst
 	shark/bom.rst
 	shark/changelog.rst
-	shark/faq.rst
 	shark/cases.rst
 	shark/ack.rst
 	shark/prototypes.rst

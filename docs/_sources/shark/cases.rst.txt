@@ -11,11 +11,6 @@ If you want to check the 3D models of the cases, see the `gallery <gallery.html#
 
 .. Attention:: The short case was prototyped and is proven to fit the PCB and the plate. The tall case is in the prototyping process.
 
-Why not use Blender?
-====================
-
-The case was designed in Fusion360, which is not open-source but is freely available. I had a hard time with 3D modelling in Blender, specially because it was not designed to interact with CAD and parts manufacturing; for example, it does not output its files in the STEP format, which is a major problem since that is the standard file extension used in the industry. Ultimately, Blender was not designed for CAD and parts fabrication.
-
 Public links
 ============
 
