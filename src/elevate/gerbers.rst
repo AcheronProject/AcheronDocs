@@ -12,4 +12,4 @@ PCB Gerber files
 Schematic drawing
 -----------------
 
-:download:`This SVG file <https://github.com/Gondolindrim/ElevatePCB/raw/master/gerbers/elevateSchematic_V1.0.zip>` depicts the schematic file of the PCB.
+:download:`This SVG file <https://github.com/Gondolindrim/ElevatePCB/raw/master/gerbers/elevateSchematic_V1.0.svg>` depicts the schematic file of the PCB.

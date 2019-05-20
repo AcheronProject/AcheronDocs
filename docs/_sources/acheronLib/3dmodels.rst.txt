@@ -12,6 +12,8 @@ Description
 
 	- ``4PinHeader.step`` is self-explanatory;
 
+	- ``angle4PinHeader.step`` os a 90-degree angled 4-pin header. It was taken from `this link <https://grabcad.com/library/pin-headers-angle-single-row-1>`_ (accessed may 20, 2019);
+
 	- ``5021_XTAL.step`` describes a 50-by-32 mil oscillator crystal. This footprint was taken from `this link <https://grabcad.com/library/crystal_smd_5032-2pin_5-0x3-2mm-1>`_ (accessed may 12, 2019) and improved by myself (added colors, some fillets).
 
 	- ``ALPS_EC11E.step`` describes the ALPS EC11E rotary encoder. It was taken from `the official page <https://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11J1525402.html>`_ (accessed may 12, 2019) and slightly modified by myself (added colors and materials).
