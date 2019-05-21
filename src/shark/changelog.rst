@@ -189,9 +189,9 @@ Although technically the modifications for this version do not qualify as a new 
 		- Col12 was moved from pin 34 to pin 19; pin 34 is SWDIO and should not be attached to row or column to allow for SWD;
 		- Col7 and Col8 exchanged places: Col7 was reassigned to pin 14 from 15, and Col8 vice-versa;
 	
-	- [:blue:`Feature`] Even though the STM32F303 being used does have a stock USB DFU bootloader, I took some advice from **pelrun** and exposed the SWD pins anyway. This is done as a backup plan should the user mess up the bootloader and need to reflash it. Pins BOOT0 and NRST were also exposed, just in case they are needed.
+	- [:blue:`Feature`] Even though the STM32F303 being used does have a stock USB DFU bootloader, I took some advice from **pelrun** and exposed the SWD pins anyway. This is done as a backup plan should the user mess up the bootloader and need to reflash it. Pins BOOT0 and NRST were also exposed, just in case they are needed. In order to expose these pins, RGB5 had to be slightly moved.
 
-	- [:green:`Update`] The CVBus capacitors were renamed to CVB, for clarity;
+	- [:green:`Update`] The CVBus capacitors were renamed to CVB, for clarity. Also C1 and C2 were renamed to CX1 and CX2 to denote they are XTAL load capacitors;
 
 	- [:blue:`Feature`] Incorporated case ESD current inrush protection. This was for three motives:
 
@@ -199,7 +199,7 @@ Although technically the modifications for this version do not qualify as a new 
 
 		- There was a small problem with my past implementation. The ESD net was directly connected to GND, meaning that current could come from the USB connector to the case, provoking an electrical shock to the user. This was dealt with by adding a 1N4007 diode, blocking current from the USB to the case, but allowing the other way around. The choice of component was because this diode has high peak rush current and high reverse voltage -- the most needed qualities when ESD is concerned. Nevertheless this diode has two problems. First is it is slow, meaning that, theoretically, in the case of an ESD discharge, the high voltage could spread to the PCB as the diode would not be able to absorb it in time. This should be mitigated by isolating the mounting pads, which are the sites of galvanic connection, from any copper traces. This was done by adding a 1 mm clearance to all those mounting pads. The second problem with the 1N4007 is that it has a rather high forward voltage when compared to more sophisticated alternatives like Schottky diodes. However this may not be a problem, as in an ESD discharge event, involved voltages will most certainly figure among the tenths of volts, if not more, so this problem would not be such a concern. Further testing is required.
 
-		- The past implementation also relied on the ground plane to deliver the unwanted inrush current to its proper destination -- the USB connector. The problem here is that, in the way the ground copper pour was configured, that inrush current would most certainly need to pass through the microcontroller, which would in all probabilities fry it. The new implementation deals with this by delivering the inrush current directly at the connector, avoiding that such current pass through delicate components.
+		- The past implementation also relied on the ground plane to deliver the unwanted inrush current to its proper destination -- the USB connector. The problem here is that, in the way the ground copper pour was configured, that inrush current would most certainly need to pass through the microcontroller, which could fry it. The ESD testings in the V3.1.1 prototypes did not yield any damage to the chip, meaning that this hypothetical event is possible but not certain, but it is better to avoid this problem. The new implementation deals with this by delivering the inrush current directly at the connector, avoiding that such current pass through delicate components.
 
 	- [:green:`Update`] The old Acheron logo was replaced for the newer one.
 
@@ -212,3 +212,9 @@ Although technically the modifications for this version do not qualify as a new 
 
 		- Second, the transistor used, BC548, did not have a base resistor to bias it. Although it worked fine in the prototypes, this causes a too high of a current on the base-emitter junction, which would probably deteriorate the transistor over time. To fix this two options were available: either insert a discrete resistor between the transistor base and the push button, or use a "self-bias" transistor package, that is, a package that contained a transistor with a resistive net (including a resistor on the base). The latter solution was the one adopted, replacing the BC548 for a DTC123J self-bias transistor.
 
+`V3.2.2 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.2>`_ :sub:`(2019/10/21)`
+--------------------------------------------------------------------------------------------
+
+	- [:blue:`Update`] Some silkscreen texts were changed for more clarity. In the latest prototype (V3.1.6), I used the height value of 0.5mm for the silkscreen character height, which was readable in my opinion but not for Steve -- reasonably so. All sikscreen text charaters now should be at least 0.6mm tall and more readable.
+
+	- [:blue:`Update`] The positioning of RGB5 was changed. It was slightly off-centered in version V3.2.0 to accomodate the pins for SWD, BOOT0 and NRST. The LED was now put in its original place, because I realized the pins can be accessed via wires should the user need.
