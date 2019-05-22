@@ -111,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prototypes.html">Prototypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gerbers.html">Gerber files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gerbers.html">Manufacturing files</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Elevate</span></p>
 <ul>
@@ -245,7 +245,9 @@
 <strong>2</strong></p></td>
 </tr>
 <tr class="row-even"><td><p class="centered">
-<strong>C7, C9, CRST2</strong></p></td>
+<strong>C7</strong></p><p class="centered">
+<strong>C9</strong></p><p class="centered">
+<strong>CRST2</strong></p></td>
 <td><p class="centered">
 <strong>4.7nF</strong></p></td>
 <td><p class="centered">
@@ -302,13 +304,14 @@
 <strong>1</strong></p></td>
 </tr>
 <tr class="row-even"><td><p class="centered">
+<strong>CVA1</strong></p><p class="centered">
 <strong>CVB4</strong></p></td>
 <td><p class="centered">
 <strong>1uF</strong></p></td>
 <td><p class="centered">
 <strong>0805</strong></p></td>
 <td><p class="centered">
-<strong>1</strong></p></td>
+<strong>2</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p class="centered">
 <strong>CVB5</strong></p></td>
@@ -472,12 +475,30 @@
 <td><p class="centered">
 <strong>1</strong></p></td>
 </tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>U3</strong></p></td>
+<td><p class="centered">
+<strong>USBLC6-2SC6</strong></p></td>
+<td><p class="centered">
+<strong>SOT-23-6</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>CVA2</strong></p></td>
+<td><p class="centered">
+<strong>10nF</strong></p></td>
+<td><p class="centered">
+<strong>0805</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="notes-on-the-bom">
 <h2>Notes on the BOM<a class="headerlink" href="#notes-on-the-bom" title="Permalink to this headline">¶</a></h2>
-<p><strong>(1)</strong> The rotary encoder was chosen because it was available at LCSC, Digikey and Mouser electronics. Its cheap, readily available and easu to solder. It also offers mechanical endurance through auxiliary legs that are soldered into the PCB.</p>
+<p><strong>(1)</strong> The rotary encoder was chosen because it was available at LCSC, Digikey and Mouser electronics. Its cheap, readily available and easy to solder. It also offers mechanical endurance through auxiliary legs that are soldered into the PCB.</p>
 <p>The encoder series EC11Ex looks to be a very versatile encoder in the sense that any rotary encoder in the series fits the footprint and has the sae pinout, as the models differ only on shaft shape and size but their footprints are the same. In the render I used the ALPS EC11E 15244G1.</p>
 <p><strong>(2)</strong> This connector seems to not be available in the european or american markets, only asian. It was chosen because, while being USBC, it has simplified pins and can easily be handsoldered. I have yet to find a good substitute for this connector that can be bought worldwide.</p>
 <p><strong>(3)</strong> Any fuse that fits the footprint will work, but I personally prefer polyfuses. Make sure that is has a minimum 1.5A trip current, as the LEDs and the high current microprocessor can sum 1A current easily.</p>

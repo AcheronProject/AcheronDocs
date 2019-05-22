@@ -1,8 +1,13 @@
-************
-Gerber files
-************
+*******************
+Manufacturing files
+*******************
 
 In the ``./gerbers`` folders you can find the plot files for the PCB and the plates.
+
+Schematic
+---------
+
+:download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/shark.pdf>` for the schematic file.
 
 PCB Gerber files
 ----------------

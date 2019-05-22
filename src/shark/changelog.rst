@@ -218,3 +218,23 @@ Although technically the modifications for this version do not qualify as a new 
 --------------------------------------------------------------------------------------------
 
 	- [:red:`Fix`] **Fixed DRC "errors"**. When I run the DRC (Design Rule Check) on KiCad, lots of errors pop out. Those are normally due to overlapping holes and pads -- a consequence of the multi-layout support, as the holes and pads of close switches will inevitably overlap. The problem is that, this time around, more than 200 error popped out, the majority of them being "Parallel lines being too close" and "Two tracks end too close". It is a known issue in KiCad that when a trace is "broken", that is, composed of many traces, these errors will appear. I knew this, but it had never happened to me. There's a first time to everything I guess. So I redid all traces that had this problem. This is more of an :blue:`Update` than a fix, because the traces were fine as they were, but I wanted to remove those errors and check them one by one because you never know -- some of them could actually be legitimate errors.
+
+`V3.2.4 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/22)`
+--------------------------------------------------------------------------------------------
+
+	- Some feedback was incorporated from **Upas**:
+
+		- [:green:`Update`] **Added data lines ESD protection** through the USBLC6 chip. This chip is specifically made for USB protocol compliance and fits perfectly into what the PCB needs.
+
+		- [:blue:`Feature`] **Added more regulation capacitors**. According to the STM32F303 datasheet [1]_ page 47, beyond the regulator capacitors CVB1-5 for the digital power supply VDD -- comprised of 4x100nF + 1x4.7uF -- there should also be 1x10nF + 1x1uF for the analog power supply. These capacitors were added as CVA1/2.
+
+	- [:red:`Fix`] **More silkscreen characters fixed**. As stated in V3.2.2, the idea is to use a minimum of 0.6mm for silkscreen character heights. There were still some left with 0.5mm.
+
+	- [:blue:`Feature`] **Added schematic PDF** in the ``./gerbers``.
+
+	- [:blue:`Feature`] **Re-positioned Q1**. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.
+
+References
+==========
+
+.. [1] STM32F303 series datasheet. Available at <https://www.st.com/resource/en/datasheet/stm32f303c6.pdf>. Accessed may 22, 2019.

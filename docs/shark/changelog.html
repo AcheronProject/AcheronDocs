@@ -133,15 +133,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-1-2019-10-20">V3.2.1 <sub>(2019/10/20)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-2-2019-10-21">V3.2.2 <sub>(2019/10/21)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-3-2019-10-21">V3.2.3 <sub>(2019/10/21)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-2-4-2019-10-22">V3.2.4 <sub>(2019/10/22)</sub></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cases.html">The Shark Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prototypes.html">Prototypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gerbers.html">Gerber files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gerbers.html">Manufacturing files</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Elevate</span></p>
 <ul>
@@ -478,6 +480,32 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="v3-2-4-2019-10-22">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4">V3.2.4</a> <sub>(2019/10/22)</sub><a class="headerlink" href="#v3-2-4-2019-10-22" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p>Some feedback was incorporated from <strong>Upas</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>[<span class="green">Update</span>] <strong>Added data lines ESD protection</strong> through the USBLC6 chip. This chip is specifically made for USB protocol compliance and fits perfectly into what the PCB needs.</p></li>
+<li><p>[<span class="blue">Feature</span>] <strong>Added more regulation capacitors</strong>. According to the STM32F303 datasheet <a class="footnote-reference brackets" href="#id5" id="id4">1</a> page 47, beyond the regulator capacitors CVB1-5 for the digital power supply VDD – comprised of 4x100nF + 1x4.7uF – there should also be 1x10nF + 1x1uF for the analog power supply. These capacitors were added as CVA1/2.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>[<span class="red">Fix</span>] <strong>More silkscreen characters fixed</strong>. As stated in V3.2.2, the idea is to use a minimum of 0.6mm for silkscreen character heights. There were still some left with 0.5mm.</p></li>
+<li><p>[<span class="blue">Feature</span>] <strong>Added schematic PDF</strong> in the <code class="docutils literal notranslate"><span class="pre">./gerbers</span></code>.</p></li>
+<li><p>[<span class="blue">Feature</span>] <strong>Re-positioned Q1</strong>. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>STM32F303 series datasheet. Available at &lt;<a class="reference external" href="https://www.st.com/resource/en/datasheet/stm32f303c6.pdf">https://www.st.com/resource/en/datasheet/stm32f303c6.pdf</a>&gt;. Accessed may 22, 2019.</p>
+</dd>
+</dl>
 </div>
 </div>
 
