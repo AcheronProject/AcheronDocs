@@ -43,7 +43,7 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 	:caption: Austin
 
-	austin/index.rst
+	austin/intro.rst
 
 .. toctree::
 	:maxdepth: 2
