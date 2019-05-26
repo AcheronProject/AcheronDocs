@@ -41,6 +41,12 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
+	:caption: Austin
+
+	austin/index.rst
+
+.. toctree::
+	:maxdepth: 2
 	:caption: Elevate
 
 	elevate/introduction.rst
@@ -56,6 +62,12 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
-	:caption: KeebsPCB
+	:caption: keebspcb
 
 	keebs/intro.rst
+
+.. toctree::
+	:maxdepth: 2
+	:caption: Ouroboros
+
+	ouroboros/index.rst
