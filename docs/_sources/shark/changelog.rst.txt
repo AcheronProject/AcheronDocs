@@ -16,7 +16,17 @@
 
 .. role:: blue
 
+.. raw:: html
 
+    <style> .orange {color:#dc7633; font-weight:bold; font-size:16px} </style>
+
+.. role:: orange
+
+.. raw:: html
+
+    <style> .pink {color:#cc00cc; font-weight:bold; font-size:16px} </style>
+
+.. role:: pink
 
 *********
 Changelog
@@ -30,7 +40,8 @@ My commits follow a little convention I like to use. The commit messages are usu
 - [:blue:`Feature`] Means a new feature was added
 - [:green:`Update`] Means a previous feature was improved or updated
 - [:red:`Fix`] Means a bug was fixed
-
+- [:orange:`Pre-release`] Means that a particular version was flagged as a pre-release. This means that prototypes were ordered and tests are pending.
+- [:pink:`Release`] Means that the prototypes were tested and deemed functional. Releases are denoted with greek letters.
 
 ----
 
@@ -233,6 +244,8 @@ Although technically the modifications for this version do not qualify as a new 
 	- [:blue:`Feature`] **Added schematic PDF** in the ``./gerbers``.
 
 	- [:blue:`Feature`] **Re-positioned Q1**. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.
+
+	- [:orange:`Pre-release`] **Alpha version pre-release**. Version 3.2.4 is the intended GB version and codenamed the Alpha version. Prototypes were ordered and this version was pre-released (prototyping tests pending). To download files and more, please check the `Alpha version pre-release page <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ .
 
 References
 ==========
