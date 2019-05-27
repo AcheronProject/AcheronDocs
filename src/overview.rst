@@ -7,7 +7,7 @@ Overview
 Introduction
 ============
 
-The **Acheron Project** is a compendium of resources for custom keyboards, that include
+The **Acheron Project** is a compendium of ECAD and MCAD resources for custom keyboards and audio equipment designed by Álvaro "Gondolindrim" Volpato with collaborators (except for some 3D models), that include
 
 - Printed Circuit Boards (PCBs);
 
@@ -17,15 +17,13 @@ The **Acheron Project** is a compendium of resources for custom keyboards, that 
 
 - 3D models
 
-	All of which designed by Álvaro "Gondolindrim" Volpato with collaborators.
-
-	The aim of the project is to build a database of freely available resources for keyboard enthusiasts, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
+The aim of the project is to build a database of freely available resources for keyboard enthusiasts and audiophiles, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
 Codenames and versioning
 ========================
 
-Codenames
----------
+Keyboard codenames
+------------------
 
 	Although each board has a codename to which it is commonly referred, each board in the Acheron project has a standard naming which comprises seven characteristics, which summarize each board's main features:
 
