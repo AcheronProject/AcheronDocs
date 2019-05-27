@@ -32,19 +32,6 @@
 Changelog
 *********
 
-How to read the changelog
-=========================
-
-My commits follow a little convention I like to use. The commit messages are usually concise. I use tags to describe better what the commit is about:
-
-- [:blue:`Feature`] Means a new feature was added
-- [:green:`Update`] Means a previous feature was improved or updated
-- [:red:`Fix`] Means a bug was fixed
-- [:orange:`Pre-release`] Means that a particular version was flagged as a pre-release. This means that prototypes were ordered and tests are pending.
-- [:pink:`Release`] Means that the prototypes were tested and deemed functional. Releases are denoted with greek letters.
-
-----
-
 V3.0
 ====
 
@@ -172,8 +159,6 @@ V3.1.6 :sub:`(2019/05/09)`
 
 	- [:green:`Update`] **Larger case fillets**. I changed the fillets of the USB cutouts of both cases to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.
 
-----
-
 V3.2
 ====
 
@@ -245,7 +230,17 @@ Although technically the modifications for this version do not qualify as a new 
 
 	- [:blue:`Feature`] **Re-positioned Q1**. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.
 
+`Alpha <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/22)`
+--------------------------------------------------------------------------------------------
+
 	- [:orange:`Pre-release`] **Alpha version pre-release**. Version 3.2.4 is the intended GB version and codenamed the Alpha version. Prototypes were ordered and this version was pre-released (prototyping tests pending). To download files and more, please check the `Alpha version pre-release page <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ .
+
+`V3.2.5 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/27)`
+--------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **Symbols and footprints update**. Some footprints and symbols (specially USB connector and microcontroller) were updated with the most recent Acheron Library footprints.
+
+	- [:green:`Update`] **Updated routing around USBLC6.** Little routing modifications were done around the USBLC chip. These were done to improve ESD discharge in such event.
 
 References
 ==========

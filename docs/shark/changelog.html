@@ -87,6 +87,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">How to read and write The Acheron Docs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Acheron OHL</span></p>
 <ul>
@@ -102,7 +103,6 @@
 <li class="toctree-l1"><a class="reference internal" href="shark.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-read-the-changelog">How to read the changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v3-0">V3.0</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#v3-0-1-01-12-2019">V3.0.1 <sub>(01/12/2019)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-0-2-01-13-2019">V3.0.2 <sub>(01/13/2019)</sub></a></li>
@@ -134,6 +134,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-2-2019-10-21">V3.2.2 <sub>(2019/10/21)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-3-2019-10-21">V3.2.3 <sub>(2019/10/21)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-4-2019-10-22">V3.2.4 <sub>(2019/10/22)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alpha-2019-10-22">Alpha <sub>(2019/10/22)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-2-5-2019-10-27">V3.2.5 <sub>(2019/10/27)</sub></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
@@ -233,18 +235,6 @@
             
   <style> .red {color:#f21717; font-weight:bold; font-size:16px} </style><style> .green {color:#009933; font-weight:bold; font-size:16px} </style><style> .blue {color:#1777f2; font-weight:bold; font-size:16px} </style><style> .orange {color:#dc7633; font-weight:bold; font-size:16px} </style><style> .pink {color:#cc00cc; font-weight:bold; font-size:16px} </style><div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-read-the-changelog">
-<h2>How to read the changelog<a class="headerlink" href="#how-to-read-the-changelog" title="Permalink to this headline">¶</a></h2>
-<p>My commits follow a little convention I like to use. The commit messages are usually concise. I use tags to describe better what the commit is about:</p>
-<ul class="simple">
-<li><p>[<span class="blue">Feature</span>] Means a new feature was added</p></li>
-<li><p>[<span class="green">Update</span>] Means a previous feature was improved or updated</p></li>
-<li><p>[<span class="red">Fix</span>] Means a bug was fixed</p></li>
-<li><p>[<span class="orange">Pre-release</span>] Means that a particular version was flagged as a pre-release. This means that prototypes were ordered and tests are pending.</p></li>
-<li><p>[<span class="pink">Release</span>] Means that the prototypes were tested and deemed functional. Releases are denoted with greek letters.</p></li>
-</ul>
-</div>
-<hr class="docutils" />
 <div class="section" id="v3-0">
 <h2>V3.0<a class="headerlink" href="#v3-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="v3-0-1-01-12-2019">
@@ -416,7 +406,6 @@
 </ul>
 </div></blockquote>
 </div>
-<hr class="docutils" />
 </div>
 <div class="section" id="v3-2">
 <h2>V3.2<a class="headerlink" href="#v3-2" title="Permalink to this headline">¶</a></h2>
@@ -505,7 +494,23 @@
 <li><p>[<span class="red">Fix</span>] <strong>More silkscreen characters fixed</strong>. As stated in V3.2.2, the idea is to use a minimum of 0.6mm for silkscreen character heights. There were still some left with 0.5mm.</p></li>
 <li><p>[<span class="blue">Feature</span>] <strong>Added schematic PDF</strong> in the <code class="docutils literal notranslate"><span class="pre">./gerbers</span></code>.</p></li>
 <li><p>[<span class="blue">Feature</span>] <strong>Re-positioned Q1</strong>. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="alpha-2019-10-22">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4">Alpha</a> <sub>(2019/10/22)</sub><a class="headerlink" href="#alpha-2019-10-22" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
 <li><p>[<span class="orange">Pre-release</span>] <strong>Alpha version pre-release</strong>. Version 3.2.4 is the intended GB version and codenamed the Alpha version. Prototypes were ordered and this version was pre-released (prototyping tests pending). To download files and more, please check the <a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4">Alpha version pre-release page</a> .</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="v3-2-5-2019-10-27">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4">V3.2.5</a> <sub>(2019/10/27)</sub><a class="headerlink" href="#v3-2-5-2019-10-27" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>[<span class="green">Update</span>] <strong>Symbols and footprints update</strong>. Some footprints and symbols (specially USB connector and microcontroller) were updated with the most recent Acheron Library footprints.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>Updated routing around USBLC6.</strong> Little routing modifications were done around the USBLC chip. These were done to improve ESD discharge in such event.</p></li>
 </ul>
 </div></blockquote>
 </div>
