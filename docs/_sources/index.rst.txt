@@ -71,4 +71,4 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 	:caption: Ouroboros
 
-	ouroboros/index.rst
+	ouroboros/intro.rst
