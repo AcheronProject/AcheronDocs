@@ -72,3 +72,4 @@ Welcome to the Acheron Project documentation page!
 	:caption: Ouroboros
 
 	ouroboros/intro.rst
+	ouroboros/tests.rst
