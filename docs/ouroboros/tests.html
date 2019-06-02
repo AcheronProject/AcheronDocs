@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ouroboros &mdash; Acheron Project 1.0.0 documentation</title>
+  <title>Simulations and tests &mdash; Acheron Project 1.0.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Introduction" href="../keebs/intro.html" /> 
+    <link rel="prev" title="Ouroboros" href="intro.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -129,7 +129,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Ouroboros</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Ouroboros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Ouroboros</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulations and tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-loop-gain">Open Loop Gain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-mode-rejection-ratio-cmrr">Common Mode Rejection Ratio (CMRR)</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -175,13 +181,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Ouroboros</li>
+      <li>Simulations and tests</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ouroboros/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ouroboros/tests.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,8 +200,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ouroboros">
-<h1>Ouroboros<a class="headerlink" href="#ouroboros" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="simulations-and-tests">
+<h1>Simulations and tests<a class="headerlink" href="#simulations-and-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>In analog electronics, a big deal of efforts is made into making the design perfetcly adjusted — given performance, costs and practical constraints.</p>
+<p>The vast majority of compliance testing and characteristics are associated with early simulations, done primarily through solving the set of differential and algebraic equations of the system in study.</p>
+<p>In this chapter the characteristics and performance simulations of the Ouroboros will be presented. All simulations were done with LTSpice XVII; the component library I used can be found at the official repository. The simulation files can be found in <a class="reference external" href="https://github.com/Gondolindrim/Ouroboros/tree/master/simulations">the simulations folder</a>.</p>
+<p>Since the Ouroboros can function with a 5 to 20V simmetrical power source, the simulations were done with an array of values: 5V, 9V, 10V, 12V, 15V and 20V.</p>
+</div></blockquote>
+</div>
+<div class="section" id="open-loop-gain">
+<h2>Open Loop Gain<a class="headerlink" href="#open-loop-gain" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/openLoopGain.svg"><img alt="../_images/openLoopGain.svg" src="../_images/openLoopGain.svg" width="800px" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Open Loop Gain bode plot of the circuit in figure 2.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/openLoopTest.svg"><img alt="../_images/openLoopTest.svg" src="../_images/openLoopTest.svg" width="250px" /></a>
+<p class="caption"><span class="caption-text">Figure 2: schematic of the circuit used to simulate the amplifier in Open Loop.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="common-mode-rejection-ratio-cmrr">
+<h2>Common Mode Rejection Ratio (CMRR)<a class="headerlink" href="#common-mode-rejection-ratio-cmrr" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/cmrr.svg"><img alt="../_images/cmrr.svg" src="../_images/cmrr.svg" width="800px" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/cmrrTest.svg"><img alt="../_images/cmrrTest.svg" src="../_images/cmrrTest.svg" width="400px" /></a>
+</div>
+</div>
 </div>
 
 
@@ -207,7 +242,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../keebs/intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral float-left" title="Ouroboros" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
