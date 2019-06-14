@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Acheron Open Hardware License (AOHL) V1.0 &mdash; Acheron Project 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../acheronLib/introduction.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="../faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Acheron Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron OHL</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Acheron Open Hardware License (AOHL) V1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1 Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definitions">1.1 Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#guide-and-intended-use">1.2 Guide and intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resources">1.3 Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing-conditions">2 Licensing conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copying-and-modification">2.1 Copying and modification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manufacture-and-distribution-of-products">2.2 Manufacture and distribution of products</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compliance-recommendation">2.3 Compliance recommendation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general">3 General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intellectual-property-and-endorsement">3.1 Intellectual property and endorsement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#names-and-logos">3.2 Names and logos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#warranty">3.3 Warranty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liability">3.3 Liability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/3dmodels.html">The 3D models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Shark</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shark/shark.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/cases.html">The Shark Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/ack.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/prototypes.html">Prototypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/renders.html">Renders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/gerbers.html">Manufacturing files</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Elevate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/gerbers.html">Gerber and schematic files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ArcticPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KeebsPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keebs/intro.html">Introduction</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Acheron Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>The Acheron Open Hardware License (AOHL) V1.0</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/license/license.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-acheron-open-hardware-license-aohl-v1-0">
+<h1>The Acheron Open Hardware License (AOHL) V1.0<a class="headerlink" href="#the-acheron-open-hardware-license-aohl-v1-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>This license describes the terms and conditions under which you may use, copy, modify, redistribute the resources hereby published. It also describes how you may make and distribute products based on those project files. It is intended to offer a legal standard by which the authors of these files publish their works, stating their intended use.</p>
+</div></blockquote>
+<div class="section" id="definitions">
+<h3>1.1 Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>(1.1.1) “License”</strong> means this AOHL document;</p></li>
+<li><p><strong>(1.1.2) “Resources”</strong> are the Acheron Project design files, hereby published and thoroughly described in section 1.3 of this licence;</p></li>
+<li><p><strong>(1.1.3) “Licensor”</strong> or “licensors” mean the legal person or people that own, author, create and modify the resources, publishing and distributing it under the conditions of this licence in the official repository; in this case, the contributors of the Acheron Project, namely Álvaro Augusto Volpato and Felipe Gonçalves Coury, and the personnel involved in the development team of the Project. For the purposes of this license, the licensors may be contacted using e-mails or the GitHub website:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="mailto:alvaro&#46;augusto&#46;volpato&#37;&#52;&#48;gmail">alvaro<span>&#46;</span>augusto<span>&#46;</span>volpato<span>&#64;</span>gmail</a> or <a class="reference external" href="https://github.com/Gondolindrim">https://github.com/Gondolindrim</a> for Álvaro Volpato;</p></li>
+<li><p><a class="reference external" href="mailto:felipe&#46;coury&#37;&#52;&#48;gmail&#46;com">felipe<span>&#46;</span>coury<span>&#64;</span>gmail<span>&#46;</span>com</a> or <a class="reference external" href="https://github.com/fcoury">https://github.com/fcoury</a> for Felipe Coury.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>(1.1.4) “Repository”</strong> means a location (generally virtual) where any author has placed the resources for public use, and where it is believed the resources will remain publicly available for at least two years;</p></li>
+<li><p><strong>(1.1.5) “Licensing Rights”</strong> refer to the rights granted explicitly from the licensor the the lincensee through this license;</p></li>
+<li><p><strong>(1.1.6) “Official repository”</strong> refers to the repository of the Acheron Project; in this case, <a class="reference external" href="https://gondolindrim.github.io/AcheronDocs">https://gondolindrim.github.io/AcheronDocs</a> .</p></li>
+<li><p><strong>(1.1.7) “Licensee”</strong> means any person that wishes to use the resources, commercially or otherwise, to whom the licensing rights are given by this license;</p></li>
+<li><p><strong>(1.1.8) “Product”</strong> means parts or the entirety of a device manufactured or built using the resources as published by the licensor or a modified version of those resources;</p></li>
+<li><p><strong>(1.1.9) “Components”</strong> means the specific names of the resources in the Acheron Project, namely:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SharkPCB;</p></li>
+<li><p>KeebsPCB;</p></li>
+<li><p>ArcticPCB;</p></li>
+<li><p>ElevatePCB;</p></li>
+<li><p>Acheron Library;</p></li>
+</ul>
+<p>The license applies to these components automatically.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="guide-and-intended-use">
+<h3>1.2 Guide and intended use<a class="headerlink" href="#guide-and-intended-use" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This license was written to describe how anyone can make use of the files and resources included in the Acheron Project. The basic idea is that all resources can be used, copied, distributed and modified free of charge, commercially or not, under certain basic conditions. These will be explained below to summarize their intent, and will be thoroughly explained through the license.</p>
+<ul class="simple">
+<li><p><strong>(1.2.1)</strong> By using, copying, modifying or distributing the resources hereby licensed, including making products and commercializing them, anyone with access to the resources automatically agrees to comply to this licence and its terms, effectively becoming a licensee. Any violation of this licence immediately terminates the rights of the licensee under this licence.</p></li>
+<li><p><strong>(1.2.2)</strong> Any modifications of the files should be dated and thoroughly listed once such modifications are made public. This requirement is not a matter of limiting or controlling how the resources should be used, but to keep a spirit of trading: in return for the free use, it is asked that you help the licensor improve the resources.</p></li>
+<li><p><strong>(1.2.3)</strong> No warranty is given and liability is limited. No responsibility is taken for faults or losses since the resources here are provided “as is”. In this sense, the licensor shall have no liability for damages like economical or data losses. Reestated, the use of the resources is given for free under the discretion of the licensee, and it is the licensee responsibility to properly test and/or prototype all the resources before manufacture or commercial distribution. This condition still applies even if the licensor has already prototyped the resources or parts of them. This is to protect the Acheron Project from its modifications; if any redistribution is infringing laws or rights, the licensor is not to be held responsible.</p></li>
+<li><p><strong>(1.2.4)</strong> The fact that the resources can be copied, modified and redistributed do not mean that the licensor endorses or takes part in the development of other projects that may come from its copying, modifying or redistribution. It also does not imply the transfer or assignment of intellectual property or copyright rights to the licensee;</p></li>
+<li><p><strong>(1.2.5)</strong> Let’s say that you want to make a project of your own based on one component of the Acheron Project. If the licensor has not taken part on those modifications not endorsed them, it is not reasonable that you can say your project belongs to the Acheron Project, and hence we ask that you remove the Acheron logos, names and web sites listed on the documentation and the resources. If you want your modifications to integrate Acheron, you must submit them to licensor revision (this is generally done through the pull request system) and the licensor must approve the modifications to be submitted to the official repository.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="resources">
+<h3>1.3 Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This licence applies to all the resources published in the documentation, including:</p>
+</div></blockquote>
+<ul>
+<li><p>Printed Circuit Boards (“PCBs”), their schematic diagrams, designs, circuit board layouts and descriptive text;</p></li>
+<li><p>The files used for PCBs manufacture like Gerber, SVG and PDF files that describe their mechanical and electrical profiles;</p></li>
+<li><p>The Bill of Materials (“BoM”), that describes the components used to manufacture the PCBs, their quantities and models, published in a sheet file or table;</p></li>
+<li><p>Parts modelling files like Computer Aided Design (“CAD”) and Computer Aided Manufacture (“CAM”) files, mechanical drawings and manufacturing, including but not limited to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Keyboard cases;</p></li>
+<li><p>Keyboard plates;</p></li>
+<li><p>Enclosures;</p></li>
+<li><p>Keycap models and drawings;</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Artworks and graphics, such as images and promotional material;</p></li>
+<li><p>The descriptive Electronical CAD (“ECAD”) or Mechanical CAD (“MCAD”) files such as footprints, symbols, shapes, models and drawings, used in conjunction with ECAD/MCAD software to devise the resources;</p></li>
+<li><p>This license itself. Although this may sound confusing, Open-Hardware Licenses are still a gray area when it comes to legality, patents, intellectual property. As such, the licenses are constantly evolving and being transformed to attend the market demands. Hence if anyone wishes to use this license, commercially or not, and help make it clearer and more concise, the licensors hereby grant anyone the right to do so, commercially or not, with the single condition that any modifications are reported back to help us improve it.</p>
+<blockquote>
+<div><p>This licence does not apply to:</p>
+</div></blockquote>
+</li>
+<li><p>The software, firmware or code loaded into programmable devices like microprocessors and microcontrollers not endorsed by the licensor. For example, it is perfectly possible that the user wishes to use a third-party firmware in conjunction with the hardware provided in this license; obviously the licensor cannot represent or speak for that firmware, since it was not of their authorship and the use of such firmware is generally subject to proper licensing, terms and conditions;</p></li>
+<li><p>The trademarks involved in some components names, brands and logos (for instance, Cortex, ALPS, Cherry, Gateron and so on). All respective brands and logos are proprties of their respective owners; such brands are mentioned only as means of asserting compatibility and usage (for example, “the PCBs use Cortex processors and are compatible with MX-style switches”);</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="licensing-conditions">
+<h2>2 Licensing conditions<a class="headerlink" href="#licensing-conditions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>This section defines the conditions under which the licensor gives permission to the licensee to use, copy, modify and distribute the resources hereby licensed, including for commercial purposes, given that the licensee complies to the conditions in this section. Such permission is granted by the licensor, directly to the licensee, worlwide and without limitation of time.</p>
+</div></blockquote>
+<div class="section" id="copying-and-modification">
+<h3>2.1 Copying and modification<a class="headerlink" href="#copying-and-modification" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The licensor grantes the licensee worldwide, royalty-free and non-exclusive permission copy and modify the resources, given that:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>(2.1.1)</strong> The modified resources must carry legible and clear notices stating the resources were modified from the original project, with date and description of the modifications; the files before and after changes should also be made available. This includes created files such as manufaturing CAD files like STEP files, Gerber files, BoM lists, mechanical drawings and so on.</p></li>
+<li><p><strong>(2.1.2)</strong> The licensee makes the modfied resources available at the same level of abstraction than the original resources, preferably in the same format of the original resources and in OSI licenses and tools. If you use proprietary formats, you must also include open-format equivalent versions.</p></li>
+<li><p><strong>(2.1.3)</strong> Modified resources have to be licensed under the terms and conditions of this license, a later version of this same license, or a compatible license. Recommended compatible licenses are the <a class="reference external" href="file:///home/alvaro/Downloads/cern_ohl_v_1_2.pdf">CERN OHL V1.2</a> , the <a class="reference external" href="https://www.tapr.org/ohl.html">TAPR OHL</a> or <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share-Alike 4.0 International</a>. For more information on how the open-hardware licensing is currently made, see <a class="reference external" href="https://www.tapr.org/Ackermann_Open_Source_Hardware_Article_2009.pdf">Ackerman’s article</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="manufacture-and-distribution-of-products">
+<h3>2.2 Manufacture and distribution of products<a class="headerlink" href="#manufacture-and-distribution-of-products" title="Permalink to this headline">¶</a></h3>
+<p>The licensor grants the licensee a worldwide, royalty-free and non-exclusive permission to manufacture and distribution of products based on the Acheron Project resources or any project derived. Such manufacture and distribution is encouraged – even commercially. It is required that the licensee complies with the requirements in section 2.1 and, additionally that</p>
+<ul class="simple">
+<li><p><strong>(2.2.1)</strong> The recipients of such products have easy means of access to a copy of the license and documentation.</p></li>
+<li><p><strong>(2.2.2)</strong> The licensee inform the licensor the quantity, dates of selling or production and types of products manufactured.</p></li>
+</ul>
+</div>
+<div class="section" id="compliance-recommendation">
+<h3>2.3 Compliance recommendation<a class="headerlink" href="#compliance-recommendation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>To comply with the licensing conditions, the licensor recommends that the licensee:</p>
+</div></blockquote>
+<ul>
+<li><p><strong>(2.3.1)</strong> Include the license file used in a LICENSE file in the documentation package; this makes it easier to understand the licensing terms.</p></li>
+<li><p><strong>(2.3.2)</strong> In the products, if the size and format allows, include a “Lincensed under the AOHL V1.0”, substituting the name AOHL for the license used.</p></li>
+<li><p><strong>(2.3.3)</strong> Have a CHANGES or CHANGELOG file included in the documentation.</p></li>
+<li><p><strong>(2.3.4)</strong> Have the original authours know about your distribution and modifications. This can be done via e-mail; particularly for the Acheron Project, this is done through the pull-request system or including detailedly descripted commits on your fork.</p>
+<blockquote>
+<div><p>In order to facilitate the compliance process, all these requirements can be easily fulfilled through the commit and pull request features of the git/GitHub platform.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="general">
+<h2>3 General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="intellectual-property-and-endorsement">
+<h3>3.1 Intellectual property and endorsement<a class="headerlink" href="#intellectual-property-and-endorsement" title="Permalink to this headline">¶</a></h3>
+<p>Except for the licensing rights explicitly granted under this document, this license does not grant the transfer or assignment of any intellectual property rights to the licensee. Furthermore, it does not imply that the licensor endorses, sponsors, participates in or has knowledge of any modifications made to the original resources.</p>
+<p>The licensor guarantees endorsement of the modifications and even incorporating them to the official resources repository, giving full credit to the author of the modifications, if the licensor has explicitly endorsed them through e-mail messages or incorporated them into the official resources repository (for example through pull requests).</p>
+</div>
+<div class="section" id="names-and-logos">
+<h3>3.2 Names and logos<a class="headerlink" href="#names-and-logos" title="Permalink to this headline">¶</a></h3>
+<p>The licensee shall not use nor make reference to any of the names, acronyms, abbreviations, images and logos under which the licensor, the repository or the resources are known, save in so far as required to comply with this license.</p>
+<p>Any permitted use of reference shall be explicit and factual and shall in no way suggest endorsement by the licensor or the participation in the development, preparations, or any construction process of the modified resources.</p>
+</div>
+<div class="section" id="warranty">
+<h3>3.3 Warranty<a class="headerlink" href="#warranty" title="Permalink to this headline">¶</a></h3>
+<p>The resources, the documentation and the repository are frelly and publicly provided in its present condition; no warranties are implied, including merchantability, sactisfatory quality, non-infringement of third-party rights, and fitness for any particular porpose or use other than the ones expressly stated.</p>
+<p>The licensor does not guarantee, and will not make representation, that modified documentation or resources will not infringe any copyright, patent or proprietary rights. The entire risk of quality, use, and performance of any product shall rest with the licensee.</p>
+</div>
+<div class="section" id="liability">
+<h3>3.3 Liability<a class="headerlink" href="#liability" title="Permalink to this headline">¶</a></h3>
+<p>The licensor will not have any liability for direct, indirect, accidental, incidental, punitive or consequential damages, arising from the usage of the documentation (modified or not) or the resources (modified or not). This includes, but is not limited to, procurement of goods or services, loss of use or data or profits, negligence, infringement of jurisdication, laws, legal requirements.</p>
+<p>The licensee shall free the licensor from any liability, costs, expenses, fees and taxes in relation to the use of resources or documentation.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../acheronLib/introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alvaro &#34;Gondolindrim&#34; Volpato
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manufacturing files &mdash; Acheron Project 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../elevate/introduction.html" />
+    <link rel="prev" title="Renders" href="renders.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Acheron Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron OHL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">The Acheron Open Hardware License (AOHL) V1.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/3dmodels.html">The 3D models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Shark</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shark.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">The Shark Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prototypes.html">Prototypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manufacturing files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#schematic">Schematic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pcb-gerber-files">PCB Gerber files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plates-gerber-and-vector-files">Plates Gerber and vector files</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Elevate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/gerbers.html">Gerber and schematic files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ArcticPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KeebsPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keebs/intro.html">Introduction</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Acheron Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Manufacturing files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/shark/gerbers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manufacturing-files">
+<h1>Manufacturing files<a class="headerlink" href="#manufacturing-files" title="Permalink to this headline">¶</a></h1>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./gerbers</span></code> folders you can find the plot files for the PCB and the plates.</p>
+<div class="section" id="schematic">
+<h2>Schematic<a class="headerlink" href="#schematic" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/shark.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> for the schematic file.</p>
+</div>
+<div class="section" id="pcb-gerber-files">
+<h2>PCB Gerber files<a class="headerlink" href="#pcb-gerber-files" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/SharkPCB.zip"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">zipped</span> <span class="pre">folder</span></code></a> contains the Gerber files for the last PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The <a class="reference external" href="./shark.html">SharkPCB introduction page</a> contains badges to show the last prototyped version of the PCB. I will release un-prototyped Gerbers in order to prototype them. Always check if the version you are downloading was prototyped!</p>
+</div>
+</div>
+<div class="section" id="plates-gerber-and-vector-files">
+<h2>Plates Gerber and vector files<a class="headerlink" href="#plates-gerber-and-vector-files" title="Permalink to this headline">¶</a></h2>
+<p>The gerbers folder also contains the plot files for the plates of both tall and short cases. There are basically two kinds of files for the plates: Gerbers and vectorized.</p>
+<p>Just to save on notation, “high plate” designates the plate for the tall (high-profile) case; the same goes for “short plate”.</p>
+<ul class="simple">
+<li><p>The Gerber files are used to order plates in the very same way as you would a PCB. This is awesome because you can cheaply order plates made from FR4 (the same material as the PCBs).</p></li>
+<li><p>The vectorized files are more general files that can be used to order plates in all sorts of materials, as the machining shops don’t use Gerbers. The aluminum plates offered in the group buys were ordered with these very same files. These shops usually use AutoCad <code class="docutils literal notranslate"><span class="pre">*.dxf</span></code> files, which can be downloaded below. The problem is that AutoCad is not open-source nor free, so I also offer <code class="docutils literal notranslate"><span class="pre">*.svg</span></code> files that can be used with Inkscape.</p></li>
+</ul>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p><strong>Gerber</strong></p></td>
+<td><p><strong>.dxf</strong></p></td>
+<td><p><strong>.svg</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>High</strong></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Low</strong></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../elevate/introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="renders.html" class="btn btn-neutral float-left" title="Renders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alvaro &#34;Gondolindrim&#34; Volpato
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

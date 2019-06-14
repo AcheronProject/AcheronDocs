@@ -45,6 +45,7 @@ Welcome to the Acheron Project documentation page!
 	:caption: Austin
 
 	austin/intro.rst
+	austin/changelog.rst
 
 .. toctree::
 	:maxdepth: 2

@@ -37,4 +37,3 @@ Common Mode Rejection Ratio (CMRR)
 
 .. figure:: ../images/ouroboros/cmrrTest.svg
 	:width: 400 px
-	
