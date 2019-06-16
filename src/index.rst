@@ -29,6 +29,12 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
+	:caption: Anubis
+
+	anubis/intro.rst
+
+.. toctree::
+	:maxdepth: 2
 	:caption: Shark
 
 	shark/shark.rst
@@ -64,7 +70,7 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
-	:caption: keebspcb
+	:caption: KeebsPCB
 
 	keebs/intro.rst
 
