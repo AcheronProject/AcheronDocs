@@ -35,7 +35,7 @@ You can hit me up at:
 
 - Email: ``alvaro.augusto.volpato@gmail.com``
 - Discord: ``Gondolindrim#9738``
-- reddit: ``u/gondolindrim_``
+- Reddit: ``u/gondolindrim``
 - Geekhack: ``Gondolindrim``
 
 Feel free to ask me questions and interact!
