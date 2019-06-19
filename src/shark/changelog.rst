@@ -162,7 +162,7 @@ V3.1.6 :sub:`(2019/05/09)`
 V3.2
 ====
 
-`V3.2.0 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.0>`_ :sub:`(2019/10/19)`
+`V3.2.0 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.0>`_ :sub:`(2019/05/10)`
 --------------------------------------------------------------------------------------------
 
 Although technically the modifications for this version do not qualify as a new sub-version, the changes were too big to consider them part of the V3.1 series. This is why this new series jumped to V3.2 .
@@ -194,7 +194,7 @@ Although technically the modifications for this version do not qualify as a new 
 
 	- [:green:`Update`] **New logo!**. The old Acheron logo was replaced for the newer one.
 
-`V3.2.1 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.1>`_ :sub:`(2019/10/20)`
+`V3.2.1 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.1>`_ :sub:`(2019/05/11)`
 --------------------------------------------------------------------------------------------
 
 	- [:red:`Fix`] **Fixed potential problems in the reset network**. The reset network used had two issues, pointed out by **ishtob**.
@@ -203,19 +203,19 @@ Although technically the modifications for this version do not qualify as a new 
 
 		- Second, the transistor used, BC548, did not have a base resistor to bias it. Although it worked fine in the prototypes, this causes a too high of a current on the base-emitter junction, which would probably deteriorate the transistor over time. To fix this two options were available: either insert a discrete resistor between the transistor base and the push button, or use a "self-bias" transistor package, that is, a package that contained a transistor with a resistive net (including a resistor on the base). The latter solution was the one adopted, replacing the BC548 for a DTC123J self-bias transistor.
 
-`V3.2.2 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.2>`_ :sub:`(2019/10/21)`
+`V3.2.2 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.2>`_ :sub:`(2019/05/11)`
 --------------------------------------------------------------------------------------------
 
 	- [:green:`Update`] **Changed some texts for readability**. Some silkscreen texts were changed for more clarity. In the latest prototype (V3.1.6), I used the height value of 0.5mm for the silkscreen character height, which was readable in my opinion but not for Steve -- reasonably so. All sikscreen text charaters now should be at least 0.6mm tall and more readable.
 
 	- [:green:`Update`] **Re-positioned RGB5**. The positioning of RGB5 was changed. It was slightly off-centered in version V3.2.0 to accomodate the pins for SWD, BOOT0 and NRST. The LED was now put in its original place, because I realized the pins can be accessed via wires should the user need.
 
-`V3.2.3 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.3>`_ :sub:`(2019/10/21)`
+`V3.2.3 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.3>`_ :sub:`(2019/05/11)`
 --------------------------------------------------------------------------------------------
 
 	- [:red:`Fix`] **Fixed DRC "errors"**. When I run the DRC (Design Rule Check) on KiCad, lots of errors pop out. Those are normally due to overlapping holes and pads -- a consequence of the multi-layout support, as the holes and pads of close switches will inevitably overlap. The problem is that, this time around, more than 200 error popped out, the majority of them being "Parallel lines being too close" and "Two tracks end too close". It is a known issue in KiCad that when a trace is "broken", that is, composed of many traces, these errors will appear. I knew this, but it had never happened to me. There's a first time to everything I guess. So I redid all traces that had this problem. This is more of an :blue:`Update` than a fix, because the traces were fine as they were, but I wanted to remove those errors and check them one by one because you never know -- some of them could actually be legitimate errors.
 
-`V3.2.4 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/22)`
+`V3.2.4 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/05/12)`
 --------------------------------------------------------------------------------------------
 
 	- Some feedback was incorporated from **Upas**:
@@ -230,17 +230,28 @@ Although technically the modifications for this version do not qualify as a new 
 
 	- [:blue:`Feature`] **Re-positioned Q1**. The past position was too near the keyswitches and I feared it could get in the way. I moved it to a space in between four switches, so this problem will not happen anymore.
 
-`Alpha <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/22)`
+`Alpha <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/05/12)`
 --------------------------------------------------------------------------------------------
 
 	- [:orange:`Pre-release`] **Alpha version pre-release**. Version 3.2.4 is the intended GB version and codenamed the Alpha version. Prototypes were ordered and this version was pre-released (prototyping tests pending). To download files and more, please check the `Alpha version pre-release page <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ .
 
-`V3.2.5 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.4>`_ :sub:`(2019/10/27)`
+`V3.2.5 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.5>`_ :sub:`(2019/05/17)`
 --------------------------------------------------------------------------------------------
 
 	- [:green:`Update`] **Symbols and footprints update**. Some footprints and symbols (specially USB connector and microcontroller) were updated with the most recent Acheron Library footprints.
 
 	- [:green:`Update`] **Updated routing around USBLC6.** Little routing modifications were done around the USBLC chip. These were done to improve ESD discharge in such event.
+
+`V3.2.6 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.6>`_ :sub:`(2019/05/18)`
+--------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **USB Connector Designator**. The designator J1 for the USB connector was not clearly put on the PCB and was moved to an easier place to see.
+
+	- [:green:`Update`] **Rewritten BOM**. Minor problems in the BOM were fixed and two more columns were added, Package and Value. This way the description can be written independently from the other rows. The problems fixed were:
+
+		- The 1N4148W diodes were listed with a quantity of 52 diodes, when in reality there were only 50;
+		- The 260 Ohm resistors also were listed with 50 units, when there were only 48;
+		- For the RGB underglow LEDs, only an "RGB" designator was on the BOM, but there are 8 units (RGB1-8). This could make the manufacturer or parts buyer to misinterpret the BOM and buy only one diode. Now in the BOM this designator cell was rewritten to "RGB1-8", putting more evidence into the fact that there are 8 LED units.
 
 References
 ==========
