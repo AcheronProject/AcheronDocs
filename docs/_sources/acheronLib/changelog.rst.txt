@@ -41,7 +41,8 @@ V1.0
 	- [:blue:`Feature`] **First version**. This version is the bare needed for a keyboard, including:
 
 		- Keyboard MX switches, reversed (R), hotswap (H), and reversed hotswap (HR) versions;
-		- 
+		- Switch slots to make plates;
+		- Adapted footprints for components like crystal, connector and more.
 
 It is widely used in the SharkPCB (V2.0 and lower), ArcticPCB V1 and KeebsPCB V1.
 
