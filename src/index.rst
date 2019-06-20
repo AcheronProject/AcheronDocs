@@ -26,6 +26,7 @@ Welcome to the Acheron Project documentation page!
 
 	acheronLib/introduction.rst
 	acheronLib/3dmodels.rst
+	acheronLib/changelog.rst
 
 .. toctree::
 	:maxdepth: 2
