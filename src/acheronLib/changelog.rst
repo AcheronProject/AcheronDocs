@@ -35,8 +35,8 @@ Changelog
 V1.0
 ====
 
-`V1.0 <https://github.com/Gondolindrim/AcherlonLibrary/releases/tag/V1.0>`_ :sub:`(2019/04/15)`
--------------------------------------------------------------------------------------------------
+`V1.0 <https://github.com/Gondolindrim/AcheronLibrary/releases/tag/V1.0>`_ :sub:`(2019/04/15)`
+----------------------------------------------------------------------------------------------
 
 	- [:blue:`Feature`] **First version**. This version is the bare needed for a keyboard, including:
 
@@ -48,8 +48,8 @@ It is widely used in the SharkPCB (V2.0 and lower), ArcticPCB V1 and KeebsPCB V1
 V2.0
 ====
 
-`V2.0 <https://github.com/Gondolindrim/AcherlonLibrary/releases/tag/V2.0>`_ :sub:`(2019/06/20)`
--------------------------------------------------------------------------------------------------
+`V2.0 <https://github.com/Gondolindrim/AcheronLibrary/releases/tag/V2.0>`_ :sub:`(2019/06/20)`
+----------------------------------------------------------------------------------------------
 
 	- [:blue:`Feature`] **Optimization for manufacturing**. In this version, I decided that the objective of the AcheronLibrary is to build footprints aimed at optimizing manufacturing speed and cost. This was done in two ways: talking to friends and contacts in the PCB manufacturing and assembly business, and feedback from my own projects by the assembly factories themselves. In order to do this, I added some footprints and modified other ones:
 		
