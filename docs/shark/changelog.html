@@ -125,12 +125,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-3-2019-03-13">V3.1.3 <sub>(2019/03/13)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-4-2019-03-16">V3.1.4 <sub>(2019/03/16)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-5-2019-03-19">V3.1.5 <sub>(2019/03/19)</sub></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">V3.1.5 <sub>(2019/03/19)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-03-21">V3.1.6 <sub>(2019/03/21)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-05-07">V3.1.6 <sub>(2019/05/07)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-6-2019-05-09">V3.1.6 <sub>(2019/05/09)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-1-7-2019-05-09">V3.1.7 <sub>(2019/05/09)</sub></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">V3.1.7 <sub>(2019/05/09)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">V3.1.7 <sub>(2019/05/09)</sub></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#v3-2">V3.2</a><ul>
@@ -142,6 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#alpha-2019-05-12">Alpha <sub>(2019/05/12)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-5-2019-05-17">V3.2.5 <sub>(2019/05/17)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-6-2019-05-18">V3.2.6 <sub>(2019/05/18)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-2-7-2019-06-21">V3.2.7 <sub>(2019/06/21)</sub></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
@@ -306,7 +306,6 @@
 </div></blockquote>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="v3-1">
 <h2>V3.1<a class="headerlink" href="#v3-1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="v3-1-0-2019-02-20">
@@ -353,10 +352,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="v3-1-5-2019-03-19">
-<h3>V3.1.5 <sub>(2019/03/19)</sub><a class="headerlink" href="#v3-1-5-2019-03-19" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id1">
-<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.5">V3.1.5</a> <sub>(2019/03/19)</sub><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.5">V3.1.5</a> <sub>(2019/03/19)</sub><a class="headerlink" href="#v3-1-5-2019-03-19" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>[<span class="blue">Feature</span>] <strong>Moved some components to the bottom layer</strong>. Some components, like the LDO and its network, as well as the reset network, were moved to the bottom layer to ensure no component would get in the way of the switches when mounting them.</p></li>
@@ -406,8 +402,8 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.7">V3.1.7</a> <sub>(2019/05/09)</sub><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.7">V3.1.7</a> <sub>(2019/05/09)</sub><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>[<span class="green">Update</span>] <strong>Larger case fillets</strong>. I changed the fillets of the USB cutouts of both cases to 1.5mm. This was done because, according to the manufacturer, the cutout was deep and a 1mm radius was difficult to machine. In order to make those fillets larger, the cutout was also needed to be made a little larger: 1mm for each dimension.</p></li>
@@ -495,7 +491,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>[<span class="green">Update</span>] <strong>Added data lines ESD protection</strong> through the USBLC6 chip. This chip is specifically made for USB protocol compliance and fits perfectly into what the PCB needs.</p></li>
-<li><p>[<span class="blue">Feature</span>] <strong>Added more regulation capacitors</strong>. According to the STM32F303 datasheet <a class="footnote-reference brackets" href="#id5" id="id4">1</a> page 47, beyond the regulator capacitors CVB1-5 for the digital power supply VDD – comprised of 4x100nF + 1x4.7uF – there should also be 1x10nF + 1x1uF for the analog power supply. These capacitors were added as CVA1/2.</p></li>
+<li><p>[<span class="blue">Feature</span>] <strong>Added more regulation capacitors</strong>. According to the STM32F303 datasheet <a class="footnote-reference brackets" href="#id5" id="id3">1</a> page 47, beyond the regulator capacitors CVB1-5 for the digital power supply VDD – comprised of 4x100nF + 1x4.7uF – there should also be 1x10nF + 1x1uF for the analog power supply. These capacitors were added as CVA1/2.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -539,12 +535,24 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="v3-2-7-2019-06-21">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.7">V3.2.7</a> <sub>(2019/06/21)</sub><a class="headerlink" href="#v3-2-7-2019-06-21" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>[<span class="green">Update</span>] <strong>Conformance with new Acheron Library</strong>. Following yet again more changes on the Acheron Library, some footprints were changed to optimize assembly. Please see the chengelog for the Acheron Library, version 2.1 for more details.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>New placement of microprocessor capacitors</strong>. The bypass capacitors for the microprocessor were re-though to do their job better. More specifically, they were moved more closely to the microprocessor and their traces to the processor were redone so that the capacitors were put between the voltage source and the pins. This guarantees the eventually noisy voltage will be filtered correctly; this does not happen if the capacitor picks the current after the pin. For more information, please see the AN4206 application note for hardware development for the STM32F3 series <a class="footnote-reference brackets" href="#id6" id="id4">2</a> .</p></li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
-<dd><p>STM32F303 series datasheet. Available at &lt;<a class="reference external" href="https://www.st.com/resource/en/datasheet/stm32f303c6.pdf">https://www.st.com/resource/en/datasheet/stm32f303c6.pdf</a>&gt;. Accessed may 22, 2019.</p>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>STM32F303 series datasheet. Available at <a class="reference external" href="https://www.st.com/resource/en/datasheet/stm32f303c6.pdf">this link</a>. Last accessed may 22, 2019.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>AN4206 application note: Getting started with STM32F3 series hardware development. Available at <a class="reference external" href="https://www.st.com/content/ccc/resource/technical/document/application_note/31/14/f4/9d/d3/8f/48/2b/DM00070391.pdf/files/DM00070391.pdf/jcr:content/translations/en.DM00070391.pdf">this link</a>. Last accessed june 21, 2019.</p>
 </dd>
 </dl>
 </div>

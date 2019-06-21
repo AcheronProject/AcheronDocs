@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prototypes &mdash; Acheron Project 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Renders" href="renders.html" />
+    <link rel="prev" title="Acknowledgements" href="ack.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Acheron Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">How to read and write The Acheron Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron OHL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">The Acheron Open Hardware License (AOHL) V1.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/3dmodels.html">The 3D models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Anubis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../anubis/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Shark</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shark.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">The Shark Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Prototypes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pcb-prototypes">PCB prototypes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#steve-s-prototypes">Steve’s prototypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#u-ajp10304-prototypes">u/ajp10304 prototypes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#case-prototypes">Case prototypes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#short-case">Short case</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gerbers.html">Manufacturing files</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Austin</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../austin/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../austin/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Elevate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/gerbers.html">Manufacturing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ArcticPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KeebsPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keebs/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ouroboros</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ouroboros/intro.html">Ouroboros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ouroboros/tests.html">Simulations and tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Acheron Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Prototypes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/shark/prototypes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prototypes">
+<h1>Prototypes<a class="headerlink" href="#prototypes" title="Permalink to this headline">¶</a></h1>
+<p>This page contains the pictures of prototypes and of the SharkPCB and its cases. Click on the figures to access the raw image and enlarge.</p>
+<div class="section" id="pcb-prototypes">
+<h2>PCB prototypes<a class="headerlink" href="#pcb-prototypes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="steve-s-prototypes">
+<h3>Steve’s prototypes<a class="headerlink" href="#steve-s-prototypes" title="Permalink to this headline">¶</a></h3>
+<p>These were the prototypes Steve ordered to build the firmware and prac tice SMD soldering.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/back1.jpg"><img alt="../_images/back1.jpg" src="../_images/back1.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/back2.jpg"><img alt="../_images/back2.jpg" src="../_images/back2.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/front1.jpg"><img alt="../_images/front1.jpg" src="../_images/front1.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/front2.jpg"><img alt="../_images/front2.jpg" src="../_images/front2.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="u-ajp10304-prototypes">
+<h3>u/ajp10304 prototypes<a class="headerlink" href="#u-ajp10304-prototypes" title="Permalink to this headline">¶</a></h3>
+<p>Thanks to u/ajp10304 for sharing pictures of his prototypes!</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/ajp1.jpg"><img alt="../_images/ajp1.jpg" src="../_images/ajp1.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/ajp2.jpg"><img alt="../_images/ajp2.jpg" src="../_images/ajp2.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/ajp3.jpg"><img alt="../_images/ajp3.jpg" src="../_images/ajp3.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="case-prototypes">
+<h2>Case prototypes<a class="headerlink" href="#case-prototypes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="short-case">
+<h3>Short case<a class="headerlink" href="#short-case" title="Permalink to this headline">¶</a></h3>
+<p>These were aluminum prototypes made through CNC machining in may 2019.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/shortCase1.jpg"><img alt="../_images/shortCase1.jpg" src="../_images/shortCase1.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/shortCase2.jpg"><img alt="../_images/shortCase2.jpg" src="../_images/shortCase2.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/shortCase3.jpg"><img alt="../_images/shortCase3.jpg" src="../_images/shortCase3.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/shortCase4.jpg"><img alt="../_images/shortCase4.jpg" src="../_images/shortCase4.jpg" style="width: 100%;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="renders.html" class="btn btn-neutral float-right" title="Renders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ack.html" class="btn btn-neutral float-left" title="Acknowledgements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alvaro &#34;Gondolindrim&#34; Volpato
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

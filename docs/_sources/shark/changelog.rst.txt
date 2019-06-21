@@ -78,8 +78,6 @@ V3.0.7 :sub:`(2019/02/13)`
 
 	- [:green:`Update`] **Adjusted models**. Adjusted 3D models of crystal and Push Button.
 
-----
-
 V3.1
 ====
 
@@ -113,9 +111,6 @@ V3.1.4 :sub:`(2019/03/16)`
 	- [:green:`Update`] **Changed the connector of I2C pins.** The I2C connector was changed to a common 4-pin header.
 
 	- [:blue:`Feature`] **Broken out more pins.** Added extra header pins for the remaining not used pins of the microcontroller. With these pins the user will be able to expand the keyboard by adding off-board devices.
-
-V3.1.5 :sub:`(2019/03/19)`
---------------------------
 
 `V3.1.5 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.1.5>`_ :sub:`(2019/03/19)`
 --------------------------------------------------------------------------------------------
@@ -253,7 +248,16 @@ Although technically the modifications for this version do not qualify as a new 
 		- The 260 Ohm resistors also were listed with 50 units, when there were only 48;
 		- For the RGB underglow LEDs, only an "RGB" designator was on the BOM, but there are 8 units (RGB1-8). This could make the manufacturer or parts buyer to misinterpret the BOM and buy only one diode. Now in the BOM this designator cell was rewritten to "RGB1-8", putting more evidence into the fact that there are 8 LED units.
 
+`V3.2.7 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.7>`_ :sub:`(2019/06/21)`
+--------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **Conformance with new Acheron Library**. Following yet again more changes on the Acheron Library, some footprints were changed to optimize assembly. Please see the chengelog for the Acheron Library, version 2.1 for more details.
+
+	- [:green:`Update`] **New placement of microprocessor capacitors**. The bypass capacitors for the microprocessor were re-though to do their job better. More specifically, they were moved more closely to the microprocessor and their traces to the processor were redone so that the capacitors were put between the voltage source and the pins. This guarantees the eventually noisy voltage will be filtered correctly; this does not happen if the capacitor picks the current after the pin. For more information, please see the AN4206 application note for hardware development for the STM32F3 series [2]_ .
+
 References
 ==========
 
-.. [1] STM32F303 series datasheet. Available at <https://www.st.com/resource/en/datasheet/stm32f303c6.pdf>. Accessed may 22, 2019.
+.. [1] STM32F303 series datasheet. Available at `this link <https://www.st.com/resource/en/datasheet/stm32f303c6.pdf>`_. Last accessed may 22, 2019.
+
+.. [2] AN4206 application note: Getting started with STM32F3 series hardware development. Available at `this link <https://www.st.com/content/ccc/resource/technical/document/application_note/31/14/f4/9d/d3/8f/48/2b/DM00070391.pdf/files/DM00070391.pdf/jcr:content/translations/en.DM00070391.pdf>`_. Last accessed june 21, 2019.
