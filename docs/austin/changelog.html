@@ -121,7 +121,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#v1-0">V1.0</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#v1-0-10-05-2019">V1.0 <sub>(10/05/2019)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v1-1-12-05-2019">V1.1 <sub>(12/05/2019)</sub></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#v1-1-20-06-2019">V1.1 <sub>(20/06/2019)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-2-20-06-2019">V1.2 <sub>(20/06/2019)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-alpha-29-06-2019">pre-Alpha <sub>(29/06/2019)</sub></a></li>
 </ul>
 </li>
 </ul>
@@ -232,12 +233,32 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="v1-1-20-06-2019">
-<h3><a class="reference external" href="https://github.com/Gondolindrim/Austin/releases/tag/V1.2">V1.1</a> <sub>(20/06/2019)</sub><a class="headerlink" href="#v1-1-20-06-2019" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="v1-2-20-06-2019">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/Austin/releases/tag/V1.2">V1.2</a> <sub>(20/06/2019)</sub><a class="headerlink" href="#v1-2-20-06-2019" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>[<span class="green">Update</span>] <strong>Plated Austin logo in the back</strong>. Added a plated Ausin logo for the bling;</p></li>
 <li><p>[<span class="green">Update</span>] <strong>New 3D models</strong>. New 3D models that contain the connector and all other components, for mechanical compliance checking.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="pre-alpha-29-06-2019">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/Austin/releases/tag/pre-Alpha">pre-Alpha</a> <sub>(29/06/2019)</sub><a class="headerlink" href="#pre-alpha-29-06-2019" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p>[<span class="green">Update</span>] <strong>Fixed courtyard problems.</strong> The last version had some problems with the resistor placements. KiCad was not checking for courtyard crossings and some resistors came misplaced, to the point some of them would prevent some switches from correctly snapping into the PCB.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>New label</strong>. New plated label registering version.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>Removed the split plus option</strong>. There was a problem with the split plus options. This was because of two reasons:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>To support split plus and LEDs, the 2U switch should be flipped 90 degrees so that the switch pads and LED pads would not superimpose. drifting decided that, for the sake of regularity, having a vertical switch should be better;</p></li>
+<li><p>Not manyt people use the split plus;</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>[<span class="green">Update</span>] <strong>Numpad plus rerouted.</strong> Numpad plus was rerouted. Before, there were three switches to route differently; one was on row 3 (upper 1U switch) and two others (lower 1U and 2U switch) were on row 4. With the removal of the split option, the 2U switch was re-routed to row 3.</p></li>
+<li><p>[<span class="red">Fix</span>] <strong>Silkscreen writings for he SWD pins.</strong> In the last revision they were not rhere and that would surely be confusing. Markings were added to signal the pin functions.</p></li>
+<li><p>[<span class="orange">Pre-release</span>] <strong>Pre-release Alpha</strong>. This version is the intended GB version and will be prototyped.</p></li>
 </ul>
 </div></blockquote>
 </div>

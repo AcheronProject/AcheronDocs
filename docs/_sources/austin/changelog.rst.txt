@@ -49,9 +49,28 @@ V1.0 :sub:`(10/05/2019)`
 
 	- [:green:`Update`] **Changed the LDO used**. The LDO used to converto the bus 5V into 3.3V for the microprocessor was the MCP1700-33; by the time of prototyping, it was not available on LCSC. I changed it for an LV1117-33, by Texas Instruments, which also features a better SOT-223 package.
 
-`V1.1 <https://github.com/Gondolindrim/Austin/releases/tag/V1.2>`_ :sub:`(20/06/2019)`
+`V1.2 <https://github.com/Gondolindrim/Austin/releases/tag/V1.2>`_ :sub:`(20/06/2019)`
 --------------------------------------------------------------------------------------------
 
 	- [:green:`Update`] **Plated Austin logo in the back**. Added a plated Ausin logo for the bling;
 	
 	- [:green:`Update`] **New 3D models**. New 3D models that contain the connector and all other components, for mechanical compliance checking.
+
+`pre-Alpha <https://github.com/Gondolindrim/Austin/releases/tag/pre-Alpha>`_ :sub:`(29/06/2019)`
+------------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **Fixed courtyard problems.** The last version had some problems with the resistor placements. KiCad was not checking for courtyard crossings and some resistors came misplaced, to the point some of them would prevent some switches from correctly snapping into the PCB.
+
+	- [:green:`Update`] **New label**. New plated label registering version.
+
+	- [:green:`Update`] **Removed the split plus option**. There was a problem with the split plus options. This was because of two reasons:
+
+		- To support split plus and LEDs, the 2U switch should be flipped 90 degrees so that the switch pads and LED pads would not superimpose. drifting decided that, for the sake of regularity, having a vertical switch should be better;
+		
+		- Not manyt people use the split plus;
+
+	- [:green:`Update`] **Numpad plus rerouted.** Numpad plus was rerouted. Before, there were three switches to route differently; one was on row 3 (upper 1U switch) and two others (lower 1U and 2U switch) were on row 4. With the removal of the split option, the 2U switch was re-routed to row 3. 
+
+	- [:red:`Fix`] **Silkscreen writings for he SWD pins.** In the last revision they were not rhere and that would surely be confusing. Markings were added to signal the pin functions.
+		
+	- [:orange:`Pre-release`] **Pre-release Alpha**. This version is the intended GB version and will be prototyped.
