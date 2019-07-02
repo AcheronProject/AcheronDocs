@@ -255,6 +255,17 @@ Although technically the modifications for this version do not qualify as a new 
 
 	- [:green:`Update`] **New placement of microprocessor capacitors**. The bypass capacitors for the microprocessor were re-though to do their job better. More specifically, they were moved more closely to the microprocessor and their traces to the processor were redone so that the capacitors were put between the voltage source and the pins. This guarantees the eventually noisy voltage will be filtered correctly; this does not happen if the capacitor picks the current after the pin. For more information, please see the AN4206 application note for hardware development for the STM32F3 series [2]_ .
 
+`V3.2.8 <https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.8>`_ :sub:`(2019/07/02)`
+--------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **Changed diode packages**. Diodes DESD1 and DRST1 were rated 0805 package. This was because of component availability. To conform to the other diodes, they were moved to SOD-123.
+
+	- [:red:`Fix`] **Designator-silkscreen inconsistencies**. Some components like RD+ and RD- had inconsistent silkscreen markings, in the sense that their designators were RD-1 and RD+1. This also happened with several components, and created inconsistencies between the bill of materials, the silkscreen markings and the pick and place files. This has now been fixed and there are no inconsistencies between those files anymore, they were all revamped and re-checked.
+
+	- [:green:`Update`] **New Acheron Library footprints**. The Acheron Library received a few updates, mainly the addition of courtyards for the switches indicating the physical limits of stabs, switches and stab wires.
+
+	- [:green:`Update`] **New plated logo**. The SharkPCB logo on the PCB front was made plated to shine out.
+
 References
 ==========
 

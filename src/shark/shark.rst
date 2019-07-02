@@ -21,6 +21,13 @@ In the next weeks, Steve from WoodCables came along and funded the project. We m
 
 The name comes from a dear friend of mine, Gustavo, who at the time did not have a nickname. I suggested the nickname "Shark" because he used a shark image for his avatar; after much thinking, he decided to adopt the Undecided Shark alias, from whence the Shark PCB was named.
 
+Contributors
+============
+
+- Steve from WoodCables, who funded de project and made it grow bigger than I had never imagined;
+- Alan Pocklington, also known as u/ajp10304, who built a prototype himself and offered to test the preliminary software to hasten the GB and gave immense feedback on documentation and component positioning.
+
+
 Features
 ========
 

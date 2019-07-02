@@ -142,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-5-2019-05-17">V3.2.5 <sub>(2019/05/17)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-6-2019-05-18">V3.2.6 <sub>(2019/05/18)</sub></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v3-2-7-2019-06-21">V3.2.7 <sub>(2019/06/21)</sub></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v3-2-8-2019-07-02">V3.2.8 <sub>(2019/07/02)</sub></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
@@ -541,6 +542,17 @@
 <div><ul class="simple">
 <li><p>[<span class="green">Update</span>] <strong>Conformance with new Acheron Library</strong>. Following yet again more changes on the Acheron Library, some footprints were changed to optimize assembly. Please see the chengelog for the Acheron Library, version 2.1 for more details.</p></li>
 <li><p>[<span class="green">Update</span>] <strong>New placement of microprocessor capacitors</strong>. The bypass capacitors for the microprocessor were re-though to do their job better. More specifically, they were moved more closely to the microprocessor and their traces to the processor were redone so that the capacitors were put between the voltage source and the pins. This guarantees the eventually noisy voltage will be filtered correctly; this does not happen if the capacitor picks the current after the pin. For more information, please see the AN4206 application note for hardware development for the STM32F3 series <a class="footnote-reference brackets" href="#id6" id="id4">2</a> .</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="v3-2-8-2019-07-02">
+<h3><a class="reference external" href="https://github.com/Gondolindrim/SharkPCB/releases/tag/V3.2.8">V3.2.8</a> <sub>(2019/07/02)</sub><a class="headerlink" href="#v3-2-8-2019-07-02" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>[<span class="green">Update</span>] <strong>Changed diode packages</strong>. Diodes DESD1 and DRST1 were rated 0805 package. This was because of component availability. To conform to the other diodes, they were moved to SOD-123.</p></li>
+<li><p>[<span class="red">Fix</span>] <strong>Designator-silkscreen inconsistencies</strong>. Some components like RD+ and RD- had inconsistent silkscreen markings, in the sense that their designators were RD-1 and RD+1. This also happened with several components, and created inconsistencies between the bill of materials, the silkscreen markings and the pick and place files. This has now been fixed and there are no inconsistencies between those files anymore, they were all revamped and re-checked.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>New Acheron Library footprints</strong>. The Acheron Library received a few updates, mainly the addition of courtyards for the switches indicating the physical limits of stabs, switches and stab wires.</p></li>
+<li><p>[<span class="green">Update</span>] <strong>New plated logo</strong>. The SharkPCB logo on the PCB front was made plated to shine out.</p></li>
 </ul>
 </div></blockquote>
 </div>
