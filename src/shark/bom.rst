@@ -5,7 +5,7 @@ Bill of Materials
 How to order components from LCSC
 ---------------------------------
 
-:download:`This file <https://github.com/Gondolindrim/SharkPCB/raw/master/bom/shark_LCSC.xlsx>` contains the Bill of Materials -- all the components for the Shark PCB -- quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
+:download:`This file <https://github.com/Gondolindrim/SharkPCB/raw/master/bom/shark_LCSC.csv>` contains the Bill of Materials -- all the components for the Shark PCB -- quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see `this video <https://www.youtube.com/watch?v=eFgOC5_1VYU>`_.
 
 If you don't want to order them from LCSC, the table below can be used.
 
@@ -23,46 +23,48 @@ BOM table
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: CX1 and CX2           | .. centered:: 22pF                  | .. centered:: 0805              | .. centered:: 2          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: C7                    |                                     |                                 |                          |
-| .. centered:: C9                    |                                     |                                 |                          |
-| .. centered:: CRST2                 | .. centered::  4.7nF                | .. centered:: 0805              | .. centered:: 3          |
+| .. centered:: CESD1                 |                                     |                                 |                          |
+| .. centered:: CSH1                  |                                     |                                 |                          |
+| .. centered:: CUSB1                 |                                     |                                 |                          |
+| .. centered:: CRST2                 | .. centered::  4.7nF                | .. centered:: 0805              | .. centered:: 4          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: CRST1                 | .. centered::  10uF                 | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: (Poly)Fuse :sup:`(3)` |  .. centered:: 1.5A trip            | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: R5 and R6             | .. centered:: 1MOhm                 | .. centered:: 1206              | .. centered:: 2          |
+| .. centered:: RSH1 and RESD1        | .. centered:: 1MOhm                 | .. centered:: 1206              | .. centered:: 2          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: CSin                  |                                     |                                 |                          |
-| .. centered:: CSout                 |                                     |                                 |                          |
+| .. centered:: CSI1                  |                                     |                                 |                          |
+| .. centered:: CSO1                  |                                     |                                 |                          |
 | .. centered:: CVB1-3                |                                     |                                 |                          |
-| .. centered:: CA, CB                | .. centered:: 100nF                 | .. centered:: 0805              | .. centered:: 7          |
+| .. centered:: CA1, CB1              | .. centered:: 100nF                 | .. centered:: 0805              | .. centered:: 7          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: Q1                    | .. centered:: AO4406AL              | .. centered:: SOIC8             | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: CVA1                  |                                     |                                 |                          |
-| .. centered:: CVB4                  | .. centered:: 1uF                   | .. centered:: 0805              | .. centered:: 2          |
+| .. centered:: CVB4                  | .. centered:: 1uF                   | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: CVB5                  | .. centered:: 4.7uF                 | .. centered:: 0805              | .. centered:: 1          |
+| .. centered:: CVB5                  | .. centered:: 10nF                  | .. centered:: 0805              | .. centered:: 1          |
++-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
+| .. centered:: CVB6                  | .. centered:: 4.7u                  | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: DF1                   | .. centered:: RB060M-60TR           | .. centered:: SOD-123           | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: QRST                  | .. centered:: DTC123J-KAT146        | .. centered:: SOT-23            | .. centered:: 1          |
+| .. centered:: QRST1                 | .. centered:: DTC123J-KAT146        | .. centered:: SOT-23            | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RCC                   | .. centered:: 5.1kOhm               | .. centered:: 1206              | .. centered:: 1          |
+| .. centered:: RCC1                  | .. centered:: 5.1kOhm               | .. centered:: 1206              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RD+ and RD-           | .. centered:: 22ROhm                | .. centered:: 1206              | .. centered:: 2          |
+| .. centered:: RDP1 and RDM1         | .. centered:: 22ROhm                | .. centered:: 1206              | .. centered:: 2          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RD+Up                 | .. centered:: 1.5kOhm               | .. centered:: 1206              | .. centered:: 1          |
+| .. centered:: RDPU1                 | .. centered:: 1.5kOhm               | .. centered:: 1206              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RB1/2, RA1/2          |                                     |                                 |                          |
-| .. centered:: RPGate                | .. centered:: 10kOhm                | .. centered:: 1206              | .. centered:: 5          |
+| .. centered:: RB1-2, RA1-2          |                                     |                                 |                          |
+| .. centered:: RPG1                  | .. centered:: 10kOhm                | .. centered:: 1206              | .. centered:: 5          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RRST                  | .. centered:: 100kOhm               | .. centered:: 1206              | .. centered:: 1          |
+| .. centered:: RRST1                 | .. centered:: 100kOhm               | .. centered:: 1206              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RSGate                | .. centered:: 100 Ohm               | .. centered:: 1206              | .. centered:: 1          |
+| .. centered:: RSG1                  | .. centered:: 100 Ohm               | .. centered:: 1206              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: SWRST                 | .. centered:: SMD Push Button       |                                 | .. centered:: 1          |
+| .. centered:: SRST1                 | .. centered:: SMD Push Button       |                                 | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: U1                    | .. centered:: STM32F303CCT6         | .. centered:: LQFP48 :sup:`(4)` | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
@@ -70,21 +72,20 @@ BOM table
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: Y1                    | .. centered:: 8MHz 4 pin            | .. centered:: 5032              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RGB                   | .. centered:: WS2812B               |                                 | .. centered:: 8          |
+| .. centered:: RGB1-8                | .. centered:: WS2812B               |                                 | .. centered:: 8          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: RL1-48                | .. centered:: 360 Ohm               | .. centered:: 1206              | .. centered:: 50         |
+| .. centered:: RL1-48                | .. centered:: 360 Ohm               | .. centered:: 1206              | .. centered:: 48         |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
+| .. centered:: DLDO1                 |                                     |                                 |                          |
 | .. centered:: DS1                   |                                     |                                 |                          |
-| .. centered:: DRST                  |                                     |                                 |                          |
-| .. centered:: D1-48                 | .. centered:: 1N4148W               | .. centered:: SOD-123           | .. centered:: 52         |
+| .. centered:: DRST1                 |                                     |                                 |                          |
+| .. centered:: D1-48                 | .. centered:: 1N4148W               | .. centered:: SOD-123           | .. centered:: 51         |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: DESD                  | .. centered:: 1N4007W               | .. centered:: SOD-123           | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: ROT1                  | .. centered:: ALPS EC11Ex :sup:`(1)`|                                 | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 | .. centered:: U3                    | .. centered:: USBLC6-2SC6           | .. centered:: SOT-23-6          | .. centered:: 1          |
-+-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
-| .. centered:: CVA2                  | .. centered:: 10nF                  | .. centered:: 0805              | .. centered:: 1          |
 +-------------------------------------+-------------------------------------+---------------------------------+--------------------------+
 
 Notes on the BOM 
