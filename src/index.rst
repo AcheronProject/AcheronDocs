@@ -65,6 +65,12 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
+	:caption: Elongate
+
+	elongate/intro.rst
+
+.. toctree::
+	:maxdepth: 2
 	:caption: ArcticPCB
 
 	arctic/intro.rst
