@@ -68,6 +68,8 @@ Welcome to the Acheron Project documentation page!
 	:caption: Elongate
 
 	elongate/intro.rst
+	elongate/bom.rst
+	elongate/manu.rst
 
 .. toctree::
 	:maxdepth: 2
