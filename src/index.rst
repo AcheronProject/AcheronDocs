@@ -67,7 +67,7 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 	:caption: Elongate
 
-	elongate/intro.rst
+	elongate/introduction.rst
 	elongate/bom.rst
 	elongate/manu.rst
 
