@@ -63,6 +63,6 @@ In that sense, the Shark uses an STM32 microprocessor that can be programmed in 
 
 Also, following the customizable principle, all unused pins were exposed so that the user can add anything hardware-wise he or she wishes.
 
-.. |pcbBadge| image:: https://img.shields.io/badge/PCB%20Version-3.2.5-blue.svg?style=flat
+.. |pcbBadge| image:: https://img.shields.io/badge/PCB%20Version-Release%20Alpha-blue.svg?style=flat
 .. |protoBadge| image:: https://img.shields.io/badge/Prototype%20Version-3.2.4-orange.svg?style=flat
-.. |firmwareBadge| image:: https://img.shields.io/badge/Firmware-not%20available-inactive.svg?style=flat
+.. |firmwareBadge| image:: https://img.shields.io/badge/Firmware-Passing-green.svg?style=flat

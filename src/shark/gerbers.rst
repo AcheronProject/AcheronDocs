@@ -7,12 +7,12 @@ In the ``./gerbers`` folders you can find the plot files for the PCB and the pla
 Schematic
 ---------
 
-:download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/shark.pdf>` for the schematic file.
+:download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/shark.pdf>` for the schematic file.
 
 PCB Gerber files
 ----------------
 
-:download:`This zipped folder <https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/SharkPCB.zip>` contains the Gerber files for the last PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.
+:download:`This zipped folder <https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/SharkPCB.zip>` contains the Gerber files for the last PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.
 
 .. Attention:: The `SharkPCB introduction page <./shark.html>`_ contains badges to show the last prototyped version of the PCB. I will release un-prototyped Gerbers in order to prototype them. Always check if the version you are downloading was prototyped!
 
@@ -30,7 +30,7 @@ Just to save on notation, "high plate" designates the plate for the tall (high-p
 +---------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 |  		|  **Gerber**												|	**.dxf** 											| **.svg**												|					
 +---------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+	
-|**High**	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.zip>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.dxf>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/highPlate.svg>`	|
+|**High**	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.zip>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.dxf>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.svg>`	|
 +---------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-|**Low**	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.zip>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.dxf>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/gerbers/lowPlate.svg>`	|
+|**Low**	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.zip>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.dxf>`	| :download:`Download<https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.svg>`	|
 +---------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
