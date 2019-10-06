@@ -38,7 +38,7 @@ Welcome to the Acheron Project documentation page!
 	:maxdepth: 2
 	:caption: Shark
 
-	shark/shark.rst
+	shark/intro.rst
 	shark/bom.rst
 	shark/changelog.rst
 	shark/cases.rst

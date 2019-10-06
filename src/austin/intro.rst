@@ -24,7 +24,7 @@ Click `this link <http://www.keyboard-layout-editor.com/#/gists/ba026fd3849cde89
 
 .. figure:: https://github.com/Gondolindrim/Austin/raw/master/graphics/austinKLE.png
         :align: center
-        :width: 1000px
+        :width: 800px
 
 Renders
 =======

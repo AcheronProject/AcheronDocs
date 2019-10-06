@@ -3,6 +3,8 @@
 |firmwareBadge|
 
 .. figure:: ../images/shark.svg
+        :align: center
+        :width: 600px
 
 ************
 Introduction
