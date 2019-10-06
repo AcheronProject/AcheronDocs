@@ -74,3 +74,14 @@ V1.0 :sub:`(10/05/2019)`
 	- [:red:`Fix`] **Silkscreen writings for he SWD pins.** In the last revision they were not rhere and that would surely be confusing. Markings were added to signal the pin functions.
 		
 	- [:orange:`Pre-release`] **Pre-release Alpha**. This version is the intended GB version and will be prototyped.
+
+`Release Alpha <https://github.com/Gondolindrim/Austin/releases/tag/Alpha>`_ :sub:`(29/09/2019)`
+------------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **South facing stabilizers.** As 001anthony recommended in his stream, due to alignment and ease-of-maintenace reasons, the bottom space and numpad 0 stabs were changed to south-facing. To accomodate the stab holes, the PCB bottom edges were made a little bit further.
+
+	- [:green:`Update`] **New silkscreen markings**. Some silkscreen markings were re-made to make building process further easier.
+
+        - [:green:`Update`] **SWD pins reorganized**. The SWD pins are reorganized now to be compatible with SWD JTAG connectors.
+
+        - [:pink:`Release`] **Alpha release**. This version is the final version that will be shipped with the boards. It has been prototyped, tested and its firmware built.

@@ -25,10 +25,11 @@ release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
-
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+def setup(app):
+    app.add_stylesheet('acheronDocsTheme.css')
 extensions = [
 ]
 
@@ -47,9 +48,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes", ]
+#html_static_path=["_static"]
 html_logo = "images/acheronDocsWhite.svg"
 html_theme_options = {
 	'logo_only': True,
+        'display_version' : False,
 	}
 
 # Add any paths that contain custom static files (such as style sheets) here,
