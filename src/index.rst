@@ -39,12 +39,10 @@ Welcome to the Acheron Project documentation page!
 	:caption: Shark
 
 	shark/intro.rst
-	shark/bom.rst
 	shark/changelog.rst
 	shark/cases.rst
 	shark/ack.rst
 	shark/prototypes.rst
-	shark/renders.rst
 	shark/gerbers.rst
 
 .. toctree::

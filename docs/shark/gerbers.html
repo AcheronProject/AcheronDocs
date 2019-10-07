@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction" href="../austin/intro.html" />
-    <link rel="prev" title="Renders" href="renders.html" /> 
+    <link rel="prev" title="Prototypes" href="prototypes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,15 +104,19 @@
 <p class="caption"><span class="caption-text">Shark</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cases.html">The Shark Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prototypes.html">Prototypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="renders.html">Renders</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Manufacturing files</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#schematic">Schematic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pcb-gerber-files">PCB Gerber files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pcb-manufacturing-files">PCB manufacturing files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-order-components-from-lcsc">How to order components from LCSC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bom-table">BOM table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes-on-the-bom">Notes on the BOM</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#plates-gerber-and-vector-files">Plates Gerber and vector files</a></li>
 </ul>
 </li>
@@ -216,14 +220,298 @@
 <p>In the <code class="docutils literal notranslate"><span class="pre">./gerbers</span></code> folders you can find the plot files for the PCB and the plates.</p>
 <div class="section" id="schematic">
 <h2>Schematic<a class="headerlink" href="#schematic" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/shark.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> for the schematic file.</p>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/releases/download/Alpha/SharkPCB_schematic_Alpha.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> for the schematic file of the Alpha version.</p>
 </div>
-<div class="section" id="pcb-gerber-files">
-<h2>PCB Gerber files<a class="headerlink" href="#pcb-gerber-files" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/SharkPCB.zip"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">zipped</span> <span class="pre">folder</span></code></a> contains the Gerber files for the last PCB version. Among them are probably more files than needed, including the files for the PCB edges and drill files.</p>
+<div class="section" id="pcb-manufacturing-files">
+<h2>PCB manufacturing files<a class="headerlink" href="#pcb-manufacturing-files" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/releases/download/Alpha/SharkPCB_Gerbers_Alpha.zip"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">zipped</span> <span class="pre">folder</span></code></a> contains the Gerber files for the PCB Alpha version. Among them are probably more files than needed, including the files for the PCB edges and drill files.</p>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/releases/download/Alpha/SharkPCB-pickNplace_Alpha.pos"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> to download the component position file for the PCB.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The <a class="reference external" href="./shark.html">SharkPCB introduction page</a> contains badges to show the last prototyped version of the PCB. I will release un-prototyped Gerbers in order to prototype them. Always check if the version you are downloading was prototyped!</p>
+</div>
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-order-components-from-lcsc">
+<h3>How to order components from LCSC<a class="headerlink" href="#how-to-order-components-from-lcsc" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/shark_BOM.csv"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">file</span></code></a> contains the Bill of Materials – all the components for the Shark PCB – quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see <a class="reference external" href="https://www.youtube.com/watch?v=eFgOC5_1VYU">this video</a>.</p>
+<p>If you don’t want to order them from LCSC, the table below can be used.</p>
+</div>
+<div class="section" id="bom-table">
+<h3>BOM table<a class="headerlink" href="#bom-table" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/releases/download/Alpha/SharkPCB_BOM_Alpha.csv"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> for the Bill of Materials file, or check the table below.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Please note that some items may be out of stock when you are ordering them. Feel free to edit the BOM (making sure to substitute the components for compatible ones) if you know what you are doing. Also don’t hesitate to hit me up, if you don’t feel confident to change the components, so I can redo the list with available components.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you don’t have experience with electronic design, do not attemp to swap or change the components in this table. Doing so may hinder some features of the PCB and even inutilize it!</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 14%" />
+<col style="width: 7%" />
+<col style="width: 20%" />
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Designator</p></th>
+<th class="head"><p>Package</p></th>
+<th class="head"><p>Quantity</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>LCSC part number</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Manufacturer Part No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RCC2, RCC1</p></td>
+<td><p>1206</p></td>
+<td><p>2</p></td>
+<td><p>5.1k</p></td>
+<td><p>C352054</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Q1</p></td>
+<td><p>SOIC-8</p></td>
+<td><p>1</p></td>
+<td><p>AO4406AL</p></td>
+<td><p>C35349</p></td>
+<td><p>Alpha Omega Semicon</p></td>
+<td><p>AO4406AL</p></td>
+</tr>
+<tr class="row-even"><td><p>DRST1,D1-48</p></td>
+<td><p>SOD-123</p></td>
+<td><p>49</p></td>
+<td><p>1N4148W</p></td>
+<td><p>C181134</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DESD1, DLDO1</p></td>
+<td><p>SOD-123</p></td>
+<td><p>2</p></td>
+<td><p>1N4007W</p></td>
+<td><p>C108803</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RGB1-8</p></td>
+<td><p>5050</p></td>
+<td><p>8</p></td>
+<td><p>WS2812B</p></td>
+<td><p>C114585</p></td>
+<td><p>Worldsemi</p></td>
+<td><p>WS2812B</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSH1,RESD1</p></td>
+<td><p>1206</p></td>
+<td><p>2</p></td>
+<td><p>1M</p></td>
+<td><p>C308486</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RDP1,RDM1</p></td>
+<td><p>1206</p></td>
+<td><p>2</p></td>
+<td><p>22R</p></td>
+<td><p>C17958</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RPU1</p></td>
+<td><p>1206</p></td>
+<td><p>1</p></td>
+<td><p>1.5k</p></td>
+<td><p>C212489</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RPG1,RA1,RA2,RB1,RB2</p></td>
+<td><p>1206</p></td>
+<td><p>5</p></td>
+<td><p>10k</p></td>
+<td><p>C328409</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RRST1</p></td>
+<td><p>1206</p></td>
+<td><p>1</p></td>
+<td><p>100k</p></td>
+<td><p>C212480</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RSG1</p></td>
+<td><p>1206</p></td>
+<td><p>1</p></td>
+<td><p>100R</p></td>
+<td><p>C319959</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RL1-48</p></td>
+<td><p>1206</p></td>
+<td><p>48</p></td>
+<td><p>360R</p></td>
+<td><p>C25376</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DF1</p></td>
+<td><p>SOD-123</p></td>
+<td><p>1</p></td>
+<td><p>RB060M-60TR</p></td>
+<td><p>C114257</p></td>
+<td><p>ROHM Semicon</p></td>
+<td><p>RB060M-60TR</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRST1</p></td>
+<td><p>SPST-NO</p></td>
+<td><p>1</p></td>
+<td><p>K2-1187SQ-A4SW-06</p></td>
+<td><p>C92584</p></td>
+<td><p>Korean Hroparts</p></td>
+<td><p>K2-1187SQ-A4SW-06</p></td>
+</tr>
+<tr class="row-even"><td><p>CX2,CX1</p></td>
+<td><p>0805</p></td>
+<td><p>2</p></td>
+<td><p>22p</p></td>
+<td><p>C1804</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CSH1,CESD1,CRST2,CUSB1</p></td>
+<td><p>0805</p></td>
+<td><p>4</p></td>
+<td><p>4.7n</p></td>
+<td><p>C77063</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>F1 <sup>(3)</sup></p></td>
+<td><p>0805</p></td>
+<td><p>1</p></td>
+<td><p>1.5A trip PTC fuse</p></td>
+<td><p>C20979</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRST1</p></td>
+<td><p>0805</p></td>
+<td><p>1</p></td>
+<td><p>10u</p></td>
+<td><p>C15850</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CSI1,CSO1,CVB1,CVB2,CVB3</p></td>
+<td><p>0805</p></td>
+<td><p>5</p></td>
+<td><p>100n</p></td>
+<td><p>C111492</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CVB5,CB1,CA1</p></td>
+<td><p>0805</p></td>
+<td><p>3</p></td>
+<td><p>10n</p></td>
+<td><p>C58456</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>U2</p></td>
+<td><p>SOT-23</p></td>
+<td><p>1</p></td>
+<td><p>MCP1700-3302E</p></td>
+<td><p>C39051</p></td>
+<td><p>Microchip Tech</p></td>
+<td><p>MCP1700T-3302E/TT</p></td>
+</tr>
+<tr class="row-odd"><td><p>QRST1</p></td>
+<td><p>SOT-23</p></td>
+<td><p>1</p></td>
+<td><p>DTC123JKAT146</p></td>
+<td><p>C111724</p></td>
+<td><p>ROHM Semicon</p></td>
+<td><p>DTC123JKAT146</p></td>
+</tr>
+<tr class="row-even"><td><p>CVB4</p></td>
+<td><p>0805</p></td>
+<td><p>1</p></td>
+<td><p>1u</p></td>
+<td><p>C141772</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CVB6</p></td>
+<td><p>0805</p></td>
+<td><p>1</p></td>
+<td><p>4.7u</p></td>
+<td><p>C37818</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>J1</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>TYPE-C-31-M12</p></td>
+<td><p>C165948</p></td>
+<td><p>Korean Hroparts</p></td>
+<td><p>TYPE-C-31-M12</p></td>
+</tr>
+<tr class="row-odd"><td><p>U1</p></td>
+<td><p>LQFP-48 <sup>(2)</sup></p></td>
+<td><p>1</p></td>
+<td><p>STM32F303CCT6</p></td>
+<td><p>C81523</p></td>
+<td><p>ST Microelectronics</p></td>
+<td><p>STM32F303CCT6</p></td>
+</tr>
+<tr class="row-even"><td><p>Y1</p></td>
+<td><p>5032 4Pin</p></td>
+<td><p>1</p></td>
+<td><p>8MHz</p></td>
+<td><p>C251594</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>U3</p></td>
+<td><p>SOT-23-6</p></td>
+<td><p>1</p></td>
+<td><p>USBLC6-2SC6</p></td>
+<td><p>C7519</p></td>
+<td><p>STMicroelectronics</p></td>
+<td><p>USBLC6-2SC6</p></td>
+</tr>
+<tr class="row-even"><td><p>ROT1, ROT2</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>ALPS EC11E15244G1 <sup>(1)</sup></p></td>
+<td><p>C370970</p></td>
+<td><p>ALPS Electric</p></td>
+<td><p>EC11E15244G1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="notes-on-the-bom">
+<h3>Notes on the BOM<a class="headerlink" href="#notes-on-the-bom" title="Permalink to this headline">¶</a></h3>
+<p><strong>(1)</strong> The rotary encoder was chosen because it was available at LCSC, Digikey and Mouser electronics. Its cheap, readily available and easy to solder. It also offers mechanical endurance through auxiliary legs that are soldered into the PCB.</p>
+<p>The encoder series EC11Ex looks to be a very versatile encoder in the sense that any rotary encoder in the series fits the footprint and has the sae pinout, as the models differ only on shaft shape and size but their footprints are the same. In the render I used the ALPS EC11E 15244G1.</p>
+<p><strong>(2)</strong> This connector seems to not be available in the european or american markets, only asian. It was chosen because, while being USBC, it has simplified pins and can easily be handsoldered. I have yet to find a good substitute for this connector that can be bought worldwide.</p>
+<p><strong>(3)</strong> Any fuse that fits the footprint will work, but I personally prefer polyfuses. Make sure that is has a minimum 1.5A trip current, as the LEDs and the high current microprocessor can sum 1A current easily.</p>
+<p><strong>(4)</strong> Please make sure that you order this exact package, since the footprint will not support anything different than this.</p>
 </div>
 </div>
 <div class="section" id="plates-gerber-and-vector-files">
@@ -236,7 +524,7 @@
 </ul>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 5%" />
+<col style="width: 3%" />
 <col style="width: 32%" />
 <col style="width: 32%" />
 <col style="width: 32%" />
@@ -244,18 +532,23 @@
 <tbody>
 <tr class="row-odd"><td></td>
 <td><p><strong>Gerber</strong></p></td>
-<td><p><strong>.dxf</strong></p></td>
-<td><p><strong>.svg</strong></p></td>
+<td><p><strong>DXF</strong></p></td>
+<td><p><strong>SVG</strong></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>High</strong></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/highPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Low</strong></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
-<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkPCB/raw/master/manuFiles/lowPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowPlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowPlate.dxf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowPlate.svg"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Base</strong></p></td>
+<td><p><a class="reference download external" download="" href="https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/basePlate.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +566,7 @@
         <a href="../austin/intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="renders.html" class="btn btn-neutral float-left" title="Renders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="prototypes.html" class="btn btn-neutral float-left" title="Prototypes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

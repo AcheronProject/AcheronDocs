@@ -5,11 +5,11 @@ The Shark Cases
 3D models and prototypes
 ========================
 
-The `case folder of the GitHub repo <https://github.com/Gondolindrim/SharkPCB/tree/master/case>`_ has the .stp, .stl and .f3d files for the custom cases being designed, one being a low profile or "short" (switches are exposed) and another a high-profile or "tall".
+The `case folder of the SharkHardware repo <https://github.com/Gondolindrim/SharkHardware/tree/master/cases>`_ has the .stp, .stl and .f3d files for the custom cases being designed, one being a low profile or "short" (switches are exposed) and another a high-profile or "tall".
 
 If you want to check the 3D models of the cases, see the `gallery <gallery.html#d-previews-of-the-cases>`_ for in-browser renders.
 
-.. Attention:: The short case was prototyped and is proven to fit the PCB and the plate. The tall case is in the prototyping process.
+.. Note:: Both cases were prototyped and are proven to work with the Alpha Release Version of the SharkPCB.
 
 Public links
 ============
@@ -21,26 +21,22 @@ Download links
 
 The following links can be used to download .stp, .stl and .f3d (Fusion 360 extension) of the cases.
 
-:download:`High Shark STL file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/highShark.stl>` 
+:download:`High Shark STL file <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highShark.stl>` 
 
-:download:`High Shark STP file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/highShark.stp>` 
+:download:`High Shark STP file <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highShark.stp>` 
 
-:download:`High Shark F3D file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/sharkCaseV1.f3d>` 
+:download:`Low Shark STL file <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowShark.stl>` 
 
-:download:`Low Shark STL file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowShark.stl>` 
-
-:download:`Low Shark STP file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowShark.stp>` 
-
-:download:`Low Shark F3D file <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowCaseV1.f3d>` 
+:download:`Low Shark STP file <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowShark.stp>` 
 
 Mechanical specifications
 =========================
 
 In order to machine the cases, many factories will need the mechanical drawing of the product to effectively and precisely manufacture it. The Shark case files also contain the mechanical drawings of the cases.
 
-:download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/case/lowSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the Low Shark case.
+:download:`Click here <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/lowSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the Low Shark case.
 
-:download:`Click here <https://github.com/Gondolindrim/SharkPCB/raw/master/case/highSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the High Shark case.
+:download:`Click here <https://github.com/Gondolindrim/SharkHardware/releases/download/V1.0/highSharkMechanicalSpecs.pdf>` to download the mechanical specifications for the High Shark case.
 
 3D previews of the cases
 ========================

@@ -266,6 +266,14 @@ Although technically the modifications for this version do not qualify as a new 
 
 	- [:green:`Update`] **New plated logo**. The SharkPCB logo on the PCB front was made plated to shine out.
 
+`Release Alpha <https://github.com/Gondolindrim/SharkPCB/releases/tag/Alpha>`_ :sub:`(2019/09/10)`
+--------------------------------------------------------------------------------------------------
+
+	- [:green:`Update`] **Re-arranged pins for LEDs**. The pin that controls LED backlight was changed to PA6, which is hardware-PWM capable. To accomodate for this, some switch matrix pins were also changed.
+
+	- [:pink:`Release`] **Alpha release**. This version is the final Group Buy version and is proven to work.
+
+
 References
 ==========
 
