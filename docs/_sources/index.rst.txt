@@ -13,6 +13,7 @@ Welcome to the Acheron Project documentation page!
 	overview.rst
 	faq.rst
 	changelog.rst
+        technical.rst
 
 .. toctree::
 	:caption: Acheron OHL

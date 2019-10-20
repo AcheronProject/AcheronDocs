@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview &mdash; Acheron Project 1.0.0 documentation</title>
+  <title>Technical Literature &mdash; Acheron Project 1.0.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/acheronDocsTheme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
-    <link rel="prev" title="Acheron Docs" href="index.html" /> 
+    <link rel="next" title="The Acheron Open Hardware License (AOHL) V1.1" href="license/license.html" />
+    <link rel="prev" title="How to read and write The Acheron Docs" href="changelog.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,17 +83,13 @@
             
               <p class="caption"><span class="caption-text">The Acheron Project</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main-project-contributors">Main project contributors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-reach-gondolindrim">How to reach Gondolindrim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#about-this-documentation">About this documentation</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">How to read and write The Acheron Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Literature</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Literature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#guidelines">Guidelines</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Acheron OHL</span></p>
 <ul>
@@ -193,13 +189,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Overview</li>
+      <li>Technical Literature</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/technical.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -212,55 +208,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="figure align-default">
-<img alt="_images/acheronLong.svg" src="_images/acheronLong.svg" /></div>
-<div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Acheron Project</strong> is a compendium of ECAD and MCAD resources for custom keyboards and audio equipment designed by Álvaro “Gondolindrim” Volpato with collaborators (except for some 3D models), that include</p>
+  <div class="section" id="technical-literature">
+<h1>Technical Literature<a class="headerlink" href="#technical-literature" title="Permalink to this headline">¶</a></h1>
+<p>These are the technical documents and links that I use for reference on the designs of the Acheron Project.</p>
+<div class="section" id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Printed Circuit Boards (PCBs);</p></li>
-<li><p>KiCad footprints and symbols;</p></li>
-<li><p>Graphic resources like logos;</p></li>
-<li><p>3D models</p></li>
+<li><p>Grounding, bypassing and oscillator tracing: <a class="reference external" href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8128-Best-Practices-for-the-PCB-Layout-of-Oscillators_ApplicationNote_AVR186.pdf">Application Note AVR186</a> : best practices for the PCB layout of oscillators. Although rather short, this AN contains valuable information on the guidelines and layout of crystal oscillators in MCUs. <a class="reference external" href="https://electronics.stackexchange.com/questions/39136/competing-pcb-crystal-layout-recommendations">This thread</a> , specially the response by Olin Lathrop, on the Electronics StackExchange, also contains good information on crystal oscillator tracing and grounding on the PCBs; in the same spirit, the response from the same person in <a class="reference external" href="https://electronics.stackexchange.com/questions/15135/decoupling-caps-pcb-layout/15143#15143">this tread</a> contains further more detailed information on the same subject, but also giving good detailed analysis on grounding and bypassing. In the same thread, Mike DeSimone also gives insightful information on these subjects.</p></li>
 </ul>
-<p>The aim of the project is to build a database of freely available resources for keyboard enthusiasts and audiophiles, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.</p>
-</div>
-<div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the <a class="reference external" href="license/license.html">Acheron Open-Hardware License V1.1</a>, under which all the Acheron Project is licensed.</p>
-<p>Basically you can use the files however you would like, be it for commercial or personal uses. There are only small requirements:</p>
-<ul class="simple">
-<li><p>If you are going to use the files commercially, please issue an email or an Issue through GitHub stating what you are selling and how many units (this is mostly for quality control).</p></li>
-<li><p>If you change the files in any way, please remove the Acheron-related logos and names from the PCB and submit the changes you have made.</p></li>
-</ul>
-<p>Feel free to contact Gondolindrim (the main Acheron developer) for any help.</p>
-</div>
-<div class="section" id="main-project-contributors">
-<h2>Main project contributors<a class="headerlink" href="#main-project-contributors" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Álvaro “Gondolindrim” Volpato</p></li>
-<li><p>Raphael “BlindJoker” Nepomuceno</p></li>
-<li><p>Felipe “MrKeebs” Coury</p></li>
-<li><p>Raphael “ArcticFox” Hochheim</p></li>
-</ul>
-</div>
-<div class="section" id="how-to-reach-gondolindrim">
-<h2>How to reach Gondolindrim<a class="headerlink" href="#how-to-reach-gondolindrim" title="Permalink to this headline">¶</a></h2>
-<p>You can hit me up at:</p>
-<ul class="simple">
-<li><p>Email: <code class="docutils literal notranslate"><span class="pre">alvaro.augusto.volpato&#64;gmail.com</span></code></p></li>
-<li><p>Discord: <code class="docutils literal notranslate"><span class="pre">Gondolindrim#9738</span></code></p></li>
-<li><p>Reddit: <code class="docutils literal notranslate"><span class="pre">u/gondolindrim</span></code></p></li>
-<li><p>Geekhack: <code class="docutils literal notranslate"><span class="pre">Gondolindrim</span></code></p></li>
-</ul>
-<p>Feel free to ask me questions and interact!</p>
-</div>
-<div class="section" id="about-this-documentation">
-<h2>About this documentation<a class="headerlink" href="#about-this-documentation" title="Permalink to this headline">¶</a></h2>
-<p>This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project <a class="reference external" href="https://github.com/Gondolindrim/AcheronProject">Github repository</a>.</p>
-<p>The idea behind writing this documentation came from the other collaborators, not me particularly. Truth is I have never imagined that the Acheron Project and its components grew big enough for other people to use it, and hence I needed to document the design process.</p>
 </div>
 </div>
 
@@ -272,10 +227,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="license/license.html" class="btn btn-neutral float-right" title="The Acheron Open Hardware License (AOHL) V1.1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Acheron Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-left" title="How to read and write The Acheron Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
