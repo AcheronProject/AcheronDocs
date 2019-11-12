@@ -55,6 +55,14 @@ Welcome to the Acheron Project documentation page!
 
 .. toctree::
 	:maxdepth: 2
+	:caption: Doddle60
+
+	doddle60/intro.rst
+	doddle60/files.rst
+	doddle60/changelog.rst
+
+.. toctree::
+	:maxdepth: 2
 	:caption: Elevate
 
 	elevate/introduction.rst
