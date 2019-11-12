@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manufacturing files &mdash; Acheron Project 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/acheronDocsTheme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/acheronDocsWhite.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Acheron Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">How to read and write The Acheron Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical.html">Technical Literature</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron OHL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license/license.html">The Acheron Open Hardware License (AOHL) V1.1</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acheron Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/3dmodels.html">The 3D models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acheronLib/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Anubis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../anubis/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Shark</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shark/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/cases.html">The Shark Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/ack.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/prototypes.html">Prototypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shark/gerbers.html">Manufacturing files</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Austin</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../austin/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../austin/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doddle60</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manufacturing files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gerbers">Gerbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schematic">Schematic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pcb-manufacturing-files">PCB manufacturing files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bom-table">BOM table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes-on-the-bom">Notes on the BOM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Elevate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/gerbers.html">Manufacturing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elevate/changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Elongate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elongate/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elongate/bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elongate/manu.html">Manufacturing files</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ArcticPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KeebsPCB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keebs/intro.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ouroboros</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ouroboros/intro.html">Ouroboros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ouroboros/tests.html">Simulations and tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Acheron Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Manufacturing files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doddle60/files.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manufacturing-files">
+<h1>Manufacturing files<a class="headerlink" href="#manufacturing-files" title="Permalink to this headline">¶</a></h1>
+<p>This page was last updated since the <a class="reference external" href="https://github.com/Gondolindrim/Doddle60/releases/tag/preAlpha">pre-Release Alpha</a> .</p>
+<div class="section" id="gerbers">
+<h2>Gerbers<a class="headerlink" href="#gerbers" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/Doddle60/releases/download/preAlpha/doddle60_preAlpha_Gerbers.zip"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> to download the latest release gerber files. These can be used to order the PCBs either assembled or un-assembled.</p>
+</div>
+<div class="section" id="schematic">
+<h2>Schematic<a class="headerlink" href="#schematic" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/Doddle60/releases/download/preAlpha/doddle60_preAlpha_Schematic.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> for the schematic file of the Alpha version.</p>
+</div>
+<div class="section" id="pcb-manufacturing-files">
+<h2>PCB manufacturing files<a class="headerlink" href="#pcb-manufacturing-files" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/Doddle60/releases/download/preAlpha/doddle60_preAlpha_Gerbers.zip"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">zipped</span> <span class="pre">folder</span></code></a> contains the Gerber files for the PCB pre-revision Alpha version. Among them are probably more files than needed, including the files for the PCB edges and drill files.</p>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/Doddle60/releases/download/preAlpha/doddle60_preAlpha_positionFile.pos"><code class="xref download docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span></code></a> to download the component position file for the PCB.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The <a class="reference external" href="./intro.html">introduction page</a> contains badges to show the last prototyped version of the PCB. I will release un-prototyped Gerbers in order to prototype them. Always check if the version you are downloading was prototyped!</p>
+</div>
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bom-table">
+<h3>BOM table<a class="headerlink" href="#bom-table" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference download external" download="" href="https://github.com/Gondolindrim/Doddle60/releases/download/preAlpha/doddle60_preAlpha_BoM.csv"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">file</span></code></a> contains the Bill of Materials – all the components for the PCB – quoted in the LCSC site. It has all LCSC part numbers, quantities and descriptions. For exact instructions on how to order the components from LCSC using the sheet file, please see <a class="reference external" href="https://www.youtube.com/watch?v=eFgOC5_1VYU">this video</a>.</p>
+<p>If you don’t want to order them from LCSC, the table below can be used.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Please note that some items may be out of stock when you are ordering them. Feel free to edit the BOM (making sure to substitute the components for compatible ones) if you know what you are doing. Also don’t hesitate to hit me up, if you don’t feel confident to change the components, so I can redo the list with available components.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you don’t have experience with electronic design, do not attemp to swap or change the components in this table. Doing so may hinder some features of the PCB and even inutilize it!</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 7%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 17%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Designator</p></th>
+<th class="head"><p>Package</p></th>
+<th class="head"><p>Quantity</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Manufacturer Part No.</p></th>
+<th class="head"><p>LCSC Part No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L1</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>ACM2012-900-2P-T002</p></td>
+<td><p>TDK</p></td>
+<td><p>ACM2012-201-2P-T002</p></td>
+<td><p>C76572</p></td>
+</tr>
+<tr class="row-odd"><td><p>RVDD1</p></td>
+<td><p>R1206</p></td>
+<td><p>1</p></td>
+<td><p>R010 1%</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>L3</p></td>
+<td><p>L1210</p></td>
+<td><p>1</p></td>
+<td><p>CMI322513U1R0KT</p></td>
+<td><p>Guangdong Fenghua</p></td>
+<td><p>CMI322513U1R0KT</p></td>
+<td><p>C99412</p></td>
+</tr>
+<tr class="row-odd"><td><p>CB10,CB9,CSO1</p></td>
+<td><p>C0805</p></td>
+<td><p>3</p></td>
+<td><p>1µ</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RL1</p></td>
+<td><p>R1206</p></td>
+<td><p>1</p></td>
+<td><p>620R</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL1</p></td>
+<td><p>D0603</p></td>
+<td><p>1</p></td>
+<td><p>19-217/R6C-AL1M2VY/3T</p></td>
+<td><p>Everlight Elec</p></td>
+<td><p>19-217/R6C-AL1M2VY/3T</p></td>
+<td><p>C72044</p></td>
+</tr>
+<tr class="row-even"><td><p>J1 <sup>(1)</sup></p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>TYPE-C-31-M-12</p></td>
+<td><p>Korean Hroparts Elec</p></td>
+<td><p>TYPE-C-31-M12</p></td>
+<td><p>C165948</p></td>
+</tr>
+<tr class="row-odd"><td><p>U1</p></td>
+<td><p>LQFP-48 <sup>(3)</sup></p></td>
+<td><p>1</p></td>
+<td><p>STM32F072CBT6</p></td>
+<td><p>STMicroelectronics</p></td>
+<td><p>STM32F072CBT6</p></td>
+<td><p>C81720</p></td>
+</tr>
+<tr class="row-even"><td><p>L2</p></td>
+<td><p>L0603</p></td>
+<td><p>1</p></td>
+<td><p>MGFL1608F1R0MT-LF</p></td>
+<td><p>Microgate</p></td>
+<td><p>MGFL1608F1R0MT-LF</p></td>
+<td><p>C281108</p></td>
+</tr>
+<tr class="row-odd"><td><p>DF1</p></td>
+<td><p>SOD-123F</p></td>
+<td><p>1</p></td>
+<td><p>SMF9.0CA</p></td>
+<td><p>Microdiode Electronics</p></td>
+<td><p>SMF9.0CA</p></td>
+<td><p>C123799</p></td>
+</tr>
+<tr class="row-even"><td><p>RSO1,RSI1,RRST1</p></td>
+<td><p>R1206</p></td>
+<td><p>3</p></td>
+<td><p>100k</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RPU1</p></td>
+<td><p>R1206</p></td>
+<td><p>1</p></td>
+<td><p>1k5</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>D1-63, D65</p></td>
+<td><p>SOD-123F</p></td>
+<td><p>64</p></td>
+<td><p>1N4148WL</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CB1,CB4,CB6</p></td>
+<td><p>C0402</p></td>
+<td><p>3</p></td>
+<td><p>1µ</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CB2,CB3,CB5,CB7,CB8</p></td>
+<td><p>C0402</p></td>
+<td><p>5</p></td>
+<td><p>100n</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRST1</p></td>
+<td><p>C0805</p></td>
+<td><p>1</p></td>
+<td><p>10µ</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRST2,CSH1,CSH2</p></td>
+<td><p>C0805</p></td>
+<td><p>3</p></td>
+<td><p>4n7</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CSI1,CUSB1</p></td>
+<td><p>C0805</p></td>
+<td><p>2</p></td>
+<td><p>100n</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DRST1</p></td>
+<td><p>SOD-123</p></td>
+<td><p>1</p></td>
+<td><p>B0520LW-7-F</p></td>
+<td><p>Diodes Incorporated</p></td>
+<td><p>B0520LW-7-F</p></td>
+<td><p>C155367</p></td>
+</tr>
+<tr class="row-odd"><td><p>DS1,DSH1</p></td>
+<td><p>SOD-123</p></td>
+<td><p>2</p></td>
+<td><p>RB060M-60TR</p></td>
+<td><p>ROHM Semiconductor</p></td>
+<td><p>RB060M-60TR</p></td>
+<td><p>C114257</p></td>
+</tr>
+<tr class="row-even"><td><p>F1</p></td>
+<td><p>F1812</p></td>
+<td><p>1</p></td>
+<td><p>1A trip PTC <sup>(2)</sup></p></td>
+<td><p>BOURNS</p></td>
+<td><p>MF-MSMF050-2</p></td>
+<td><p>C17313</p></td>
+</tr>
+<tr class="row-odd"><td><p>QRST1</p></td>
+<td><p>SOT-23</p></td>
+<td><p>1</p></td>
+<td><p>DTC123JKAT146</p></td>
+<td><p>ROHM Semiconductor</p></td>
+<td><p>DTC123JKAT146</p></td>
+<td><p>C111724</p></td>
+</tr>
+<tr class="row-even"><td><p>RCC1,RCC2</p></td>
+<td><p>R1206</p></td>
+<td><p>2</p></td>
+<td><p>5k1</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RSH1,RSH2</p></td>
+<td><p>R1206</p></td>
+<td><p>2</p></td>
+<td><p>1M</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SWRST1</p></td>
+<td><p>5.2x5.2mm</p></td>
+<td><p>1</p></td>
+<td><p>K2-1187SQ-A4SW-06</p></td>
+<td><p>Korean Hroparts</p></td>
+<td><p>K2-1187SQ-A4SW-06</p></td>
+<td><p>C92584</p></td>
+</tr>
+<tr class="row-odd"><td><p>U2</p></td>
+<td><p>SOT-23-6</p></td>
+<td><p>1</p></td>
+<td><p>USBLC6-2SC6</p></td>
+<td><p>STMicroelectronics</p></td>
+<td><p>USBLC6-2SC6</p></td>
+<td><p>C7519</p></td>
+</tr>
+<tr class="row-even"><td><p>U3</p></td>
+<td><p>SOT-23</p></td>
+<td><p>1</p></td>
+<td><p>MCP1700T-3302E/TT</p></td>
+<td><p>Microchip Tech</p></td>
+<td><p>MCP1700T-3302E/TT</p></td>
+<td><p>C39051</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="notes-on-the-bom">
+<h3>Notes on the BOM<a class="headerlink" href="#notes-on-the-bom" title="Permalink to this headline">¶</a></h3>
+<p><strong>(1)</strong> This connector seems to not be available in the european or american markets, only asian. It was chosen because, while being USBC, it has simplified pins and can easily be handsoldered. I have yet to find a good substitute for this connector that can be bought worldwide.</p>
+<p><strong>(2)</strong> Any fuse that fits the footprint will work, but I personally prefer polyfuses. Make sure that is has a minimum 1.5A trip current, as the LEDs and the high current microprocessor can sum 1A current easily.</p>
+<p><strong>(3)</strong> Since there are many versions of this MCU, please make sure that you order this exact package since the footprint will not support anything different than this.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Alvaro &#34;Gondolindrim&#34; Volpato
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
