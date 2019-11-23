@@ -31,7 +31,23 @@ This license describes the terms and conditions under which you may use, copy, m
 
 **"Product"** means parts or the entirety of a device manufactured or built using the resources as published by the licensor or a modified version of those resources;
 
-**"Components"** means the specific names of the resources in the project repository to which this license applies automatically.
+**"Components"** means the specific names of the resources in the project repository to which this license applies automatically, namely:
+
+- ElongatePCB;
+- AustinPCB;
+- SharkPCB and its resources, cases and renders;
+- AnubisPCB;
+- Ouroboros;
+- Doddle60;
+- Faraday;
+- Sagittarius;
+- Archer;
+- KeebsPCB;
+- ArcticPCB;
+- ElevatePCB;
+- ZekePCB;
+- The Keen Ladies PCB;
+- Acheron Library;
 
 1.2 Guide and intended use
 ..........................
@@ -93,7 +109,8 @@ The licensor grantes the licensee worldwide, royalty-free and non-exclusive perm
 
 It is encouraged that the licensee use the Git versioning system to manage the changes and publish their modifications at a hosting website that supports Git, like GitHub, GitLab and Bitbucket. Furthermore, any contributions are welcome, and a pull-request submission is also encouraged.
 
-### 2.2 Manufacture and distribution of products
+2.2 Manufacture and distribution of products
+............................................
 
 The licensor grants the licensee a worldwide, royalty-free and non-exclusive permission to manufacture, distribute and sell any products based on the Alchemy49 design files. Such manufacture and distribution is encouraged -- even commercially. It is required that the licensee complies with the requirements in section 2.1 and, additionally that:
 
@@ -101,7 +118,8 @@ The licensor grants the licensee a worldwide, royalty-free and non-exclusive per
 
 - The licensee inform the licensor the quantity, dates of selling or production and types of products manufactured.
 
-### 2.3 Compliance recommendation
+2.3 Compliance recommendation
+.............................
 
 To comply with the licensing conditions, the licensor recommends that the licensee:
 
