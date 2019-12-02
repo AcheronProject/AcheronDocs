@@ -95,7 +95,7 @@ It is encouraged that the licensee use the Git versioning system to manage the c
 
 ### 2.2 Manufacture and distribution of products
 
-The licensor grants the licensee a worldwide, royalty-free and non-exclusive permission to manufacture, distribute and sell any products based on the Alchemy49 design files. Such manufacture and distribution is encouraged -- even commercially. It is required that the licensee complies with the requirements in section 2.1 and, additionally that:
+The licensor grants the licensee a worldwide, royalty-free and non-exclusive permission to manufacture, distribute and sell any products based on the project's design files. Such manufacture and distribution is encouraged -- even commercially. It is required that the licensee complies with the requirements in section 2.1 and, additionally that:
 
 - The recipients of such products have easy means of access to a copy of the license and documentation.
 
