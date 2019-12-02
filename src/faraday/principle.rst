@@ -78,7 +78,11 @@ Let's use the circuit transfer function to simulate the output response of the c
 
 .. math:: V_I(t) = A\cos\left(\omega_0 t\right) \Rightarrow V_I(s) = \dfrac{As}{s^2 + \omega_0^2}
 
-For those not familiar with the concept, the Laplace Transform is a mathematical transformation that associates every time signal to a function in the space of complex frequency :math:`s \in \mathbb{C}`. For Linear-Time-Invariant systems (linear systems that do not change with time), it can be shown that the time representation and the frequency-domain representation are interchangeable, a property we will use soon.
+For those not familiar with the concept, the Laplace Transform :math:`\mathcal{L}\left\{f\left(t\right)\right\}` is a mathematical transformation that associates a time signal :math:`f\left(t\right)` to a function in the space of complex frequency :math:`s \in \mathbb{C}`, given by
+
+.. math:: F\left(s\right) := \mathcal{L}\left\{f\left(t\right)\right\}(s) = \int\limits_{-\infty}^{\infty} f\left(t\right)e^{-st}dt,\ F:\mathbb{C}\to\mathbb{C}
+
+For Linear-Time-Invariant systems (linear systems that do not change with time, that is, dont "get older"), it can be shown that the time representation and the frequency-domain representation are interchangeable, a property we will use soon.
 
 Let us also admit that the capacitance :math:`C_S` changes instantly from 0 to a value :math:`C` at instant zero, which is actually the instant at which the switch is pressed; hence, :math:`C_S` is modelled as a step of amplitude :math:`C`:
 
@@ -98,7 +102,7 @@ Taking the inverse Laplace transform yields
 
 Naturally, the first term -- the cosine --  is the steady-state response of :math:`V_O` while the exponential term accounts for the transient behavior aforementioned. It is interesting to note that such transient will be as fast as the time constant :math:`\tau_{trans} = R_FC_F`, meaning that the lower this constant, the faster the transient is.
 
-As was determined in the last section, we will use :math:`C = 6pF`, :math:`A = 6.8V`, :math:`\omega_0 = 10kHz`, :math:`R_F = 300k\Omega`, :math:`C_F = 2.7pF`, yielding :math:`\tau_{trans} = 810ns`, meaning that the transient response seen is very fast and can be safely and ultimately neglected -- as for all intents and purposes the transient behavior can be considered null adter five to ten times the time constant, that is, between four and eight microsseconds.
+As was determined in the last section, we will use :math:`C = 6pF`, :math:`A = 6.8V`, :math:`\omega_0 = 10kHz`, :math:`R_F = 300k\Omega`, :math:`C_F = 2.7pF`, yielding :math:`\tau_{trans} = 810ns`; in general the time for the exponential term to fade is considered to be three to fice times this constant, which would be at most 4 microsseconds. This means that the transient response seen is very fast and can be safely and ultimately neglected -- as for all intents and purposes the transient behavior can be considered null adter five to ten times the time constant, that is, between four and eight microsseconds.
 
 Hence the final capacitance-to-AM modulator circuit adopted is given below.
 
@@ -106,16 +110,173 @@ Hence the final capacitance-to-AM modulator circuit adopted is given below.
         :align: center
         :width: 400px
 
+The plot below shows the step response of this system, as simulated in LTSpice (a dedicated integrated electronics simulation software). This simulation uses a transistor-level model for the operational amplifier, meaning it is very true to reality.
+
+.. figure:: images/capSenseResponse.svg
+        :align: center
+        :width: 600px
+
+As expected, the amplitude dynamic response is very fast, ranging in the 4 microsseconds we predicted, validating the design.
+
+
 (2) AM signal de-modulator circuit
-=================================
+==================================
 
+The AM-modulator circuit works in a very simple purpose: it codifies the measured capacitance into the amplitude of a sinusoidal wave. However useful, this information cannot be translated into a working circuit. The goal now is to design a circuit that measures the amplitude of a sine wave and outputs the amplitude of that wave in a DC voltage signal. Such circuit is called an AM-demodulator. Such circuit is shown in the figure below.
 
-(3) Carrier wave generator oscillator
+.. figure:: images/full_demodulator.svg
+        :align: center
+        :width: 600px
+
+Note that the input voltage of this circuit is the output voltage of the AM modulator of the last section, meaning it is a sinusoidal wave which amplitude codifies the value of the measured capacitance. 
+
+This circuit has a very intricate funcioning, which will be explained in detail below.
+
+(2.1) Precision rectifier
+-------------------------
+
+First, consider the circuit immediately below, called a precision rectifier. Such circuit takes advantage of the high open-loop gain of operational amplifiers to remove the effects of the forward voltages of the diodes, rectifying the input sine wave to almost perfection.
+
+.. figure:: images/precision_rectifier.svg
+        :align: center
+        :width: 600px
+
+The rectifier does its job, transforming the sinusoidal wave into a pulsating DC voltage.
+
+(2.2) Peak detector
+-------------------
+
+When :math:`C_1` is added to the rectifier, the circuit becomes what is called a peak detector, which outputs the highest registered level of the input voltage. This would be enough for us, because as the switch is pressed and the input sine wave rises, the peak detector would output the amplitude of that wine wave, which is exactly what we want. There is, however, a small problem with that: if the sine wave decreases its amplitude, the output voltage does not change accordingly. See the below figure for details. 
+
+.. figure:: images/peak_detector.svg
+        :align: center
+        :width: 600px
+
+In the figure, note how when the amplitude of the input voltage decreases, the output voltage does not decrese. In practicality, this means that if we active the switch, the demodulator will detect the activation, but when we release the switch, the demodulator will act as if the switch was held. To remedy this, a resistor is added in parallel to the capacitor.a
+
+(2.3) Damped peak detector
+--------------------------
+
+Adding a discharge resistor to the capacitor allows it do discharge when the input voltage amplitude goes down. This circuit is known as a damped peak detector.
+
+.. figure:: images/damped_peak_detector.svg
+        :align: center
+        :width: 700px
+
+This is not the final circut, however. The issue with the damped peak detector is that, in order for the release detection to work fast enough, the RC filter is fast enough to discharge between the sinusoidal peaks, generating a distortion called ripple. So we want the lowest ripple possible. However, if we use too high of a resistance, the time the circuit takes to respond to a change in the voltage input amplitude becomes too high, meaning that the circuit will take too long to detec the switch activation or deactivation. The faster we want the circuit to react, the higher the ripple, making it a design tradeoff. In general, it is recommended that one chooses :math:`R_1` and :math:`C_1` such that the time constant :math:`R_1C_1` is ten times greater than the carrier wave period.
+
+(2.4) Filtered demodulator
+--------------------------
+
+In order to filter the ripple, a low-pass filter is added to the circuit output, originating the final full demodulator circuit.
+
+.. figure:: images/demodulator.svg
+        :align: center
+        :width: 800px
+
+This circuit gives a smooth DC voltage in it output which corresponds to the amplitude of the input sine wave, which is what we wanted after all. However it has another issue: due to the ripple filtering, the output voltage is not exactly the peak of the input voltage, but a diminished value -- see the arrow indications in the above picture. The output voltage is naturally higher the higher is the input voltage amplitude. Not only this, but the voltage drop is non-linear; the actual math is available (see for example Shade Graphs for rectifier design) but is way too complicated and unnecessary.
+
+(2.5) The important stuff
+-------------------------
+
+Having given the step-by-step construction of the demodulator, one may find its project to be unecessarily difficult. The main issue is building a circuit which components can be easily found and cheaply bought. There are many ready-to-use modulators and demodulators, but these are generally expensive and difficult to find.
+
+At the end of the day, however, all we need to know about our circuit are two things:
+
+- (1) Is the demodulator fast enough to detect switch activation and deactivation without significant dynamic response time? And
+- (2) What is the output of the demodulator at the exact capacitance of the switch activation?
+
+The end result is almost entirely based off of electronic dynamic simulation, and the RC filters are dsigned in a very iteractive, back-and-forth basis. I have determined the values for resistances and capacitances through LTSpice simulation; the resulting circuit is shown in the figure below.
+
+.. figure:: images/demodulator_real.svg
+        :align: center
+        :width: 1000px
+
+The next plot shows the step time response of this circuit. In this plot, the sensed capacitor goes instantly (step function) to 6 picofarads at 20 microseconds.
+
+.. figure:: images/demodulator_6p.svg
+        :align: center
+        :width: 1000px
+
+The plot shows the important waveforms as well as a zoom-out on the waves in their steady-state form. It is important to see how the damped peak detector outputs a very rippled waveform and how the output filter is effective on making it a smooth function.
+
+(5) Switch simulation circuit
+=============================
+
+So let us resume what we have so far.
+
+First, a sinusoidal 100kHz signal is generated. This signal is then used with a capacitance sensor so that the output is a 100kHz sine wave which amplitude is proportional do the capacitance being sensed. This circuit is known as an Amplitude Modulation (AM) modulator.
+
+Then, a de-modulator is used to convert the amplitude value of the generated sine wave to a smooth DC voltage. The modulator and de-modulator circuit form then what is called a Capacitance-to-Voltage converter (C2V). The image below shows a step time response of the whole modulator and demodulator circuit when the capacitor being sensed suffers a variety of amplitudes.
+
+.. figure:: images/switch_values.svg
+        :align: center
+        :width: 800px
+
+It can then be safely said that the C2V converter produces a direct relation between the output voltage and sensing capacitance. We can build a capacitance to voltage table:
+
++----------------------+-----------------+
+| **Capacitance** (pF) | **Voltage** (V) |
++======================+=================+
+| 6                    | 6.86            |
++----------------------+-----------------+
+| 5                    | 5.69            |
++----------------------+-----------------+
+| 4                    | 4.51            |
++----------------------+-----------------+
+| 3                    | 3.35            |
++----------------------+-----------------+
+| 2.2                  | 2.43            |
++----------------------+-----------------+
+| 1                    | 1.07            |
++----------------------+-----------------+
+
+With this information we can do, for example, a third-order polynomial regression to find an approximate relation between the output voltage and capacitance. Using this method, we find 
+
+.. math:: V = 0.005732053735 C^2 + 1.119156195 C - 0.05709052532
+
+Where C is the sensed capacitance in picofarads and V is the output voltage in volts. With a coefficient of determination :math:`R^2 = 0.9999956134`, meaning this is a very good approximation; the theoretical max deviation (the maximum values between calculated and simulated values) is of a milivolt. For an even more accurate approximation, one can use a fifth-order polynomial fit, yielding
+
+.. math:: V = -0.0004723614553 C^5 + 0.007808200965 C^4 - 0.04871351941 C^3 + 0.1489252986 C^2 + 0.9224022521C  + 0.04005012801
+
+This approximation gives results precise to the tens of nanovolts.
+
+The next goal is now to use this C2V converter to trigger a circuit that simulates the short-circuit of a switch.
+
+(5.1) Simulating a switch behavior and n-key rollover
+-----------------------------------------------------
+
+In order to understand how this simulation is done, let us first understand how a keyboard switch matrix works. During normal operation, a Microprocessor Unit (MCU) has its pins connected to rows and columns; the rows and columns are connected by switches. Electrically, switches are nothing more than simple electromechanical short-circuits.
+
+All the rows are set as input (most commonly open-drain) and all columns are set as outputs (most commonly push-pulls). At a given moment only one column can be at high state; in that moment, the MCU senses for voltage in the row pins. If a given row pin receives a high state, that is because the switch corresponding to that particular column and row was pressed.
+
+After some time (generally a milisecond) that particular row is turned off and the next row receives a high state; the MCU then scans for actions on the rows.i This cycle runs endlessly until the MCU is turned off, and constitutes the main loop of a keyboard firmware.
+
+The problem with switches, however, is that since they are short circuits, current can flow in both directions. Say that at a particular time the column 1 is at high state, and the switch at column 1 and row 2 is pressed. If another switch is also pressed in the same column, say, switch at row 2 column 3, then columns 1 and 3, as well as row 2, are short-circuited. This may cause many effects from damaging the MCU to causing very high currents; the most known phenomena and common is **ghosting**, where this situation makes the MCU register *ghost* keys that were not pressed.
+
+To remedy this, diodes are generally used in series with the switches; these diode, presenting assymetrical conduction, will prevent currents from flowing back to the switches and causing unintended issues. This way we can press any combination of switches in the keyboard and the MCU will register the right keypresses; this feature is known as *n-key rollover* or nKRO. Also this technique enables the MCU to not detech ghost keypresses, that is, this implementation prevents ghosting, a feature called *anti-ghosting* or AGh.
+
+Komar has an amazing explanation in `his blog <http://blog.komar.be/how-to-make-a-keyboard-the-matrix/>`_, definitely worth the reading for any PCB designer worth their salt.
+
+(5.2) Voltage detection circuit
+-------------------------------
+
+For now, what I want to emphasize is: the circuit used for simulating the switch and diode behavior has to provide the same features -- namely, nKRO and AGh. What is interesting to note is that a switch plus diode pair is basically an electrical contact that only conducts current in one way.
+
+If you know electronics at an enough high level, a lighbulb might have popped in your head: a current conductor that conducts current in a single way when an electrical signal is input is simply a saturated bipolar transistor; a simple common collector or common drain topology will serve as an electronically controlled switch that conducts current in a single way.
+
+And that is perfectly correct. However, those topologies have a major flaw: not only they need a power supply, they also need biasing components. These two requirements will make the circuit significantly bigger and complex. Also, it is known that the behavior of these topologies is extremely dependant on the tolerances of those components and the parameter variation of the transistor, which is huge for commonplace BC548s.
+
+A far easier solution to this task is using an **opto-coupler**. This device is made of an LED (generally infra-red emitter) and a transistor with an open gate (a phototransistor); when the LED conducts light directly into the transistor's base, the base is overflown with carriers due to photon recombination at the energy band level, making the transistor conduct current too. This topology uses only a single component, does not need a dedicated power supply, and will provide the assymetrical conductance we need for the AGh and nKRO.
+
+Another advantage of this device is that it galvanically isolates the diode matrix and the capacitor sensing circuit. Whereas the switch matrix uses the USB or LDO-provided 5 or 3.3V for its operation, the capacitance sensing uses 15V generated by a voltage source. Not only that, mixing the digital power rails and analog sensing power rails can be disastrous to the sensing circuit, because it relies on very precise measurements to work.
+
+(4) Carrier wave generator oscillator
 =====================================
 
 .. figure:: images/oscillator_dft.svg
         :align: center
-        :width: 600px
+        :width: 60px
 
-(4) Power supply and noise isolation
+(5) Power supply and noise isolation
 ====================================
