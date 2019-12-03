@@ -6,10 +6,80 @@ This page describes the operation of the Faraday PCB in the details and inner wo
 
 As always, feel free to contact me for questions.
 
-The page is divided into four sections: the capacitance AM-modulating circuit; the de-modulation circuit; the oscillator circuit and the filters used; and the power supply. Apart from the last section, all of the rest are well-founded with equations and SPICE simulations so they are very close to the real-world  behavior of the systems involved. Frequency and time domain plots are presented to validate the reasoning.
+The page is divided into six sections: the introduction; the capacitance AM-modulating circuit; the de-modulation circuit; the circuit used to simulate the behavior of electromechanical switches; the oscillator circuit and the filters used; and the power supply. Apart from the last section, all of the rest are well-founded with equations and SPICE simulations so they are very close to the real-world  behavior of the systems involved. Frequency and time domain plots are presented to validate the reasoning.
 
-(1) Capacitance sensing circuit
-===============================
+(0) Introduction
+================
+
+It has been a problem in the mechanical switch community that there are no custom keyboards that use the famous electro-capacitive Topre switches, which are different from the commonplace electromechanical switches generally used because they offer a very different tactile feeling and sound signature. There were some attempts, but they failed (as long as my researched has concluded). To my evaluation, this has three major factors:
+
+- Topre switch parts are very difficult to come by. This has been changing in the past days but it is a common belief that, if you want Topre switch parts, you need to buy them from specific vendors;
+- There are enough Topre switch OEM keyboards to satisfy the curious users who want a Topre experience: the KKHB Pro 2, the Leopold F660C and the Realforce line of keyboards. The HHKB Pro 2 can even be enhanced by using the famous Hasu controller, giving it bluetooth capabilities and programmability; the main issue being that these keyboards are generally expensive, ranging in the 200-dollar mark;
+- The circuitry needed to deal with Topre switches is awfully complicated and difficult to implement; not only that, the available technology is very expensive, making it very hard to compete against the available OEM options. This is the main technical barrier: there are many smart and very intelligent makers in the mechanical keyboards hobby, but to my knowledge a hardware designer and specialist does not figure among them;
+- In the attempts that were made to implement custom Topre keyboards, the end product was not QMK compatible. This one is a big no-no for most of the community as QMK is pretty much the backbone of this hobby.
+
+The Faraday60 is my attempt to solve the third and fourth issues. This PCB is a QMK-compatible, custom PCB for a mechanical keyboard that uses Topre switches. Not only that, it uses simple and cheap circuitry, allowing for implementation in a myriad of layouts. 
+
+I hope that, by having an easy-to-use and available custom option for Topre switches, these will spread in the community and parts will become more available.
+
+(0.1) Design philosophy
+-----------------------
+
+The philosophy used for this design is a simple yet difficult one, for simplicity is the ultimate sophistication: designing circuitry for Topre switches that:
+
+- Is cheap, using cheap and easy-to-find components;
+- Can be explained in a simple yet precise way, so that aspiring designers can understand the principles of operations and eventually design their own implementations;
+
+Also, while in the design process, the main requirements I had were:
+
+- The tools I used to design, simulate and calculate the circuitry behavior are either free or plainly open-source;
+- Documenting every single piece of information and every single thought that I had while designing. This way the design can be improved upon by other designers, creating new implementations for the community;
+- Transparency is key. I was always very honest with the flaws in this design. Also, every single flaw has to be justified and understood; if the circuit has an unjustified flaw, I want to know why and how to suppress it;
+- Performance requirements are reckless and necessary. While some of the features in this implementation might seem over-engineered, every single step has a justification to be and I always had very clear performance specifications, which I will detail in section **(0.3)**
+
+(0.2) Basic principle of operation
+----------------------------------
+
+However complicated, the circuitry has a simple principle of operation. 
+
+The Topre switch is basically a travel-to-capacitance transducer. The PCB has a metallic pad with two terminals; once the switch is pressed, a spring between the keycap and the PCB forms a capacitor with the PCB pads in such a way that, the farther the switch is pressed, the higher the capacitive effect sensed between the two terminals of the PCB pads.
+
+In this sense, the PCB circuitry is not concerned with an electromechanical contact like with commonplace mechanical switches, but with the magnitude of the resulting capacitance of the PCB pad. This means that, in essence, Topre PCBs are capacitance sensors that take an action when the capacitance reaches a certain point.
+
+For a common Topre switch, the actuation level is at :math:`2.2pF`, that is, the switch is considered pressed when the capacitance between the PCB pad terminals is :math:`2.2pF`. When the switch is bottomed-out, that capacitance is :math:`6pF`.
+
+The first step is converting the capacitance value into an electrical signal. This is done in the circuitry by using an adaptive filter that outputs a sinusoidal wave. This wave has its amplitude modulated by the sensed capacitance, that is, the amplitude of the sine wave is proportional to the sensed capacitance. This is essentially an AM (Amplitude Modulation) modulator, codifying the signal (capacitance value) into the amplitude of a sinusoidal wave. The technique used for AM modulation is basically an operational-amplifier second-order filter; linear design techniques are employed (basically Laplace transform and Bode Plots).
+
+Next is a circuit that transforms this amplitude into a smooth DC signal. This circuit is known as an AM de-modulator; more specifically, the one used here is a precision de-modulator. This circuit then outputs a DC signal which corresponds to the sensing capacitance.
+
+After the demodulator is a circuit that simulates the activation of an electromechanical switch. This circuit is comprised of a comparator and an opto-coupler, and allows the whole design to be integrated with a switch matrix very similar to the ones generally used by electromechanical keyboards, while galvanically isolating the analog sensing circuitry from the digital keyboard circuitry. This comparator and optocoupler pair is also what enables QMK support.
+
+(0.3) Performance parameters
+----------------------------
+
+The main difference from my implementation of a Topre PCB to the one that is generally used is that I employ analog precision sensing circuitry to determine the equivalent capacitance of the PCB pads in a given moment. This means that the majority of the circuitry I use is based upon applied electronic design and does not rely on software nor multiplexing techniques.
+
+The advantage of my implementation, as stated, is that it is cheap and easier to understand while also being able to be integrated into a common firmware environment such as QMK.
+
+However, it obviously has downsides, the first of them being the intrinsic issue with all analog sensing circuitry: settling time. All sensors have a period of time to output their readings correctly and that sensing or settling time  must be respected. In this case, the settling time means the time interval between switch activation and the acknowledgement of that activation from the MCU; this time is the main factor contributing to input lag.
+
+In common electromechanical switches, the settling time is virtually zero, owing some time interval only to the parasitic capacitances of the diodes generally employed. In my design, the settling time is significant.
+
+The first performance goal is to achieve a 100 microsecond maximum sensing time; this means that, by design, the time between switch pressing and the MCU acknowledgind that press must be less than that. This value is not arbitrary: most keyboard firmwares (QMK included) use a 1kHz column sensing frequency; the theoretical input lag is rated at least a milisecond, which is the timeframe a column stays at a high state. 100 microseconds is a tenth of that value.
+
+The second performance parameter of the sensing circuit is a 1% voltage precision. This guarantees that the circuit is reliable enough to be used safely as a capacitance-to-voltage transducer. In order to achieve this, all components use must have very tight tolerances -- for example, all resistors must be rated 1% or 0.5% and all capacitors 2% or 1%. This ensures that all simulations and calculations presented here are true to reality, that is, the design is close to what really happens.
+
+The third performance parameter is that the system is robust to power supply voltage fluctuations. This is done by using specific operation amplifier topologies and filters.
+
+Finally, the fourth performance parameter is that the analog sensing circuitry must be completely isolated from the digital and power circuitry, avoiding crosstalk and digital noises on analog circuits.
+
+(0.4) Disclosure
+----------------
+
+While I am confident that all the design hereby documented is going to work and is very reliable, I cannot guarantee it will work. As of december of 2019, this design has not yet been tested nor prototyped.
+
+(1) Capacitance sensing circuit: AM modulator
+=============================================
 
 (1.1) Transfer function and basic mechanism
 -------------------------------------------
@@ -24,9 +94,13 @@ In this filter, :math:`C_S` is the test capacitance which will be measured, whil
 
 .. math:: G(s) = \dfrac{V_O(s)}{V_I(s)} = \dfrac{sC_S}{\dfrac{1}{R_F} + sC_F}
 
-For the non-initiated in applied mathematics, this transfer function is a complex-valued function (that is, :math:`s \in \mathbb{C}`) that describes how the output voltage :math:`V_O` changes dynamically according to changes in the input voltage :math:`V_I`. 
+For the non-initiated in applied mathematics, this transfer function is a complex-valued function (that is, :math:`s \in \mathbb{C}`) that describes how the output voltage :math:`V_O` changes dynamically according to changes in the input voltage :math:`V_I`. For those not familiar with the concept, the Laplace Transform :math:`\mathcal{L}\left\{f\left(t\right)\right\}` is a mathematical transformation that associates a time signal :math:`f\left(t\right)` to a function in the space of complex frequency :math:`s \in \mathbb{C}`, given by
 
-Substituting :math:`s = j\omega` (:math:`j` being the imaginary unity that satisfyes :math:`j^2 = -1`) one can deduce the behavior of the system to pure-frequency sinusoidal signals. This means that, if the input signal is a pure-sine wave of frequency :math:`\omega`, the transfer function has an amplitude which is proportional to :math:`C_S`:
+.. math:: F\left(s\right) := \mathcal{L}\left\{f\left(t\right)\right\}(s) = \int\limits_{-\infty}^{\infty} f\left(t\right)e^{-st}dt,\ F:\mathbb{C}\to\mathbb{C}
+
+For Linear-Time-Invariant systems (linear systems that do not change with time, that is, dont "get older"), it can be shown that the time representation and the frequency-domain representation are interchangeable, a property we will use soon.
+
+One of the many useful tricks allowed by this transformation is to analyse the response of an LTI system given a pure sine wave. Substituting :math:`s = j\omega` (:math:`j` being the imaginary unity that satisfyes :math:`j^2 = -1`) one can deduce the behavior of the system to pure-frequency sinusoidal signals. This means that, if the input signal is a pure-sine wave of frequency :math:`\omega`, the transfer function has an amplitude which is proportional to :math:`C_S`:
 
 .. math:: \left\lvert G(j\omega) \right\rvert = \dfrac{\omega C_S}{\sqrt{\dfrac{1}{R_F^2} + \omega^2C_F^2}}
 
@@ -77,12 +151,6 @@ There is, however, a small problem with the calculations above: they are based o
 Let's use the circuit transfer function to simulate the output response of the circuit. Suppose that the input voltage is a sinusoidal wave with amplitude :math:`A` and :math:`\omega_0` frequency; then its Laplace Transform is given by
 
 .. math:: V_I(t) = A\cos\left(\omega_0 t\right) \Rightarrow V_I(s) = \dfrac{As}{s^2 + \omega_0^2}
-
-For those not familiar with the concept, the Laplace Transform :math:`\mathcal{L}\left\{f\left(t\right)\right\}` is a mathematical transformation that associates a time signal :math:`f\left(t\right)` to a function in the space of complex frequency :math:`s \in \mathbb{C}`, given by
-
-.. math:: F\left(s\right) := \mathcal{L}\left\{f\left(t\right)\right\}(s) = \int\limits_{-\infty}^{\infty} f\left(t\right)e^{-st}dt,\ F:\mathbb{C}\to\mathbb{C}
-
-For Linear-Time-Invariant systems (linear systems that do not change with time, that is, dont "get older"), it can be shown that the time representation and the frequency-domain representation are interchangeable, a property we will use soon.
 
 Let us also admit that the capacitance :math:`C_S` changes instantly from 0 to a value :math:`C` at instant zero, which is actually the instant at which the switch is pressed; hence, :math:`C_S` is modelled as a step of amplitude :math:`C`:
 
@@ -239,7 +307,7 @@ Where C is the sensed capacitance in picofarads and V is the output voltage in v
 
 .. math:: V = -0.0004723614553 C^5 + 0.007808200965 C^4 - 0.04871351941 C^3 + 0.1489252986 C^2 + 0.9224022521C  + 0.04005012801
 
-This approximation gives results precise to the tens of nanovolts.
+This approximation gives results precise to the tens of nanovolts. However, such a precision is not needed; what is important is to know that, when the PCB switch pads attain a 2.2pF capacitance (which corresponds to switch activation), the circuit outputs 2.43V . This is important because we can use this information to implement a digital logic to the analog output: **if the demodulator output is greater than 2.2pF, we can consider the switch to be activated**.
 
 The next goal is now to use this C2V converter to trigger a circuit that simulates the short-circuit of a switch.
 
@@ -270,6 +338,25 @@ And that is perfectly correct. However, those topologies have a major flaw: not 
 A far easier solution to this task is using an **opto-coupler**. This device is made of an LED (generally infra-red emitter) and a transistor with an open gate (a phototransistor); when the LED conducts light directly into the transistor's base, the base is overflown with carriers due to photon recombination at the energy band level, making the transistor conduct current too. This topology uses only a single component, does not need a dedicated power supply, and will provide the assymetrical conductance we need for the AGh and nKRO.
 
 Another advantage of this device is that it galvanically isolates the diode matrix and the capacitor sensing circuit. Whereas the switch matrix uses the USB or LDO-provided 5 or 3.3V for its operation, the capacitance sensing uses 15V generated by a voltage source. Not only that, mixing the digital power rails and analog sensing power rails can be disastrous to the sensing circuit, because it relies on very precise measurements to work.
+
+(5.) Comparator circuit
+-----------------------
+
+Having discussed how the keyboard works and that the analog-to-digital interface will be done through a fancy optocoupler, there is also a problem: how will the optocoupler know when to conduct and when to not conduct? 
+
+As seen in section (5.1), we can conclude from the circuit workings that when the AM demodulator outputs a voltage grater than 2.43 volts, we can consider that the switch is activated. Fortunately, there is a very handy circuit in electronics called a comparator, shown in the figure below.
+
+.. figure:: images/comparator_circuit.svg
+        :align: center
+        :width: 300px
+
+The comparator works in a very simple manner: if :math:`V_P > V_N`, the output is ideally VCC (remember that this only happens with a special kind of opamp called rail-to-rail; a common opamp will input only approximately VCC-2); if :math:`V_P < V_N` then the output voltage is VSS (then again, normal opamps will output approximately VSS+2). 
+
+This is the key: if we assume :math:`V_N = 2.43V` and hook up the AM de-modulator circuit to :math:`V_P` then we will achieve the very result we want: the output signal will be approximately VCC-2 when the PCB pads sensed capacitance is greater than 2.2pF (key is activated) and VSS+2 when it is not pressed. Producing a 2.43V level is easy, it can be done by using a resistive divider with 12k and 2.32k resistors, which will input a 2.430167V into :math:`V_N`, which is very close to the 2.43V we seek. See the circuit below for the real implementation. Capacitor :math:`C_1` is used to prevent spikes on the 15V supply to interfere with the sensing action.
+
+.. figure:: images/comparator_circuit_real.svg
+        :align: center
+        :width: 400px
 
 (4) Carrier wave generator oscillator
 =====================================
