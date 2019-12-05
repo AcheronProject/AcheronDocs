@@ -203,7 +203,7 @@ This circuit has a very intricate funcioning, which will be explained in detail 
 (2.1) Precision rectifier
 -------------------------
 
-First, consider the circuit immediately below, called a precision rectifier. Such circuit takes advantage of the high open-loop gain of operational amplifiers to remove the effects of the forward voltages of the diodes, rectifying the input sine wave to almost perfection.
+First, consider the circuit immediately below, called a precision full-wave rectifier. Such circuit takes advantage of the high open-loop gain of operational amplifiers to remove the effects of the forward voltages of the diodes, rectifying the input sine wave to almost perfection.
 
 .. figure:: images/precision_rectifier.svg
         :align: center
@@ -256,11 +256,14 @@ At the end of the day, however, all we need to know about our circuit are two th
 - (1) Is the demodulator fast enough to detect switch activation and deactivation without significant dynamic response time? And
 - (2) What is the output of the demodulator at the exact capacitance of the switch activation?
 
-The end result is almost entirely based off of electronic dynamic simulation, and the RC filters are dsigned in a very iteractive, back-and-forth basis. I have determined the values for resistances and capacitances through LTSpice simulation; the resulting circuit is shown in the figure below.
+The end result is almost entirely based off of electronic dynamic simulation, and the RC filters are designed in a very iteractive, back-and-forth basis due to the inherent nonlinearity of the process. I have determined the values for resistances and capacitances through LTSpice simulation; the resulting circuit is shown in :numref:`figure_demodulator_real`.
 
+.. _figure_demodulator_real:
 .. figure:: images/demodulator_real.svg
         :align: center
         :width: 800px
+	
+	. Schematic of the AM modulator and demodulator circuits with component ratings and opamp models.
 
 The next plot shows the step time response of this circuit. In this plot, the sensed capacitor goes instantly (step function) to 6 picofarads at 20 microseconds.
 
@@ -325,11 +328,11 @@ It is also interesting to note that the ripple is very linear with capacitance (
 
 Where :math:`\overline{V}` is the average output voltage in milivolts and ..math:`C` is the input capacitance in picofarads. The coefficient uncertainties are measured considering a 95% confidence interval. The measured R-squared coefficient is 0.99989, confirming again that this is a very good approximation.
 
-It is then interesting to note that, since both ripple and average value are very linear to the capacitance, the average-to-ripple ratio is very good and can be calculated by using the Propagation of Uncertainty formula:
+It is then interesting to note that, since both ripple and average value are very linear to the capacitance, the average-to-ripple ratio is very good and can be calculated by using the Chain Rule and the Propagation of Uncertainty formula:
 
-.. math:: \dfrac{\dfrac{\partial \overline{V}}{\partial C}}{\dfrac{\partial V_{pp}}{\partial C}} = 596.766524013 \pm 8.181351195
+.. math:: \dfrac{\partial \overline{V}}{\partial V_{pp}} = \dfrac{\dfrac{\partial \overline{V}}{\partial C}}{\dfrac{\partial V_{pp}}{\partial C}} = 596.766524013 \pm 8.181351195
 
-This means that we can assert that the output ripple will be six hundred times lesser than the average value, which is an amazing result for a capacitive sensor. More precisely, we can theoretically state with 95% confidence that this relation will be in the :math:`\left[588.585172818, 604.947875208\right]` interval.
+This means that, given a change in capacitance, we can assert that the output ripple will rise six hundred times slower than the average value, which is an amazing result for a capacitive sensor. More precisely, we can theoretically state with 95% confidence that this relation will be in the :math:`\left[588.585172818, 604.947875208\right]` interval.
 
 (2.6.3) Output signal rise time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -345,17 +348,26 @@ The risetime falls into the sub-100 microsecond category, maxing out at almost 7
 
 The results show that the designed circuit passes the performance requirements with flying colors, attendind every requisite with much room to spare.
 
-It is very important to note that this circuit is ideal. The main issue here is the tolerances of the components, which can greatly alter the time and frequency response of the system. The operational amplifiers guarantee that these tolerances will not have a significant effect to some extent, but nevertheless it is of the utmost importance to use precise components with at most 2% tolerance.
+It is very important to note that the nonlinear, stochastic and simulatory analysis hereby presented is developed upon ideal conditions -- perfect components and no parasitic second-order effects. The main issue here is the tolerances of the components, which can greatly alter the time and frequency response of the system. The operational amplifiers guarantee that these tolerances will not have a significant effect to some extent, but nevertheless it is of the utmost importance to use precise components with at most 2% tolerance.
 
 Also, there is a very difficult issue with implementation of this circuit which is PCB layout. Since all waves have a fundamental frequency of the modulator carrier (100kHz), a badly laid out PCB can generate parasitic capacitances and inductances that can simply destroy the circuit behavior and make all the analysis here useless, specially because of the fairly analog and high speeds involved. Hence, all these results require a very well laid-out PCB and circuit stability, which can be expected from USB-based PCBs.
 
-(5) Switch simulation circuit
+The AM modulator and AM de-modulator circuit will henceforth be called an AM CODEC (Codifier and Decodifier) or a C2V (Capacitance-to-Voltage) converter.
+
+(3) Switch simulation circuit
 =============================
 
-(5.1) Simulating a switch behavior and n-key rollover
------------------------------------------------------
+The AM CODEC circuit is basically a C2V converter that outputs a DC voltage correspnding to a sensed capacitance (the switch). Ultimately what we want is to simulate an emech-switch activation on the MCU switch matrix, connecting a particular row to a particular column. This simulation, however, must be triggered only if the input capacitance hits a cretain level that corresponds to the Topre switch activation point, 2.2pF to be more exact. In our circuit, this means that this simulation must only be triggered when the CODEC output voltage hits 2.389V.
 
-In order to understand how this simulation is done, let us first understand how a keyboard switch matrix works. During normal operation, a Microprocessor Unit (MCU) has its pins connected to rows and columns; the rows and columns are connected by switches. Electrically, switches are nothing more than simple electromechanical short-circuits.
+The simulation circuit is then comprised of two stages:
+
+-  **(1) A comparator (or voltage detector)**. The comparator stage detects a voltage level greater than 2.389V coming from the CODEC, and triggers the actuator when that happens. The comparator used here also features a noise-filtering capability called *hystheresis*, which protects the circuit from the voltage ripples produced by the AM CODEC.
+- **(2) An actuator (or decoupler)**.  The actuator actuates on the MCU switch matrix when it is triggered, but there is a catch: it  must also meet performance requirements, the first requirement being that the actuator must offer n-key rollover and anti-ghosting capabilities to the matrix. The second requirement being that this actuator must isolate the sensing circuitry from the digital MCU part, in order to make the sensing circuit more reliable. Finally, this circuit must be again cheap, easy to understand and easily available.
+
+(3.1) Simulating an emech-switch behavior
+-----------------------------------------
+
+In order to understand how the actuator circuit simulates an electromechanical switch and diode pair, let us first understand how a keyboard switch matrix works. During normal operation, a Microprocessor Unit (MCU) has its pins connected to rows and columns; the rows and columns are connected by switches. Electrically, switches are nothing more than simple electromechanical short-circuits activated when the switch is pressed. This short-circuit is generally comprised by two leaf contacts that are pressed against each other.
 
 All the rows are set as input (most commonly open-drain) and all columns are set as outputs (most commonly push-pulls). At a given moment only one column can be at high state; in that moment, the MCU senses for voltage in the row pins. If a given row pin receives a high state, that is because the switch corresponding to that particular column and row was pressed.
 
@@ -365,27 +377,12 @@ The problem with switches, however, is that since they are short circuits, curre
 
 To remedy this, diodes are generally used in series with the switches; these diode, presenting assymetrical conduction, will prevent currents from flowing back to the switches and causing unintended issues. This way we can press any combination of switches in the keyboard and the MCU will register the right keypresses; this feature is known as *n-key rollover* or nKRO. Also this technique enables the MCU to not detech ghost keypresses, that is, this implementation prevents ghosting, a feature called *anti-ghosting* or AGh.
 
-Komar has an amazing explanation in `his blog <http://blog.komar.be/how-to-make-a-keyboard-the-matrix/>`_, definitely worth the reading for any PCB designer worth their salt.
+Komar, the designer of the famous GH60 PCB, has an amazing explanation in `his blog <http://blog.komar.be/how-to-make-a-keyboard-the-matrix/>`_, definitely worth the reading for any PCB designer worth their salt.
 
-(5.2) Voltage detection circuit
--------------------------------
+(3.3) Comparator circuit
+------------------------
 
-For now, what I want to emphasize is: the circuit used for simulating the switch and diode behavior has to provide the same features -- namely, nKRO and AGh. What is interesting to note is that a switch plus diode pair is basically an electrical contact that only conducts current in one way.
-
-If you know electronics at an enough high level, a lighbulb might have popped in your head: a current conductor that conducts current in a single way when an electrical signal is input is simply a saturated bipolar transistor; a simple common collector or common drain topology will serve as an electronically controlled switch that conducts current in a single way.
-
-And that is perfectly correct. However, those topologies have a major flaw: not only they need a power supply, they also need biasing components. These two requirements will make the circuit significantly bigger and complex. Also, it is known that the behavior of these topologies is extremely dependant on the tolerances of those components and the parameter variation of the transistor, which is huge for commonplace BC548s.
-
-A far easier solution to this task is using an **opto-coupler**. This device is made of an LED (generally infra-red emitter) and a transistor with an open gate (a phototransistor); when the LED conducts light directly into the transistor's base, the base is overflown with carriers due to photon recombination at the energy band level, making the transistor conduct current too. This topology uses only a single component, does not need a dedicated power supply, and will provide the assymetrical conductance we need for the AGh and nKRO.
-
-Another advantage of this device is that it galvanically isolates the diode matrix and the capacitor sensing circuit. Whereas the switch matrix uses the USB or LDO-provided 5 or 3.3V for its operation, the capacitance sensing uses 15V generated by a voltage source. Not only that, mixing the digital power rails and analog sensing power rails can be disastrous to the sensing circuit, because it relies on very precise measurements to work.
-
-(5.) Comparator circuit
------------------------
-
-Having discussed how the keyboard works and that the analog-to-digital interface will be done through a fancy optocoupler, there is also a problem: how will the optocoupler know when to conduct and when to not conduct? 
-
-As seen in section (5.1), we can conclude from the circuit workings that when the AM demodulator outputs a voltage grater than 2.43 volts, we can consider that the switch is activated. Fortunately, there is a very handy circuit in electronics called a comparator, shown in the figure below.
+We know from our CODEC simulations that  when it outputs a voltage grater than 2.389 volts, we can consider that the switch is activated. Fortunately, there is a very handy circuit in electronics called a comparator, shown in the figure below, that can be used as a voltage level detection circuit.
 
 .. figure:: images/comparator_circuit.svg
         :align: center
@@ -399,12 +396,29 @@ This is the key: if we assume :math:`V_N = 2.43V` and hook up the AM de-modulato
         :align: center
         :width: 400px
 
-(4) Carrier wave generator oscillator
+(3.3.1) Comparator circuit with hystheresis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+http://www.ti.com/lit/ug/tidu020a/tidu020a.pdf
+
+(3.2) Actuator circuit
+----------------------
+
+For now, what I want to emphasize is: the circuit used for simulating the switch and diode behavior has to provide the same features -- namely, nKRO and AGh. What is interesting to note is that a switch plus diode pair is basically an electrical contact that only conducts current in one way.
+
+If you know electronics at an enough high level, a lighbulb might have popped in your head: a current conductor that conducts current in a single way when an electrical signal is input is simply a saturated bipolar transistor; a simple common collector or common drain topology will serve as an electronically controlled switch that conducts current in a single way. And that is perfectly correct. However, those topologies have a major flaw: not only they need a power supply, they also need biasing components. These two requirements will make the circuit significantly bigger and complex. Also, it is known that the behavior of these topologies is extremely dependant on the tolerances of those components and the parameter variation of the transistor, which is huge for commonplace BC548s.
+
+A far easier solution to this task is using an **opto-coupler**. This device is made of an LED (generally infra-red emitter) and a transistor with an open gate (a phototransistor); when the LED conducts light directly into the transistor's base, the base is overflown with carriers due to photon recombination at the energy band level, making the transistor conduct current too. This topology uses only a single component, does not need a dedicated power supply, and will provide the assymetrical conductance we need for the AGh and nKRO.
+
+Another advantage of this device is that it galvanically isolates the diode matrix and the capacitor sensing circuit. Whereas the switch matrix uses the USB or LDO-provided 5 or 3.3V for its operation, the capacitance sensing uses 15V generated by a voltage source. Not only that, mixing the digital power rails and analog sensing power rails can be disastrous to the sensing circuit, because it relies on very precise measurements to work. Hence, not only the opto-coupler does the job of being an actuator, it also promotes isolation between digital processing circuit and analog sensor, greatly enhancing the reliability of the circuit.
+
+
+(5) Carrier wave generator oscillator
 =====================================
 
 .. figure:: images/oscillator_dft.svg
         :align: center
         :width: 60px
 
-(5) Power supply and noise isolation
+(6) Power supply and noise isolation
 ====================================
