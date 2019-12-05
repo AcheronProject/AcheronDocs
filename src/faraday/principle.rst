@@ -50,7 +50,7 @@ For a common Topre switch, the actuation level is at :math:`2.2pF`, that is, the
 
 The first step is converting the capacitance value into an electrical signal. This is done in the circuitry by using an adaptive filter that outputs a sinusoidal wave. This wave has its amplitude modulated by the sensed capacitance, that is, the amplitude of the sine wave is proportional to the sensed capacitance. This is essentially an AM (Amplitude Modulation) modulator, codifying the signal (capacitance value) into the amplitude of a sinusoidal wave. The technique used for AM modulation is basically an operational-amplifier second-order filter; linear design techniques are employed (basically Laplace transform and Bode Plots).
 
-Next is a circuit that transforms this amplitude into a smooth DC signal. This circuit is known as an AM de-modulator; more specifically, the one used here is a precision de-modulator. This circuit then outputs a DC signal which corresponds to the sensing capacitance.
+Next is a circuit that transforms this amplitude into a smooth DC signal. This circuit is known as an AM de-modulator; more specifically, the one used here is a precision de-modulator. This circuit then outputs a DC signal which corresponds to the sensing capacitance. This part of the circuitry is the most delicate one and will be dealt with in a very technical manner, through SPICE simulations. A performance analysis of the system is carried out by means of simulation and statistical analysis.
 
 After the demodulator is a circuit that simulates the activation of an electromechanical switch. This circuit is comprised of a comparator and an opto-coupler, and allows the whole design to be integrated with a switch matrix very similar to the ones generally used by electromechanical keyboards, while galvanically isolating the analog sensing circuitry from the digital keyboard circuitry. This comparator and optocoupler pair is also what enables QMK support.
 
@@ -242,7 +242,9 @@ In order to filter the ripple, a low-pass filter is added to the circuit output,
         :align: center
         :width: 800px
 
-This circuit gives a smooth DC voltage in it output which corresponds to the amplitude of the input sine wave, which is what we wanted after all. However it has another issue: due to the ripple filtering, the output voltage is not exactly the peak of the input voltage, but a diminished value -- see the arrow indications in the above picture. The output voltage is naturally higher the higher is the input voltage amplitude. Not only this, but the voltage drop is non-linear; the actual math is available (see for example Shade Graphs for rectifier design) but is way too complicated and unnecessary.
+This circuit gives a smooth DC voltage in it output which corresponds to the amplitude of the input sine wave, which is what we wanted after all. It is important to note, however, that the addition of this lowpass filter will not totally remove ripple, but reduce it to very low levels. Not only that, it is important to have in mind that the addition of this circuit to the :math:`C_1R_5` circuit will add loading effect to the circuit, meaning that the design of both filters must be done at the same time, that is, you cannot design one after the other independently as they affect each other's behavior.
+
+However it has another issue: due to the ripple filtering, the output voltage is not exactly the peak of the input voltage, but a diminished value -- see the arrow indications in the above picture. The output voltage is naturally higher the higher is the input voltage amplitude. Not only this, but the voltage drop is non-linear; the actual math is available (see for example Shade Graphs for rectifier design) but is way too complicated and unnecessary.
 
 (2.5) The important stuff
 -------------------------
@@ -258,7 +260,7 @@ The end result is almost entirely based off of electronic dynamic simulation, an
 
 .. figure:: images/demodulator_real.svg
         :align: center
-        :width: 1000px
+        :width: 800px
 
 The next plot shows the step time response of this circuit. In this plot, the sensed capacitor goes instantly (step function) to 6 picofarads at 20 microseconds.
 
@@ -266,10 +268,10 @@ The next plot shows the step time response of this circuit. In this plot, the se
         :align: center
         :width: 1000px
 
-The plot shows the important waveforms as well as a zoom-out on the waves in their steady-state form. It is important to see how the damped peak detector outputs a very rippled waveform and how the output filter is effective on making it a smooth function.
+The plot shows the important waveforms as well as a zoom-out on the waves in their steady-state form. It is important to see how the damped peak detector outputs a very rippled waveform and how the output filter is effective on making it a smooth DC signal. It is also important to note that the output signal is so smooth to the point that we can consider it basically a DC signal. The plot below shows the time responde of the system top various amplitudes of capacitance step.
 
-(5) Switch simulation circuit
-=============================
+(2.6) Evaluating the C2V converter performance
+----------------------------------------------
 
 So let us resume what we have so far.
 
@@ -277,39 +279,78 @@ First, a sinusoidal 100kHz signal is generated. This signal is then used with a 
 
 Then, a de-modulator is used to convert the amplitude value of the generated sine wave to a smooth DC voltage. The modulator and de-modulator circuit form then what is called a Capacitance-to-Voltage converter (C2V). The image below shows a step time response of the whole modulator and demodulator circuit when the capacitor being sensed suffers a variety of amplitudes.
 
+In this subsection I will dissert about the techniques and parameters I used to evaluate the C2V sensor performance.
+
+The three parameters I used were:
+
+- **Output signal linearity**. Ideally, a sensor will output a signal that is proportional to the quantity being sensed. Linearity is an amazing property that will greatly ease the measurement and signal processing. Since the output signal is not perfectly linear, we want to measure "how linear" the output signal is. This is done by measuring the average value of the output wave in its permanent behavior. In practical terms, this linearity means that the C2V output is well-behaved with respect to the switch travel distance, that is, the output signal is not too big or too low and doesn't change its behavior abruptly during the switch travel time.
+- **Output signal distortion**. Also ideally, a C2V sensor will output a perfectly smooth DC voltage. We saw in the last graph that this is not true: the output wave is rippled, albeit by a little. Hence it is necessary to measure the ripple and compare it to the actual wave value. In practical terms, this ripple basically means the accuracy of the sensor, that is, the smoother the output wave is, the more accurate the measurement is.
+- **Sensor rise time**. In the field of Control Theory, the rise time is defined as the amount of time that the system needs to attain 95% of the final output value. In practical terms, the rise time is a measurement of how fast the system reacts to the input signal. In practical terms, we want the system to have at most a 100 microsecond rise time, because that was one of the main performance requirements of the sensor, listed in the introduction.
+
+The plot below shows the time response of the sensor to steps in the input (capacitance), which simulate a very fast switch press. The many capacitance values mean various level of keypress, to exemplify how the system behaves to various levels of input.
+
 .. figure:: images/switch_values.svg
         :align: center
-        :width: 800px
+        :width: 1000px
 
-It can then be safely said that the C2V converter produces a direct relation between the output voltage and sensing capacitance. We can build a capacitance to voltage table:
+The evaluation of these performance parameters applied to this circuit will be done in the following manner. This circuit was simulated six thousand times with six thousand different input capacitance values, from time zero to a milisecond (fairly enough to hit the static behavior). The output wave was cut for the last 20 microseconds and three parameters were measured: rise time of the curve since time zero; average and peak-to-peak values of the wave in the last 20 microseconds.
 
-+----------------------+-----------------+
-| **Capacitance** (pF) | **Voltage** (V) |
-+======================+=================+
-| 6                    | 6.86            |
-+----------------------+-----------------+
-| 5                    | 5.69            |
-+----------------------+-----------------+
-| 4                    | 4.51            |
-+----------------------+-----------------+
-| 3                    | 3.35            |
-+----------------------+-----------------+
-| 2.2                  | 2.43            |
-+----------------------+-----------------+
-| 1                    | 1.07            |
-+----------------------+-----------------+
+The parameter analysis will use a stochastic and discrete Minimum Least Squares method, which is basically a statistic time-fitting analysis of the discrete time response of the system.
 
-With this information we can do, for example, a third-order polynomial regression to find an approximate relation between the output voltage and capacitance. Using this method, we find 
+(2.6.1) Output signal linearity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. math:: V = 0.005732053735 C^2 + 1.119156195 C - 0.05709052532
+The plot below shows the average value of the C2V converter output voltage as a function of input capacitance.
 
-Where C is the sensed capacitance in picofarads and V is the output voltage in volts. With a coefficient of determination :math:`R^2 = 0.9999956134`, meaning this is a very good approximation; the theoretical max deviation (the maximum values between calculated and simulated values) is of a milivolt. For an even more accurate approximation, one can use a fifth-order polynomial fit, yielding
+.. figure:: images/C2V_linearity.svg
+        :align: center
+        :width: 600px
 
-.. math:: V = -0.0004723614553 C^5 + 0.007808200965 C^4 - 0.04871351941 C^3 + 0.1489252986 C^2 + 0.9224022521C  + 0.04005012801
+As it can be seen, the curve is extremely linear. A stochastic Minimum Squares fit will confirm these results:
 
-This approximation gives results precise to the tens of nanovolts. However, such a precision is not needed; what is important is to know that, when the PCB switch pads attain a 2.2pF capacitance (which corresponds to switch activation), the circuit outputs 2.43V . This is important because we can use this information to implement a digital logic to the analog output: **if the demodulator output is greater than 2.2pF, we can consider the switch to be activated**.
+.. math:: \overline{V} = \left(1.255 \pm 0.001366\right)C + \left(-0.1062 \pm 0.004738\right)  
 
-The next goal is now to use this C2V converter to trigger a circuit that simulates the short-circuit of a switch.
+Where :math:`\overline{V}` is the average output voltage in volts and ..math:`C` is the input capacitance in picofarads. The coefficient uncertainties are measured considering a 95% confidence interval. The measured R-squared coefficient is 0.99993, confirming that this is a very good approximation.
+
+(2.6.2) Output signal ripple
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is also interesting to note that the ripple is very linear with capacitance (despite small spikes). The plot below shows the measured peak-to-peak voltaeg of the output C2V voltage as a function of input capacitance.
+
+.. figure:: images/C2V_peaktopeak.svg
+        :align: center
+        :width: 600px
+
+.. math:: V_{pp} = \left(2.103  \pm 0.02874\right)C + \left(-0.01566\times \pm 0.0009967 \right)  
+
+Where :math:`\overline{V}` is the average output voltage in milivolts and ..math:`C` is the input capacitance in picofarads. The coefficient uncertainties are measured considering a 95% confidence interval. The measured R-squared coefficient is 0.99989, confirming again that this is a very good approximation.
+
+It is then interesting to note that, since both ripple and average value are very linear to the capacitance, the average-to-ripple ratio is very good and can be calculated by using the Propagation of Uncertainty formula:
+
+.. math:: \dfrac{\dfrac{\partial \overline{V}}{\partial C}}{\dfrac{\partial V_{pp}}{\partial C}} = 596.766524013 \pm 8.181351195
+
+This means that we can assert that the output ripple will be six hundred times lesser than the average value, which is an amazing result for a capacitive sensor. More precisely, we can theoretically state with 95% confidence that this relation will be in the :math:`\left[588.585172818, 604.947875208\right]` interval.
+
+(2.6.3) Output signal rise time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/C2V_risetime.svg
+        :align: center
+        :width: 660px
+
+The risetime falls into the sub-100 microsecond category, maxing out at almost 70, which is very satisfactory.
+
+(2.6.4) Results and discussion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The results show that the designed circuit passes the performance requirements with flying colors, attendind every requisite with much room to spare.
+
+It is very important to note that this circuit is ideal. The main issue here is the tolerances of the components, which can greatly alter the time and frequency response of the system. The operational amplifiers guarantee that these tolerances will not have a significant effect to some extent, but nevertheless it is of the utmost importance to use precise components with at most 2% tolerance.
+
+Also, there is a very difficult issue with implementation of this circuit which is PCB layout. Since all waves have a fundamental frequency of the modulator carrier (100kHz), a badly laid out PCB can generate parasitic capacitances and inductances that can simply destroy the circuit behavior and make all the analysis here useless, specially because of the fairly analog and high speeds involved. Hence, all these results require a very well laid-out PCB and circuit stability, which can be expected from USB-based PCBs.
+
+(5) Switch simulation circuit
+=============================
 
 (5.1) Simulating a switch behavior and n-key rollover
 -----------------------------------------------------
