@@ -121,9 +121,22 @@ Before doing any simulations, the parameters :math:`R_F` and :math:`C_F` must be
 
 This design requirement is not arbitrary. The main issue associated with analog precision sensing circuitry are the second-order effects that op-amps introduce in the system, the most famous of which is the output saturation due to voltage rails. An operational amplifier will not output a voltage higher than :math:`V_{CC}` nor lower than :math:`V_{SS}`. In practicality, the limits of the output are even tighter; as a rule of thumb, we assume that the op-amp will clamp outputs higher than :math:`V_{CC}-2` and lower than :math:`V_{SS}+2`. While there are op-amps that have output limits very tight to the power rails (called rail-to-rail op-amps), these are generally more expensive and difficult to use than your everyday TL081s. For instance, the figure below shows the maximum output voltage of a TL08x operation amplifier as a function of operating frequency. Note that the maximum acievable output voltages are significantly lower than the power voltages supplied. (Image taken from the `TL08x datasheet <http://www.ti.com/lit/ds/symlink/tl082.pdf>`_).
 
+.. _tl082_datasheet_graph :
 .. figure:: images/tl082_voltage.svg
         :align: center
         :width: 400px
+
+	. Datasheet plot showing the maximum output voltage for the TL081 opamp as a function of frequency.
+
+The datasheet also denotes 
+
+.. _tl082_datasheet_table :
+.. figure:: images/tl082_datasheet_table.svg
+        :align: center
+        :width: 800px
+
+	. Datasheet table showing the typical maximum output voltage for the TL081 opamp (image edited for clarity).
+
 
 A value of :math:`V_{CC} = -V_{SS} = 15V` will be used; these voltages are easily generated from the USB power input through precision integrated buck-boost converters as the `TPS61040 <https://lcsc.com/product-detail/DC-DC-Converters_TI-Tex-as-Instruments_TPS61040DBVR_TI-Tex-as-Instruments-TI-TPS61040DBVR_C7722.html>`_ . The input voltage amplitude will be :math:`6.8V` (this value is also not arbitrary and its reason will be seen in the next section), which gives plenty headroom for the op-amps to work with without going into voltage saturation.
 
@@ -320,17 +333,20 @@ Where :math:`\overline{V}` is the average output voltage in volts and ..math:`C`
 
 It is also interesting to note that the ripple is very linear with capacitance (despite small spikes). The plot below shows the measured peak-to-peak voltaeg of the output C2V voltage as a function of input capacitance.
 
+.. _C2V_peaktopeak :
 .. figure:: images/C2V_peaktopeak.svg
         :align: center
         :width: 600px
 
-.. math:: V_{pp} = \left(2.103  \pm 0.02874\right)C + \left(-0.01566\times \pm 0.0009967 \right)  
+	. Output voltage ripple amplitude as function of sensed capacitance.
+
+.. math:: V_{pp} = \left(2.103  \pm 0.02874\right)C + \left(-0.015.76\times \pm 0.0009967 \right)  
 
 Where :math:`\overline{V}` is the average output voltage in milivolts and ..math:`C` is the input capacitance in picofarads. The coefficient uncertainties are measured considering a 95% confidence interval. The measured R-squared coefficient is 0.99989, confirming again that this is a very good approximation.
 
 It is then interesting to note that, since both ripple and average value are very linear to the capacitance, the average-to-ripple ratio is very good and can be calculated by using the Chain Rule and the Propagation of Uncertainty formula:
 
-.. math:: \dfrac{\partial \overline{V}}{\partial V_{pp}} = \dfrac{\dfrac{\partial \overline{V}}{\partial C}}{\dfrac{\partial V_{pp}}{\partial C}} = 596.766524013 \pm 8.181351195
+.. math:: \dfrac{\partial \overline{V}}{\partial V_{pp}} = \dfrac{\dfrac{\partial \overline{V}}{\partial C}}{\dfrac{\partial V_{pp}}{\partial C}} = 5.76.766524013 \pm 8.181351195
 
 This means that, given a change in capacitance, we can assert that the output ripple will rise six hundred times slower than the average value, which is an amazing result for a capacitive sensor. More precisely, we can theoretically state with 95% confidence that this relation will be in the :math:`\left[588.585172818, 604.947875208\right]` interval.
 
@@ -352,16 +368,16 @@ It is very important to note that the nonlinear, stochastic and simulatory analy
 
 Also, there is a very difficult issue with implementation of this circuit which is PCB layout. Since all waves have a fundamental frequency of the modulator carrier (100kHz), a badly laid out PCB can generate parasitic capacitances and inductances that can simply destroy the circuit behavior and make all the analysis here useless, specially because of the fairly analog and high speeds involved. Hence, all these results require a very well laid-out PCB and circuit stability, which can be expected from USB-based PCBs.
 
-The AM modulator and AM de-modulator circuit will henceforth be called an AM CODEC (Codifier and Decodifier) or a C2V (Capacitance-to-Voltage) converter.
+The AM modulator and AM de-modulator circuit will henceforth be called a C2V (Capacitance-to-Voltage) converter.
 
 (3) Switch simulation circuit
 =============================
 
-The AM CODEC circuit is basically a C2V converter that outputs a DC voltage correspnding to a sensed capacitance (the switch). Ultimately what we want is to simulate an emech-switch activation on the MCU switch matrix, connecting a particular row to a particular column. This simulation, however, must be triggered only if the input capacitance hits a cretain level that corresponds to the Topre switch activation point, 2.2pF to be more exact. In our circuit, this means that this simulation must only be triggered when the CODEC output voltage hits 2.389V.
+The C2V converter is a circuit that outputs a DC voltage correspnding to a sensed capacitance (the switch). Ultimately what we want is to simulate an emech switch activation on the MCU switch matrix, connecting a particular row to a particular column. This simulation, however, must be triggered only if the input capacitance hits a cretain level that corresponds to the Topre switch activation point, 2.2pF to be more exact. In our circuit, this means that this simulation must only be triggered when the C2V output voltage hits 2.389V.
 
 The simulation circuit is then comprised of two stages:
 
--  **(1) A comparator (or voltage detector)**. The comparator stage detects a voltage level greater than 2.389V coming from the CODEC, and triggers the actuator when that happens. The comparator used here also features a noise-filtering capability called *hystheresis*, which protects the circuit from the voltage ripples produced by the AM CODEC.
+-  **(1) A comparator (or voltage detector)**. The comparator stage detects a voltage level greater than 2.389V coming from the C2V, and triggers the actuator when that happens. The comparator used here also features a noise-filtering capability called *hystheresis*, which protects the circuit from the voltage ripples produced by the C2V.
 - **(2) An actuator (or decoupler)**.  The actuator actuates on the MCU switch matrix when it is triggered, but there is a catch: it  must also meet performance requirements, the first requirement being that the actuator must offer n-key rollover and anti-ghosting capabilities to the matrix. The second requirement being that this actuator must isolate the sensing circuitry from the digital MCU part, in order to make the sensing circuit more reliable. Finally, this circuit must be again cheap, easy to understand and easily available.
 
 (3.1) Simulating an emech-switch behavior
@@ -382,22 +398,107 @@ Komar, the designer of the famous GH60 PCB, has an amazing explanation in `his b
 (3.3) Comparator circuit
 ------------------------
 
-We know from our CODEC simulations that  when it outputs a voltage grater than 2.389 volts, we can consider that the switch is activated. Fortunately, there is a very handy circuit in electronics called a comparator, shown in the figure below, that can be used as a voltage level detection circuit.
+We know from our C2V simulations that  when it outputs a voltage grater than 2.389 volts, we can consider that the switch is activated. Fortunately, there is a very handy circuit in electronics called a comparator, shown in the figure below, that can be used as a voltage level detection circuit.
 
 .. figure:: images/comparator_circuit.svg
         :align: center
         :width: 300px
 
-The comparator works in a very simple manner: if :math:`V_P > V_N`, the output is ideally VCC (remember that this only happens with a special kind of opamp called rail-to-rail; a common opamp will input only approximately VCC-2); if :math:`V_P < V_N` then the output voltage is VSS (then again, normal opamps will output approximately VSS+2). 
+The comparator works in a very simple manner: if :math:`V_P > V_N`, the output is ideally :math:`V_{CC}` (remember that this only happens with a special kind of opamp called rail-to-rail; a common opamp will input only approximately :math:`V_{CC}-2`); if :math:`V_P < V_N` then the output voltage is VSS (then again, normal opamps will output approximately :math:`V_{SS}+2`). 
 
-This is the key: if we assume :math:`V_N = 2.43V` and hook up the AM de-modulator circuit to :math:`V_P` then we will achieve the very result we want: the output signal will be approximately VCC-2 when the PCB pads sensed capacitance is greater than 2.2pF (key is activated) and VSS+2 when it is not pressed. Producing a 2.43V level is easy, it can be done by using a resistive divider with 12k and 2.32k resistors, which will input a 2.430167V into :math:`V_N`, which is very close to the 2.43V we seek. See the circuit below for the real implementation. Capacitor :math:`C_1` is used to prevent spikes on the 15V supply to interfere with the sensing action.
+A very common technique is to generate a reference signal through a voltage resistor divider from VCC, as denoted in :numref:`comparator_circuit_ideal`. The figure also shows the output response of the system: :math:`V_o = V_H` if :math:`V_I > V_F` and :math:`V_o = V_L` if :math:`V_I < V_F`. :math:`V_H` and :math:`V_L` are the maximum and minimum peak voltages of the opmp at :math:`V_{CC}`; as :numref:`tl082_datasheet_table` shows, for the TL08x at 15V, those are :math:`\pm 13.5V`. It is interesting to note that since the opamp has a very high input impedance, one can calculate :math:`V_F` as
 
+.. math:: V_F = V_{CC}\dfrac{R_1}{R_1 + R_2}
+
+.. _comparator_circuit_ideal :
+.. figure:: images/comparator_circuit_ideal.svg
+        :align: center
+        :width: 800px
+
+	. Ideal voltage-divider-fed comparator circuit
+
+This is the key: if we assume :math:`V_N = 2.289V` and hook up the AM de-modulator circuit to :math:`V_P` then we will achieve the very result we want: the output signal will be approximately VCC-2 when the PCB pads sensed capacitance is greater than 2.2pF (key is activated) and VSS+2 when it is not pressed. Producing a 2.389V level is easy, it can be done by using a resistive divider with 11.1k and 2.10k resistors, which will input a 2.389V into :math:`V_N`, which is very close to the 2.43V we seek. See the circuit below for the real implementation. Capacitor :math:`C_1` is used to prevent spikes on the 15V supply to interfere with the sensing action.
+
+.. _comparator_circuit_real :
 .. figure:: images/comparator_circuit_real.svg
         :align: center
         :width: 400px
 
-(3.3.1) Comparator circuit with hystheresis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	. Voltage-divider-fed comparator circuit using TL081, designed to trigger at the 2.389V (2.2pF) voltage mark.
+
+(3.4) Comparator circuit with hystheresis
+-----------------------------------------
+
+The circuit in figure :numref:`comparator_circuit_real` has a problem, however: it reacts very wildly to flickering or rippled voltages. :numref:`comparator_nonhystheresis_response` shows the time response of that circuit given a flickering input voltage.
+
+.. _comparator_nonhystheresis_response :
+.. figure:: images/comparator_nonhystheresis_response.svg
+        :align: center
+        :width: 400px
+
+	. Time response (top plot) of the circuit of :numref:`comparator_circuit_real` given a flickering input voltage (bottom plot).
+
+A very effective way to solve this issue is to add a feedback resistor, which generates a feature called **hystheresis**. :numref:`comparator_circuit_hystheresis_ideal` shows the circuit schematic and its input-output response.
+
+.. _comparator_circuit_hystheresis_ideal :
+.. figure:: images/comparator_circuit_hystheresis_ideal.svg
+        :align: center
+        :width: 800px
+
+	. Voltage-divider-feedback-ed comparator ideal circuit.
+
+What is interesting about this circuit is that it adds a sort of "conditional response". Applying the Kirchoff Current Law yields
+
+.. math:: \dfrac{V_0 - V_F}{R_F} + \dfrac{V_F}{R_2} = \dfrac{V_{CC} - V_F}{R_1} \Leftrightarrow V_F = \dfrac{\dfrac{V_{CC}}{R_1} - \dfrac{V}{R_F}}{\dfrac{1}{R_1} + \dfrac{1}{R_2} - \dfrac{1}{R_F}}
+
+Suppose that the circuit is working with a very low input voltage and it keeps growing. The output voltage is :math:`V_L`, so the feedback voltage is given by
+
+.. math:: V_{FH} = \dfrac{\dfrac{V_{CC}}{R_1} - \dfrac{V_L}{R_F}}{\dfrac{1}{R_1} + \dfrac{1}{R_2} - \dfrac{1}{R_F}}
+
+Meaning that the output voltage will only rise when the input voltage is :math:`V_{FH}`. Similarly, if the input voltage is too high and keeps getting lower, the feedback voltage is given by
+
+.. math:: V_{FL} = \dfrac{\dfrac{V_{CC}}{R_1} + \dfrac{V_H}{R_F}}{\dfrac{1}{R_1} + \dfrac{1}{R_2} - \dfrac{1}{R_F}}
+
+And then the output voltage will only lower when the input voltage is :math:`V_{FL}`.
+
+The magical thing about this circuit is that it has a small amplitude :math:`V_A`, around a central voltage :math:`V_C`, in the input thresholds that prevent it from reacting to flickering signals:
+
+.. math:: A = V_{FH} - V_{FL} = \dfrac{ \dfrac{V_H - V_L}{R_F}}{\dfrac{1}{R_1} + \dfrac{1}{R_2} - \dfrac{1}{R_F}}
+
+.. math:: V_C = \dfrac{\dfrac{V_{CC}}{R_1} - \dfrac{V_L + V_H}{2R_F}}{\dfrac{1}{R_1} + \dfrac{1}{R_2} - \dfrac{1}{R_F}}
+
+:numref:`comparator_circuit_hystheresis_ideal_response` shows the input-output-response of the comparator with hystheresis consiering the central voltage and voltage amplitude.
+
+.. _comparator_circuit_hystheresis_ideal_response :
+.. figure:: images/comparator_circuit_hystheresis_ideal_response.svg
+        :align: center
+        :width: 600px
+
+	. Voltage-divider-feedback-ed comparator ideal circuit input-output-response.
+
+The formulas, however, are pretty difficult, specially because they contain three resistance parameters to tune. What is generally done is to consider :math:`R_F` much greater than :math:`R_1` or :math:`R_2`, which is generally true. Under this assumption, we can approximate
+
+.. math:: A \approx \dfrac{1}{R_F}\dfrac{ V_H - V_L}{\dfrac{1}{R_1} + \dfrac{1}{R_2}}
+
+.. math:: V_C \approx \dfrac{\dfrac{V_{CC}}{R_1}}{\dfrac{1}{R_1} + \dfrac{1}{R_2}}
+
+What we want ultimately is that the amplitude voltage be bigger than the ripple amplitude, avoiding that the circuit respond too rapidly due to the ripple. As a security, measure, we generally adopt the amplitude as twice the maximum ripple. From :numref:`C2V_peaktopeak` we can assume that, at the desired actuation point (2.2pF), the ripple is almost 4mV; hence we want a hystheresis amplitude of 8mV. Using the same resistances from the non-hysteresis comparator yields
+
+.. math:: R_F \approx \dfrac{1}{8\times 10^{-3}}\dfrac{ 13.5 - \left(-13.5\right) }{\dfrac{1}{11.1\times 10^3} + \dfrac{1}{2.01\times 10^3}} = 5.743678489702517M\Omega
+
+Adopting the nearest value, :math:`5.76M\Omega`. If you feel uncomfortable with the approximations, you can use the non-approximated formulas:
+
+.. math:: A = \dfrac{ \dfrac{13.5 - \left(-13.5\right)}{5.76\times 10^6}}{\dfrac{1}{11.1\times 10^3} + \dfrac{1}{2.01\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 8.207749 mV
+
+.. math:: V_C = \dfrac{\dfrac{15}{11.1\times 10^3} - \dfrac{13.5-\left(-13.5\right)}{2\times 5.76\times 10^6}}{\dfrac{1}{11.1\times 10^3} + \dfrac{1}{2.01\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 2.294971102V
+
+Which are values close to the ones wanted: :math:`8mV` and :math:`2.389V`, but not quite there. We can adjust :math:`R_1` and :math:`R_2` slightly to :math:`R_1 = 10.7k\Omega` and :math:`R_2 = 2k\Omega`, and keeping :math:`R_F = 5.76M\Omega`, 
+
+.. math:: A = \dfrac{ \dfrac{13.5 - \left(-13.5\right)}{5.76\times 10^6}}{\dfrac{1}{10.7\times 10^3} + \dfrac{1}{2\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 7.900933mV
+
+.. math:: V_C = \dfrac{\dfrac{15}{10.7\times 10^3} - \dfrac{13.5 - \left(-13.5\right)}{2\times 5.76\times 10^6}}{\dfrac{1}{10.7\times 10^3} + \dfrac{1}{2\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 2.407013612V
+
+And those are much closer results.
 
 http://www.ti.com/lit/ug/tidu020a/tidu020a.pdf
 
