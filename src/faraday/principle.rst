@@ -438,7 +438,7 @@ The circuit in figure :numref:`comparator_circuit_real` has a problem, however: 
 
 	. Time response (top plot) of the circuit of :numref:`comparator_circuit_real` given a flickering input voltage (bottom plot).
 
-A very effective way to solve this issue is to add a feedback resistor, which generates a feature called **hystheresis**. :numref:`comparator_circuit_hystheresis_ideal` shows the circuit schematic and its input-output response.
+In keyboard practical terms, this means that the comparator will trigger the switch simulation circuit uninterruptly, which will make the MCU register the same key countless times inside a very small time space, an unwanted behavior we generally call "key chattering". A very effective way to solve this issue is to add a feedback resistor, which generates a feature called **hystheresis**. :numref:`comparator_circuit_hystheresis_ideal` shows the circuit schematic and its input-output response.
 
 .. _comparator_circuit_hystheresis_ideal :
 .. figure:: images/comparator_circuit_hystheresis_ideal.svg
@@ -497,6 +497,15 @@ Which are values close to the ones wanted: :math:`8mV` and :math:`2.389V`, but n
 .. math:: A = \dfrac{ \dfrac{13.5 - \left(-13.5\right)}{5.76\times 10^6}}{\dfrac{1}{10.7\times 10^3} + \dfrac{1}{2\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 7.900933mV
 
 .. math:: V_C = \dfrac{\dfrac{15}{10.7\times 10^3} - \dfrac{13.5 - \left(-13.5\right)}{2\times 5.76\times 10^6}}{\dfrac{1}{10.7\times 10^3} + \dfrac{1}{2\times 10^3} - \dfrac{1}{5.76\times 10^6}} = 2.407013612V
+
+:numref:`comparator_hystheresis_response` shows the output of this circuit to a flickering input signal. Comparing this response to :numref:`comparator_nonhystheresis_response` makes clear how the hystheresis makes the circuit much more well-behaved, making it much more well-suited to a rippled voltage like the one that the C2V outputs.
+
+.. _comparator_hystheresis_response :
+.. figure:: images/comparator_hystheresis_response.svg
+        :align: center
+        :width: 400px
+
+	. Time response (top plot) of the circuit of :numref:`comparator_circuit_real` given a flickering input voltage (bottom plot).
 
 And those are much closer results.
 
