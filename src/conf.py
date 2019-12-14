@@ -33,6 +33,9 @@ def setup(app):
 extensions = [
 ]
 
+numfig = True
+numfig_format={'figure': 'Figure %s'}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
