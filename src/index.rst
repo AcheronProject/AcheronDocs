@@ -22,6 +22,12 @@ Welcome to the Acheron Project documentation page!
 	license/license.rst
 
 .. toctree::
+	:caption: PCBWay sponsorship
+	:maxdepth: 2
+	
+	pcbway/sponsorship.rst
+
+.. toctree::
 	:maxdepth: 2
 	:caption: Acheron Library
 
