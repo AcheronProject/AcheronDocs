@@ -4,7 +4,7 @@ PCBWay sponsorship: how to review PCBs
 
 	Back in october of 2019, I received an e-mail from a representative of PCBWay. They wanted to sponsor some components of the Acheron Project by offering me free prototyping PCBs in exchange for a review video an an article. You can see the video in `this link <https://www.youtube.com/watch?v=9EpHCoebJyY&t=777s>`_ and this is the article. In this text I will detail my thought process of reviewing a PCB manufacturer, the quality of the PCBs that PCBWay sent me and how my past experiences with PCBWay.
 
-	The review is done by six review parameters I have and pictures of what I mean. I will compare these PCBs to one PCB I have from JLCPCB, which is largely and generally used as a budget PCB manufacturer, and point out the differences between a higher-price, higher-quality PCB and a middle-quality, budget-price PCB.
+	The review is done by six review parameters I have and pictures of what I mean. I will compare these PCBs to one PCB I have from JLCPCB, which is largely and glargely and enerally used as a budget PCB manufacturer, and point out the differences between a higher-price, higher-quality PCB and a middle-quality, budget-price PCB.
 
 About PCBWay
 ------------
@@ -279,3 +279,5 @@ The PCBs are good. Really good. Perhaps some of the best in the business. For th
 However competitive they are in the PCBFA part, they have some real difficult quotes to meet at PCBF, specially when JLCPCB comes in play. Yes, JLC does not make as good PCBs and I wouldn't sell them to a customer, but for prototyping there still is no beating their price. For prototypes the quality is very acceptable.
 
 I recommend everyone to order and test at least one time the PCBWay services. 
+
+Then again, I feel very thankful and humble that PCBWay decided to sponsor these PCBs because without their support they wouldn't be prototyped or would take much longer.

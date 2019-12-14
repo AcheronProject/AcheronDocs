@@ -279,3 +279,5 @@ The PCBs are good. Really good. Perhaps some of the best in the business. For th
 However competitive they are in the PCBFA part, they have some real difficult quotes to meet at PCBF, specially when JLCPCB comes in play. Yes, JLC does not make as good PCBs and I wouldn't sell them to a customer, but for prototyping there still is no beating their price. For prototypes the quality is very acceptable.
 
 I recommend everyone to order and test at least one time the PCBWay services. 
+
+Then again, I feel very thankful and humble that PCBWay decided to sponsor these PCBs because without their support they wouldn't be prototyped or would take much longer.
