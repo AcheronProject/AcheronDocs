@@ -119,6 +119,15 @@ To contrast with these, below is an image of the SharkPCB prototype version pre-
 
 It becomes very clear how in JLCPCB's case the silkscreen markings are not so clear and "fuzzy". Also note how the characters are much harder to read and spot.
 
+It is important to note that in some cases the silkscreen can be incomplete or misaligned, as in :numref:`silkscreen_7`. This is indicative of a very lazy production process and for a final product is not torelable.
+
+.. _silkscreen_7 :
+.. figure:: images/austin5.jpg
+        :align: center
+        :width: 800px
+
+	.  Picture showing a case od misaligned silkscreen.
+
 2. Soldermask
 -------------
 
@@ -143,6 +152,17 @@ In the video I forgot to add a section where I try to scrape the soldermask off,
         :width: 800px
 
 	. Silkscreen OSH logo on the SharkPCB prototype.
+
+Just like the silkscreen, the soldermaks can too be incomplete or misaligned, like in :numref:`soldermask_3`.  This is very detrimental to the PCB as misalignments in the soldermask can prevent it from doing its work, that is, avoiding solder bridges and wrong solders.
+
+.. _soldermask_3 :
+.. figure:: images/soldermask.jpg
+        :align: center
+        :width: 800px
+
+	. Picture showing a case of misaligned soldermask, Courtesy of Discord user @xyz .
+
+
 
 3. Soldering pads and metallization
 -----------------------------------
@@ -198,7 +218,7 @@ All in all, I find the pads in the PCBs I received from PCBWay very acceptable a
 4. PCB edges and castellated holes
 ----------------------------------
 
-	PCB edges are important because by evaluating how well that part was done tells us how precise the machines of the factory are. There are two main ways to evaluate drilling and edges on a PCB, the first being through holes that are near the edge and the second hthe second the second oles that literally cross the PCB edges, like castellated holes.
+	PCB edges are important because by evaluating how well that part was done tells us how precise the machines of the factory are. There are two main ways to evaluate drilling and edges on a PCB, the first being through holes that are near the edge and the second being the holes that literally cross the PCB edges, like castellated holes.
 
 	For instance, in both ArcticPCB and KeebsPCB, the backspace stabilizer holes are very near the PCB top edge, and the spacebar stabilizer holes also are. :numref:`holes_1` and :numref:`holes_2` show the backspace stab holes and the spacebar stab holes, respectively.
 
@@ -265,21 +285,21 @@ My experience with PCBWay has always been very easy. They are always on point an
 
 I had, however, one problem with PCBWay that brought some troubles. For a particular keyboard, the PCBs were ordered from them and a good portion of the PCBs came with very noticeable and deep scoffs and scratches. I immediately messaged PCBWay and they were fast to respond, sending new PCBs for free in a couple days. However, the new PCBs came scratched and scoffed too, so the vendor had to give every buyer a discount.
 
-As of today -- december 14, 2019 -- we have not received yet new PCBs again, but this has been a huge turndown. Their support is still good and we are waiting on a response, but the issue is we have a deadline to consider in delivering the keyboard PCBs.
+As of today -- December 14, 2019 -- we have not received yet new PCBs again, but this has been a huge turndown. Their support is still good and we are waiting on a response, but the issue is we have a deadline to consider in delivering the keyboard PCBs.
 
 At the end, PCBWays customer service is still the best that I have dealt with but the way this situation has been handled is very problematic.
 
-Onde we see a closing to this issue I will write it here.
+Once we see a closing to this issue I will write it here.
 
 Conclusion
 ----------
 
 Can I recommend PCBWay? Depends.
 
-The PCBs are good. Really good. Perhaps some of the best in the business. For the final selling products, I recommend them yes. Their customer support is also very good and responsive, solving questions and issues fast. Whatever issues I had with them are still open, so they have time to redeem themselves.
+The PCBs are good. Really good. Perhaps some of the best in the business. For the final selling products, I  do recommend them. Their customer support is also very good and responsive, solving questions and issues fast. Whatever issues I had with them are still open, so they have time to redeem themselves.
 
 However competitive they are in the PCBFA part, they have some real difficult quotes to meet at PCBF, specially when JLCPCB comes in play. Yes, JLC does not make as good PCBs and I wouldn't sell them to a customer, but for prototyping there still is no beating their price. For prototypes the quality is very acceptable.
 
-I recommend everyone to order and test at least one time the PCBWay services. 
+I recommend everyone to order and test the PCBWay services at least one tim e.
 
 Then again, I feel very thankful and humble that PCBWay decided to sponsor these PCBs because without their support they wouldn't be prototyped or would take much longer.
