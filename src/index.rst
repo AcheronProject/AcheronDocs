@@ -102,3 +102,10 @@ Welcome to the Acheron Project documentation page!
 
 	ouroboros/intro.rst
 	ouroboros/tests.rst
+
+.. toctree::
+	:maxdepth: 2
+	:caption: Faraday
+
+	faraday/intro.rst
+	faraday/principle.rst
