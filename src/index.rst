@@ -89,6 +89,8 @@ Welcome to the Acheron Project documentation page!
 	:caption: ArcticPCB
 
 	arctic/intro.rst
+	arctic/changelog.rst
+
 
 .. toctree::
 	:maxdepth: 2
