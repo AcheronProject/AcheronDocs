@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -93,6 +93,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../license/license.html">The Acheron Open Hardware License (AOHL) V1.2</a></li>
 </ul>
+<p class="caption"><span class="caption-text">PCBWay sponsorship</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pcbway/sponsorship.html">PCBWay sponsorship: how to review PCBs</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Acheron Library</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../acheronLib/introduction.html">Introduction</a></li>
@@ -139,6 +143,7 @@
 <p class="caption"><span class="caption-text">ArcticPCB</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../arctic/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arctic/changelog.html">Changelog</a></li>
 </ul>
 <p class="caption"><span class="caption-text">KeebsPCB</span></p>
 <ul>
@@ -153,6 +158,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-state">Current state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a></li>
 </ul>
 </li>
@@ -221,9 +228,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p><img alt="pcbBadge" src="https://img.shields.io/badge/PCB%20Version-Release%20Alpha-blue.svg?style=flat" />
-<img alt="protoBadge" src="https://img.shields.io/badge/Prototype%20Version-3.2.4-orange.svg?style=flat" />
-<img alt="firmwareBadge" src="https://img.shields.io/badge/Firmware-Passing-green.svg?style=flat" /></p>
+  <p><img alt="pcbBadge" src="https://img.shields.io/badge/PCB%20Version-Not%20AvailableAlpha-gray.svg?style=flat" />
+<img alt="protoBadge" src="https://img.shields.io/badge/Prototype%20Version-Not%20Available-gray.svg?style=flat" />
+<img alt="firmwareBadge" src="https://img.shields.io/badge/Firmware-Not%20Available-gray.svg?style=flat" /></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/faraday_logo.svg"><img alt="../_images/faraday_logo.svg" src="../_images/faraday_logo.svg" width="600px" /></a>
 </div>
@@ -232,13 +239,22 @@
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The Faraday PCB was conceived as a take on the Topre swiches for keyboards from the Acheron Project. Topre custom PCBs are pretty much nonexistant in this hobby (apart from some initiatives here and there); this is mainly due to the complicated and difficult to handle capacitive switch technology.</p>
-<p>Topre switches work basically by measuring the capacitance difference of a spring-loaded rubber dome system. In this regard, it has always boggled me on how the Leopold FC660C, Realforce and HHKB Pro keyboards implemented the capacitor sensing technology, through a rather complicated and overly sophisticated multiplexation circuitry. The FaradayPCB instead uses an analog capacitance-to-voltage (C2V) analog sensing circuitry, which is detailedly explained in the <a class="reference external" href="principle.html">principle section</a></p>
+<p>Topre switches work basically by measuring the capacitance difference of a spring-loaded rubber dome system. In this regard, it has always boggled me on how the Leopold FC660C, Realforce and HHKB Pro keyboards implemented the capacitor sensing technology, through a rather complicated and overly sophisticated multiplexation circuitry. The FaradayPCB instead uses an analog capacitance-to-voltage (C2V) analog sensing circuitry, which is detailedly explained in the <a class="reference external" href="principle.html">principle section</a> .</p>
+</div>
+<div class="section" id="current-state">
+<h2>Current state<a class="headerlink" href="#current-state" title="Permalink to this headline">¶</a></h2>
+<p>The Faraday60 is still under development and is not yet released. The simulations are stil being perfected and the sensing circuitry designed. However, one-off prototypes of the switches were already made and the system is proven to work; there were some implementation flaws, however.</p>
+<p>The roadmap for this first version is to be an HHKB Pro 2 replacement PCB. This will also include a replacement for the USB hub daughterboard that the HHKB has. In its first intended stage, the Faraday60 will feature a USB mini-B connector, no bluetooth connection, and a USB2.0 hub. The main feature, however, is integrating QMK compatibility with the famous electrocapacitive Topre switches.</p>
+</div>
+<div class="section" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
+<p>The initial IC page for the Faraday60 was made in a <a class="reference external" href="https://geekhack.org/index.php?topic=105035">GeekHack post</a> . Some feedback from the community was taken and suggestions ensued. After this IC, the design was revamped in some of its features.</p>
+<p>As of may 2020 there is still no way to obtain a Faraday PCB.</p>
 </div>
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Steve from WoodCables, who funded de project and made it grow bigger than I had never imagined;</p></li>
-<li><p>Alan Pocklington, also known as u/ajp10304, who built a prototype himself and offered to test the preliminary software to hasten the GB and gave immense feedback on documentation and component positioning.</p></li>
+<li><p>Upas, from CannonKeys, who helped immensely by giving feedback and tips for this PCB.</p></li>
 </ul>
 </div>
 </div>
