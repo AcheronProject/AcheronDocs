@@ -92,6 +92,12 @@
 
 .. toctree::
 	:maxdepth: 2
+	:caption: Lasgweloth
+
+	lasgweloth/intro.rst
+
+.. toctree::
+	:maxdepth: 2
 	:caption: Ouroboros
 
 	ouroboros/intro.rst
