@@ -1,113 +1,65 @@
-.. figure:: images/acheronDocs.svg
+.. figure:: images/acheronLong.svg
+	:align: center
+	:width: 1200px
 
-************
-Acheron Docs
-************
+********
+Overview
+********
 
-Welcome to the Acheron Project documentation page!
+Introduction
+============
 
-.. toctree::
-	:caption: The Acheron Project
-	:maxdepth: 2
+The **Acheron Project** is a compendium of ECAD and MCAD resources for custom keyboards and audio equipment designed by Álvaro "Gondolindrim" Volpato with collaborators (except for some 3D models), that include
 
-	overview.rst
-	faq.rst
-	changelog.rst
-        technical.rst
+- Printed Circuit Boards (PCBs);
 
-.. toctree::
-	:caption: Acheron OHL
-	:maxdepth: 2
+- KiCad footprints and symbols;
 
-	license/license.rst
+- Graphic resources like logos;
 
-.. toctree::
-	:caption: PCBWay sponsorship
-	:maxdepth: 2
-	
-	pcbway/sponsorship.rst
+- 3D models
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Acheron Library
+The aim of the project is to build a database of freely available resources for keyboard enthusiasts and audiophiles, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
-	acheronLib/introduction.rst
-	acheronLib/3dmodels.rst
-	acheronLib/changelog.rst
+Getting started
+===============
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Anubis
+The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the `Acheron Open-Hardware License V1.1 <license/license.html>`_, under which all the Acheron Project is licensed.
 
-	anubis/intro.rst
+Basically you can use the files however you would like, be it for commercial or personal uses. There are only small requirements:
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Shark
+- If you are going to use the files commercially, please issue an email or an Issue through GitHub stating what you are selling and how many units (this is mostly for quality control).
 
-	shark/intro.rst
-	shark/changelog.rst
-	shark/cases.rst
-	shark/ack.rst
-	shark/prototypes.rst
-	shark/gerbers.rst
+- If you change the files in any way, please remove the Acheron-related logos and names from the PCB and submit the changes you have made.
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Austin
+Feel free to contact Gondolindrim (the main Acheron developer) for any help.
 
-	austin/intro.rst
-	austin/changelog.rst
+Main project contributors
+=========================
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Doddle60
+- Álvaro "Gondolindrim" Volpato
 
-	doddle60/intro.rst
-	doddle60/files.rst
-	doddle60/changelog.rst
+- Raphael "BlindJoker" Nepomuceno
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Elevate
+- Felipe "MrKeebs" Coury
 
-	elevate/introduction.rst
-	elevate/bom.rst
-	elevate/gerbers.rst
-	elevate/changelog.rst
+- Raphael "ArcticFox" Hochheim
 
-.. toctree::
-	:maxdepth: 2
-	:caption: Elongate
+How to reach Gondolindrim
+=========================
 
-	elongate/introduction.rst
-	elongate/bom.rst
-	elongate/manu.rst
+You can hit me up at:
 
-.. toctree::
-	:maxdepth: 2
-	:caption: ArcticPCB
+- Email: ``alvaro.augusto.volpato@gmail.com``
+- Discord: ``Gondolindrim#9738``
+- Reddit: ``u/gondolindrim``
+- Geekhack: ``Gondolindrim``
 
-	arctic/intro.rst
-	arctic/changelog.rst
+Feel free to ask me questions and interact!
 
+About this documentation
+========================
 
-.. toctree::
-	:maxdepth: 2
-	:caption: KeebsPCB
+This documentation was built using Sphinx and the ReadTheDocs theme. The source files can be found at the Acheron Project `Github repository <https://github.com/Gondolindrim/AcheronProject>`_.
 
-	keebs/intro.rst
-
-.. toctree::
-	:maxdepth: 2
-	:caption: Ouroboros
-
-	ouroboros/intro.rst
-	ouroboros/tests.rst
-
-.. toctree::
-	:maxdepth: 2
-	:caption: Faraday
-
-	faraday/intro.rst
-	faraday/principle.rst
+The idea behind writing this documentation came from the other collaborators, not me particularly. Truth is I have never imagined that the Acheron Project and its components grew big enough for other people to use it, and hence I needed to document the design process.
