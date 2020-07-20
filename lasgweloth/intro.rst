@@ -34,7 +34,7 @@ The shapes I came up with are illustrated in the next figures. They show the mou
 
 	.. figure:: ../images/lasgweloth/cutouts.svg
 		:align: center
-		:width: 1200px
+		:width: 1000px
 
 Supported layouts
 =================
