@@ -18,7 +18,7 @@
 	:maxdepth: 2
 	
 	pcbway/sponsorship.rst
-
+	reset_article/principle.rst
 .. toctree::
 	:maxdepth: 2
 	:caption: Acheron Library
