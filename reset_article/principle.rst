@@ -43,7 +43,7 @@ The problem then becomes: **how to develop a user-friendly way to make available
 The way we select the boot region in STM32 devices are through external pins and certain registers. In STM32F0xx devices, there are two external pins, **nRST** and **BOOT0**, and two memory registers **nBOOT1** and **nBOOT0**. **nRST** is the hardware reboot pin: when this pin is pulled low, all but some registers in the MCU are reset. When it gets back to normal high the MCU starts from memory address 0x00000000 and the bootloader program takes over. At the fourth rising edge of the system clock the **BOOT0**, **nBOOT0** and **nBOOT1** values are sampled and the boot option is determined according to the table :numref:`reset_table` below.
 
 .. _reset_table :
-.. figure:: images/reset_table.svg
+.. figure:: images/reset_table.png
         :align: center
         :width: 600px
 
@@ -61,7 +61,7 @@ Hence, the reset circuitry we will use is very simple. It has only two interacti
 Reference [2]_ in page 30 shows a very simple yet effective way to achieve this in the reference design. This vanilla circuit is depicted in figure :numref:`vanilla_reset` .
 
 .. _vanilla_reset :
-.. figure:: images/vanilla_reset.svg
+.. figure:: images/vanilla_reset.png
         :align: center
         :width: 400px
 
@@ -70,7 +70,7 @@ Reference [2]_ in page 30 shows a very simple yet effective way to achieve this 
 This circuit is very simple and only needs a couple components. The pulling of nRST is done by a simple push button and a capacitor to avoid weird transients; the BOOT0 selection is done by a selector switch. In some custom keyboards like `the Sagittarius <https://geekhack.org/index.php?topic=107023>`_, this employs an SPDT switch:
 
 .. _sagittarius_reset :
-.. figure:: images/sagittarius_reset.svg
+.. figure:: images/sagittarius_reset.png
         :align: center
         :width: 400px
 
@@ -81,7 +81,7 @@ On these boards, to flash the MCU, the user changes the SPDT to position one and
 On BluePill boards, this is done through a simple jumper selector.
 
 .. _bluepill_reset :
-.. figure:: images/bluepill_reset.svg
+.. figure:: images/bluepill_reset.png
         :align: center
         :width: 400px
 
@@ -90,7 +90,7 @@ On BluePill boards, this is done through a simple jumper selector.
 The vanilla circuit of :numref:`vanilla_reset` can be modified just a little bit to make it more reliable, by addding a 100R resistor in series with the nRST button to avoid fast voltage changes in its capacitor and adding a little 100n capacitor to BOOT0 to avoid any fast transients, since it is a CMOS-type input.
 
 .. _vanilla_reset_gondo :
-.. figure:: images/vanilla_reset_gondo.svg
+.. figure:: images/vanilla_reset_gondo.png
         :align: center
         :width: 400px
 
@@ -104,7 +104,7 @@ The problem of this vanilla circuit is that it requires way too many operations 
 In middle development of the SharkPCB, a user by the name of ishtob (can't find his GitHub account or his Discord anymore, please contact me so I can credit you properly ish!) blessed me with a piece of his knowledge and shared a reset circuit he was working on. A version of this circuit is depicted in :numref:`reset1`.
 
 .. _reset1 :
-.. figure:: images/reset1.svg
+.. figure:: images/reset1.png
         :align: center
         :width: 600px
 
@@ -112,7 +112,7 @@ In middle development of the SharkPCB, a user by the name of ishtob (can't find 
 
 The circuit is pretty clever; the idea is that the user will need to interact with the PCB only once to get it to work. When the push button is presset, the transistor will drive nRST to ground immediately; the reset and capacitor by BOOT0 will store voltage. By the time the user lets go of the button, BOOT0 is charged up and nRST is low. The MCU then goes into bootloader mode.
 
-There are two caveats with this circuit. The first is that the diode is absolutely needed; without it, the charged voltage across the BOOT0 capacitor can maintain the transistor conducting and the MCU will not reset before BOOT0 loses its voltage to resistor decay. The second is that the transistor used has to have a base resistor, or else the base and emitter will be shorted -- a bipolar transistor is basically two diodes back-to-back -- and the circuit will never work.
+There are two caveats with this circuit. The first is that the diode is absolutely needed; without it, the charged voltage across the BOOT0 capacitor can maintain the transistor conducting and the MCU will not reset before BOOT0 loses its voltage to resistor decay. The second is that the transistor used has to have a base resistor, or else the base and emitter will be shorted -- a bipolar transistor is basically two diodes back-to-back -- and the circuit will never work; using a pre-biased transistor (also known as digital transistor) like the DTC123JK helps to keep component count lower due to the integrated resistors.
 
 One might point out that this circuit only does half the job -- it is able to get the MCU into DFU, but not able to reset the program. Well, as it turns out, resetting the MCU is not needed *per se*. See, QMK has software reset capabilities, so once the MCU is flashed it automatically resets. The user is also able to reset the MCU through a key combination, making use of the Boot Magic features of QMK.
 
@@ -126,7 +126,7 @@ In order to add a reset-and-DFU capability to the circuit, I had to turn my eyes
 What I did was simple, yet complex. The addittion of a resistor between the diode and the BOOT0 branch will enable the RC circuit of BOOT0 to act as a timed charge RC circuit which voltage rises across time as the push button is maintained pressed.
 
 .. _reset2 :
-.. figure:: images/reset2.svg
+.. figure:: images/reset2.png
         :align: center
         :width: 600px
 
@@ -139,7 +139,7 @@ The form and charge/decay rates of the BOOT0 pin are given by the R1, R2 and C1 
 To determine the exact times, first we need to know the logig level thresholds of the BOOT0 pin. In the MCU datasheet [3]_ one can see the following table:
 
 .. _thresholds_table :
-.. figure:: images/thresholds_table.svg
+.. figure:: images/thresholds_table.png
         :align: center
         :width: 600px
 
@@ -148,7 +148,7 @@ To determine the exact times, first we need to know the logig level thresholds o
 The table shows that using a feeding voltage of 3.3b,  BOOT0 is considered low for voltages lower than :math:`0.3\times 3.3 - 0.3 = 0.69V` and high for voltages higher than :math:`0.2\times 3.3 + 0.95 = 1.61V`. The circuit of :numref:`reset2` was simulated usin LTSpice XVII; the simulation results are detailed below.
 
 .. _reset2_simulation :
-.. figure:: images/nominal_reset_plot.svg
+.. figure:: images/nominal_reset_plot.png
         :align: center
         :width: 800px
 
@@ -170,7 +170,7 @@ Consider then the three comparison cases:
 - (3) "Fast" case. Pretty much the opposite of the slow case: C1 and R1 are at the lowest values 80µF and 31.35kΩ and R1 is at its highest 105kΩ, which is the fastest charging possible variation.
 
 .. _reset2_simulation_variance :
-.. figure:: images/variance_reset_plot.svg
+.. figure:: images/variance_reset_plot.png
         :align: center
         :width: 900px
 
@@ -183,13 +183,57 @@ This means that by using the circuit of :numref:`reset2`, if the user presses th
 (3) Handling the discharge issue
 ================================
 
-.. _reset3 :
-.. figure:: images/reset3.svg
+The circuit of :numref:`reset2` still has an issue: the discharge of the BOOT0 circuit. The charging of the circuit sure does serve our purpose, but what happens *after* the MCU has reset or entered DFU mode? Of course, the BOOT0 circuit discharges -- the energy charged in the C1 capacitor makes its way to ground with R2. However, the discharge rate of this circuit is way too slow.
+
+:numref:`discharge_simulation` shows thhe simulation of the reset circuit during and after the push button is pressed. This simulation shows that, after the button is released, the BOOT0 takes 10 seconds to fall back to the low logic level threshold. Picture the following situation: the user holds the button and gets the MCU into DFU mode, only to realize that that was not the intention, they wanted really only to reset the circuit. Well, now they give the button a fast press and, surprise: the MCU still goes to DFU when the user didnt hold the button. Since the BOOT0 pin was charged, they must now wait 20 seconds to press again.
+
+A vendor might see the disaster this situation can become: the user now thinks they have a faulty PCB and proceed to rage on the vendor website about how the PCB does not work as intended and they want a refund. 
+
+.. _discharge_simulation :
+.. figure:: images/nominal_falltime.png
         :align: center
-        :width: 600px
+        :width: 800px
+
+	.Simulation of the reset circuit of :numref:`reset2` during and after the pushbutton is pressed.
+
+In order to fast discharge the BOOT0 pin, an additional PNP transistor is used, generating the circuit in :numref:`reset3` . The use of the MUN5335DW1T1G integrated circuit makes it possible to integrate both the pre-biased NPN transistor for the nRST pin as well as the PNP transistor for the BOOT0 discharge in the same SOT-23-6 package, keeping component count the same as the old circuit without the discharge.
+
+.. _reset3 :
+.. figure:: images/reset3.png
+        :align: center
+        :width: 800px
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
+.. _reset5 :
+.. figure:: images/mun_simulation.png
+        :align: center
+        :width: 800px
+
+	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+
+The idea here is that when the push button is relased, the PNP transistor will conduct and drive BOOT0 immediately to zero, therefore dis-charging the BOOT0 pin and making it possible to re-activate the circuit.
+
+.. _reset5 :
+.. figure:: images/reset5.png
+        :align: center
+        :width: 800px
+
+	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+
+.. _reset4 :
+.. figure:: images/reset4.png
+        :align: center
+        :width: 800px
+
+	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+
+.. _reset4 :
+.. figure:: images/reset6.png
+        :align: center
+        :width: 800px
+
+	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
 
 References
