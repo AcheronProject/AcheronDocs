@@ -43,7 +43,7 @@ The problem then becomes: **how to develop a user-friendly way to make available
 The way we select the boot region in STM32 devices are through external pins and certain registers. In STM32F0xx devices, there are two external pins, **nRST** and **BOOT0**, and two memory registers **nBOOT1** and **nBOOT0**. **nRST** is the hardware reboot pin: when this pin is pulled low, all but some registers in the MCU are reset. When it gets back to normal high the MCU starts from memory address 0x00000000 and the bootloader program takes over. At the fourth rising edge of the system clock the **BOOT0**, **nBOOT0** and **nBOOT1** values are sampled and the boot option is determined according to the table :numref:`reset_table` below.
 
 .. _reset_table :
-.. figure:: images/reset_table.png
+.. figure:: images/png/reset_table.png
         :align: center
         :width: 600px
 
@@ -61,7 +61,7 @@ Hence, the reset circuitry we will use is very simple. It has only two interacti
 Reference [2]_ in page 30 shows a very simple yet effective way to achieve this in the reference design. This vanilla circuit is depicted in figure :numref:`vanilla_reset` .
 
 .. _vanilla_reset :
-.. figure:: images/vanilla_reset.png
+.. figure:: images/png/vanilla_reset.png
         :align: center
         :width: 400px
 
@@ -70,7 +70,7 @@ Reference [2]_ in page 30 shows a very simple yet effective way to achieve this 
 This circuit is very simple and only needs a couple components. The pulling of nRST is done by a simple push button and a capacitor to avoid weird transients; the BOOT0 selection is done by a selector switch. In some custom keyboards like `the Sagittarius <https://geekhack.org/index.php?topic=107023>`_, this employs an SPDT switch:
 
 .. _sagittarius_reset :
-.. figure:: images/sagittarius_reset.png
+.. figure:: images/png/sagittarius_reset.png
         :align: center
         :width: 400px
 
@@ -81,7 +81,7 @@ On these boards, to flash the MCU, the user changes the SPDT to position one and
 On BluePill boards, this is done through a simple jumper selector.
 
 .. _bluepill_reset :
-.. figure:: images/bluepill_reset.png
+.. figure:: images/png/bluepill_reset.png
         :align: center
         :width: 400px
 
@@ -90,7 +90,7 @@ On BluePill boards, this is done through a simple jumper selector.
 The vanilla circuit of :numref:`vanilla_reset` can be modified just a little bit to make it more reliable, by addding a 100R resistor in series with the nRST button to avoid fast voltage changes in its capacitor and adding a little 100n capacitor to BOOT0 to avoid any fast transients, since it is a CMOS-type input.
 
 .. _vanilla_reset_gondo :
-.. figure:: images/vanilla_reset_gondo.png
+.. figure:: images/png/vanilla_reset_gondo.png
         :align: center
         :width: 400px
 
@@ -104,7 +104,7 @@ The problem of this vanilla circuit is that it requires way too many operations 
 In middle development of the SharkPCB, a user by the name of ishtob (can't find his GitHub account or his Discord anymore, please contact me so I can credit you properly ish!) blessed me with a piece of his knowledge and shared a reset circuit he was working on. A version of this circuit is depicted in :numref:`reset1`.
 
 .. _reset1 :
-.. figure:: images/reset1.png
+.. figure:: images/png/reset1.png
         :align: center
         :width: 600px
 
@@ -126,9 +126,9 @@ In order to add a reset-and-DFU capability to the circuit, I had to turn my eyes
 What I did was simple, yet complex. The addittion of a resistor between the diode and the BOOT0 branch will enable the RC circuit of BOOT0 to act as a timed charge RC circuit which voltage rises across time as the push button is maintained pressed.
 
 .. _reset2 :
-.. figure:: images/reset2.png
+.. figure:: images/png/reset2.png
         :align: center
-        :width: 600px
+        :width: 800px
 
 	.Improvement over ishtob's original reset circuit.
 
@@ -139,7 +139,7 @@ The form and charge/decay rates of the BOOT0 pin are given by the R1, R2 and C1 
 To determine the exact times, first we need to know the logig level thresholds of the BOOT0 pin. In the MCU datasheet [3]_ one can see the following table:
 
 .. _thresholds_table :
-.. figure:: images/thresholds_table.png
+.. figure:: images/png/thresholds_table.png
         :align: center
         :width: 600px
 
@@ -148,7 +148,7 @@ To determine the exact times, first we need to know the logig level thresholds o
 The table shows that using a feeding voltage of 3.3b,  BOOT0 is considered low for voltages lower than :math:`0.3\times 3.3 - 0.3 = 0.69V` and high for voltages higher than :math:`0.2\times 3.3 + 0.95 = 1.61V`. The circuit of :numref:`reset2` was simulated usin LTSpice XVII; the simulation results are detailed below.
 
 .. _reset2_simulation :
-.. figure:: images/nominal_reset_plot.png
+.. figure:: images/png/nominal_reset_plot.png
         :align: center
         :width: 800px
 
@@ -170,15 +170,35 @@ Consider then the three comparison cases:
 - (3) "Fast" case. Pretty much the opposite of the slow case: C1 and R1 are at the lowest values 80µF and 31.35kΩ and R1 is at its highest 105kΩ, which is the fastest charging possible variation.
 
 .. _reset2_simulation_variance :
-.. figure:: images/variance_reset_plot.png
+.. figure:: images/png/variance_reset_plot.png
         :align: center
         :width: 900px
 
 	.Time simulation of the circuit in :numref:`reset2` considering component tolerance-added "slow" and "fast" cases.
 
-:numref:`reset2_simulation_variance` shows the simulation of the three cases. The simulations show that the fastest time the circuit will cross the low logic levle maximum threshold is at approximately 0.8s, while the longest time the circuit will take to cross the high logic level minimum voltage is approximately 3.8 seconds.
+:numref:`reset2_simulation_variance` shows the simulation of the three cases. The simulations show that the fastest time the circuit will cross the low logic levle maximum threshold is at approximately 0.75s, while the longest time the circuit will take to cross the high logic level minimum voltage is approximately 4.5 seconds. This means that by using the circuit of :numref:`reset2`, if the user presses the button for no more than 0.75 seconds the MCU is guaranteed to reset, and if he or she presses the button for longer than 4.5 seconds the MCU is guaranteed to DFU.
 
-This means that by using the circuit of :numref:`reset2`, if the user presses the button for no more than 0.8 seconds the MCU is guaranteed to reset, and if he or she presses the button for longer than 3.8 seconds the MCU is guaranteed to DFU.
+These times are, however, not to my liking. As can be seen in :numref:`reset2_simulation_variance`, the spread of timings between the curves is way too high. In order to solve that, I changed the tolerances of the resistors to 1% and the tolerance of the capacitor to 5%. 
+
+.. _reset2_tight :
+.. figure:: images/png/reset2_tighter.png
+        :align: center
+        :width: 800px
+
+	.Improved reset circuit with tighter tolerances.
+
+
+:numref:`reset2_simulation_variance_tight` shows the simulation of the same circuit with the tighter tolerances, which is much, much better: now the needed times for guaranteed low and high levels are 0.94 seconds (which can be considered 1s for a human reaction time) and 3.8 seconds.
+
+.. _reset2_simulation_variance_tight :
+.. figure:: images/png/variance_reset_plot_tight.png
+        :align: center
+        :width: 900px
+
+	.Time simulation of the circuit in :numref:`reset2_tight` which has tighter component tolerances.
+
+The choice of tighter or normal components is really a designer choice, but I highly recommend the use of this tighter circuit since the price raise is really not much (maybe a dollar?) and the circuit becomes much, much more reliable.
+
 
 (3) Handling the discharge issue
 ================================
@@ -190,7 +210,7 @@ The circuit of :numref:`reset2` still has an issue: the discharge of the BOOT0 c
 A vendor might see the disaster this situation can become: the user now thinks they have a faulty PCB and proceed to rage on the vendor website about how the PCB does not work as intended and they want a refund. 
 
 .. _discharge_simulation :
-.. figure:: images/nominal_falltime.png
+.. figure:: images/png/nominal_falltime.png
         :align: center
         :width: 800px
 
@@ -199,14 +219,14 @@ A vendor might see the disaster this situation can become: the user now thinks t
 In order to fast discharge the BOOT0 pin, an additional PNP transistor is used, generating the circuit in :numref:`reset3` . The use of the MUN5335DW1T1G integrated circuit makes it possible to integrate both the pre-biased NPN transistor for the nRST pin as well as the PNP transistor for the BOOT0 discharge in the same SOT-23-6 package, keeping component count the same as the old circuit without the discharge.
 
 .. _reset3 :
-.. figure:: images/reset3.png
+.. figure:: images/png/reset3.png
         :align: center
         :width: 800px
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
 .. _reset5 :
-.. figure:: images/mun_simulation.png
+.. figure:: images/png/mun_simulation.png
         :align: center
         :width: 800px
 
@@ -215,23 +235,23 @@ In order to fast discharge the BOOT0 pin, an additional PNP transistor is used, 
 The idea here is that when the push button is relased, the PNP transistor will conduct and drive BOOT0 immediately to zero, therefore dis-charging the BOOT0 pin and making it possible to re-activate the circuit.
 
 .. _reset5 :
-.. figure:: images/reset5.png
+.. figure:: images/png/reset5.png
         :align: center
         :width: 800px
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
 .. _reset4 :
-.. figure:: images/reset4.png
+.. figure:: images/png/reset4.png
         :align: center
         :width: 800px
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
 .. _reset4 :
-.. figure:: images/reset6.png
+.. figure:: images/png/reset6.png
         :align: center
-        :width: 800px
+        :width: 1000px
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
