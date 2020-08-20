@@ -63,7 +63,7 @@ Reference [2]_ in page 30 shows a very simple yet effective way to achieve this 
 .. _vanilla_reset :
 .. figure:: images/png/vanilla_reset.png
         :align: center
-        :width: 400px
+        :width: 600px
 
 	. Vanilla reset circuit recommended by ST in [2]_.
 
@@ -72,7 +72,7 @@ This circuit is very simple and only needs a couple components. The pulling of n
 .. _sagittarius_reset :
 .. figure:: images/png/sagittarius_reset.png
         :align: center
-        :width: 400px
+        :width: 600px
 
 	. Implementation of the vanilla reset circuit using an SPDT switch.
 
@@ -92,7 +92,7 @@ The vanilla circuit of :numref:`vanilla_reset` can be modified just a little bit
 .. _vanilla_reset_gondo :
 .. figure:: images/png/vanilla_reset_gondo.png
         :align: center
-        :width: 400px
+        :width: 600px
 
 	. Slight modification from the vanilla reset circuit recommended by ST.
 
@@ -106,7 +106,7 @@ In middle development of the SharkPCB, a user by the name of ishtob (can't find 
 .. _reset1 :
 .. figure:: images/png/reset1.png
         :align: center
-        :width: 600px
+        :width: 800px
 
 	. ishtob's original reset circuit for STM32.
 
@@ -193,7 +193,7 @@ These times are, however, not to my liking. As can be seen in :numref:`reset2_si
 .. _reset2_simulation_variance_tight :
 .. figure:: images/png/variance_reset_plot_tight.png
         :align: center
-        :width: 900px
+        :width: 1000px
 
 	.Time simulation of the circuit in :numref:`reset2_tight` which has tighter component tolerances.
 
@@ -202,6 +202,9 @@ The choice of tighter or normal components is really a designer choice, but I hi
 
 (3) Handling the discharge issue
 ================================
+
+(3.1) Describing the discharge issue
+------------------------------------
 
 The circuit of :numref:`reset2` still has an issue: the discharge of the BOOT0 circuit. The charging of the circuit sure does serve our purpose, but what happens *after* the MCU has reset or entered DFU mode? Of course, the BOOT0 circuit discharges -- the energy charged in the C1 capacitor makes its way to ground with R2. However, the discharge rate of this circuit is way too slow.
 
@@ -212,11 +215,16 @@ A vendor might see the disaster this situation can become: the user now thinks t
 .. _discharge_simulation :
 .. figure:: images/png/nominal_falltime.png
         :align: center
-        :width: 800px
+        :width: 900px
 
 	.Simulation of the reset circuit of :numref:`reset2` during and after the pushbutton is pressed.
 
+(3.2) Using the MUN533
+----------------------
+
 In order to fast discharge the BOOT0 pin, an additional PNP transistor is used, generating the circuit in :numref:`reset3` . The use of the MUN5335DW1T1G integrated circuit makes it possible to integrate both the pre-biased NPN transistor for the nRST pin as well as the PNP transistor for the BOOT0 discharge in the same SOT-23-6 package, keeping component count the same as the old circuit without the discharge.
+
+The idea here is that when the push button is relased, the PNP transistor will conduct and drive BOOT0 immediately to zero, therefore dis-charging the BOOT0 pin and making it possible to re-activate the circuit.
 
 .. _reset3 :
 .. figure:: images/png/reset3.png
@@ -225,30 +233,137 @@ In order to fast discharge the BOOT0 pin, an additional PNP transistor is used, 
 
 	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
 
-.. _reset5 :
+:numref:`mun_simulation` shows the BOOT0 and NRST voltages as the push button is pressed and released. The keen reader will however be able to find the issue with this circuit: the added PNP transistor does what it was supposed to; the BOOT0 pin with the MUN component indeed discharges way faster than without it. However, the addition of this PNP transistor also comes with the addition of two transistors that bias it, both internal to the MUN device.
+
+These transistors have two detrimental effects.
+
+- First, the 47k resistor and the 2.3k act in parallel with the 33k resistor, making a much lower parallel resistance and interfering with the charge pattern of the BOOT0 pin in such a way that it charges way faster than the nominal case, making it impossible for the user to release the button before BOOT0 is charged, effectively removing the circuit's capability to reset the MCU;
+- Second, the internal PNP resistors also make a path that bypasses the D1 diode which was supposed to keep the BOOT0 from maintaining the base of the NPN transistor charged. With this new path, the voltage and the NPN base is maintained, causing the NRST voltage to not rise immediately, but takes near a second more to rise again.
+
+.. _mun_simulation :
 .. figure:: images/png/mun_simulation.png
         :align: center
-        :width: 800px
+        :width: 1000px
 
-	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+	.Time simulation of the circuit in :numref:`reset3` during a 5 second press of the push button and release, comparing NRST and BOOT0 signals for this case and the nominal circuit of :numref:`reset2`.
 
-The idea here is that when the push button is relased, the PNP transistor will conduct and drive BOOT0 immediately to zero, therefore dis-charging the BOOT0 pin and making it possible to re-activate the circuit.
+(3.3) Using the UMF5N
+---------------------
+
+The apparent solution to this problem would be to adopt a PNP transistor that does not integrate the biasing resistors. `ROHM Semiconductors' UMF5N <https://www.rohm.com/products/transistors/complex-transistors/umf5n-product>`_ is a device which houses a pre-biased NPN and a non-biased PNP, that is, a NPN that has the internal transistors but a PNP that does not.
 
 .. _reset5 :
 .. figure:: images/png/reset5.png
         :align: center
         :width: 800px
 
-	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+	.PNP-discharged circuit of :numref:`reset3` using the UMF5N, which contains a non-biased PNP transistor.
+
+The :numref:`umf5n_simulation` shows the time simulation of the circuit. Since the UMF5N does not have the biasing resistors, hence does not make a current path that bypasses the diode D1, the charging profile of BOOT0 is kept the same as the nominal case. The PNP transistor does the job of discharging the circuit much faster than the nominal case, and the NRST voltage rises as fast as the nominal case.
+
+.. _umf5n_simulation :
+.. figure:: images/png/umf5n_simulation.png
+        :align: center
+        :width: 1000px
+
+	.Time simulation of the circuit in :numref:`reset5` using the UMF5N device comparing the BOOT0 voltage against the nominal case of :numref:`reset2`.
+
+(3.4) using a jfet
+------------------
+
+I still was not *quite happy* with how the UMF5N device solves the issue. As can be seen from the simulation in :numref:`umf5n_simulation`, the BOOT0 voltage does fall profusely in the first seconds after the push button is released, but adter some time it still looks like it holds some voltage (approximately 0.3V). That is due to the bipolar transistor's circuit characteristics. In simple terms, a bipolar transistor is fundamentally two diodes constructed back-to-back; this means the bipoalr transistor has an exponential characteristic such that the lower the base voltage, the collector current is diminished exponentially. After a while, when the BOOT0 circuit is already discharged, the PNP transistor cannot conduct current fast enough to make the BOOT0 discharge completely to zero volts.
+
+The solution I found was to use a JFET transistor, which are known to be unparalleled analog switches. The circuit with the JFET as an analog discharge switch is shown in :numref:`reset7`.
+
+.. _reset7 :
+.. figure:: images/png/reset7.png
+        :align: center
+        :width: 800px
+
+	.Schematic of the discharged-reset circuit using a J270 JFET instead of a bipolar transistor for the BOOT0 discarge.
+
+.. _jfet_simulation :
+.. figure:: images/png/jfet_discharge_simulation.png
+        :align: center
+        :width: 1000px
+
+	.Time simulation of the circuit in :numref:`reset7` during a 5 second press of the push buttom and release, showing BOOT0 and nRST pins voltages.
+
+As the simulation shows, the JFET does the job perfectly: it *instantly* grounds BOOT0, discharging it immediately. The problem now is... it does the job way too well. :numref:`jfet_simulation_zoom` shows the zoomed-in version of the plot in :numref:`jfet_simulation`. The plot shows that the JFET discharges BOOT0 so fast that the pin reaches its low threshole even before nRST reaches its high, meaning that the when the MCU samples BOOT0 -- after nRST has reached high logic -- BOOT0 will already be at low state. This means that the circuit will never go into DFU mode, only reset to flash!
+
+.. _jfet_simulation_zoom :
+.. figure:: images/png/jfet_discharge_simulation_zoom.png
+        :align: center
+        :width: 1000px
+
+	.Zoomed-in exceprt of the plot in :numref:`jfet_simulation` showing the rise and falltimes of BOOT0 and nRST and their thresholds during the simulation of the JFET-discharged circuit of :numref:`reset7`.
+
+(3.5) JFET reset with delayed discharge
+---------------------------------------
+
+To delay the JFET discharge time, all that is needed is to add a resistor to the JFET, as shown in :numref:`reset4`. The time simulation of this circuit to a press, hold and release of the push button is shown in :numref:`delayed_discharge_simulation`.
 
 .. _reset4 :
 .. figure:: images/png/reset4.png
         :align: center
         :width: 800px
 
-	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+	.Schematic of the reset circuit using a delayed-discharge JFET mechanism.
 
-.. _reset4 :
+.. _delayed_discharge_simulation :
+.. figure:: images/png/jfet_delayed_Discharge_simulation.png
+        :align: center
+        :width: 1000px
+
+	.Time simulation of the delayed-discharge JFET mechanism circuit of :numref:`reset4`.
+
+This circuit is simple but ingenious. What is happening here is quite sophisticated yet so simple. The JFET acts as a switch that commutes the BOOT0 RC circuit charge and discharge, as seen in :numref:`reset4_simple`.
+
+.. _reset4_simple :
+.. figure:: images/png/reset4_simple.png
+        :align: center
+        :width: 800px
+
+	.Simplification of the schematic of the reset circuit using a delayed-discharge JFET mechanism showing the JFET as a discharge resistor switch.
+
+When the push button is pressed and the BOOT0 circuit is charging, the JFET does not conduct current and the 1MΩ resistor is used to charge the circuit slowly, abiding by the designed cross times we seen before; as a matter of fact, the JFET conducts so little current that the 10kΩ resistor is almost non-existant. When the push button is released, the JFET starts conducting current and the 10kΩ resistor is shorted to ground, making a parallel resistance with the 1MΩ. Since the former is so much smaller than the latter, the resulting parallel resistance is very close to 10kΩ.
+
+So at the end the JFET acts as a switch that commutes the resistors; when the push button is pressed, the circuit charges with the bigger 1MΩ and hence charges slowly. When the button is released the circuit "changes" the RC resistance to 10kΩ, which makes it discharge swiftly.
+
+The 10kΩ value was not chosen randomly. It was chosen to be much smaller than 1MΩ, bringing the charge/discharge commutation effect yes, but it was also chosen such that the discharge of the JFET was delayed in such a way that the nRST pin would have time to reach high logic before BOOT0 completely discharged. :numref:`reset4_simulation_zoom` shows the time plot of the time simulation of the delayed-discharge JFET circuit with a 10kΩ resistor.
+
+.. _reset4_simulation_zoom :
+.. figure:: images/png/jfet_delayed_discharge_simulation_zoom.png
+        :align: center
+        :width: 1000px
+
+	.Simplification of the schematic of the reset circuit using a delayed-discharge JFET mechanism showing the JFET as a discharge resistor switch.
+
+As the plot shows, the delayed discharge allows the circuit an approximate 25 milisecond time between nRST reaching high logic and BOOT0 discharging to the high logic threshold, which is far more than enough. Remember that, according to the datasheet, the BOOT0 pin is sampled on the fourth rise of the clock signal of the MCU once nRST is high; since the MCU works at 72 megahertz, a 25 milisecond time is very reasonable.
+
+Finally, as far as the R4 value goes, almost any value between 2kΩ and 10kΩ will give a plausible result. The next plot shows a simulation of the falltime of BOOT0 on the circuit given several values of R4, ranging from 0 to 10kΩ in 1kΩ steps. Naturally, the bigger the R4 value, the slower the discharge is and the more available time the MCU has to sample BOOT0 at high time.
+
+.. _reset4_simulation_stepped :
+.. figure:: images/png/jfet_delayed_discharge_simulation_stepped.png
+        :align: center
+        :width: 1000px
+
+	.Simplification of the schematic of the reset circuit using a delayed-discharge JFET mechanism showing the JFET as a discharge resistor switch.
+
+:numref:`nrst_available_time` shows a parametric plot of the available time that the MCU has to sample BOOT0 as high level, that is, the time difference between the instant nRST voltage rises to its high logic level threshold and the time instant BOOT0 voltage falls back to its high logic threshold, as a function of the R4 resistance. As we seen before, at 0kΩ, the available time is negative, that is, BOOT0 falls below high logic level before nRST hits its high logic level. This is counterbalanced at approximately 1kΩ (1.021kΩ to be more precise) where the available time is zero, that is, BOOT0 and nRST hit their high level thresholds at the same time. At 2kΩ the available time is 2.8559 miliseconds -- enough on its own. The reason I chose 10kΩ is because it gives a very nice headroom to work with component tolerances and is a good value to find with tighter tolerances.
+
+.. _nrst_available_time :
+.. figure:: images/png/nrst_available_time.png
+        :align: center
+        :width: 800px
+
+	.Parametric plot showing the available time the MCU has to sample a high logic level BOOT0 once nRST is sampled high as a function of the discharge resistor R4.
+
+
+(4) Using a comparator
+======================
+
+.. _reset6 :
 .. figure:: images/png/reset6.png
         :align: center
         :width: 1000px
