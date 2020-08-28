@@ -101,7 +101,7 @@ The problem of this vanilla circuit is that it requires way too many operations 
 (2) A new reset circuit
 =======================
 
-In middle development of the SharkPCB, a user by the name of ishtob (can't find his GitHub account or his Discord anymore, please contact me so I can credit you properly ish!) blessed me with a piece of his knowledge and shared a reset circuit he was working on. A version of this circuit is depicted in :numref:`reset1`.
+In middle development of the SharkPCB, a user by the name of ishtob blessed me with a piece of his knowledge and shared a reset circuit he was working on. A version of this circuit is depicted in :numref:`reset1`.
 
 .. _reset1 :
 .. figure:: images/png/reset1.png
@@ -357,19 +357,75 @@ Finally, as far as the R4 value goes, almost any value between 2kΩ and 10kΩ wi
         :align: center
         :width: 800px
 
-	.Parametric plot showing the available time the MCU has to sample a high logic level BOOT0 once nRST is sampled high as a function of the discharge resistor R4.
+	. Parametric plot showing the available time the MCU has to sample a high logic level BOOT0 once nRST is sampled high as a function of the discharge resistor R4.
 
+(5) Conclusion
+==============
 
-(4) Using a comparator
-======================
+The article presents the development and simulation of various possible reset circuits, of which three are viable, meaning they can reliably drive the MCU both to reset and to DFU mode. :numref:`reset4_tighter` shows these reset circuits.
 
-.. _reset6 :
-.. figure:: images/png/reset6.png
+.. _reset4_tighter :
+.. figure:: images/png/reset4_tighter.png
         :align: center
-        :width: 1000px
+        :width: 2000px
 
-	.Yet another improvement over the reset circuit, this time with a discharge transistor to ensure voltage fallback discharge.
+	. Final list of the viable developed reset circuits developed: the "vanilla" circuit recommended by STM, the "improved reset" and the JFET "delayed-discharge reset circuit".
 
+(5.1) Which circuit should I use?
+---------------------------------
+
+Confronted with so many possibilities one might ask which is the best or which should they use. Although I do not know if there is a "better" or "worse" circuit, there are adtanvages and disadvatages with every single one of them:
+
+- The "vanilla reset" circuit is by far the simplest one. It is the most reliable and simple to implement and requires few simple components. However, the fact that it requires a rather complicated routine to flash and reset makes it non-ideal for user usability; reestated, the fact that it is not single-action and requires several steps to work may be a problem in troubleshoot and operation for the common non-experienced users;
+- The "improved reset" circuit is the initial implementation of the BOOT0 charging machanism where a short button press is a reset and a long button press drives the MCU to DFU mode. It is fairly complicated and requires precision 1% resistors and a 5% tolerance capacitor on the BOOT0 circuit to be reliable, but delivers the single-action proposal of this article with cheap and simple enough components. The problem here being that each activation of this circuit should be approximately 30 seconds apart, due to the fact that the BOOT0 circuit takes time to discharge;
+- The "delayed discharge" circuit is the most user-friendly but is the most sophisticated and requires fancy components like the J270 JFET (that costs up to 20 cents a piece) and the special tolerance resistors and capacitors. The fact that the delayed discharge is performed means that the circuit is immediately discharged after button release, meaning the user can press the button rapidly and the circuit will work every time without problems, delivering the promise of a "truly single" action.
+
+The usage of each circuit is of course at the discretion of the designer; my personal experience and opinion is that the vanilla circuit is fine for prototyping reasons or if the PCB you are designing is a personal project and not intended for mass production and selling. If the objective is user friendliness and mass selling, I definitely recommend using the JFET delayed discharge circuit. For 20 cents more you get a reliable single-action circuit that works as intended every time, as opposed to the "improved reset" that, albeit being single-action, can be misused if the user is not patient enough to wait 30 seconds for each action or is simply ignorant of its functioning. It is my opinion that a product should not be designed while supposing that the user knows its inner workings, hence why I recommend the delayed-discharge circuit.
+
+(5.2) Tighter tolerance components
+----------------------------------
+
+Another possible question that arises is: are the tighter tolerance components on the BOOT0 charge circuit *really* needed? The true answer is no. The time plot of :numref:`reset2_simulation_variance`  shows that it's perfectly possible to reset and DFU the MCU without the special tighter tolerance components. The *real* only thing that changes from a circuit that uses common-tolerance components and a circuit that uses tighter tolerance components is simply the guaranteed times needed. For instance, with normal tolerances, the MCU is guaranteed to reset if the button is released under 0.7 seconds after being pressed and guaranteed to DFU is the button is held for at least 4.6 seconds.
+
+The usage of tighter component tolerances gives you two advantages.
+
+First, that the times tom reset and DFU are a little bit more reasonable -- to reset release under a second of press and to DFU hold for at least 3.8 seconds. The curse of the exponential growth characteristic of the charging circuit means that if you try to make the reset timing larger -- to a second, for instance -- the DFU timing will also be *much* longer; if you try to make the DFU timing shorter, the reset timing will be *much* shorter. This means that, with common tolerances, it is very difficult to adjust the reset and DFU timings because trying to adjust one will *exponentially* (literally) affect the other. With tighter tolerances, however, the change is still exponential; but since the parameter uncertainty is that much smaller, the effect is not that great.
+
+To illustrate this advantage, imagine a common serial RC circuit with a constant voltage source :math:`V_S`. Then the charge timing of the capacitor voltage is given by
+
+.. math:: v_C(t) = V_Se^{-\dfrac{t}{RC}}
+
+Hence, the time :math:`T` the capacitor takes to reach a voltage :math:`V` os given by
+
+.. math:: T = - RC\ln\left(1 - \dfrac{V}{V_S}\right)
+
+Imagine now that :math:`R` and :math:`C` vary with uncertainties :math:`\Delta R` and :math:`\Delta C`, that is,
+
+.. math:: R = R_0 \pm \Delta R,\ C = C_0 \pm \Delta C
+
+Call :math:`T_0` the nominal time to reach voltage :math:`V`, that is, the capacitor would reach that voltage if the components were perfect:
+
+.. math:: T_0 = - R_0 C_0\ln\left(1 - \dfrac{V}{V_S}\right)
+
+Then through the propagation of uncertainty formulas, the uncertainty of :math:`T`, that is, :math:`\Delta T`, is given by
+
+.. math:: \dfrac{\Delta T}{T_0} = \sqrt{\left(\dfrac{\Delta R}{R}\right)^2 + \left(\dfrac{\Delta C}{C}\right)^2}
+
+The keen reader might indetify this as a elliptic parabolloid in the  :math:`\Delta T`, :math:`\Delta R` and :math:`\Delta C` variables. This means that the time uncertainty :math:`\Delta T` grow *parabolically* with the resistor and capacitor uncertainties, which goes to show that the time uncertainty is very, very sensible to these quantities.
+
+The interested reader might also calculate the partial derivatives of the sensibilities of :math:`\Delta T` with respect to :math:`\Delta R` and :math:`\Delta C`, which will prove the parabolic growth of the sensibility.
+
+If the reader is still incredulous, let us calculate the time sensibility in the terms of this last formula. If we are using common tolerances, that is, 
+
+.. math:: \dfrac{\Delta R}{R} = 0.05,\ \dfrac{\Delta C}{C} = 0.2
+
+Then the normalized time uncertainty equals 20.62%. If the tighter tolerances are used, that is, 
+
+.. math:: \dfrac{\Delta R}{R} = 0.01,\ \dfrac{\Delta C}{C} = 0.05
+
+Then the time uncertainty equals 5.10%.
+
+These calculations motivate the second advantage that this circuit gives you; this advantage is deeper and less visible, but much more important: reliability. Suppose that you are using the circuit with common tolerances in a 1000-unit production run. Since every PCB has different capacitanca and resistance values, each PCB has a different time charging curve; what I can guarantee is that this curve is at all times located between the "fast case" yellow curve and the "slow case" pink curve of figure :numref:`reset2_simulation_variance`, and that the charging times between PCBs will vary in a 20.62% margin. This means that the actual timings to reser and DFU can vary wildly between PCBs. On the other hand, if you use tighter tolerances, the charging curve will be confined between the fast and slow curves of figure :numref:`reset2_simulation_variance_tight`, which are much closer together; hence the actual timings of each PCB will vary mildly (inside a 5.1% margin, which is much more tolerable), as opposed to the large variations you would get if you used the more common tolerances. The fact that the circuit is more predictable and less variable -- hence, more **reliable** -- means that the behavior of the circuit will be more uniform across all production units, that is, while the normal tolerance components will give each unit a very different timing, the tighter tolerance will make sure all PCB units will be under a very strict margin. This, in turn, makes sure that your product is much closer to specifications.
 
 References
 ==========
