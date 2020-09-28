@@ -4,7 +4,7 @@ PCBWay sponsorship: how to review PCBs
 
 Back in october of 2019, I received an e-mail from a representative of PCBWay. They wanted to sponsor some components of the Acheron Project by offering me free prototyping PCBs in exchange for a review video and an article. You can see the video in `this link <https://www.youtube.com/watch?v=9EpHCoebJyY&t=777s>`_ and this is the article. In this text I will detail my thought process of reviewing a PCB manufacturer, and review the quality of the PCBs that PCBWay sent me and how my past experiences with PCBWay.
 
-The review is done by six parameters I have and pictures of what I mean. I will compare these PCBs to one PCB I have from JLCPCB, which is largely and largely and generally used as a budget PCB manufacturer, and point out the differences between a higher-price, higher-quality PCB and a middle-quality, budget-price PCB.
+The review is done by six parameters I have and pictures of what I mean. I will compare these PCBs to one PCB I have from JLCPCB, which is largely and generally used as a budget PCB manufacturer, and point out the differences between a higher-price, higher-quality PCB and a middle-quality, budget-price PCB.
 
 About PCBWay
 ------------
@@ -13,12 +13,12 @@ Of course, PCBWay would not sponsor the project without my counterpart: introduc
 
 PCBWay is a big player in the business of Printed Circuit Board (PCB) manufacture (F) and assembly (A), which we generally abbreviate as PCBFA. This is also called full-turnkey process. You can hire their services at `their website <http://www.pcbway.com>`_, where they have an Instant Quote process. This means that you can submit your files to their webiste and receive an immediate quotation of the price you will pay for their services, if you use PCBF only. If you want to hire PCBFA, they will analyse and review your project and make a quotation for the PCBs, the components and their services, assigning to you a sales representative and sending you a very detailed quotation within a week.
 
-For everyone interested in using their services, always have in mind that they are based in Asia (China I believe), so if you are thinking of importing their PCBs to sell, most countries will apply importation tarrifs. However, their price is almost always worth it over local manufacturers.
+For everyone interested in using their services, keep in mind that they are based in Asia (China I believe), so if you are thinking of importing their PCBs to sell, most countries will apply importation tarrifs. However, their price is almost always worth it over local manufacturers.
 
 Why accepting sponsorships
 --------------------------
 
-At a first glance one might ask himself why should I accept a sponsorhip from a big PCB manufacturer.
+At first glance, one might ask themself why should I accept a sponsorhip from a big PCB manufacturer.
 
 First, because hardware development takes money. Much money. Sometimes more than what I can pay, actually; a round of five PCB prototypes will cost easily from 130 to 180 US dollars. In general, my modus operandi is that I don't charge for a PCB project but the person that wants the PCB pays for prototypes.
 
@@ -40,14 +40,14 @@ Another issue of reviewing PCBs is that there is also a heavy aesthetical factor
         :align: center
         :width: 600px
 
-	. First picture of a heavily scoffed and dirty PCB. This should serve as an example of a objectively bad aesthetics and innaceptable state of a PCB.
+	. First picture of a heavily scuffed and dirty PCB. This should serve as an example of a objectively bad aesthetics and unacceptable state of a PCB.
 
 .. _scoffed_pcb_2 :
 .. figure:: images/austin2.jpg
         :align: center
         :width: 600px
 
-	. Second picture of a heavily scoffed and dirty PCB. Note that, beyond the scoffs, there is a weird stain around diode D18, which is most probably a result of a badly used solderpaste or flux, since we can see flux of tin on the stain.
+	. Second picture of a heavily scuffed and dirty PCB. Note that, beyond the scuffs, there is a weird stain around diode D18, which is most probably a result of a badly used solderpaste or flux, since we can see flux of tin on the stain.
 
 The main parameters I use to review a PCB are:
 
@@ -62,12 +62,12 @@ One might also ask why "price" is not on this list. This is because since the PC
 
 There is, however, an outliner in this process. Most famouly, JLCPCB, which is known to make cheap PCBs at low quantities, ideal for prototyping. in this article I'll also show a PCB that I have from JLC and how does a budget PCB compare to a high-quality, more expensive PCB.
 
-Hence the following chapters will, each by each, focus on these five parameters. They were analysed in photographic detail, and pictures will be presented.
+Hence the following chapters will, one by one, focus on these five parameters. They were analysed in photographic detail, and pictures will be presented.
 
 1. Silkscreen
 -------------
 
-Over the years I have used many PCB manufacturers, and one thing that I particularly like about PCBWay is that they have one of the cleanest silkscreens I know. This is specially important in SMD PCBs because since surface components are generally very small, having clear silkscreen is important for the soldering process and the prototyping, as well as maintenance whenever you need to replace a component.
+Over the years I have used many PCB manufacturers, and one thing that I particularly like about PCBWay is that they have one of the cleanest silkscreens I know. This is specially important in SMD PCBs because since surface components are generally very small, having clean silkscreen is important for the soldering process and the prototyping, as well as maintenance whenever you need to replace a component.
 
 .. _silkscreen_1 :
 .. figure:: images/arctic8.jpg
@@ -117,7 +117,7 @@ To contrast with these, below is an image of the SharkPCB prototype version pre-
 
 	. Silkscreen OSH logo on the SharkPCB prototype.
 
-It becomes very clear how in JLCPCB's case the silkscreen markings are not so clear and "fuzzy". Also note how the characters are much harder to read and spot.
+It becomes very clear how in JLCPCB's case the silkscreen markings are not so clean and "fuzzy". Also note how the characters are much harder to read and spot.
 
 It is important to note that in some cases the silkscreen can be incomplete or misaligned, as in :numref:`silkscreen_7`. This is indicative of a very lazy production process and for a final product is not torelable.
 
@@ -131,9 +131,9 @@ It is important to note that in some cases the silkscreen can be incomplete or m
 2. Soldermask
 -------------
 
-The main way to look at soldermask is coverage and uniformity. Soldermask is basically a protective cover to avoid exposing the PCB copper and unintended shortcuts. Its main purpose, however, is to repel solder so that the tin sticks only to the metallic pads it is supposed to. It also has a very aesthetic function, as it is basically what gives the PCB its color. 
+The main way to look at soldermask is coverage and uniformity. Soldermask is basically a protective cover to avoid exposing the PCB copper and unintended shorts. Its main purpose, however, is to repel solder so that the tin sticks only to the metallic pads it is supposed to. It also has a very aesthetic function, as it is basically what gives the PCB its color. 
 
-Having a soldermask not cover any part of the PCB means it can present oxidation and unintended shorcircuits. Having it uneven or not uniform means that it can wear off in some time or with bad handling.
+Having a soldermask not cover any part of the PCB means it can present oxidation and unintended short-circuits. Having it uneven or not uniform means that it can wear off in some time or with bad handling.
 
 A good stress test is to try scraping the soldermask off at some point in the PCB; ideally, a soldermask should be very difficult to wear or scrape off, so taking a blunt and a sharp object and trying to rip soldermask off the PCB in various places is the way to do it. Another way to detect bad uniformity is putting the PCB against a light source and checking for color differences.
 
@@ -171,10 +171,10 @@ In general, the most important part of a PCB are the soldering pads, because tha
 
 It needs to be said that the quality of the surface finishing of the pads depends highly on the technology used. There are three main surface finishes that most PCB manufacturers offer, the frst and cheapest of them being HASL (Hot-Air Solder Leveling), where the PCB is dipped into a bath of molten solder in and the excess is removed by hot air knives (a stream of high intensity, high pressure and hot temperature stream of laminarly flown air). HASL however tends not to hold the best results because the excess solder tin does not come off easily, even with air knives, leaving uneven and inconsistent surfaces. It also is not good for fine-pitch PCBs and compex PCBs, as it can very easily generate solder bridges. HASL also has the issue of generally using leaded solder; there are, however, lead-free HASL options.
 
-The second most available copper finish is Organic Solderability Preserving, or OSP, which consists of coating the PCB with an organic material that bonds to the copper, preventing it from oxidation, until the actual soldering. The organic compounds are generally the heterociclyc azoles, which due to the nitrogen in their chain form coordination bonds with the copper atoms, producing nitro-copper-heterocycle complexes. This finish is sometimes regarded as the most "environment-friendly". OSP has a very nice simple process and flat surface, while also being very price-effective; its main issue being it has a very low shelf life because the organic compounds are not oxigen-stable and degrade over time. Also, the coating is not metallic, so it is very sensitive to bad maintenance and handling.
+The second most available copper finish is Organic Solderability Preserving, or OSP, which consists of coating the PCB with an organic material that bonds to the copper, preventing it from oxidation, until the actual soldering. The organic compounds are generally the heterociclyc azoles, which due to the nitrogen in their chain form coordination bonds with the copper atoms, producing nitro-copper-heterocycle complexes. This finish is sometimes regarded as the most "environment-friendly". OSP has a very nice simple process and flat surface, while also being very price-effective; its main issue being it has a very low shelf life because the organic compounds are not oxygen-stable and degrade over time. Also, the coating is not metallic, so it is very sensitive to bad maintenance and handling.
 
-PCB factories will also offer ENIG (Electroless Nickel-Immersed Gold). Over the exposed copper a layer of nickel is deposited through an auto-catalysed reaction and, over it, a layer of gold (yes, real gold!) through electrodeposition. This is by far the finish that gives the most quality feel and looks, because it leaves a near-perfect surface due to the very even layer of nickel. It also offer excellent oxidation process, as gold does not oxidate in the presence of oxigen. Moreover, ENIG is ideal for applications where an exposed metal surface is needed, e.g., common membrane switches.
-
+PCB factories will also offer ENIG (Electroless Nickel-Immersed Gold). Over the exposed copper, a layer of nickel is deposited through an auto-catalysed reaction and, over it, a layer of gold (yes, real gold!) through electrodeposition. This is by far the finish that gives the most quality feel and looks, because it leaves a near-perfect surface due to the very even layer of nickel. It also offers excellent resistance to oxidation, as gold does not oxidate in the presence of oxygen. Moreover, ENIG is ideal for applications where an exposed metal surface is needed, e.g., common membrane switches.
+ 
 Finally, some PCB factories can offer IAg or Silver Immersion copper finish. This finish is not easily found and is used only for very specific applications, specially those where high-speed designs are concerned because silver, being the most conductive metal known to man, offers very low high frequency signal loss due to skin effect, enhancing signal integrity in the PCB. The issue with IAg is that silver is notably prone to oxidation, taking a blackened shade.
 
 Personally I recommend going HASL for prototypes, since they don't need to be very aesthetically pleasing or high-quality; they just need to work. That's what you get with HASL, and that's what I did with the protos PCBWay sent me. H1owever, if you are doing the final product to sell or distribute, I always go with ENIG, ensuring a nice experience for the PCB user.
@@ -256,7 +256,7 @@ The picture shows that there are absolutely no problems with the castellated hol
 
 This section is, again, very subjective and there are many ways to look at this. However, there are some objective patterns we can use.
 
-First, the PCBs came with absolutely no scratches or scuffs, apart however from two PCBs that came a little bit scoffed. This happened -- I believed -- because the vacuum plastic that the PCBs were wrapped in was torn, so the vacuum went away and some PCBs grinded on one another. I feel strange to blame this on PCBWay, but one can speculate. First, the obvious choice is to blame this on the shipping companies, and that a rough shipping made the plastic tear. Another possibility would be that PCBWay did not wrap the PCBs properly. I will not make comments on this or assume one of both options.
+First, the PCBs came with absolutely no scratches or scuffs, apart however from two PCBs that came a little bit scuffed. This happened -- I believed -- because the vacuum plastic that the PCBs were wrapped in was torn, so the vacuum went away and some PCBs grinded on one another. I feel strange to blame this on PCBWay, but one can speculate. First, the obvious choice is to blame this on the shipping companies, and that a rough shipping made the plastic tear. Another possibility would be that PCBWay did not wrap the PCBs properly. I will not make comments on this or assume one of both options.
 
 I know that I am biased, but I find the PCBs very nice and appealing, especially because it is very clean and metallization looks great. Below are some images of particularly nice spots on the PCBs.
 
@@ -274,7 +274,7 @@ I know that I am biased, but I find the PCBs very nice and appealing, especially
 
 	. Picture of the label on the ArcticPCB.
 
-Also, aesthetics and feel are also affected by the quality of the edge cuts. Take a look at figure :numref:`silkscreen_5` to note how a PCB from JLCPCB has very rough edges; I have seen cases in some PCBFs where the edges are so badly cut that they are sharp and cut fingers and hands.
+Also, aesthetics and feel are also affected by the quality of the edge cuts. Take a look at figure :numref:`silkscreen_5` to note how a PCB from JLCPCB has very rough edges; I have seen cases in some PCBFs where the edges are so badly cut that they are sharp and could cut fingers and hands.
 
 6. Customer support and my experience
 -------------------------------------
@@ -300,6 +300,6 @@ The PCBs are good. Really good. Perhaps some of the best in the business. For th
 
 However competitive they are in the PCBFA part, they have some real difficult quotes to meet at PCBF, specially when JLCPCB comes in play. Yes, JLC does not make as good PCBs and I wouldn't sell them to a customer, but for prototyping there still is no beating their price. For prototypes the quality is very acceptable.
 
-I recommend everyone to order and test the PCBWay services at least one tim e.
+I recommend everyone to order and test the PCBWay services at least one time.
 
 Then again, I feel very thankful and humble that PCBWay decided to sponsor these PCBs because without their support they wouldn't be prototyped or would take much longer.
