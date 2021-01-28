@@ -49,7 +49,7 @@ The way we select the boot region in STM32 devices are through external pins and
 
 	. Table of boot options for STM32F0xx devices.
 
-First of all, we can ignore the three bottom options as those are only available to STM32F04x and STM32F09x devices. Then for the three top options, we can ignore **BOOT_SEL** that is 1 for all these options and **nBOOT0** which is marked as an **x** meaning its value does not matter for these options. As for **nBOOT1**, we have to remember it comes factory-set as zero, meaning that if we simply don't mess with it, we can do both the options we wanted -- boot from system memory or boot from flash -- at the expense of not being able to start from SRAM which is very, very rare on an end-product occasion so not a big deal anyways.
+First of all, we can ignore the three bottom options as those are only available to STM32F04x and STM32F09x devices. Then for the three top options, we can ignore **BOOT_SEL** that is 1 for all these options and **nBOOT0** which is marked as an **x** meaning its value does not matter for these options. As for **nBOOT1**, we have to remember it comes factory-set as one, meaning that if we simply don't mess with it, we can do both the options we wanted -- boot from system memory or boot from flash -- at the expense of not being able to start from SRAM which is very, very rare on an end-product occasion so not a big deal anyways.
 
 In the end, we can reset into flash or go into DFU USB by only setting the value of the pin **BOOT0**: if it is high, the MCU goes into DFU and if it is low, it resets into flash.
 
