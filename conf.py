@@ -29,7 +29,7 @@ release = '1.0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 def setup(app):
-    app.add_stylesheet('acheronDocsTheme.css')
+    app.add_css_file('acheronDocsTheme.css')
 extensions = [
 ]
 
