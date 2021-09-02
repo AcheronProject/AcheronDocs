@@ -152,36 +152,30 @@ Consider then the three comparison cases:
   <figcaption><b> Figure 9. </b> Time simulation of the circuit in figure 6 considering component tolerance-added "slow" and "fast" cases.</figcaption>
 </figure>
 
-
 :numref:`reset2_simulation_variance` shows the simulation of the three cases. The simulations show that the fastest time the circuit will cross the low logic levle maximum threshold is at approximately 0.75s, while the longest time the circuit will take to cross the high logic level minimum voltage is approximately 4.5 seconds. This means that by using the circuit of :numref:`reset2`, if the user presses the button for no more than 0.75 seconds the MCU is guaranteed to reset, and if he or she presses the button for longer than 4.5 seconds the MCU is guaranteed to DFU.
 
 These times are, however, not to my liking. As can be seen in :numref:`reset2_simulation_variance`, the spread of timings between the curves is way too high. In order to solve that, I changed the tolerances of the resistors to 1% and the tolerance of the capacitor to 5%. 
 
-.. _reset2_tight :
-.. figure:: images/png/reset2_tighter.png
-        :align: center
-        :width: 800px
+<!--.. _reset2_tight : -->
+<figure>
+  <img src="../../images/reset_article/reset2_tighter.svg" width="600" align="middle"/>
+  <figcaption><b> Figure 10. </b> Improved reset circuit with tighter tolerances.</figcaption>
+</figure>
 
-	.Improved reset circuit with tighter tolerances.
+Figure 10 shows the simulation of the same circuit with the tighter tolerances, which is much, much better: now the needed times for guaranteed low and high levels are 0.94 seconds (which can be considered 1s for a human reaction time) and 3.8 seconds.
 
-
-:numref:`reset2_simulation_variance_tight` shows the simulation of the same circuit with the tighter tolerances, which is much, much better: now the needed times for guaranteed low and high levels are 0.94 seconds (which can be considered 1s for a human reaction time) and 3.8 seconds.
-
-.. _reset2_simulation_variance_tight :
-.. figure:: images/png/variance_reset_plot_tight.png
-        :align: center
-        :width: 1000px
-
-	.Time simulation of the circuit in :numref:`reset2_tight` which has tighter component tolerances.
+<!--.. _reset2_simulation_variance_tight : -->
+<figure>
+  <img src="../../images/reset_article/variance_reset_plot_tight.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 10. </b> Time simulation of the circuit in :numref:`reset2_tight` which has tighter component tolerances.</figcaption>
+</figure>
 
 The choice of tighter or normal components is really a designer choice, but I highly recommend the use of this tighter circuit since the price raise is really not much (maybe a dollar?) and the circuit becomes much, much more reliable.
 
 
-(3) Handling the discharge issue
-================================
+## 3 Handling the discharge issue
 
-(3.1) Describing the discharge issue
-------------------------------------
+### 3.1 Describing the discharge issue
 
 The circuit of :numref:`reset2` still has an issue: the discharge of the BOOT0 circuit. The charging of the circuit sure does serve our purpose, but what happens *after* the MCU has reset or entered DFU mode? Of course, the BOOT0 circuit discharges -- the energy charged in the C1 capacitor makes its way to ground with R2. However, the discharge rate of this circuit is way too slow.
 
