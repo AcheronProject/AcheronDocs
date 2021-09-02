@@ -1,0 +1,14 @@
+site_name: Acheron Docs
+site_url: http://acheronproject.com
+nav:
+ - Home: index.md
+ - About: overview.md
+ - Articles: articles.md
+ - AOHL: AOHL.md
+ - Alexandria: alexandria.md
+ - PCB repository: pcb_repo.md
+
+markdown_extensions:
+  - attr_list
+
+#theme: readthedocs
