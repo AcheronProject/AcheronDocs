@@ -1,13 +1,20 @@
 site_name: Acheron Docs
 site_url: http://acheronproject.com
 nav:
- - Home: index.md
- - About: overview.md
- - Articles: articles.md
- - AOHL: AOHL.md
- - Alexandria: alexandria.md
- - PCB repository: pcb_repo.md
- - Electric Symbols: electric_symbols/electric_symbols.md
+    - Home: index.md
+    - About: overview.md
+    - Articles:
+        - About the articles: articles.md
+        - A single-push reset circuit for STM32: reset_article/reset_article.md
+        - A multi-MCU approach to keyboard PCB development: multimcu_article/multimcu_article.md
+    - AOHL: AOHL.md
+    - Alexandria: alexandria.md
+    - PCB repository: pcb_repo.md
+    - Electric Symbols: electric_symbols/electric_symbols.md
+    - Home: index.md
+    - Getting Started: getting-started.md
+    - User Guide:
+        - Overview: user-guide/index.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -17,4 +24,3 @@ extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-#theme: readthedocs

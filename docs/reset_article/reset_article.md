@@ -1,5 +1,9 @@
 # A single-push reset circuit for STM32
 
+Making the complex a simple thing is (paradoxically!) complex
+
+---
+
 The STM32 family of microcontrollers offers a wide good variety of options when it comes to boot selection. The majority of STM32 devices are flashed at factory with a bootloader that is very permissive and complete; it allows for a wide variety of options when it comes to booting options, boot behaviors, in-system programming through I2C, SPI, serial communication and very good debug features.
 
 One of the most interesting aspects of working with these devices is the way STM tackled the boot selection process, that is, what portion of the memory is used for the stack pointer start. In STM32F0xx devices, there are basically four ways you can boot the MCU: main flash memory, main system memory, embedded SRAM memory, and an "empty check" option only available to STM32F04x and STM32F09x devices.
