@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="865.92987pt"
    height="482.24045pt"
    viewBox="0 0 865.92985 482.24044"
    version="1.2"
    id="svg791"
    sodipodi:docname="nominal_falltime.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
    inkscape:export-xdpi="192"
-   inkscape:export-ydpi="192">
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata795">
     <rdf:RDF>
@@ -43,15 +43,23 @@
      inkscape:window-height="1043"
      id="namedview793"
      showgrid="false"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="1303.892"
-     inkscape:cy="502.00321"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="978.28223"
+     inkscape:cy="352.49273"
      inkscape:window-x="1920"
-     inkscape:window-y="310"
+     inkscape:window-y="312"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg791" />
+     inkscape:current-layer="svg791"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="pt" />
   <defs
      id="defs202">
+    <rect
+       x="440.27168"
+       y="204.88648"
+       width="499.05232"
+       height="250.41011"
+       id="rect17990" />
     <marker
        inkscape:stockid="Arrow2Mend"
        orient="auto"
@@ -1443,8 +1451,8 @@
        id="rect11574" />
     <rect
        id="rect11580"
-       height="289.4563"
-       width="647.01013"
+       height="158.7444"
+       width="308.23199"
        y="267.15659"
        x="379.34174" />
     <rect
@@ -3427,6 +3435,18 @@
          width="1105.92"
          height="584.06403" />
     </clipPath>
+    <rect
+       x="379.34174"
+       y="267.15659"
+       width="647.01013"
+       height="289.4563"
+       id="rect80154" />
+    <rect
+       x="379.34174"
+       y="267.15659"
+       width="647.01013"
+       height="289.4563"
+       id="rect85911" />
   </defs>
   <path
      inkscape:export-ydpi="192"
@@ -3742,122 +3762,144 @@
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0,-0.65043368,0.65043368,0,-164.37709,526.59589)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1506);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1506)"
      id="text1504"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">BOOT0 voltage (V)</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88326"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88324">BOOT0 voltage (V)</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text1512"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1514);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1514)"
      transform="matrix(0.65043368,0,0,0.65043368,194.22912,299.26745)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">Time (s)</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88330"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88328">Time (s)</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-121.29685,-99.878631)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1526);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1526)"
      id="text1524"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">2.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88334"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88332">2.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text1530"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1532);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1532)"
      transform="matrix(0.39437313,0,0,0.39437313,-121.00107,-51.768527)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">1.75</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88338"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88336">1.75</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text1536"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1542);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1542)"
      transform="matrix(0.39437313,0,0,0.39437313,-120.89459,-1.7670508)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">1.50</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88342"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88340">1.50</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-121.00107,46.07659)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1544);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1544)"
      id="text1540"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">1.25</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88346"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88344">1.25</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text1548"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1562);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1562)"
      transform="matrix(0.39437313,0,0,0.39437313,-120.89459,95.4813)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">1.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88350"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88348">1.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-121.35009,146.11436)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1564);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1564)"
      id="text1552"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">0.75</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88354"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88352">0.75</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-121.24361,194.62591)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1566);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1566)"
      id="text1556"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">0.50</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88358"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88356">0.50</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text1560"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1568);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1568)"
      transform="matrix(0.39437313,0,0,0.39437313,-121.35009,243.09387)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">0.25</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88362"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88360">0.25</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-121.24361,290.39018)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1574);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1574)"
      id="text1572"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">0.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88366"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88364">0.00</tspan></tspan></text>
   <path
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
@@ -3871,59 +3913,38 @@
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.49357457,0,0,0.49357457,373.42994,-64.56905)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11572);fill:#ff0000;fill-opacity:1;"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11572);fill:#ff0000;fill-opacity:1"
      id="text11564"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;fill:#ff0000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">High logic minimum threshold</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88370"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88368">High logic minimum threshold</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11570"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11574);fill:#9466bd;fill-opacity:1;"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11574);fill:#9466bd;fill-opacity:1"
      transform="matrix(0.49357457,0,0,0.49357457,383.0759,142.20289)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;fill:#9466bd;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">Low logic maximum threshold</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88374"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88372">Low logic maximum threshold</tspan></tspan></text>
   <rect
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.41732;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:10;stroke-opacity:1"
      id="rect5612"
-     width="133.90857"
+     width="133.909"
      height="64.891632"
      x="323.88043"
      y="149.38429"
      ry="9.8181477" />
-  <text
-     inkscape:export-ydpi="192"
-     inkscape:export-xdpi="192"
-     inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
-     transform="matrix(0.45034146,0,0,0.45034146,73.708699,35.182166)"
-     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11580);"
-     id="text11578"
-     xml:space="preserve"
-     x="164.32463"
-     y="0"><tspan
-       x="603.02193"
-       y="289.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Discharge time
-</tspan></tspan><tspan
-       x="563.79696"
-       y="320.87219"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">for BOOT0 high logic
-</tspan></tspan><tspan
-       x="652.02684"
-       y="351.79517"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">fallback
-</tspan></tspan><tspan
-       x="636.96673"
-       y="382.71814"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">6.46689 s</tspan></tspan></text>
   <path
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
@@ -3938,99 +3959,117 @@
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11716"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11718);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11718)"
      transform="matrix(0.39437313,0,0,0.39437313,-99.427928,306.64477)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">0.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88378"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88376">0.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,-0.25756246,306.64477)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11726);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11726)"
      id="text11724"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">2.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88382"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88380">2.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,97.855639,306.64477)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11740);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11740)"
      id="text11732"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">4.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88386"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88384">4.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11738"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11742);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11742)"
      transform="matrix(0.39437313,0,0,0.39437313,197.026,306.64477)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">6.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88390"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88388">6.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,293.62984,306.64477)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11768);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11768)"
      id="text11748"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">8.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88394"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88392">8.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11754"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11770);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11770)"
      transform="matrix(0.39437313,0,0,0.39437313,392.80021,306.64477)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">10.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88398"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88396">10.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11760"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11772);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11772)"
      transform="matrix(0.39437313,0,0,0.39437313,490.91341,306.64477)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">12.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88402"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88400">12.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.39437313,0,0,0.39437313,590.08377,306.64477)"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11774);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11774)"
      id="text11766"
      xml:space="preserve"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">14.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88406"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88404">14.00</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      xml:space="preserve"
      id="text11780"
-     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11782);"
+     style="font-size:30px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11782)"
      transform="matrix(0.39437313,0,0,0.39437313,687.30575,306.64477)"><tspan
        x="379.3418"
-       y="274.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;stroke-linecap:butt;stroke-linejoin:round">16.00</tspan></tspan></text>
+       y="274.02625"
+       id="tspan88410"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88408">16.00</tspan></tspan></text>
   <path
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
@@ -4052,14 +4091,16 @@
      inkscape:export-xdpi="192"
      inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
      transform="matrix(0.45034146,0,0,0.45034146,-256.33625,339.83084)"
-     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect12012);"
+     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect12012)"
      id="text12010"
      xml:space="preserve"
      x="164.32463"
      y="0"><tspan
        x="587.00191"
-       y="289.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Button is pressed</tspan></tspan></text>
+       y="289.02625"
+       id="tspan88414"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88412">Button is pressed</tspan></tspan></text>
   <text
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
@@ -4068,11 +4109,13 @@
      x="164.32463"
      xml:space="preserve"
      id="text12016"
-     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect12018);"
+     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect12018)"
      transform="matrix(0.45034146,0,0,0.45034146,-6.6887425,339.83084)"><tspan
        x="582.96693"
-       y="289.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Button is released</tspan></tspan></text>
+       y="289.02625"
+       id="tspan88418"><tspan
+         style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         id="tspan88416">Button is released</tspan></tspan></text>
   <rect
      inkscape:export-ydpi="192"
      inkscape:export-xdpi="192"
@@ -4091,22 +4134,47 @@
      y="0"
      x="164.32463"
      xml:space="preserve"
-     id="text10182"
-     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10186);"
-     transform="matrix(0.45034146,0,0,0.45034146,430.75837,16.991548)"><tspan
+     id="text80152"
+     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect80154);stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(0.45034146,0,0,0.45034146,74.824261,35.227546)"><tspan
        x="603.02193"
-       y="289.94922"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Discharge time
-</tspan></tspan><tspan
-       x="569.70695"
-       y="320.87219"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">for BOOT0 low logic
-</tspan></tspan><tspan
+       y="289.02625"
+       id="tspan88420">Discharge time
+</tspan><tspan
+       x="563.79696"
+       y="319.02625"
+       id="tspan88422">for BOOT0 high logic
+</tspan><tspan
        x="652.02684"
-       y="351.79517"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">fallback
-</tspan></tspan><tspan
+       y="349.02625"
+       id="tspan88424">fallback
+</tspan><tspan
        x="636.96673"
-       y="382.71814"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">14.9453 s</tspan></tspan></text>
+       y="379.02625"
+       id="tspan88426">6.46689 s</tspan></text>
+  <text
+     inkscape:export-ydpi="192"
+     inkscape:export-xdpi="192"
+     inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nominal_falltime.png"
+     y="0"
+     x="164.32463"
+     xml:space="preserve"
+     id="text85909"
+     style="font-size:30px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;stroke-linecap:butt;stroke-linejoin:round;shape-inside:url(#rect85911)"
+     transform="matrix(0.45034146,0,0,0.45034146,431.39511,19.010593)"><tspan
+       x="603.02193"
+       y="289.02625"
+       id="tspan88428">Discharge time
+</tspan><tspan
+       x="569.70695"
+       y="319.02625"
+       id="tspan88430">for BOOT0 low logic
+</tspan><tspan
+       x="652.02684"
+       y="349.02625"
+       id="tspan88432">fallback
+</tspan><tspan
+       x="636.96673"
+       y="379.02625"
+       id="tspan88434">14.9453 s</tspan></text>
 </svg>
