@@ -11,14 +11,10 @@ nav:
     - Alexandria: alexandria.md
     - PCB repository: pcb_repo.md
     - Electric Symbols: electric_symbols/electric_symbols.md
-    - Home: index.md
-    - Getting Started: getting-started.md
-    - User Guide:
-        - Overview: user-guide/index.md
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+    - pymdownx.arithmatex:
+        generic: true
 
 extra_javascript:
   - javascripts/config.js

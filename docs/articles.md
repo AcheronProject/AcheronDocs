@@ -8,8 +8,8 @@ There is however a problem, which is technicality and detailing *versus* readabi
 
 The philosophy of the documentation is then to *expose and explain the matter at hand in a precise and founded way, while achieving the end goal or knowledge in a more accessible form*.
 
-To access the articles, just click the hyperlinks on the titles.
+## How to read the articles
 
-## [A single-push reset circuit for STM32](reset_article/reset_article.md)
+Most of the articles are about hardware development. All are geared towards an open-source and collaboratie approach to certain challenges of hardware design which the articles propose a solution to.
 
-This article develops the circuitry needed to operate (most) STM32 microcontrollers in their boot-time sequences, focusing on STM32F072.
+As such, the best way to make use of the articles is to download the KiCAD and LTSpice softwares and use them as guides or exercises, clearing up the issues and solutions.
