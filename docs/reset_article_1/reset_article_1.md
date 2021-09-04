@@ -389,10 +389,21 @@ My opinion and experience on this matter are this: use component footprints so t
 
 ## 6 MOSFET version
 
-There is a small adjustment that can be made to the reset circuits hereby discussed: the ability to prototype them through the [JLCPCB assembly service](https://jlcpcb.com/smt-assembly). The problem being the parts that can be used with that service must figure in the roster of the [JLCPCB parts library](https://jlcpcb.com/parts), wherein no pre-biased bipolar transistor lies; hence most circuits here discussed cannot be used. In order to circumvent this issue, one can use a 2N7002 MOSFET with a couple resistors as the equivalent to the pre-biased bipolar transistor used. The 10k ohm resistor can be ommitted but it is recommended that it is left as the extra cost is negligible.
+There are two small problem with the reset circuits hereby discussed. First is that some people might see the use of a JFET a little bit complicated, because it is a weird part (even though its use as a voltage-controlled switch is solid). Second, and this is the most important, both the pre-biased NPN transistor and the JFET used are extended parts in the [JLCPCB assembly service](https://jlcpcb.com/smt-assembly). Let's make a brief explanation why that might be a problem.
+
+The JLCPCB service is known as a quick and cheap prototyping tool. Their assembly service works like this: where most PCB assemblers will source parts from distributors when you supply them a Bill of Materials, JLCPCB has a [parts library](https://jlcpcb.com/parts) wherefrom the needed parts will be sourced. In this library, there are two types of parts: "basic" and "extended" ones.
+
+- Basic parts are components that are very often used by designers so JLCPCB has a line of pick-and-place machines with these parts pre-loaded and ready to be used. Using these parts is fairly simple and inexpensive and no fee is charged besides the part cost and the soldering fee;
+- Extended parts are ones that albeit figuring in the parts roster are not pre-loaded into machines, meaning that a JLC employee must load them into the machines; hence for extended parts JLC charges a 3 USD fee on top of the parts cost and soldering fee (this is per unique extended parts, so if you have say two extended components on the same PCB that are the same part number, the 3 USD fee will be charged only once).
+
+As one might imagine, both the JFET and the pre-biased bipolar transistor used in the reset circuits are extended parts, and there are no basic parts that directly substitute them. Or, until now at least.
+
+### 6.1 Substituting the BJT
+
+Substituting a bipolar transistor as a switch is easy; one can use a 2N7002 MOSFET with a couple resistors. The 10k ohm resistor can be ommitted but it is recommended that it is left as the extra cost is negligible. The advantage here being, of course, the 2N7002 is a basic part and costs cents a piece.
 
 <figure>
-  <img src="../../images/reset_article/mos_biaspnp.svg" width="600" align="middle"/>
+  <img src="../../images/reset_article/mos_biaspnp.svg" width="800" align="middle"/>
   <figcaption><b> Figure 26. </b>  MOSFET equivalent to the pre-biased bipolar transistor used.</figcaption>
 </figure>
 
@@ -402,6 +413,19 @@ Using this MOSFET, the resulting "improved reset" circuit would be as depicted i
   <img src="../../images/reset_article/mos_reset.svg" width="800" align="middle"/>
   <figcaption><b> Figure 27. </b> "Improved reset" circuit using a MOSFET equivalent to the pre-biased bipolar transistor.</figcaption>
 </figure>
+
+### 6.2 Substituting the JFET
+
+Now to the big issue: substituting the JFET. As mentioned before, the big advantage of using a P-channel JFET is that it acts almost like a perfect switch while working with an active-low logic, that is, conducts when its gate input is zero, which is a little hard to replicate. Not even a PNP or a P-channel MOS will work the same way, as both need some connection from bridge to emitter (in the case of the BJT) or gate and source (in the case of the MOS), which will inevitably disbalance the circuit much like the MUN533 and the UMF5N did. The only way to replicate that behavior is to use a *driver circuit*, that is, an ancillary circuit intended to drive the PMOS or the PNP transistor; in its simplest forms, this driver circuit generally manifests as an inverting amplifier (common source or common emitter) with some protection circuitry.
+
+As one might imagine this is not ideal. We already have a good bunch of components in the circuit and adding many more would not be ideal. However, we are in luck: one can identify that the MOSFET used to drive the nRST is already an inverting amplifier; in order to give the BOOT0 and the nRST circuits some isolation we use a high value resistor, which in turn culminates in a "double-MOSFET improved delayed discharge" reset circuit (that's a mouthful) depicted in figure 28.
+
+<figure>
+  <img src="../../images/reset_article/double_mos_reset.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 28. </b> "Double-MOSFET improved delayed discharge" reset circuit.</figcaption>
+</figure>
+
+Figure 28 shows the MOSFETS and their intended uses. As always, blue components are not essential but recommended.
 
 ## References
 
