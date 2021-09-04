@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="192"
    inkscape:export-xdpi="192"
    inkscape:export-filename="/home/alvaro/Desktop/AcheronProject/AcheronDocs/reset_article/images/png/nrst_available_time.png"
@@ -16,7 +9,14 @@
    version="1.2"
    id="svg381"
    sodipodi:docname="nrst_available_time.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata385">
     <rdf:RDF>
@@ -47,12 +47,13 @@
      inkscape:document-units="mm"
      inkscape:snap-intersection-paths="true"
      inkscape:zoom="0.32340007"
-     inkscape:cx="952.6674"
-     inkscape:cy="571.79384"
+     inkscape:cx="950.83467"
+     inkscape:cy="570.5008"
      inkscape:window-x="1920"
-     inkscape:window-y="310"
+     inkscape:window-y="312"
      inkscape:window-maximized="1"
-     inkscape:current-layer="surface4172" />
+     inkscape:current-layer="surface4172"
+     inkscape:pagecheckerboard="0" />
   <defs
      id="defs106">
     <rect
@@ -9447,160 +9448,160 @@
     <text
        xml:space="preserve"
        id="text1504-5"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.5;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1506-75);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.5;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1506-75)"
        transform="matrix(0,-0.97565055,0.97565055,0,-216.74913,1035.5881)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"
        x="163.11035"
        y="0"><tspan
          x="420.57136"
-         y="296.52625"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Available time for BOOT0 sampling (ms)</tspan></tspan></text>
+         y="296.52625"
+         id="tspan28079">Available time for BOOT0 sampling (ms)</tspan></text>
     <text
        xml:space="preserve"
        id="text1572-9"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1574-7);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1574-7)"
        transform="matrix(0.78874626,0,0,0.78874626,-202.66005,450.30074)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">-5</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28081">-5</tspan></text>
     <text
        xml:space="preserve"
        id="text5832"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect5834);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect5834);fill:#000000;fill-opacity:1;stroke:none"
        transform="translate(-603.5826,577.58421)" />
     <text
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect16835);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect16835);fill:#000000;fill-opacity:1;stroke:none"
        id="text16833"
        xml:space="preserve"
        transform="translate(-567.92679,1481.5929)" />
     <text
        xml:space="preserve"
        id="text10902"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10904);fill:#000000;fill-opacity:1;stroke:none;" />
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Tengwar Annatar';-inkscape-font-specification:'Tengwar Annatar';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10904);fill:#000000;fill-opacity:1;stroke:none" />
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,-194.63854,352.62709)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10914);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10914)"
        id="text10912"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">0</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28083">0</tspan></text>
     <text
        xml:space="preserve"
        id="text10918"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10920);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10920)"
        transform="matrix(0.78874626,0,0,0.78874626,-194.78052,256.32945)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">5</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28085">5</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,-207.79483,156.40712)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10926);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10926)"
        id="text10924"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">10</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28087">10</tspan></text>
     <text
        xml:space="preserve"
        id="text10930"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10932);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10932)"
        transform="matrix(0.78874626,0,0,0.78874626,-207.9368,55.413493)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">15</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28089">15</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,-207.79483,-35.625015)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10938);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10938)"
        id="text10936"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">20</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28091">20</tspan></text>
     <text
        xml:space="preserve"
        id="text10942"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10944);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10944)"
        transform="matrix(0.78874626,0,0,0.78874626,-207.9368,-137.04795)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">25</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28093">25</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,-174.34788,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10952);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10952)"
        id="text10950"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">0</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28095">0</tspan></text>
     <text
        xml:space="preserve"
        id="text10956"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10958);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10958)"
        transform="matrix(0.78874626,0,0,0.78874626,52.103821,477.27502)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">2
-</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28097">2
+</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,275.49485,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10964);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10964)"
        id="text10962"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">4</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28099">4</tspan></text>
     <text
        xml:space="preserve"
        id="text10968"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10970);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10970)"
        transform="matrix(0.78874626,0,0,0.78874626,497.77543,477.27502)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">6</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28101">6</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,716.36113,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10976);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10976)"
        id="text10974"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">8</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28103">8</tspan></text>
     <text
        xml:space="preserve"
        id="text10980"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10982);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10982)"
        transform="matrix(0.78874626,0,0,0.78874626,932.86617,477.27502)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">10</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28105">10</tspan></text>
     <g
        style="stroke-width:1.41732;stroke-miterlimit:10;stroke-dasharray:none"
        id="g10986"
@@ -9665,67 +9666,65 @@
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,-59.334035,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11008);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11008)"
        id="text11006"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">1</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28107">1</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,162.85447,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11014);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11014)"
        id="text11012"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">3
-</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28109">3
+</tspan></text>
     <text
        xml:space="preserve"
        id="text11018"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11020);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11020)"
        transform="matrix(0.78874626,0,0,0.78874626,385.19671,477.27502)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">5</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28111">5</tspan></text>
     <text
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.78874626,0,0,0.78874626,607.80401,477.27502)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11026);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11026)"
        id="text11024"
        xml:space="preserve"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">7</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28113">7</tspan></text>
     <text
        xml:space="preserve"
        id="text11030"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11032);"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11032)"
        transform="matrix(0.78874626,0,0,0.78874626,830.25488,477.27502)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          x="379.3418"
-         y="274.02625"><tspan
-           style="stroke-linecap:butt;stroke-linejoin:round">9</tspan></tspan></text>
+         y="274.02625"
+         id="tspan28115">9</tspan></text>
     <text
        y="0"
        x="163.11035"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="matrix(0.97565055,0,0,0.97565055,148.89354,453.22075)"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.5;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11040);stroke-linecap:butt;stroke-linejoin:round;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.5;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect11040);stroke-linecap:butt;stroke-linejoin:round"
        id="text11038"
        xml:space="preserve"><tspan
          x="452.21795"
-         y="296.52625"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">R4 resistor (k</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">Ω</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round">)</tspan></tspan></text>
+         y="296.52625"
+         id="tspan28117">R4 resistor (kΩ)</tspan></text>
     <g
        clip-path="url(#clip14)"
        clip-rule="nonzero"

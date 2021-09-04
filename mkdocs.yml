@@ -5,7 +5,8 @@ nav:
     - About: overview.md
     - Articles:
         - About the articles: articles.md
-        - A single-push reset circuit for STM32: reset_article/reset_article.md
+        - A single-push reset circuit for STM32, part 1: reset_article_1/reset_article_1.md
+        - A single-push reset circuit for STM32, part 2: reset_article_2/reset_article_2.md
         - A multi-MCU approach to keyboard PCB development: multimcu_article/multimcu_article.md
     - AOHL: AOHL.md
     - Alexandria: alexandria.md
@@ -15,8 +16,13 @@ nav:
 markdown_extensions:
     - pymdownx.arithmatex:
         generic: true
+    - pymdownx.tabbed
+    - admonition
 
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+    - extra_css/pymdownx_tabbed.css
