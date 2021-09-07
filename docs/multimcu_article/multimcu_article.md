@@ -1,4 +1,4 @@
-# A multi-MCU approach to mechanical keyboard hardware design
+# A multi-MCU approach to mechanical keyboard hardware design: the Joker template
 *Because desperate times need creative measures*
 
 ---
@@ -9,19 +9,46 @@ The worldwide pandemic has brought an unprecedented halt in many private sector 
 
 It is not the intent of this article to explain why this shortage is or what are its causes. See the references for deeper understanding.
 
-This shortage has hit everyone by their guts at this point, because, in the digital humanity of the twenty-first century, every single home appliance, handheld device, consumer electronics device and kids toy, uses, if not several, at least one microcontroller (which we will, for better reading, abbreviate as MCUs for "Microcontroller Units"). The problem being that, due to the shortage, the supply of MCUs has been diminished to a point where Toyota, Honda and Ford announced that they are halting their manufacturing efforts simply because there are no MCUs available to manufacture their cars [3] .
+This shortage has hit everyone by their guts at this point because in the digital humanity of the twenty-first century every single home appliance, handheld device, consumer electronics, and kids toy uses if not several at least one microcontroller (which we will, for better reading, abbreviate as MCUs for "Microcontroller Units"). The problem being that, due to the shortage, the supply of MCUs has been diminished to a point where even huge car manufacturers like Toyota, Honda and Ford announced that they are halting their manufacturing efforts simply because there are no MCUs available to manufacture their cars [3] .
 
-As of the writing of this article (semtember of 2021), the semiconductor industry is still getting back on its feet, trying to match supply to demand. The void in supply is still huge, which brings us to the keyboard community. For us, this supply issue has hit hard. The thing is: since there are important industries in dire need of semiconductor devices, the ones deemed more urgent get priority, specially the car manufacturers and, for obvious reasons, the medical supplies and devices manufacturers. In this zeitgeist, distributors like LCSC, Digikey and Mouser, who serve the general buyers, rarely get some stock of any MCUs at all. If there is stock, the microcontrollers are sold at ridiculous prices [4]. 
+As of the writing of this article (semtember of 2021), the semiconductor industry is still getting back on its feet, trying to match supply to demand. The void in supply is still huge, which brings us to the keyboard community. For us, this supply issue has hit hard. The thing is: not only demand is completely disproportionally small compared to demand, there are important industries in dire need of semiconductor devices, some of them deemed more urgent get priority, specially the car manufacturers and, for obvious reasons, the medical supplied and devices. In this zeitgeist, distributors like LCSC, Digikey and Mouser, who serve the general buyers like us mere keyboard mortals rarely get some stock of any MCUs at all. If there is stock, the microcontrollers are sold at ridiculous prices [4]. 
 
-The biggest example being the microcontroller I use the most for keyboards: STM32F072C, be it the B (128kB flash) or 8 (64kB flash) versions. While in a normal setting I could get several thousand units for around two US dollars a piece, nowadays I can only get tens of them for twenty six US dollars each; and that's considering I can not *always* have them. This trend is not unique to this unit, as all others follow the same pattern. It's not surprising, then, to see that designing and manufacturing keyboard PCBs in this setting is a challenge. At a given time, one MCU is available, say F072, and in the next week it will become out of stock and another one, say, F411, will be available.
+Just as an example: the microcontroller I use the most for keyboards is STM32F072C, be it the B (128kB flash) or 8 (64kB flash) versions. While in a normal setting I could get several thousand units for around two US dollars a piece, nowadays I can only get tens of them for twenty six US dollars each; and that's considering I can not *always* have them. This trend is not unique to this unit, as all others follow the same pattern. It's not surprising, then, to see that designing and manufacturing keyboard PCBs in this setting is a challenge. At a given time, one MCU is available, say F072, and in the next week it will become out of stock and another one, say, F411, will be available.
 
 This article is an attempt to document a long and wide talk between me (Gondolindrim) and **tzarc**, embedded systems engineer and known in the keyboard community through his work as a QMK developer, where we achieved a template design that allows for multiple STM microcontroller units to be used in the same design, only needing tweaking in the bill of materials. This should make the manufacture of the PCBs *easier* in the context of the pandemic (because of course no one can't make it easier than it was before, with availability and prices) while giving the PCB designer some insight insight in such approach.
 
-### 1.1 The STM approach
+### 1.1 Objective and constraints
+
+The end objective of this article is to develop a template design consisting of a microcontroller footprint and several ancillary components (EEPROM, clock crystal and its load capacitors, USB resistors, bypass capacitors); this template design is intended as a "joker" design that can support multiple STM32 microcontrollers, with the following parameters:
+
+#### Firmware compatibility
+
+Target MCUs must be QMK-supported;
+
+#### Availability
+
+Target MCUs must also be available for purchase for the general public (there are versions restricted to military or industrial use);
+
+#### Design licensing
+The Joker template should be KiCAD-compatible and open-source;
+
+#### Manufacturability
+
+The design must be manufacturable through a wide myriad (if not all) of the PCB manufacturers out there. There are some MCU versions that use BGA, UBGA and WLCSP packages which are only manufacturable in specialized fab houses. In this article we will focus on 48-pin variants, specifically UFQFPN-48 and LQFP-48 packages.
+
+### 1.2 The STM approach
 
 The STM family of microprocessors is industry-wide known for their cross-compatibility, that is, the ability to *replace one microcontroller type by another one in the same product series* [5] . It is nice to know that the STM microcontrollers are designed for *some level* of cross-compatibility from the get-go, but one must wonder what are the needed changes to port a design from one microcontroller or another; STM has many ([8], [9], [10]) references on such operations. However, to the best of my knowledge there is not an application note on a *multi-microcontroller* approach, that is, how to design an appliance to support multiple microcontroller families.
 
 References [8] through [10] show
+
+## Final circuit
+
+<figure>
+  <img src="../../images/multimcu_article/joker.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 1. </b>  "Joker" 48-pin STM32 MCU circuit topology.</figcaption>
+</figure>
+
 
 # References
 

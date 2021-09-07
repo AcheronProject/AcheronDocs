@@ -313,9 +313,57 @@ Figure 25 shows a parametric plot of the available time that the MCU has to samp
   <figcaption><b> Figure 25. </b> Parametric plot showing the available time the MCU has to sample a high logic level BOOT0 once nRST is sampled high as a function of the discharge resistor. </figcaption>
 </figure>
 
-## 5 Conclusion
 
-The article presents the development and simulation of various possible reset circuits, of which three are viable, meaning they can reliably drive the MCU both to reset and to DFU mode. The tabs below show these reset circuits in comparison to one another.
+## 5 MOSFET version
+
+There are two small problem with the reset circuits hereby discussed. First is that some people might see the use of a JFET a little bit complicated, because it is a weird part (even though its use as a voltage-controlled switch is solid). Second, and this is the most important, both the pre-biased NPN transistor and the JFET used are extended parts in the [JLCPCB assembly service](https://jlcpcb.com/smt-assembly). Let's make a brief explanation why that might be a problem.
+
+The JLCPCB service is known as a quick and cheap prototyping tool. Their assembly service works like this: where most PCB assemblers will source parts from distributors when you supply them a Bill of Materials, JLCPCB has a [parts library](https://jlcpcb.com/parts) wherefrom the needed parts will be sourced. In this library, there are two types of parts: "basic" and "extended" ones.
+
+- Basic parts are components that are very often used by designers so JLCPCB has a line of pick-and-place machines with these parts pre-loaded and ready to be used. Using these parts is fairly simple and inexpensive and no fee is charged besides the part cost and the soldering fee;
+- Extended parts are ones that albeit figuring in the parts roster are not pre-loaded into machines, meaning that a JLC employee must load them into the machines; hence for extended parts JLC charges a 3 USD fee on top of the parts cost and soldering fee (this is per unique extended parts, so if you have say two extended components on the same PCB that are the same part number, the 3 USD fee will be charged only once).
+
+As one might imagine, both the JFET and the pre-biased bipolar transistor used in the reset circuits are extended parts, and there are no basic parts that directly substitute them. Or, until now at least.
+
+### 5.1 Substituting the BJT
+
+Substituting a bipolar transistor as a switch is easy; one can use a 2N7002 MOSFET with a couple resistors. The 10k ohm resistor can be ommitted but it is recommended that it is left as the extra cost is negligible. The advantage here being, of course, the 2N7002 is a basic part and costs cents a piece.
+
+<figure>
+  <img src="../../images/reset_article/mos_biaspnp.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 26. </b>  MOSFET equivalent to the pre-biased bipolar transistor used.</figcaption>
+</figure>
+
+Using this MOSFET, the resulting "improved reset" circuit would be as depicted in figure 27.
+
+<figure>
+  <img src="../../images/reset_article/mos_reset.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 27. </b> "Improved reset" circuit using a MOSFET equivalent to the pre-biased bipolar transistor.</figcaption>
+</figure>
+
+### 5.2 Substituting the JFET
+
+Now to the big issue: substituting the JFET. As mentioned before, the big advantage of using a P-channel JFET is that it acts almost like a perfect switch while working with an active-low logic, that is, conducts when its gate input is zero, which is a little hard to replicate. Not even a PNP or a P-channel MOS will work the same way, as both need some connection from bridge to emitter (in the case of the BJT) or gate and source (in the case of the MOS), which will inevitably disbalance the circuit much like the MUN533 and the UMF5N did. The only way to replicate that behavior is to use a *driver circuit*, that is, an ancillary circuit intended to drive the PMOS or the PNP transistor; in its simplest forms, this driver circuit generally manifests as an inverting amplifier (common source or common emitter) with some protection circuitry.
+
+As one might imagine this is not ideal. We already have a good bunch of components in the circuit and adding many more would not be ideal. However, we are in luck: one can identify that the MOSFET used to drive the nRST is already an inverting amplifier; in order to give the BOOT0 and the nRST circuits some isolation we use a high value resistor, which in turn culminates in a "double-MOSFET improved delayed discharge" reset circuit (that's a mouthful) depicted in figure 28. As always, blue components are not essential but recommended. 
+
+<figure>
+  <img src="../../images/reset_article/double_mos_reset.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 28. </b> "Double-MOSFET improved delayed discharge" reset circuit.</figcaption>
+</figure>
+
+The question now is: *how well* does the MOSFET approximate the analog switch of the JFET? Figure 29 shows a time simulation of both circuits using variable discharge resistor values (R4 in both figures 28 and 20). The values are range from $1\text{k}\Omega$ to $100\text{k}\Omega$ in 21 logarithmically spaced steps.
+
+<figure>
+  <img src="../../images/reset_article/double_mos_reset_comparison.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 29. </b> Time simulation comparison between the "double-MOSFET-delayed" and the "JFET-delayed" reset circuits.</figcaption>
+</figure>
+
+As the figure shows, the simulation performances of both circuits are so close that they are almost indistinguishable; this leads us to keep the same value of discharge resistor, $10\text{k}\Omega$.
+
+## 6 Conclusion
+
+The article presents the development and simulation of various possible reset circuits, of which four are viable, meaning they can reliably drive the MCU both to reset and to DFU mode. The tabs below show these reset circuits in comparison to one another.
 
 !!! note ""
 	=== "Vanilla reset"
@@ -323,25 +371,35 @@ The article presents the development and simulation of various possible reset ci
 		<figure>
 		  <img src="../../images/reset_article/vanilla_reset_final.svg" height="600" align="middle"/>
 		</figure>	
-	=== "Improved reset"
+	=== "Improved reset (MOS)"
 		<figure>
 		  <img src="../../images/reset_article/improved_reset_final.svg" height="600" align="middle"/>
+		</figure>
+	=== "Improved reset (BJT)"
+		<figure>
+		  <img src="../../images/reset_article/improved_reset_BJT_final.svg" height="600" align="middle"/>
 		</figure>
 	=== "Delayed-discharge reset"
 		<figure>
 		  <img src="../../images/reset_article/delayed_discharge_reset_final.svg" height="600" align="middle"/>
 		</figure>
-### 5.1 Which circuit should I use?
+### 6.1 Which circuit should I use?
 
-Confronted with so many possibilities one might ask which is the best or which should they use. Although I do not know if there is a "better" or "worse" circuit, there are adtanvages and disadvatages with every single one of them:
+First of all, the price and availability of the 27000 is a great reason to just adopt those variants. They are cheaper, easier to implement, and the 2N7002 MOSFET is available by the hundreds of thousands in many manufacturers around; the only downside is real-estate because where the DTC123JKAT146 had integrated resistors, the 2N7002 needs external ones to work. Since these resistors do not carry power current, you can safely use small packages like 0402 resistors.
+
+That being said, four possibilities arise: the "vanilla" reset, the "improved reset" (both MOSFET version of figure 27 and the BJT version of figure 10)  and the "double-MOSFET" of figure 28. Confronted with these many possibilities one might ask which is the best or which should they use. Although I do not know if there is a "better" or "worse" circuit, there are adtanvages and disadvatages with every single one of them:
 
 - The "vanilla reset" circuit is by far the simplest one. It is the most reliable and simple to implement and requires few simple components. However, the fact that it requires a rather complicated routine to flash and reset makes it non-ideal for user usability; reestated, the fact that it is not single-action and requires several steps to work may be a problem in troubleshoot and operation for the common non-experienced users;
-- The "improved reset" circuit is the initial implementation of the BOOT0 charging machanism where a short button press is a reset and a long button press drives the MCU to DFU mode. It is fairly complicated and requires precision 1% resistors and a 5% tolerance capacitor on the BOOT0 circuit to be reliable, but delivers the single-action proposal of this article with cheap and simple enough components. The problem here being that each activation of this circuit should be approximately 30 seconds apart, due to the fact that the BOOT0 circuit takes time to discharge;
-- The "delayed discharge" circuit is the most user-friendly but is the most sophisticated and requires fancy components like the J270 JFET (that costs up to 20 cents a piece) and the special tolerance resistors and capacitors. The fact that the delayed discharge is performed means that the circuit is immediately discharged after button release, meaning the user can press the button rapidly and the circuit will work every time without problems, delivering the promise of a "truly single" action.
+- The "improved reset" circuit is the initial implementation of the BOOT0 charging mechanism where a short button press is a reset and a long button press drives the MCU to DFU mode.  It is fairly complicated and requires precision 1% resistors and a 5% tolerance capacitor on the BOOT0 circuit to be reliable, but delivers the single-action proposal of this article with cheap and simple enough components. The problem here being that each activation of this circuit should be approximately 30 seconds apart, due to the fact that the BOOT0 circuit takes time to discharge. There are two variants of this circuit:
+	- The MOSFET version (figure 27) is a preferred choice due to the price and availability of the MOSFET versus the pricey and more limited pre-biased BJT; this is specially true if one is using the JLCPCB prototyping service, where the 2N7000 is a basic part while all pre-biased BJTs are extended parts (hence more expensive to use)
+	- The BJT version might be just a tad pricey and less available, but has a huge advantage when it comes to variety. There are tons of different pre-biased BJT transistors in varying packages; not only it integrates the biasing resistors (which you have to add discretely to the MOSFET circuit), the 27000 component is only available in a SOT-23 package whereas one can find pre-biased BJTs in the tinies of packages;
+	- Both versions are perfectly interchangeable performance-wise, so use them at your discretion; myself (Gondolindrim) I highly favour the BJT version as I solder my prototypes at home, meaning I don't need to solder extra resistors. 
+- The "double MOSFET" circuit of figure 28 is the most user-friendly, because it implements the discharge needed for reliable re-operation of the BOOT0 charge-and-discharge mechanism -- the fact that the delayed discharge is performed means that the circuit is immediately discharged after button release, meaning the user can press the button rapidly and the circuit will work every time without problems, delivering the promise of a "truly single" action. This circuit substitutes the JFET circuit of figure 20; honestly, don't use these. JFETs are very particular components used in a small number of designs where they are absolutely needed; they are difficult to source and fairly expensive. Just don't.
+	- A big warning here is that, albeit the "improved reset" circuit having two interchangeable variants (BJT and MOSFET), this is not the case here. The fact of the matter is that the MOSFET is a much better electronic switch than the BJT is because the BJT is slow and needs a base current to work; this means that if a BJT is used, be it in the BOOT0 or the nRST portions of the circuit, the timins get messed up and it does not work as well.
 
 The usage of each circuit is of course at the discretion of the designer; my personal experience and opinion is that the vanilla circuit is fine for prototyping reasons or if the PCB you are designing is a personal project and not intended for mass production and selling. If the objective is user friendliness and mass selling, I definitely recommend using the JFET delayed discharge circuit. For 20 cents more you get a reliable single-action circuit that works as intended every time, as opposed to the "improved reset" that, albeit being single-action, can be misused if the user is not patient enough to wait 30 seconds for each action or is simply ignorant of its functioning. It is my opinion that a product should not be designed while supposing that the user knows its inner workings, hence why I recommend the delayed-discharge circuit.
 
-### 5.2 Tighter tolerance components
+### 6.2 Tighter tolerance components
 
 Another possible question that arises is: are the tighter tolerance components on the BOOT0 charge circuit *really* needed? The true answer is no. The time plot of figure 9  shows that it's perfectly possible to reset and DFU the MCU without the special tighter tolerance components. The *real* only thing that changes from a circuit that uses common-tolerance components and a circuit that uses tighter tolerance components is simply the guaranteed times needed. For instance, with normal tolerances, the MCU is guaranteed to reset if the button is released under 0.7 seconds after being pressed and guaranteed to DFU is the button is held for at least 4.6 seconds.
 
@@ -386,46 +444,6 @@ Then the time uncertainty equals 5.10%.
 These calculations motivate the second advantage that this circuit gives you; this advantage is deeper and less visible, but much more important: reliability. Suppose that you are using the circuit with common tolerances in a 1000-unit production run. Since every PCB has different capacitanca and resistance values, each PCB has a different time charging curve; what I can guarantee is that this curve is at all times located between the "fast case" yellow curve and the "slow case" pink curve of figure figure 9, and that the charging times between PCBs will vary in a 20.62% margin. This means that the actual timings to reser and DFU can vary wildly between PCBs. On the other hand, if you use tighter tolerances, the charging curve will be confined between the fast and slow curves of figure figure 10, which are much closer together; hence the actual timings of each PCB will vary mildly (inside a 5.1% margin, which is much more tolerable), as opposed to the large variations you would get if you used the more common tolerances. The fact that the circuit is more predictable and less variable -- hence, more **reliable** -- means that the behavior of the circuit will be more uniform across all production units, that is, while the normal tolerance components will give each unit a very different timing, the tighter tolerance will make sure all PCB units will be under a very strict margin. This, in turn, makes sure that your product is much closer to specifications.
 
 My opinion and experience on this matter are this: use component footprints so that the common tolerance and the tighter tolerance components share the same footprints; for instance, use a 1206 resistor and a 0805 capacitor footprint, as there are both 5% and 1% 1206 resistors just like 20% and 5% 0805 capacitors. That way you can keep prototype costs down by using the more common tolerances and, on the final more polished product, you use the tighter tolerances components because, at a large scale, the price per PCB will be increased marginally while the circuit will be much more reliable and user-friendly.
-
-## 6 MOSFET version
-
-There are two small problem with the reset circuits hereby discussed. First is that some people might see the use of a JFET a little bit complicated, because it is a weird part (even though its use as a voltage-controlled switch is solid). Second, and this is the most important, both the pre-biased NPN transistor and the JFET used are extended parts in the [JLCPCB assembly service](https://jlcpcb.com/smt-assembly). Let's make a brief explanation why that might be a problem.
-
-The JLCPCB service is known as a quick and cheap prototyping tool. Their assembly service works like this: where most PCB assemblers will source parts from distributors when you supply them a Bill of Materials, JLCPCB has a [parts library](https://jlcpcb.com/parts) wherefrom the needed parts will be sourced. In this library, there are two types of parts: "basic" and "extended" ones.
-
-- Basic parts are components that are very often used by designers so JLCPCB has a line of pick-and-place machines with these parts pre-loaded and ready to be used. Using these parts is fairly simple and inexpensive and no fee is charged besides the part cost and the soldering fee;
-- Extended parts are ones that albeit figuring in the parts roster are not pre-loaded into machines, meaning that a JLC employee must load them into the machines; hence for extended parts JLC charges a 3 USD fee on top of the parts cost and soldering fee (this is per unique extended parts, so if you have say two extended components on the same PCB that are the same part number, the 3 USD fee will be charged only once).
-
-As one might imagine, both the JFET and the pre-biased bipolar transistor used in the reset circuits are extended parts, and there are no basic parts that directly substitute them. Or, until now at least.
-
-### 6.1 Substituting the BJT
-
-Substituting a bipolar transistor as a switch is easy; one can use a 2N7002 MOSFET with a couple resistors. The 10k ohm resistor can be ommitted but it is recommended that it is left as the extra cost is negligible. The advantage here being, of course, the 2N7002 is a basic part and costs cents a piece.
-
-<figure>
-  <img src="../../images/reset_article/mos_biaspnp.svg" width="800" align="middle"/>
-  <figcaption><b> Figure 26. </b>  MOSFET equivalent to the pre-biased bipolar transistor used.</figcaption>
-</figure>
-
-Using this MOSFET, the resulting "improved reset" circuit would be as depicted in figure 27.
-
-<figure>
-  <img src="../../images/reset_article/mos_reset.svg" width="800" align="middle"/>
-  <figcaption><b> Figure 27. </b> "Improved reset" circuit using a MOSFET equivalent to the pre-biased bipolar transistor.</figcaption>
-</figure>
-
-### 6.2 Substituting the JFET
-
-Now to the big issue: substituting the JFET. As mentioned before, the big advantage of using a P-channel JFET is that it acts almost like a perfect switch while working with an active-low logic, that is, conducts when its gate input is zero, which is a little hard to replicate. Not even a PNP or a P-channel MOS will work the same way, as both need some connection from bridge to emitter (in the case of the BJT) or gate and source (in the case of the MOS), which will inevitably disbalance the circuit much like the MUN533 and the UMF5N did. The only way to replicate that behavior is to use a *driver circuit*, that is, an ancillary circuit intended to drive the PMOS or the PNP transistor; in its simplest forms, this driver circuit generally manifests as an inverting amplifier (common source or common emitter) with some protection circuitry.
-
-As one might imagine this is not ideal. We already have a good bunch of components in the circuit and adding many more would not be ideal. However, we are in luck: one can identify that the MOSFET used to drive the nRST is already an inverting amplifier; in order to give the BOOT0 and the nRST circuits some isolation we use a high value resistor, which in turn culminates in a "double-MOSFET improved delayed discharge" reset circuit (that's a mouthful) depicted in figure 28.
-
-<figure>
-  <img src="../../images/reset_article/double_mos_reset.svg" width="800" align="middle"/>
-  <figcaption><b> Figure 28. </b> "Double-MOSFET improved delayed discharge" reset circuit.</figcaption>
-</figure>
-
-Figure 28 shows the MOSFETS and their intended uses. As always, blue components are not essential but recommended.
 
 ## References
 
