@@ -23,7 +23,7 @@ The AcheronDocs is passing through a re-writing and is still under construction;
 
 ## Getting started
 
-The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the [Acheron Open-Hardware License V1.4](../license.md), under which all the Acheron Project is licensed.
+The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the [Acheron Open-Hardware License V1.4](AOHL.md), under which all the Acheron Project is licensed.
 
 Basically you can use the files however you would like, be it for commercial or personal uses. There are only small requirements:
 
