@@ -17,9 +17,13 @@ The **Acheron Project** is a compendium of ECAD and MCAD resources for custom ke
 
 The aim of the project is to build a database of freely available resources for keyboard enthusiasts and audiophiles, focused primarily on PCBs that comply with Open-Source Hardware principles. Many features, characteristics, components are community-driven and feedback is highly appreciated.
 
+### Under construction
+
+The AcheronDocs is passing through a re-writing and is still under construction; as such not all pages are available.
+
 ## Getting started
 
-The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the [Acheron Open-Hardware License V1.3](../license.md), under which all the Acheron Project is licensed.
+The main development objects of the Acheron Project are Open-Source printed circuit boards. In order to use the files, please read and understand the [Acheron Open-Hardware License V1.4](../license.md), under which all the Acheron Project is licensed.
 
 Basically you can use the files however you would like, be it for commercial or personal uses. There are only small requirements:
 

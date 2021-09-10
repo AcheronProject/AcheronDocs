@@ -12,6 +12,7 @@ nav:
     - Alexandria: alexandria.md
     - PCB repository: pcb_repo.md
     - Electric Symbols: electric_symbols/electric_symbols.md
+    - Acheron Setup: acheron_setup/acheron_setup.md
 
 markdown_extensions:
     - pymdownx.arithmatex:

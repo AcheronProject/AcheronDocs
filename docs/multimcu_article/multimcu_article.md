@@ -49,6 +49,11 @@ References [8] through [10] show
   <figcaption><b> Figure 1. </b>  "Joker" 48-pin STM32 MCU circuit topology.</figcaption>
 </figure>
 
+<figure>
+  <img src="../../images/multimcu_article/kicad_schematic.svg" width="800" align="middle"/>
+  <figcaption><b> Figure 2. </b>  "Joker" 48-pin STM32 MCU circuit KiCAD template schematic.</figcaption>
+</figure>
+
 
 # References
 
