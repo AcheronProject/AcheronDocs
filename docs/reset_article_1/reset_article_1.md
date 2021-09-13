@@ -366,23 +366,24 @@ As the figure shows, the simulation performances of both circuits are so close t
 The article presents the development and simulation of various possible reset circuits, of which four are viable, meaning they can reliably drive the MCU both to reset and to DFU mode. The tabs below show these reset circuits in comparison to one another.
 
 !!! note ""
-	=== "Vanilla reset"
-		<!-- .. _reset4_simulation_zoom : -->
-		<figure>
-		  <img src="../../images/reset_article/vanilla_reset_final.svg" height="600" align="middle"/>
-		</figure>	
-	=== "Improved reset (MOS)"
-		<figure>
-		  <img src="../../images/reset_article/improved_reset_final.svg" height="600" align="middle"/>
-		</figure>
-	=== "Improved reset (BJT)"
-		<figure>
-		  <img src="../../images/reset_article/improved_reset_BJT_final.svg" height="600" align="middle"/>
-		</figure>
-	=== "Delayed-discharge reset"
-		<figure>
-		  <img src="../../images/reset_article/delayed_discharge_reset_final.svg" height="600" align="middle"/>
-		</figure>
+    === "Vanilla reset"
+        <!-- .. _reset4_simulation_zoom : -->
+        <figure>
+            <img src="../../images/reset_article/vanilla_reset_final.svg" width="800" align="middle"/>
+        </figure>	
+    === "Improved reset (MOS)"
+        <figure>
+    	    <img src="../../images/reset_article/improved_reset_final.svg" width="800" align="middle"/>
+        </figure>
+    === "Improved reset (BJT)"
+        <figure>
+    	    <img src="../../images/reset_article/improved_reset_BJT_final.svg" width="800" align="middle"/>
+        </figure>
+    === "Delayed-discharge reset"
+        <figure>
+    	    <img src="../../images/reset_article/delayed_discharge_reset_final.svg" width="800" align="middle"/>
+        </figure>
+
 ### 6.1 Which circuit should I use?
 
 First of all, the price and availability of the 27000 is a great reason to just adopt those variants. They are cheaper, easier to implement, and the 2N7002 MOSFET is available by the hundreds of thousands in many manufacturers around; the only downside is real-estate because where the DTC123JKAT146 had integrated resistors, the 2N7002 needs external ones to work. Since these resistors do not carry power current, you can safely use small packages like 0402 resistors.

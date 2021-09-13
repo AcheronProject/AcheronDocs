@@ -36,23 +36,48 @@ The Joker template should be KiCAD-compatible and open-source;
 
 The design must be manufacturable through a wide myriad (if not all) of the PCB manufacturers out there. There are some MCU versions that use BGA, UBGA and WLCSP packages which are only manufacturable in specialized fab houses. In this article we will focus on 48-pin variants, specifically UFQFPN-48 and LQFP-48 packages.
 
-### 1.2 The STM approach
+### 1.2 The STM approach and how we make use of it
 
 The STM family of microprocessors is industry-wide known for their cross-compatibility, that is, the ability to *replace one microcontroller type by another one in the same product series* [5] . It is nice to know that the STM microcontrollers are designed for *some level* of cross-compatibility from the get-go, but one must wonder what are the needed changes to port a design from one microcontroller or another; STM has many ([8], [9], [10]) references on such operations. However, to the best of my knowledge there is not an application note on a *multi-microcontroller* approach, that is, how to design an appliance to support multiple microcontroller families.
 
-References [8] through [10] show
+References [8] through [10] show official STM documents that specifically target the migrating capabilities of the STM32 family, allowing us to get a better grip on how it works.
 
-## Final circuit
+## 2. How the template works
+
+The core mechanic of the joker template is the fact that for the majority of the STM32 MCUs, some specific peripherals and the power inputs are kept at the same pins throughout multiple chip models, hence allowing us to fix those pins and maintain some keyboard features (RGB, LEDs and so on) attached to the same pin of the footprint. In other words, the way this works is that the pins we use for RGBs, LEDs, OLED control and so on can be the same across multiple chips; this in turn allows us to make a design that can receive a variety of different chips and configure their pins through QMK or a realtime operating system.
+
+This is not to say, however, that all the STM32 microcontrollers are the same. For instance, STM32F07x is a microcontroller line aimed at connectivity in cost-sensitive applications; hence it integrates a solid-state oscillator with a USB 2.0 and CAN bus, meaning you have a high degree of possibilities in a small and cheap package with resistorless USB connectivity and crystal-less operation. However, its peripherals are very basic; the STM32F30x family, for instance, is a more sophisticated family with operational amplifiers, ultra-fast comparators, 12-bit ultra-fast ADCs but they need a pullup resistor and an oscillator crystal while being more expensive.
+
+Hence, even though the F0x and F30x have the SPI and I2C peripherals at the same pins, those peripherals might not be the same (with a high chance of the F30x peripherals being better and faster). This gives rise to a second layer of the ingenuity of the joker template: ultimately, keyboards are not the pinnacle of human technology. No one needs a ultra-fast ADC to run a keyboard; a simple ADC will do the trick. Hence, both the "lighter" peripherals of the F07x and the "better" ones on F30x will work.
+
+#### I2C
+
+The I2C1 peripheral is generally at pins 42 and 43 (PB9 and PB10); this peripheral is used by QMK for some RGB controlling chips (ISSI chips mostly) and to control OLED screens;
+
+#### PWM
+
+The channel 1 of TIM3 is generally at pin 15 (PA6); this peripheral can be used by QMK to control the WS2812 RGB LEDs and for the backlight LEDs (also called "in-switch" LEDs); in the case of this template, we use it mainly for the backlight.
+
+#### SPI
+The SPI2 peripheral is generally located at pins 28, 27 and 26 (in that order, MOSI, MISO and SCK pins).
+
+## 1.3 The final circuit
+
+Figure 1 shows a schematic of the "joker template" developed. 
 
 <figure>
   <img src="../../images/multimcu_article/joker.svg" width="800" align="middle"/>
   <figcaption><b> Figure 1. </b>  "Joker" 48-pin STM32 MCU circuit topology.</figcaption>
 </figure>
 
+This template can be used by using the [keyboard creator tool](../acheron_setup/acheron_setup.md) script or by simply copying the [target files](https://github.com/AcheronProject/AcheronSetup/tree/main/keyboard_creator/joker_template). Figure 2 shows the KiCAD schematic implementation of these files.
+
 <figure>
   <img src="../../images/multimcu_article/kicad_schematic.svg" width="800" align="middle"/>
   <figcaption><b> Figure 2. </b>  "Joker" 48-pin STM32 MCU circuit KiCAD template schematic.</figcaption>
 </figure>
+
+## 1.4 How the 
 
 
 # References

@@ -1,5 +1,10 @@
 site_name: Acheron Docs
 site_url: http://acheronproject.com
+site_author: Gondolindrim
+site_description: Acheron Project documentation
+repo_url: https://github.com/AcheronProject/AcheronDocs
+repo_name: AcheronProject/AcheronDocs
+
 nav:
     - Home: index.md
     - About: overview.md
@@ -19,6 +24,34 @@ markdown_extensions:
         generic: true
     - pymdownx.tabbed
     - admonition
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+        options:
+            custom_icons:
+                - images/icons
+
+theme:
+  name: material
+  palette:
+    - scheme: acheron-light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: acheron-dark
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  favicon: images/icons/acheron_favicon.svg
+  logo: images/icons/acheron_favicon.svg
+  features:
+    - navigation.tabs
+
+extra:
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/AcheronProject/AcheronDocs
+          name: See the Acheron Docs GitHub
 
 extra_javascript:
   - javascripts/config.js
