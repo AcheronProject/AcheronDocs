@@ -15,7 +15,9 @@ nav:
         - A multi-MCU approach to keyboard PCB development: multimcu_article/multimcu_article.md
     - AOHL: AOHL.md
     - Alexandria: alexandria.md
-    - PCB repository: pcb_repo.md
+    - PCB repository:
+         - Introduction to the Acheron PCBs: pcbs/intro_to_pcbs.md
+         - Apollo87H: pcbs/apollo/apollo87h.md
     - Electric Symbols: electric_symbols/electric_symbols.md
     - Acheron Setup: acheron_setup/acheron_setup.md
 
