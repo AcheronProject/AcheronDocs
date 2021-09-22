@@ -14,7 +14,7 @@ nav:
         - A single-push reset circuit for STM32, part 2: reset_article_2/reset_article_2.md
         - A multi-MCU approach to keyboard PCB development: multimcu_article/multimcu_article.md
     - AOHL v1.4: AOHL14.md
-    - Alexandria: alexandria.md
+    - Alexandria: alexandria/alexandria.md
     - PCB repository:
          - Introduction to the Acheron PCBs: pcbs/intro_to_pcbs.md
          - Apollo87H: pcbs/apollo/apollo87h.md
