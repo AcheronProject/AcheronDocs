@@ -99,7 +99,9 @@ This template can be used by using the [keyboard creator tool](../acheron_setup/
 
 It must be understood that the final circuit of figure 2 is supposed to work with multiple STM units, some of which either don't make use or do not need some of the peripherals needed. For instance, in QMK the STM32F072 units can make use of an EEPROM simulation algorithm that allocates some flash memory to act as EEPROM; STM32L072 and STM32L051 have integrated EEPROM. This means that these units do not need the external EEPROM, and this in turn means that if the PCB in question is being manufactured using one of those microcontrollers one can omit the EEPROM and its bypass capacitor (and if no other I2C devices are being used, the I2C pullup resistors as well) from the Bill of Materials, thus informing the factory that, albeit the footprints being there, these components are not to be soldered. This situation is most commonly referred to as leaving these footprints or sites *unpopulated*.
 
-### 3.2 How to averiguate if a microcontroller is supported by the Joker template
+There are, however, some components that are implemented specifically for a certain family of STM32. For instance, resistor R5 for the USB fullspeed pullup, is integrated in most STM32 MCUs; according to [15], all MCUs in the STM32F303 family need that external resistor.
+
+### 3.2 How to check if a microcontroller is supported by the Joker template
 
 - It is available in a 48-pin version, in either LQFP or UFQFPN packages;
 - There is an I2C peripheral on pins 42 and 43;
@@ -129,10 +131,12 @@ Here are listed the known compatible or incompatible MCUs and some description o
 - **Compatible units**: this family has two sub-families.
     - *[STM32F042](https://www.st.com/resource/en/datasheet/stm32f042c4.pdf)*: STM32F042C(X)(Y) where (X) can be either 4 or 6 for 16 or 32 kB of flash and (Y) can be T or U for LQFP or UFQFPN package. 
     - *[STM32F072](https://www.st.com/resource/en/datasheet/stm32f072c8.pdf)*: STM32F072C(X)(Y) where (X) can be either 8 or B for 64 or 128kB of flash and (Y) can be T or U for LQFP or UFQFPN packages.
-- **General notes:** avoid using F042 for its very, very low flash sizes (16kB for STM32F042x4 and 32kB for STM32F042x6) which will not be enough for a firmware with VIA; in truth, the F042 series is just a toned-down version of F072 but with no price or availability counterpart. Highly favour the F072 series MCU as it tends to be cheaper and more available than most (in non-pandemic times at least...) while needing minimal components; in the Joker topology, the only populated components needed are the I2C pullup resistors R2 and R3 if any I2C device beyond the EEPROM is needed. Both STM32F072C8 and STM32F072CB versions are compatible and provenly work but the lower flash on the 8 version might be a problem specially with VIA. It should however prove to be enough for most keyboards with no fancy custom code.
+- **General notes:** these microcontrollers are very nice to use because they need minimal external components: no EEPROM, no crystal, no USB resistor. The only populated components needed are the I2C pullup resistors R2 and R3 if any I2C device beyond the EEPROM is needed, like an ISSI RGB controller. Both STM32F072C8 and STM32F072CB versions are compatible and provenly work but the lower flash on the 8 version might be a problem specially with VIA. It should however prove to be enough for most keyboards with no fancy custom code.
+    - **Avoid F042 and favour F072**: avoid using F042 for its very, very low flash sizes (16kB for STM32F042x4 and 32kB for STM32F042x6) which will not be enough for a firmware with VIA; in truth, the F042 series is just a toned-down version of F072 but with no price or availability counterpart. Highly favour the F072 series MCU as it tends to be cheaper and more available than most (in non-pandemic times at least...);
+    - **Integrated oscillator and "EEPROM"**: QMK implements an EEPROM-simulating algorithm, hence essentially it has an integrated EEPROM. This MCU also integrates as solid-state oscillator and crystal-less USB capabilities, so it also does not need a crystal oscillator. 
 - **Leave unpopulated**
-    - Crystal oscillator Y1 and load capacitors C2 and C3 (has internal RC oscillator);
-    - External EEPROM by simulating internal EEPROM through its flash. The I2C pullup resistors R2 and R3 can be also unpopulated if no other I2C devices are needed;
+    - Crystal oscillator Y1 and load capacitors C2 and C3 (has internal oscillator);
+    - External EEPROM (simulates internal EEPROM in its flash). The I2C pullup resistors R2 and R3 can be also unpopulated if no other I2C devices are needed;
     - Pullup resistor R2 (integrated);
     - Voltage sense resistor R4 (has no voltage sensing in that pin);
     - BOOT1 pulldown resistor R1 (has no BOOT1);
@@ -142,19 +146,19 @@ Here are listed the known compatible or incompatible MCUs and some description o
 
 - **Link**: [family website](https://www.st.com/en/microcontrollers-microprocessors/stm32f303.html#overview)
 - **Compatible units**: this family has basically three sub-families: *[STM32F303xD/xE](https://www.st.com/resource/en/datasheet/stm32f303re.pdf)*, *[STM32F303x6/x8](https://www.st.com/resource/en/datasheet/stm32f303c6.pdf)* and *[STM32F303xB/xC](https://www.st.com/resource/en/datasheet/stm32f303cb.pdf)* of which only the latter is supported; compatible devices then are STM32F303(X)T where (X) can be either B or C for 128 or 256 kB flash. Only the LQFP package is available for this sub-family.
-- **General notes: DO NOT USE** the xD, xE, x6 or x8 devices as they lack USB interfaces. Only the xB and xC versions do.
+- **General notes: DO NOT USE** x6 or x8 devices as they lack USB interfaces. Also, xD and xE variants are not available in 48-pin packages.
 - **Leave unpopulated**
     - Voltage sense resistor R4 (has no voltage sensing in that pin);
     - BOOT1 pulldown resistor R1 (has no BOOT1);
 - **Populate**
     - Crystal oscillator Y1 and load capacitors C2 and C3;
     - External EEPROM and I2C pullup resistors;
-    - Pullup resistor R2;
+    - USB pullup resistor R5;
     - VCAP capacitor C9 (does not have a VCAP pin);
 
 !!! warning
 
-    **DO NOT, ABSOLUTELY DO NOT** use the xD, xE, x6 or x8 sub-families as they lack USB interfaces. Only the xB and xC versions do!
+    **DO NOT, ABSOLUTELY DO NOT** use the x6 or x8 sub-families: despite available in LQFP-48 package, they lack USB interfaces. Also xD or xE versions are not available in 48-pin packages.
 
 #### F411
 
@@ -166,10 +170,10 @@ Here are listed the known compatible or incompatible MCUs and some description o
     - **USB VBUS OTG sensing**: this family has what is called a "on-the-go fullspeed" USB, or "USB OTG FS" for short; this allows the device to act both as USB master and slave roles, stablishing a communication link between two devices. On this device, pin A9 (pin 30 on the 48-pin versions) has a USB OTG VBUS sensing, which would not be a big deal were it not for an undocumented integrated pulldown resistor on that pin which prevents it from being used for pretty much anything else on a keyboard, even column or row keys. If this peripheral is needed one can connect this pin to VBUS by the 0R resistor, but for most (almost all, really) applications this resistor should be left un-populated.
 - **Leave unpopulated**
     - Voltage sense resistor R4 (populate if voltage sensing is needed);
+    - USB pullup resistor R5;
 - **Populate**
     - Crystal oscillator Y1 and load capacitors C2 and C3;
     - External EEPROM and I2C pullup resistors;
-    - Pullup resistor R2;
     - BOOT1 pulldown resistor R1;
     - VCAP capacitor C9;
 
@@ -183,12 +187,33 @@ Here are listed the known compatible or incompatible MCUs and some description o
     - **USB VBUS OTG sensing**: this family has what is called a "on-the-go fullspeed" USB, or "USB OTG FS" for short; this allows the device to act both as USB master and slave roles, stablishing a communication link between two devices. On this device, pin A9 (pin 30 on the 48-pin versions) has a USB OTG VBUS sensing, which would not be a big deal were it not for an undocumented integrated pulldown resistor on that pin which prevents it from being used for pretty much anything else on a keyboard, even column or row keys. If this peripheral is needed one can connect this pin to VBUS by the 0R resistor, but for most (almost all, really) applications this resistor should be left un-populated.
 - **Leave unpopulated**
     - Voltage sense resistor R4 (populate if voltage sensing is needed);
+    - USB pullup resistor R5;
 - **Populate**
     - Crystal oscillator Y1 and load capacitors C2 and C3;
     - External EEPROM and I2C pullup resistors;
-    - Pullup resistor R2;
     - BOOT1 pulldown resistor R1;
     - VCAP capacitor C9;
+
+#### L4x2
+
+- **Link**: [family website](https://www.st.com/en/microcontrollers-microprocessors/stm32l4x2.html#overview)
+    - *[STM32L412xxx](https://www.st.com/resource/en/datasheet/stm32l412c8.pdf)*
+    - *[STM32L422xxx](https://www.st.com/resource/en/datasheet/stm32l422cb.pdf)*
+- **Compatible units**: STM32L4(Z)2C(X)(Y), where:
+    - (X) can be B for 128kB of flash or 8 for 64kB of flash;
+    - (Y) can be T for LQFP-48 package or U for UFQFPN-48;
+    - (Z) can be either 1 or 2;
+- **General notes**:
+    - **No PWM on pin 16**: do not have a timer channel output on pin 16 so the LED backlight feature will not be available; hence this unit is only supported if this feature is not needed or can be disabled;
+    - **Crystal-less USB**: these do not need a crystal to run the oscillator because they have an internal solid state oscillator;
+- **Leave unpopulated**
+    - Voltage sense resistor (has no voltage sensing);
+    - USB pullup resistor R5 (integrated);
+    - BOOT1 pulldown resistor R1 (has no BOOT1);
+    - VCAP capacitor C9 (has no VCAP pin);
+    - Crystal oscillator Y1 and load capacitors C2 and C3 (has internal RC oscillator);
+- **Populate**
+    - External EEPROM and I2C pullup resistors;
 
 #### L4x2
 
@@ -239,7 +264,7 @@ Not available in 48-pin version.
 
 Not available in 48-pin version.
 
-#### F303
+#### F303 (x6, x8, xD, xE)
 
 The xD, xE, x6 and x8 sub-families lack an USB peripheral, hence they do not communicate over USB at all. The xB and xC sub-families do have an USB and are supported.
 
@@ -273,3 +298,5 @@ The xD, xE, x6 and x8 sub-families lack an USB peripheral, hence they do not com
 - **[13]** *Application note AN4488: Getting started with STM32F4xxx hardware development*. Available at [this link](https://www.st.com/resource/en/application_note/dm00115714-getting-started-with-stm32f4xxxx-mcu-hardware-development-stmicroelectronics.pdf). Last accessed october 2, 2021.
 
 - **[14]** *USB On-The-Go Wikipedia article*. Available at its [Wikipedia page](https://en.wikipedia.org/wiki/USB_On-The-Go). Lasta ccessed october 3, 2021.
+
+- **[15]** *USB hardware and PCB guidelines using STM32 MCUs*. Available at [this link](https://www.st.com/resource/en/application_note/dm00296349-usb-hardware-and-pcb-guidelines-using-stm32-mcus-stmicroelectronics.pdf). Last accessed october 12, 2021.
