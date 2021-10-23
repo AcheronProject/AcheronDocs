@@ -1,16 +1,20 @@
 # Acheron Project Keyboard Creator
 
-A tool to create a KiCAD keyboard project using the Acheron Libraries.
+**By Gondolindrim**
 
-This keyboard creator tool also encloses the tolerances and rules used for the Acheron Project in the keyboard PCB projects, uniformizing their design.
+---
 
-## Introduction
+AcheronSetup is a tool to create a KiCAD keyboard project using the Acheron Libraries. It also encloses the tolerances and rules used for the Acheron Project in the keyboard PCB projects, uniformizing their design. The numbers used aim to be a *somewhat factory-agnostic* set of rules which can make the PCBs designed using them possible of being manufactured in a myriad of factories.
+
+## 1 Introduction
 
 The Keyboard Creator is a GNU Makefile-based tool to create a KiCAD keyboard project. Its dependencies are git and the ssh to operate remote repositories in a GNU environment. This Makefile has been developed and tested in bash using GNU Makefile; no other platform or terminal was tested.
 
-## Usage
+## 2 Usage
 
-Clone the repository and open a terminal; then run ```make create```.
+There are two ways to use the files. The first is by straight out copying the template files and using them, which is not recommended because these depend on specific libraries to work; however that might be, they are still usable with some small adapting.
+
+The usage intended for the Acheron Setup tool is by using the Makefile script, which can be done by cloning the repository and opening a terminal; then runing ```make create```.
 
 This will, in this order,
 
@@ -33,7 +37,7 @@ This will, in this order,
 
 In the end the ```./kicad_files``` folder will contain a fully working KiCAD project with ready to use added libraries.
 
-## Options
+## 3 Options
 
 Additionally, the ```create``` target also admits passing arguments in the commandline.
 
@@ -59,11 +63,11 @@ Additionally, the ```create``` target also admits passing arguments in the comma
 	- ```BLANK``` is the *blank* template, that is, a project with blank schematic and PCB layouts. This is the default value;
 	- ```JOKER``` is the multi-STM32-microcontroller design template developed [here](../multimcu_article/multimcu_article.md). **BE SURE TO READ THIS DOCUMENTATION**. This template will contain a microcontroller footprint with ancillary components that make the resulting PCB compatible with a myriad of microcontrollers.
 
-## Design notes
+## 3 Design notes
 
 The PCB files generated contain a myriad of information regarding tolerances, usage and copper pours. These informations are replicated here.
 
-### Usage comments
+### 3.1 Usage comments
 
 This PCB file was generated through the Acheron Setup script, an automated tool to generate design-ready KiCAD schematic and PCB files for keyboard projects; it is offered under a no-liability, as-is clause. Please visit http://github.com/AcheronProject/AcheronSetup for more information.
 
@@ -71,7 +75,7 @@ The files generated are compatible with KiCAD developmental ("nightly") versions
 
 For requests/issues please submit a issue in the github folder. Do not attempt to contact the developers directly. We ask that bugs/problems be reported through the issues page too.
 
-### Notes on tolerances
+### 3.1 Notes on tolerances
 
 The manufacturing tolerances used for PCBs in the Acheron Project are a way to uniformize the design settings of the projects. These settings were obtained using mainly three manufacturers: PCBWay, Elecrow and JLCPCB (see their capabilities pages on references [1-3]). These are big players in the asian PCB manufacturing market and the tolerances practiced by them are accepted industry-wide; hence, the values used here should be enough for most manufacturers.
 
@@ -97,7 +101,7 @@ Keep in mind that these are, after all, minimum values. Always try to stray away
 - You can freely change these parameters around but make sure what those changes entail to, cost and production-wise
 - If you are beggining on PCB design or are using a new fab, it might be wise to just use the values here for now
 
-### Notes on copper pours
+### 3.2 Notes on copper pours
 
 Many DIY designers will state that the usage of copper pours is perfeccionism; in some cases, designers will argue that the pours are actually detrimental to the design, while I (gondolindrim) disagree with the former I agree with the latter in some respects. Ground pours are an integral part of digital high-speed signal design; since most (if not all) modern keyboards work under USB communication which uses differential pair topology, a ground copper pour is absolutely needed to ensure proper return currents paths, low ground impedance, EMI resistance, efficiency in ESD protection, protection from overheating, and so on. Particularly in keyboard PCBs, however, the copper pours make the PCBs stiffer, reducing what is known as "flex". The way to countermeasure that is by deploying flex cuts (also known as relief cuts) or leaf-spring mounting points. Use copper pours are your discretion but I (Gondolindrim) recommend always using them. My designs make liberal use of such pours even for other signals.
 
@@ -105,7 +109,7 @@ At the bottom-right of the page there is a copper polygon with the settings gene
 
 Avoid using hatched-pattern copper pours. They have their reason to be, but not on keyboard PCBs. They are ugly (yeah, fight me) and don't do what we want them to do here. Always use solid fills. The drawback is that they can make the PCB stiffer, so use flex cuts on the PCB.
 
-### Used tolerances
+### 3.3 Used tolerances
 
 #### IMPORTANT!
 The values and observations here listed consider a two-layer, 1 oz/ft² copper weight PCB setting. A change in these parameters (layers and copper weight) will unequivocably change the minimum values. Values also pertain to the cheapest setting on the referenced manufacturers. Therefore even for a 2-layer 1oz/ft2 PCB tolerances can be different for the "advanced" or "high-difficulty" settings.
@@ -140,7 +144,7 @@ DO NOT use these values in other settings; always coordinate properly with the f
 - [iv] The distance of copper-to-edge is a big problem for fabs in designs where traces need to be close to certain slots or the edges, like keyboard PCBs with flex cuts where the PCB traces need to be routed close to the flex cuts for lack of real-estate. This is why this value is much higer than the fabrication ones.
 - [v] The 1:6 ratio for silkscreen is OK for large characters but can become unreadable to the naked eye on a 1mm character. A 1:5 ratio is recommended.
 
-### Overall design recommendations
+### 3.3 Overall design recommendations
 
 - The first experience with PCB design is always very frustrating and overwhelming. There will be a lot of failed prototypes before you consider yourself a minimally good PCB designer, and there is always something to learn. Since PCB design is a highly technical and skill-oriented field, it can sometimes looks as if some sort of black magic. Do not stray from resilience. The best way to learn PCB design is designing. Some study in the fundamental aspects of electronics and embedded systems is also recommended, but higher education in maths and engineering is absolutely not needed to be a DIY designer.
 
@@ -158,7 +162,7 @@ DO NOT use these values in other settings; always coordinate properly with the f
 	- **(2) CRYSTAL TRACES:** these are the highest frequency traces on the PCB and should be handled with extreme care. Always place the crystal extremely close to the MCU (in its vicinities) and if possible sharing the same ground (ideally islanded).
 	- **(3) BYPASS CAPACITORS:** the precise function and nature of bypass (also called decoupling) capacitors is difficult to explain without higher knowledge in maths and engineering. In layman's terms, bypass capacitors are placed to mitigate noise inherently present in digital circuits due to the natural inductance of traces and the switching characteristic of digital circuitry. Failure to properly place and route these capacitors can lead to inability of the digital circuits to work properly. In the specific case of keyboard PCBs, there are plenty of digital circuits that need decoupling, mainly the microcontroller, RGB underglow LEDs and level shifters. Treat bypass capacitors like you would a crystal: as close to the main device as possible and with short traces. Always look at datasheets, reference manuals and application notes which will generally inform how many capacitors are needed and their respective values and sizes.
 
-## References
+## 4 References
 
 - [1] PCBWay manufacturing capabilities. Link: <https://www.pcbway.com/capabilities.html>. Last access august 21, 2021.
 - [2] JLCPCB manufacturing capabilities. Link: <https://jlcpcb.com/capabilities/Capabilities>. Last accessed august 21, 2021.

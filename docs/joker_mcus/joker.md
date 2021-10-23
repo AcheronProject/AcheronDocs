@@ -1,6 +1,12 @@
 # A multi-MCU approach to mechanical keyboard hardware design: the Joker template
 *Because desperate times need creative measures*
 
+**By Gondolindrim with contributos Tzarc and sigprof**
+
+**First version** published in sptember, 1 2021
+
+**Last revision** in october 22, 2021
+
 ---
 
 ## 1 Introduction
@@ -24,7 +30,7 @@ The end objective of this article is to develop a template design consisting of 
 - **Firmware compatibility**: target MCUs must be QMK-supported;
 - **Availability**: target MCUs must also be available for purchase for the general public (there are versions restricted to military or industrial use);
 - **Design licensing**: the Joker template should be KiCAD-compatible and open-source;
-- **Manufacturability**: the design must be manufacturable through a wide myriad (if not all) of the PCB manufacturers out there. There are some MCU versions that use BGA, UBGA and WLCSP packages which are only manufacturable in specialized fab houses. In this article we will focus on 48-pin variants, specifically UFQFPN-48 and LQFP-48 packages.
+- **Manufacturability**: the design must be manufacturable through a wide myriad (if not all) of the PCB manufacturers out there. There are some MCU versions that use BGA, UBGA and WLCSP packages which are only manufacturable in specialized fab houses. In this article we will focus on 48 and 64-pin variants, specifically UFQFPN-48 and LQFP-48 packages for the 48-pin variants and LQFP-64 packages for 64-pin variants.
 
 ### 1.2 The STM approach and how we make use of it
 
@@ -44,7 +50,7 @@ Hence, even though the F0x and F30x have the SPI and I2C peripherals at the same
 
 #### I2C
 
-The I2C1 peripheral is generally at pins 42 and 43 (PB9 and PB10); this peripheral is used by QMK for:
+The I2C1 peripheral is generally at pins 42 and 43 (PB9 and PB10) in the 48-pin variants and ; this peripheral is used by QMK for:
 
 - Some RGB controlling chips, mostly Lumissil chips like IS31FL3741A;
 - OLED screens;
@@ -58,52 +64,85 @@ The channel 1 of TIM3 is generally at pin 15 (PA6); this peripheral can be used 
 
 The SPI2 peripheral is generally located at pins 28, 27 and 26 (in that order, MOSI, MISO and SCK pins). This peripheral is used by the template to control integrated-controlled RGB LEDs (WS2812, SK6812 and derivatives), which can be used for RGB underglow and per-key RGB lighting.
 
-#### Power pins
-
-On the MCUs used by the template, there are basically three types of power pins.
-
-- Pin 1 has a battery sensing pin; this is used mostly for the realtime clock (RTC) peripheral to keep the time counter ticking while the microcontroller is not operating. According to **[11-13]**, if not external battery is present then this pin should be connected to VDD with a 100nF capacitor.
-- Pins 8 and 9 are the analog power supply and analog voltage reference for the ADC and DAC peripherals, reset blocks, oscillator PLLs and the internal HSI and LSI buses. The references recommend using two capacitors: a 100 nF ceramic with a 1uF ceramic or tantallum. Additionally, for digital noise filtering, it is also recommended to connect VDDA to VDD using through a ferrite bead;
-- Pins 23 and 24, 35 and 36, 47 and 48 are digital supply pin pairs (VDD and VSS respectively for each pair). These should be connected with a single tantallum or ceramic capacitor of minimum 4.7uF (10uF typical recommended) and a 100nF ceramic capacitor for each pin.
-- In the STM32F4 family, pin 22 is used as filters for the voltage regulator. **[13]** recommends using a 4.7uF ceramic capacitor with low ESR.
-
-Below is a schematic of the power supply as recommended by STM.
-
-<figure>
-  <img src="../../images/multimcu_article/stm32f0x1x2x8_power.svg" width="600" align="middle"/>
-  <figcaption><b> Figure 1. </b>  STM32F0x1/x2/x8 power supply schematic as recommended by STM. Source: [12].</figcaption>
-</figure>
-
 #### Reset pins
 
 - All MCUs supported by the template have a BOOT0 pin, located at pin 44, and an nRST pin located at pin 7;
 - For those MCUs that have BOOT1, it is located at pin 20;
 
-## 3 The final circuit
-
-Figure 1 shows a schematic of the "joker template" developed. 
-
-<figure>
-  <img src="../../images/multimcu_article/joker.svg" width="800" align="middle"/>
-  <figcaption><b> Figure 2. </b>  "Joker" 48-pin STM32 MCU circuit topology.</figcaption>
-</figure>
-
-This template can be used by using the [keyboard creator tool](../acheron_setup/acheron_setup.md) script or by simply copying the [target files](https://github.com/AcheronProject/AcheronSetup/tree/main/keyboard_creator/joker_template). Figure 2 shows the KiCAD schematic implementation of these files.
-
-<figure>
-  <img src="../../images/multimcu_article/kicad_schematic.svg" width="800" align="middle"/>
-  <figcaption><b> Figure 3. </b>  "Joker" 48-pin STM32 MCU circuit KiCAD template schematic.</figcaption>
-</figure>
-
-### 3.1 Understanding the generality of the circuit
+### 2.2 Understanding the generality of the circuit
 
 It must be understood that the final circuit of figure 2 is supposed to work with multiple STM units, some of which either don't make use or do not need some of the peripherals needed. For instance, in QMK the STM32F072 units can make use of an EEPROM simulation algorithm that allocates some flash memory to act as EEPROM; STM32L072 and STM32L051 have integrated EEPROM. This means that these units do not need the external EEPROM, and this in turn means that if the PCB in question is being manufactured using one of those microcontrollers one can omit the EEPROM and its bypass capacitor (and if no other I2C devices are being used, the I2C pullup resistors as well) from the Bill of Materials, thus informing the factory that, albeit the footprints being there, these components are not to be soldered. This situation is most commonly referred to as leaving these footprints or sites *unpopulated*.
 
 There are, however, some components that are implemented specifically for a certain family of STM32. For instance, resistor R5 for the USB fullspeed pullup, is integrated in most STM32 MCUs; according to [15], all MCUs in the STM32F303 family need that external resistor.
 
-### 3.2 How to check if a microcontroller is supported by the Joker template
+## 3 The final circuits and the KiCAD files
 
-- It is available in a 48-pin version, in either LQFP or UFQFPN packages;
+###  3.1 Final circuits
+
+Figures 1a and 1b show a schematic of the Joker48 template while figures 2a and 2b show a schematic of the Joker64 template. The circuits are denoted in two versions, a colored version denoting some pin functionalities and a black and white version for better readability.
+
+!!! note "Joker templates schematics"
+    === "Joker 48 B/W"
+        <figure>
+            <img src="../../images/joker_article/joker48_bw.svg" width="1000" align="middle"/>
+            <figcaption><b> Figure 1a. </b>  "Joker48" 48-pin STM32 MCU circuit topology (black and white version). </figcaption>
+        </figure>
+    === "Joker48 colored"
+        <figure>
+            <img src="../../images/joker_article/joker48_colored.svg" width="1000" align="middle"/>
+	    <figcaption><b> Figure 1b. </b>  "Joker48" 48-pin STM32 MCU circuit topology (colored version). </figcaption>
+        </figure>
+    === "Joker64 B/W"
+        <figure>
+            <img src="../../images/joker_article/joker64_bw.svg" width="1000" align="middle"/>
+            <figcaption><b> Figure 2a. </b>  "Joker64" 64-pin STM32 MCU circuit topology (black and white version). </figcaption>
+        </figure>
+    === "Joker64 colored"
+        <figure>
+            <img src="../../images/joker_article/joker64_colored.svg" width="1000" align="middle"/>
+	    <figcaption><b> Figure 2b. </b>  "Joker64" 64-pin STM32 MCU circuit topology (colored version). </figcaption>
+        </figure>
+
+### 3.2 Notes on the final circuits
+
+The colored versions of the circuits shows five pin types:
+
+- **Blue pin type or "MCU function pins":** these are used by the microcontroller for specific functions like booting options, In-System-Programming SWD or voltage regulating capacitors (VCAP pins). Blue pins should not be changed or edited in any way whatsoever as they are crucial for the compatibility of the Joker templates:
+    - **Crystal pins:** paramount for the majority of STM MCUs that don't embed a solid-state oscillator;
+    - **nRST, BOOT0 and BOOT1:** BOOT0 and BOOT1 are sampled during reset which happens when nRST is pulled low or a software reset is issued. BOOT0 is present in all STM32F MCUs and is used to select between DFU (if high state) and main memory boot (if low state). BOOT1, on the other hand, is also used for boot selection but is not available in all families. However, in the ones it is, if BOOT1 is pulled down, the BOOT0 pin works like it does in the MCUs that don't have BOOT1 (DFU is BOOT1 is sampled high, main memory if sampled low). For clarification on this, read the [part 2 of the reset circuit article](../reset_article_2/reset_article_2.md). Hence, the idea is to pull BOOT1 down through a 10k ohm pullup and operate BOOT0 the same way in both cases; the signals for nRST or BOOT1 can be chosen at the discretion of the designer. The ones available in [part 1 of the reset circuit article](../reset_article_1/reset_article_1.md) are advised;
+    - **SWD pins SWDIO and SWCLK:** used for in-system-programming. These have very particular topologies, some have pullup or pulldown resistors. Expose them with a pin header and leave them be;
+    - **USB pins USB_D+ and USB_D-:** used for USB communication;
+    - 
+- **Pink pin type or "keyboard feature pins":** these pins are used by certain keyboard features.
+    - The I2C pins SDA and SCL are used for the EEPROM (needed for VIA). It is recommended to not use these pins for anything else as some MCUs in the compatibility list need EEPROM and designing your PCB without EEPROM support will make features like VIA not work with these MCUs in particular. In the case of MCUs with embedded EEPROM or EEPROM-simulation capabilities one can just leave the EEPROM circuit unpopulated;
+    - The LED PWM can be any pin with PWM capability (avoid TIM2 pins as that is used by ChibiOS for OS tick). If your keyboard does not have backlight this pin can be used for anything else or left floating;
+    - The RGB_3V3 pin used can be any SPI-capable pin; the RGB LEDs output signal is delivered by the SPIx_MOSI pin. The default port used in Joker48 is SPI2. Remember however that once SPI is enabled, the SPIx_CLK pin is locked and cannot be used for anything else; this is denoted by an X on the schematics figures. You can still use the SPIx_MISO pin for rows and columns. If your keyboard does not need to use this feature these pins can be freely used for anything else or left floating.
+- **Black pin type or "general use pins":** these pins are, as the name suggests, ideal for general use, preferable rows and columns in your keyboard matrix;
+- **Green pin type or "special case pins":** read below.
+    - **PA9**: in microcontrollers with the USB OTG capability, this pin is used as VBUS sensing and has an embedded strong pullup resistor which impedes it from being used for anything else. On the template this is left with a 0R resisor (essentially a jumper) which can be populated in case this feature is not usable.
+    - **PA10**: in MCUs with this capability, this pin is used by the DFU to update firmware using the USART peripheral; if left floating or with a long enough copper trace this pin can pickup signals and the USART DFU can trigger, which makes the MCU give USB errors. A weak pullup (51k on the schematic) is used to avoid  this. This pin can be used as a general input-output; the recommended use is as row or column pin in the switch matrix.
+- **Yellow pins or power pins:** there are basically three types of power pins: VBAT for battery sensing, VDD for digital power, VDDA for analog power and VDDUSB for the USB peripheral power in MCUs that feature this (in the ones that don't these are just VDDIO pins). Figure 3 shows a schematic of the power supply scheme recommended by ST. Note the 10 microfarad tantallum capacitor, used for the particularity of thermal, age and electric reliability of tantallums.
+    - Pin 1 has a battery sensing pin; this is used mostly for the realtime clock (RTC) peripheral to keep the time counter ticking while the microcontroller is not operating. According to **[11-13]**, if not external battery is present then this pin should be connected to VDD with a 100nF capacitor.
+    - Pins 8 and 9 are the analog power supply and analog voltage reference for the ADC and DAC peripherals, reset blocks, oscillator PLLs and the internal HSI and LSI buses. The references recommend using two capacitors: a 100 nF ceramic with a 1uF ceramic or tantallum. Additionally, for digital noise filtering, it is also recommended to connect VDDA to VDD using through a ferrite bead;
+    - Pins 23 and 24, 35 and 36, 47 and 48 are digital supply pin pairs (VDD and VSS respectively for each pair). These should be connected with a single tantallum or ceramic capacitor of minimum 4.7uF (10uF typical recommended) and a 100nF ceramic capacitor for each pin.
+    - In the STM32F4 family, pin 22 is used as filters for the voltage regulator. **[13]** recommends using a 4.7uF ceramic capacitor with low ESR.
+
+<figure>
+  <img src="../../images/joker_article/stm32f0x1x2x8_power.svg" width="600" align="middle"/>
+  <figcaption><b> Figure 3. </b>  STM32F0x1/x2/x8 power supply schematic as recommended by STM. Source: [12].</figcaption>
+</figure>
+
+
+### 3.3 Ready-to-use KiCAD files
+     
+In order to speed up development using these templates, the Acheron Project made available KiCAD template files that can be readily used through the [AcheronSetup keyboard creator script](../acheron_setup/acheron_setup.md) or by simply copying the target files. These files already have constraints and tolerances used by the AcheronProject to achieve somewhat factory-agnostic manufacturable PCB tolerances (like minimum copper trace widths, copper clearances *et cetera*), as documented in the AcheronSetup page.
+
+## 4 Joker48 MCU compatibility list
+
+Here are listed the known compatible or incompatible MCUs and some description of their workings, with the populate and don't populate list of components for each family.
+
+### How to check if an MCU is supported by the Joker48 template
+- It is available in a 48-pin version, in either LQFP-48 (package code "CxT") or UFQFPN (package code "CxU") packages;
 - There is an I2C peripheral on pins 42 and 43;
 - There is an SPI peripheral on pins 26 through 28;
 - There is a PWM (timer) peripheral on pin 15 (avoid using timer TIM2 as it is used by ChibiOS for the OS tick);
@@ -119,9 +158,6 @@ There are, however, some components that are implemented specifically for a cert
 
 Additionally, one must also make sure that all the power pins check. The MCUs compatible have VDD and VSS pins at pins 23/24, 35/36, 47/48; analog voltage reference pins are 8 and 9. Pins 1 is used as a battery voltage sensing and should be connected to VDD.
 
-## 4 MCU compatibility list
-
-Here are listed the known compatible or incompatible MCUs and some description of their workings, with the populate and don't populate list of components for each family.
 
 ### 4.1 Known compatible families
 
@@ -268,6 +304,25 @@ Not available in 48-pin version.
 
 The xD, xE, x6 and x8 sub-families lack an USB peripheral, hence they do not communicate over USB at all. The xB and xC sub-families do have an USB and are supported.
 
+## 5 Joker64 MCU compatibility list
+
+
+### 5.1 How to check if an MCU is supported by the Joker64 template
+- It is available in a 64-pin version, in LQFP-64 package which package code is "R";
+- There is an I2C peripheral on pins 42 and 43;
+- There is an SPI peripheral on pins 26 through 28;
+- There is a PWM (timer) peripheral on pin 15 (avoid using timer TIM2 as it is used by ChibiOS for the OS tick);
+- There is an USB peripheral on pins 32 and 33;
+- The BOOT0 is at pin 44 and nRST at pin 7;
+- For those units that have BOOT1, it's located at pin 20;
+- For those units that do not have an internal RC oscillator, the oscillator crystal pins are 5 and 6;
+- For those units that need a capacitor for the voltage regulators, the VCAP pin is located at pin 22;
+- There are VDD and VSS (digital power and digital ground) at pins 23/24, 35/36, 47/48
+- There are VDDA and VSSA (analog power and analog ground) at pins 8 and 9;
+- There is a VBAT battery sense at pin 1;
+- There are USB D+ and D- at pins 33 and 32 respectively;
+
+Additionally, one must also make sure that all the power pins check. The MCUs compatible have VDD and VSS pins at pins 23/24, 35/36, 47/48; analog voltage reference pins are 8 and 9. Pins 1 is used as a battery voltage sensing and should be connected to VDD.
 
 # References
 

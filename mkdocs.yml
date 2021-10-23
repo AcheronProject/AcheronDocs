@@ -12,7 +12,7 @@ nav:
         - About the articles: articles.md
         - A single-push reset circuit for STM32, part 1: reset_article_1/reset_article_1.md
         - A single-push reset circuit for STM32, part 2: reset_article_2/reset_article_2.md
-        - A multi-MCU approach to keyboard PCB development: multimcu_article/multimcu_article.md
+        - A multi-MCU approach to keyboard PCB development: joker_mcus/joker.md
     - AOHL v1.4: AOHL14.md
     - Alexandria: alexandria/alexandria.md
     - PCB repository:
