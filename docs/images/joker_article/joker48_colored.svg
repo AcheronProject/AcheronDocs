@@ -28,18 +28,19 @@
      fit-margin-bottom="5"
      fit-margin-right="5"
      lock-margins="true"
-     inkscape:zoom="1.8771859"
-     inkscape:cx="291.12727"
-     inkscape:cy="340.1368"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="1920"
-     inkscape:window-y="293"
-     inkscape:window-maximized="1"
+     inkscape:zoom="0.66368544"
+     inkscape:cx="1276.9604"
+     inkscape:cy="1126.2866"
+     inkscape:window-width="1310"
+     inkscape:window-height="969"
+     inkscape:window-x="1996"
+     inkscape:window-y="721"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      inkscape:snap-center="true"
      inkscape:object-paths="true"
-     inkscape:snap-nodes="false">
+     inkscape:snap-nodes="false"
+     showguides="false">
     <inkscape:grid
        type="xygrid"
        id="grid15424"
@@ -991,7 +992,7 @@
        y="0"><tspan
          x="283.46125"
          y="-1172.3321"
-         id="tspan12975">100nF</tspan></text>
+         id="tspan5276">100nF</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fab400;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -138.30876,220.54578 h 84.99999"
@@ -1179,7 +1180,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12977">1</tspan></text>
+         id="tspan5278">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,408.72531)"
@@ -1189,7 +1190,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12979">2</tspan></text>
+         id="tspan5280">2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,428.72533)"
@@ -1199,7 +1200,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12981">3</tspan></text>
+         id="tspan5282">3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,448.72533)"
@@ -1209,7 +1210,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12983">4</tspan></text>
+         id="tspan5284">4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,468.72533)"
@@ -1219,7 +1220,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12985">5</tspan></text>
+         id="tspan5286">5</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,488.72534)"
@@ -1229,7 +1230,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12987">6</tspan></text>
+         id="tspan5288">6</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,508.72533)"
@@ -1239,7 +1240,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan12989">7</tspan></text>
+         id="tspan5290">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-120.30874,636.72531)"
@@ -1249,7 +1250,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan12991">13</tspan></text>
+         id="tspan5292">13</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-100.30874,636.72531)"
@@ -1259,7 +1260,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan12993">14</tspan></text>
+         id="tspan5294">14</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-80.30874,636.72531)"
@@ -1269,7 +1270,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan12995">15</tspan></text>
+         id="tspan5296">15</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-60.30873,636.72531)"
@@ -1279,7 +1280,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan12997">16</tspan></text>
+         id="tspan5298">16</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-40.30873,636.72531)"
@@ -1289,7 +1290,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan12999">17</tspan></text>
+         id="tspan5300">17</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,496.7253)"
@@ -1299,9 +1300,9 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13003"><tspan
+         id="tspan5304"><tspan
            style="text-align:start"
-           id="tspan13001">31</tspan></tspan></text>
+           id="tspan5302">31</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,516.7253)"
@@ -1311,7 +1312,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13005">30</tspan></text>
+         id="tspan5306">30</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,536.72531)"
@@ -1321,7 +1322,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13007">29</tspan></text>
+         id="tspan5308">29</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,556.72532)"
@@ -1331,7 +1332,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13009">28</tspan></text>
+         id="tspan5310">28</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,576.72532)"
@@ -1341,7 +1342,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13011">27</tspan></text>
+         id="tspan5312">27</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,596.72533)"
@@ -1351,7 +1352,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13013">26</tspan></text>
+         id="tspan5314">26</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,616.72532)"
@@ -1361,7 +1362,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13015">25</tspan></text>
+         id="tspan5316">25</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.30873,368.7253)"
@@ -1371,7 +1372,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13017">42</tspan></text>
+         id="tspan5318">42</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-20.30873,368.7253)"
@@ -1381,7 +1382,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13019">43</tspan></text>
+         id="tspan5320">43</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-41.30873,368.7253)"
@@ -1391,7 +1392,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13021">44</tspan></text>
+         id="tspan5322">44</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-61.30873,368.7253)"
@@ -1401,7 +1402,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13023">45</tspan></text>
+         id="tspan5324">45</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-80.30874,368.72531)"
@@ -1411,7 +1412,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13025">46</tspan></text>
+         id="tspan5326">46</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-100.30874,368.7253)"
@@ -1421,7 +1422,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13027">47</tspan></text>
+         id="tspan5328">47</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-120.30874,368.7253)"
@@ -1431,7 +1432,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13029">48</tspan></text>
+         id="tspan5330">48</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,528.72534)"
@@ -1441,7 +1442,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan13031">8</tspan></text>
+         id="tspan5332">8</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-140.30874,548.72534)"
@@ -1451,7 +1452,7 @@
        y="0"><tspan
          x="309.39846"
          y="-1172.3321"
-         id="tspan13033">9</tspan></text>
+         id="tspan5334">9</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -63.30877,260.54578 h 10"
@@ -1465,7 +1466,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13035">10</tspan></text>
+         id="tspan5336">10</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -63.30877,280.54578 h 10"
@@ -1479,7 +1480,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13037">11</tspan></text>
+         id="tspan5338">11</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -63.30877,300.54578 h 10"
@@ -1493,7 +1494,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13039">12</tspan></text>
+         id="tspan5340">12</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 126.69124,330.54578 v -10"
@@ -1507,7 +1508,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13041">18</tspan></text>
+         id="tspan5342">18</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.30876,636.72531)"
@@ -1517,7 +1518,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13043">19</tspan></text>
+         id="tspan5344">19</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,19.69125,636.72531)"
@@ -1527,7 +1528,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13045">20</tspan></text>
+         id="tspan5346">20</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.69125,636.72531)"
@@ -1537,7 +1538,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13047">21</tspan></text>
+         id="tspan5348">21</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,59.69125,636.72531)"
@@ -1547,7 +1548,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13049">22</tspan></text>
+         id="tspan5350">22</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,396.72531)"
@@ -1557,7 +1558,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13051">36</tspan></text>
+         id="tspan5352">36</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,416.72532)"
@@ -1567,7 +1568,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13053">35</tspan></text>
+         id="tspan5354">35</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,436.72532)"
@@ -1577,7 +1578,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13055">34</tspan></text>
+         id="tspan5356">34</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,456.72533)"
@@ -1587,7 +1588,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13057">33</tspan></text>
+         id="tspan5358">33</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,136.69104,476.72532)"
@@ -1597,7 +1598,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13059">32</tspan></text>
+         id="tspan5360">32</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 106.69123,60.54578 v -10"
@@ -1623,7 +1624,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13061">37</tspan></text>
+         id="tspan5362">37</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,78.69126,368.7253)"
@@ -1633,7 +1634,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13063">38</tspan></text>
+         id="tspan5364">38</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,58.69126,368.7253)"
@@ -1643,7 +1644,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13065">39</tspan></text>
+         id="tspan5366">39</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.69125,368.72531)"
@@ -1653,7 +1654,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13067">40</tspan></text>
+         id="tspan5368">40</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,19.69125,368.7253)"
@@ -1663,7 +1664,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13069">41</tspan></text>
+         id="tspan5370">41</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,79.69126,636.72531)"
@@ -1673,7 +1674,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13071">23</tspan></text>
+         id="tspan5372">23</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,99.69126,636.72531)"
@@ -1683,7 +1684,7 @@
        y="0"><tspan
          x="297.53715"
          y="-1172.3321"
-         id="tspan13073">24</tspan></text>
+         id="tspan5374">24</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -123.30877,150.54579 v 9.99999"
@@ -1911,7 +1912,7 @@
        y="0"><tspan
          x="276.22525"
          y="-1172.3321"
-         id="tspan13075">VDD</tspan></text>
+         id="tspan5376">VDD</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fab400;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -91.30876,83.54578 3,-3 -3,-3"
@@ -1925,7 +1926,7 @@
        y="0"><tspan
          x="276.22525"
          y="-1172.3321"
-         id="tspan13077">VDD</tspan></text>
+         id="tspan5378">VDD</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fab400;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;fill-opacity:1"
        d="M -73.30876,80.54577 V 65.54578"
@@ -1944,7 +1945,7 @@
        y="0"><tspan
          x="284.95105"
          y="-1172.3321"
-         id="tspan13079">C2</tspan></text>
+         id="tspan5380">C2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-205.809,456.72532)"
@@ -1954,7 +1955,7 @@
        y="0"><tspan
          x="278.99835"
          y="-1172.3321"
-         id="tspan13081">12pF</tspan></text>
+         id="tspan5382">12pF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-204.30883,507.72533)"
@@ -1964,7 +1965,7 @@
        y="0"><tspan
          x="284.95105"
          y="-1172.3321"
-         id="tspan13083">C3</tspan></text>
+         id="tspan5384">C3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-205.809,513.72533)"
@@ -1974,7 +1975,7 @@
        y="0"><tspan
          x="279.94366"
          y="-1172.3321"
-         id="tspan13085">12pF</tspan></text>
+         id="tspan5386">12pF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-171.30894,479.72532)"
@@ -1984,9 +1985,9 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13089"><tspan
+         id="tspan5390"><tspan
            style="text-align:start"
-           id="tspan13087">Y1</tspan></tspan></text>
+           id="tspan5388">Y1</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-171.30894,485.72532)"
@@ -1996,9 +1997,9 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13093"><tspan
+         id="tspan5394"><tspan
            style="text-align:start"
-           id="tspan13091">8MHz</tspan></tspan></text>
+           id="tspan5392">8MHz</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-189.30895,545.72532)"
@@ -2008,7 +2009,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13095">1μF</tspan></text>
+         id="tspan5396">1μF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-189.30895,539.72532)"
@@ -2018,7 +2019,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13097">C5</tspan></text>
+         id="tspan5398">C5</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-153.30895,545.72532)"
@@ -2028,7 +2029,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13099">100nF</tspan></text>
+         id="tspan5400">100nF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-153.30895,539.72532)"
@@ -2038,7 +2039,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13101">C6</tspan></text>
+         id="tspan5402">C6</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.69105,695.72532)"
@@ -2048,7 +2049,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13103">10kΩ</tspan></text>
+         id="tspan5404">10kΩ</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.69105,689.72532)"
@@ -2058,7 +2059,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13105">R1</tspan></text>
+         id="tspan5406">R1</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 141.69124,370.54581 h 9.99997"
@@ -2092,7 +2093,7 @@
        y="0"><tspan
          x="276.06575"
          y="-1172.3321"
-         id="tspan13107">VDD</tspan></text>
+         id="tspan5408">VDD</tspan></text>
     <g
        id="g251252"
        transform="rotate(180,410.87603,-151.28726)"
@@ -2163,7 +2164,7 @@
        y="0"><tspan
          x="276.06575"
          y="-1172.3321"
-         id="tspan13109">VDD</tspan></text>
+         id="tspan5410">VDD</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-106.30883,342.72533)"
@@ -2173,7 +2174,7 @@
        y="0"><tspan
          x="283.46125"
          y="-1172.3321"
-         id="tspan13111">100nF</tspan></text>
+         id="tspan5412">100nF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-103.80898,336.72533)"
@@ -2183,7 +2184,7 @@
        y="0"><tspan
          x="290.62097"
          y="-1172.3321"
-         id="tspan13113">C8</tspan></text>
+         id="tspan5414">C8</tspan></text>
     <g
        id="g187258-4-4"
        transform="translate(-457.01104,50.6893)"
@@ -2216,7 +2217,7 @@
        y="0"><tspan
          x="283.46125"
          y="-1172.3321"
-         id="tspan13115">100nF</tspan></text>
+         id="tspan5416">100nF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,229.5495,216.74857)"
@@ -2226,7 +2227,7 @@
        y="0"><tspan
          x="290.62097"
          y="-1172.3321"
-         id="tspan13117">C1</tspan></text>
+         id="tspan5418">C1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-32.50642,284.16747)"
@@ -2236,7 +2237,7 @@
        y="0"><tspan
          x="285.56259"
          y="-1172.3321"
-         id="tspan13119">1.5kΩ</tspan></text>
+         id="tspan5420">1.5kΩ</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-30.00657,277.75167)"
@@ -2246,7 +2247,7 @@
        y="0"><tspan
          x="290.62097"
          y="-1172.3321"
-         id="tspan13121">R3</tspan></text>
+         id="tspan5422">R3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,96.19099,652.72532)"
@@ -2256,7 +2257,7 @@
        y="0"><tspan
          x="284.69032"
          y="-1172.3321"
-         id="tspan13123">C10</tspan></text>
+         id="tspan5424">C10</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 311.69121,143.54578 -3,-3 3,-3"
@@ -2270,7 +2271,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13125">USB_D+</tspan></text>
+         id="tspan5426">USB_D+</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 311.69121,163.54578 -3,-3 3,-3"
@@ -2284,7 +2285,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13127">USB_D-</tspan></text>
+         id="tspan5428">USB_D-</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 315.19121,143.54578 3,-3 -3,-3"
@@ -2306,7 +2307,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13129">3.3V</tspan></text>
+         id="tspan5430">3.3V</tspan></text>
     <circle
        style="display:inline;fill:#00b4fa;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="path220524"
@@ -2344,7 +2345,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13131">SDA</tspan></text>
+         id="tspan5432">SDA</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fa00b4;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 69.69126,-70.95423 -3,-3 -3,3"
@@ -2367,7 +2368,7 @@
        y="0"><tspan
          x="386.98461"
          y="-1172.3321"
-         id="tspan13133">3.3V</tspan></text>
+         id="tspan5434">3.3V</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fa00b4;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 89.69126,-67.45423 -3,3 -3,-3"
@@ -2381,7 +2382,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13135">SCL</tspan></text>
+         id="tspan5436">SCL</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fa00b4;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 89.69126,-70.95423 -3,-3 -3,3"
@@ -2395,7 +2396,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13137">RGB_3V3</tspan></text>
+         id="tspan5438">RGB_3V3</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fa00b4;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 239.19121,243.54578 3,-3 -3,-3"
@@ -2421,7 +2422,7 @@
        y="0"><tspan
          x="284.95105"
          y="-1172.3321"
-         id="tspan13139">R5</tspan></text>
+         id="tspan5440">R5</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00c800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 259.69121,203.54578 -3,-3 3,-3"
@@ -2435,7 +2436,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13141">USB_5V</tspan></text>
+         id="tspan5442">USB_5V</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,158.69121,497.72532)"
@@ -2445,7 +2446,7 @@
        y="0"><tspan
          x="284.95105"
          y="-1172.3321"
-         id="tspan13143">R4</tspan></text>
+         id="tspan5444">R4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,157.19101,503.72532)"
@@ -2455,7 +2456,7 @@
        y="0"><tspan
          x="290.34363"
          y="-1172.3321"
-         id="tspan13145">0Ω</tspan></text>
+         id="tspan5446">0Ω</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,45.69123,668.72532)"
@@ -2465,7 +2466,7 @@
        y="0"><tspan
          x="296.52027"
          y="-1172.3321"
-         id="tspan13147">4.7μF</tspan></text>
+         id="tspan5448">4.7μF</tspan></text>
     <g
        id="g240200"
        transform="rotate(-90,698.70906,421.89755)"
@@ -2488,7 +2489,7 @@
        y="0"><tspan
          x="282.05211"
          y="-1172.3321"
-         id="tspan13149">LED_PWM</tspan></text>
+         id="tspan5450">LED_PWM</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 206.69121,260.54578 h 10"
@@ -2502,7 +2503,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13151">SPI SLCK</tspan></text>
+         id="tspan5452">SPI SLCK</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fab400;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 256.69121,95.54578 v 10"
@@ -2568,7 +2569,7 @@
        y="0"><tspan
          x="298.5768"
          y="-1172.3321"
-         id="tspan13153">100nF</tspan></text>
+         id="tspan5454">100nF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,146.69091,399.72532)"
@@ -2578,7 +2579,7 @@
        y="0"><tspan
          x="293.47439"
          y="-1172.3321"
-         id="tspan13155">C11</tspan></text>
+         id="tspan5456">C11</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-176.30916,377.72532)"
@@ -2588,7 +2589,7 @@
        y="0"><tspan
          x="298.5768"
          y="-1172.3321"
-         id="tspan13157">100nF</tspan></text>
+         id="tspan5458">100nF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-169.30906,371.72532)"
@@ -2598,7 +2599,7 @@
        y="0"><tspan
          x="305.3357"
          y="-1172.3321"
-         id="tspan13159">C7</tspan></text>
+         id="tspan5460">C7</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 88.69124,362.54578 3,3 -3,3"
@@ -2612,7 +2613,7 @@
        y="0"><tspan
          x="298.85203"
          y="-1172.3321"
-         id="tspan13161">BOOT1</tspan></text>
+         id="tspan5462">BOOT1</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 43.69124,25.04578 3,3 3,-3"
@@ -2630,7 +2631,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13163">BOOT0</tspan></text>
+         id="tspan5464">BOOT0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,170.20841,432.72532)"
@@ -2640,7 +2641,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13165">SWDIO</tspan></text>
+         id="tspan5466">SWDIO</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0,-0.26458333,0.26458333,0,498.89711,96.61376)"
@@ -2650,7 +2651,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13167">SWDCLK</tspan></text>
+         id="tspan5468">SWDCLK</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fa00b4;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 86.69124,-49.45423 h -29 l -1,4 -2,-8 -2,8 -2,-8 -2,8 -2,-8 -1,4 h -9"
@@ -2669,7 +2670,7 @@
        y="0"><tspan
          x="386.98461"
          y="-1172.3321"
-         id="tspan13169">3.3V</tspan></text>
+         id="tspan5470">3.3V</tspan></text>
     <circle
        style="display:inline;fill:#fa00b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="circle275212"
@@ -2685,7 +2686,7 @@
        y="0"><tspan
          x="285.56259"
          y="-1172.3321"
-         id="tspan13171">1.5kΩ</tspan></text>
+         id="tspan5472">1.5kΩ</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-29.80901,247.72532)"
@@ -2695,7 +2696,7 @@
        y="0"><tspan
          x="290.62097"
          y="-1172.3321"
-         id="tspan13173">R2</tspan></text>
+         id="tspan5474">R2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-192.30913,512.72532)"
@@ -2705,7 +2706,7 @@
        y="0"><tspan
          x="339.46184"
          y="-1172.3321"
-         id="tspan13175">nRST</tspan></text>
+         id="tspan5476">nRST</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 327.0497,-104.43098 v 49.97675"
@@ -2745,7 +2746,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13177">SCL</tspan></text>
+         id="tspan5478">SCL</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,239.0495,307.75157)"
@@ -2755,7 +2756,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13179">SDA</tspan></text>
+         id="tspan5480">SDA</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0,0.26458333,-0.26458333,0,28.677763,-117.45444)"
@@ -2765,9 +2766,9 @@
        y="0"><tspan
          x="299.25354"
          y="-1165.5001"
-         id="tspan13183"><tspan
+         id="tspan5484"><tspan
            style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold'"
-           id="tspan13181">I2C EEPROM</tspan></tspan></text>
+           id="tspan5482">I2C EEPROM</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,198.60181,623.91769)"
@@ -2777,10 +2778,10 @@
        y="0"><tspan
          x="334.8201"
          y="-1165.5001"
-         id="tspan13185">2X5 PIN </tspan><tspan
+         id="tspan5486">2X5 PIN </tspan><tspan
          x="327.34022"
          y="-1128.8335"
-         id="tspan13187">HEADER</tspan></text>
+         id="tspan5488">HEADER</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,233.5495,264.72527)"
@@ -2790,9 +2791,9 @@
        y="0"><tspan
          x="330.86946"
          y="-1172.3321"
-         id="tspan13191"><tspan
+         id="tspan5492"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan13189">VDD</tspan></tspan></text>
+           id="tspan5490">VDD</tspan></tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 330.0497,-107.43098 -3,3 -3,-3"
@@ -2806,7 +2807,7 @@
        y="0"><tspan
          x="331.44543"
          y="-1172.3321"
-         id="tspan13193">3.3V</tspan></text>
+         id="tspan5494">3.3V</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 327.0497,25.54577 v 10"
@@ -2820,9 +2821,9 @@
        y="0"><tspan
          x="329.68546"
          y="-1172.3321"
-         id="tspan13197"><tspan
+         id="tspan5498"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan13195">GND</tspan></tspan></text>
+           id="tspan5496">GND</tspan></tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 307.0497,-4.45426 h -15"
@@ -2963,7 +2964,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13199">SWCLK</tspan></text>
+         id="tspan5500">SWCLK</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,276.90631,682.75166)"
@@ -2973,7 +2974,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13201">BOOT1</tspan></text>
+         id="tspan5502">BOOT1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-66.22655,493.56067)"
@@ -2983,10 +2984,10 @@
        y="0"><tspan
          x="321.89539"
          y="-1145.0041"
-         id="tspan13203">&quot;Joker48&quot; STM32 </tspan><tspan
+         id="tspan5504">&quot;Joker48&quot; STM32 </tspan><tspan
          x="479.92178"
          y="-1078.3375"
-         id="tspan13205">MCU</tspan></text>
+         id="tspan5506">MCU</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00b4fa;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="m 101.69126,400.54578 h 9.99997"
@@ -3031,7 +3032,7 @@
        y="0"><tspan
          x="387.838"
          y="-1172.3321"
-         id="tspan13207">SDA</tspan></text>
+         id="tspan5508">SDA</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,201.19101,428.75168)"
@@ -3041,7 +3042,7 @@
        y="0"><tspan
          x="276.11434"
          y="-1172.3321"
-         id="tspan13209">1.5kΩ</tspan></text>
+         id="tspan5510">1.5kΩ</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,165.83563,287.74857)"
@@ -3051,7 +3052,7 @@
        y="0"><tspan
          x="389.62999"
          y="-1172.3321"
-         id="tspan13211">SCL</tspan></text>
+         id="tspan5512">SCL</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,149.69095,652.71783)"
@@ -3061,7 +3062,7 @@
        y="0"><tspan
          x="321.64851"
          y="-1172.3321"
-         id="tspan13213">SWDIO</tspan></text>
+         id="tspan5514">SWDIO</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,149.69095,682.75169)"
@@ -3071,7 +3072,7 @@
        y="0"><tspan
          x="321.7978"
          y="-1172.3321"
-         id="tspan13215">BOOT0</tspan></text>
+         id="tspan5516">BOOT0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,45.69123,661.72532)"
@@ -3081,7 +3082,7 @@
        y="0"><tspan
          x="324.23218"
          y="-1172.3321"
-         id="tspan13217">C9
+         id="tspan5518">C9
 </tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3173,7 +3174,7 @@
        y="0"><tspan
          x="349.18969"
          y="-1172.3321"
-         id="tspan13219">3.3V</tspan></text>
+         id="tspan5520">3.3V</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 287.69111,400.54576 h -21"
@@ -3246,7 +3247,7 @@
        y="0"><tspan
          x="339.46184"
          y="-1172.3321"
-         id="tspan13221">nRST</tspan></text>
+         id="tspan5522">nRST</tspan></text>
     <g
        id="g77761"
        transform="rotate(90,505.54297,-173.97205)"
@@ -3293,7 +3294,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13223">3.3V</tspan></text>
+         id="tspan5524">3.3V</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,189.69101,392.72532)"
@@ -3303,7 +3304,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13225">VDD</tspan></text>
+         id="tspan5526">VDD</tspan></text>
     <g
        id="g68171"
        transform="rotate(90,237.45565,-497.15093)"
@@ -3332,7 +3333,7 @@
        y="0"><tspan
          x="283.30784"
          y="-1172.3321"
-         id="tspan13227">3V3</tspan></text>
+         id="tspan5528">3V3</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#fab400;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        d="m -109.575,15.45424 h -35"
@@ -3351,7 +3352,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13229">VDD</tspan></text>
+         id="tspan5530">VDD</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-189.72761,339.66014)"
@@ -3361,7 +3362,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13231">C4</tspan></text>
+         id="tspan5532">C4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-189.57519,346.63378)"
@@ -3371,7 +3372,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13233">10μF</tspan></text>
+         id="tspan5534">10μF</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-189.53855,353.62627)"
@@ -3381,7 +3382,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13235">Tantallum</tspan></text>
+         id="tspan5536">Tantallum</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 6.69124,330.54578 v -10"
@@ -3404,7 +3405,7 @@
        y="0"><tspan
          x="445.76195"
          y="-1145.0041"
-         id="tspan13237">Legend</tspan></text>
+         id="tspan5538">Legend</tspan></text>
     <g
        id="g32186"
        transform="translate(-27.876414,-8.8275201)">
@@ -3419,7 +3420,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect5966);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="202.3457"
            y="252.35149"
-           id="tspan13239">Input</tspan></text>
+           id="tspan5540">Input</tspan></text>
     </g>
     <g
        id="g32191"
@@ -3435,7 +3436,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect11128);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="202.3457"
            y="252.35149"
-           id="tspan13241">Output</tspan></text>
+           id="tspan5542">Output</tspan></text>
     </g>
     <g
        id="g32198"
@@ -3459,7 +3460,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect11740);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="202.3457"
            y="252.35149"
-           id="tspan13243">Input/Output</tspan></text>
+           id="tspan5544">Input/Output</tspan></text>
     </g>
     <path
        style="display:inline;fill:none;stroke:#00c800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3479,7 +3480,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13245">3.3V</tspan></text>
+         id="tspan5546">3.3V</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#00c800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 346.56091,183.54578 -3,-3 3,-3"
@@ -3497,7 +3498,7 @@
        y="0"><tspan
          x="275.90625"
          y="-1172.3321"
-         id="tspan13247">PA10</tspan></text>
+         id="tspan5548">PA10</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,233.81296,516.02865)"
@@ -3507,7 +3508,7 @@
        y="0"><tspan
          x="284.95105"
          y="-1172.3321"
-         id="tspan13249">R6</tspan></text>
+         id="tspan5550">R6</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,232.31286,522.02865)"
@@ -3517,7 +3518,7 @@
        y="0"><tspan
          x="279.07967"
          y="-1172.3321"
-         id="tspan13251">51kΩ</tspan></text>
+         id="tspan5552">51kΩ</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-128.32388,-109.51108)"
@@ -3525,7 +3526,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect15222);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="202.3457"
          y="252.35149"
-         id="tspan13253">Power pin</tspan></text>
+         id="tspan5554">Power pin</tspan></text>
     <rect
        style="fill:#fab400;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="rect15326"
@@ -3551,7 +3552,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect4117);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="202.3457"
          y="252.35149"
-         id="tspan13255">Special case</tspan></text>
+         id="tspan5556">Special case</tspan></text>
     <rect
        style="fill:#fa00b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="rect15410"
@@ -3568,7 +3569,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect15860);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="202.3457"
          y="252.35149"
-         id="tspan13257">Keyboard feature pin</tspan></text>
+         id="tspan5558">Keyboard feature pin</tspan></text>
     <rect
        style="fill:#00b4fa;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="rect15408"
@@ -3585,7 +3586,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect15644);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="202.3457"
          y="252.35149"
-         id="tspan13259">MCU function pin</tspan></text>
+         id="tspan5560">MCU function pin</tspan></text>
     <g
        id="g1664"
        transform="translate(-21.045336,28.243603)">
@@ -3604,7 +3605,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect1666);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="202.3457"
            y="252.35149"
-           id="tspan13261">General use</tspan></text>
+           id="tspan5562">General use</tspan></text>
     </g>
   </g>
 </svg>

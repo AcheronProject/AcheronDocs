@@ -21,11 +21,17 @@ As of the writing of this article (semtember of 2021), the semiconductor industr
 
 Just as an example: the microcontroller I use the most for keyboards is STM32F072C, be it the B (128kB flash) or 8 (64kB flash) versions. While in a normal setting I could get several thousand units for around two US dollars a piece, nowadays I can only get tens of them for twenty six US dollars each; and that's considering I can not *always* have them. This trend is not unique to this unit, as all others follow the same pattern. It's not surprising, then, to see that designing and manufacturing keyboard PCBs in this setting is a challenge. At a given time, one MCU is available, say F072, and in the next week it will become out of stock and another one, say, F411, will be available.
 
-This article is an attempt to document a long and wide talk between me (Gondolindrim) and **tzarc**, embedded systems engineer and known in the keyboard community through his work as a QMK developer, where we achieved a template design that allows for multiple STM microcontroller units to be used in the same design, only needing tweaking in the bill of materials. This should make the manufacture of the PCBs *easier* in the context of the pandemic (because of course no one can't make it easier than it was before, with availability and prices) while giving the PCB designer some insight insight in such approach.
+This article is an attempt to document a long and wide talk between:
+
+- Me (Gondolindrim);
+- **tzarc**, embedded systems engineer and known in the keyboard community through his work as a QMK developer
+- **sigprof**, a member of the QMK community with significant contributions in hardware design, specially for the F4x1 family
+
+The goal of this documentation is: **achieving a template design that allows for multiple STM microcontroller units to be used in the same design, only needing tweaking in the bill of materials.** This should make the manufacture of the PCBs *easier* by generalizing the design process and making the designed PCBs recyclabe, especially in the context of the pandemic (because of course no one can't make it easier than it was before, with availability and prices) while giving the PCB designer some insight insight in such approach.
 
 ### 1.1 Objective and constraints
 
-The end objective of this article is to develop a template design consisting of a microcontroller footprint and several ancillary components (EEPROM, clock crystal and its load capacitors, USB resistors, bypass capacitors); this template design is intended as a "joker" design that can support multiple STM32 microcontrollers, with the following parameters:
+The end objective of this article is to develop a template design consisting of a microcontroller footprint and several ancillary components (EEPROM, clock crystal and its load capacitors, USB resistors, bypass capacitors); this template design is intended as a "wildcard" or "joker" (whence the name) design that can support multiple STM32 microcontrollers, with the following parameters:
 
 - **Firmware compatibility**: target MCUs must be QMK-supported;
 - **Availability**: target MCUs must also be available for purchase for the general public (there are versions restricted to military or industrial use);
@@ -40,13 +46,13 @@ References [8] through [10] show official STM documents that specifically target
 
 ## 2. How the template works
 
-The core mechanic of the joker template is the fact that for the majority of the STM32 MCUs, some specific peripherals and the power inputs are kept at the same pins throughout multiple chip models, hence allowing us to fix those pins and maintain some keyboard features (RGB, LEDs and so on) attached to the same pin of the footprint. In other words, the way this works is that the pins we use for RGBs, LEDs, OLED control and so on can be the same across multiple chips; this in turn allows us to make a design that can receive a variety of different chips and configure their pins through QMK or a realtime operating system.
-
-### 2.1 Peripheral compatibility
+The core mechanic of the joker template is the fact that in the STM32F family MCUs some specific peripherals and the power inputs are kept at the same pins throughout multiple chip models, hence allowing us to fix those pins and maintain some keyboard features (RGB, LEDs and so on) attached to the same pin of the footprint. In other words, the way this works is that the pins we use for RGBs, LEDs, OLED control and so on can be the same across multiple chips; this in turn allows us to make a design that can receive a variety of different chips and configure their pins through QMK or a realtime operating system.
 
 This is not to say, however, that all the STM32 microcontrollers are the same. For instance, STM32F07x is a microcontroller line aimed at connectivity in cost-sensitive applications; hence it integrates a solid-state oscillator with a USB 2.0 and CAN bus, meaning you have a high degree of possibilities in a small and cheap package with resistorless USB connectivity and crystal-less operation. However, its peripherals are very basic; the STM32F30x family, on the other hand, is a more sophisticated family with operational amplifiers, ultra-fast comparators, 12-bit ultra-fast ADCs but they need an USB pullup resistor and an oscillator crystal while being more expensive.
 
 Hence, even though the F0x and F30x have the SPI and I2C peripherals at the same pins, those peripherals might not be the same (with a high chance of the F30x peripherals being better and faster). This gives rise to a second layer of the ingenuity of the joker template: ultimately, keyboards are not the pinnacle of human technology. No one needs a ultra-fast ADC to run a keyboard; a simple ADC will do the trick. Hence, both the "lighter" peripherals of the F07x and the "better" ones on F30x will work.
+
+The second layer of abstraction the template uses is the way 
 
 #### I2C
 
@@ -105,14 +111,30 @@ Figures 1a and 1b show a schematic of the Joker48 template while figures 2a and 
 
 ### 3.2 Notes on the final circuits
 
+#### A brief discussion on external crystals versus internal RC oscillators
+
+In microcontrollers, a quartz crystal is generally used to generate the clock signal -- basically the microcontroller's hearbeat, dictating the frequency at which commands are undertaken in the digital logic. In a very summarized explanation, the clock signal dictates at what speed the microcontroller runs. The problem being that certain operations in the microcontroller require ultra-precision timing; for instance, USB communication at 2.0 full speed requires a 480MHz signal with a very tight tolerance. If the signal sent by the microcontroller is not inside this narrow limit, then the host device (or whoever the MCU is talking to) will not recognize the communication and your system will simply not work. Clock timing is also very important for timed functions in the microcontroller; keeping the real-time clock precise, like in digital watches, is one of such functions. Hence, precise and consistent clock timing is paramount. Quartz crystals are known to be excellently precise in generating clock, with tolerances in the parts-per-milion (that's 0.0001%). Hence most microcontrollers will employ such a device to generate their clock signals.
+
+However, there are some drawbacks to quartz crystals, two of which are the most cited. First, the crystal requires load capacitors to work, adding three more components to the bill of materials; second, and more important that the former, is that due to the very high frequency the crystal outputs, tracing that signal is perhaps the worst task in the microcontroller routing process: the crystal needs to be expertly close to the controller, as well as its capacitors, and the traces need to be short and unbroken.
+
+Most (if not all) STM32F microcontrollers have an integrated RC (short for Resistor-Capacitor) oscillator, which is a solid-state device able to generate clock, generally based on a transistorized oscillator topology like an astable operationally-amplified multivibrator. These devices tend to be very, very imprecise (sometimes their generated frequency can swing as much as 10% of their rated frequency!) because they are semiconductor-based, so thermal and fabrication variances are immense (see [16,17] for further details on thermal and parameter spreading effects on conductance of transistors and [18] for details on the effect of parameter uncertainty in some transistors). One might ask why then is that such internal oscillators are not quartz-based, and the answer is very simple: despite it being easy to miniaturize and integrate transistors, resistors and capacitors, the same case cannot be made for miniaturizing crystals because, due to their piezoelectric nature, their size is a major factor in their oscillating frequency. For all of these reasons, the internal RC oscillators in these microcontrollers are generally used for very limited functions, especially the early booting procedures like starting the program stack pointer and enabling basic buses; from very early in the process, the external oscillator kicks in.
+
+However, there are some microcontrollers that embed a somewhat decently precise RC oscillator; not exactly *crystal-precision-precise*, but under a 0.5% tolerance achieved through a laser-trimming process. Due to this precision, these microcontrollers have a "crystal-less USB" feature, or "xtalless USB", that is, the capability of operating USB fullspeed communications and timed oeprations without a crystal oscillator. In custom keyboards, an important example is STM32F072 which is widely used because of this feature; remember that F072 was designed for cost-sensitive applications, so it makes sense that it integrates a precise solid-state oscillator.
+
+Hence, in some units like F072, the crystal unit is not needed albeit most (if not all) STM32F microcontrollers having an internal RC oscillator.
+
+#### Peripheral usage and notes
+
+#### Template pin colors
+
 The colored versions of the circuits shows five pin types:
 
 - **Blue pin type or "MCU function pins":** these are used by the microcontroller for specific functions like booting options, In-System-Programming SWD or voltage regulating capacitors (VCAP pins). Blue pins should not be changed or edited in any way whatsoever as they are crucial for the compatibility of the Joker templates:
-    - **Crystal pins:** paramount for the majority of STM MCUs that don't embed a solid-state oscillator;
+    - **Crystal pins:**
     - **nRST, BOOT0 and BOOT1:** BOOT0 and BOOT1 are sampled during reset which happens when nRST is pulled low or a software reset is issued. BOOT0 is present in all STM32F MCUs and is used to select between DFU (if high state) and main memory boot (if low state). BOOT1, on the other hand, is also used for boot selection but is not available in all families. However, in the ones it is, if BOOT1 is pulled down, the BOOT0 pin works like it does in the MCUs that don't have BOOT1 (DFU is BOOT1 is sampled high, main memory if sampled low). For clarification on this, read the [part 2 of the reset circuit article](../reset_article_2/reset_article_2.md). Hence, the idea is to pull BOOT1 down through a 10k ohm pullup and operate BOOT0 the same way in both cases; the signals for nRST or BOOT1 can be chosen at the discretion of the designer. The ones available in [part 1 of the reset circuit article](../reset_article_1/reset_article_1.md) are advised;
     - **SWD pins SWDIO and SWCLK:** used for in-system-programming. These have very particular topologies, some have pullup or pulldown resistors. Expose them with a pin header and leave them be;
     - **USB pins USB_D+ and USB_D-:** used for USB communication;
-    - 
+    - **Pin PB2 or VCAP**: used by some MCU units for regulating ADC reference voltage and internal regulators voltages. According to [13], this should be hooked to an external 4.7 microfarads ceramic capacitor and should not be used for anything else.
 - **Pink pin type or "keyboard feature pins":** these pins are used by certain keyboard features.
     - The I2C pins SDA and SCL are used for the EEPROM (needed for VIA). It is recommended to not use these pins for anything else as some MCUs in the compatibility list need EEPROM and designing your PCB without EEPROM support will make features like VIA not work with these MCUs in particular. In the case of MCUs with embedded EEPROM or EEPROM-simulation capabilities one can just leave the EEPROM circuit unpopulated;
     - The LED PWM can be any pin with PWM capability (avoid TIM2 pins as that is used by ChibiOS for OS tick). If your keyboard does not have backlight this pin can be used for anything else or left floating;
@@ -125,13 +147,13 @@ The colored versions of the circuits shows five pin types:
     - Pin 1 has a battery sensing pin; this is used mostly for the realtime clock (RTC) peripheral to keep the time counter ticking while the microcontroller is not operating. According to **[11-13]**, if not external battery is present then this pin should be connected to VDD with a 100nF capacitor.
     - Pins 8 and 9 are the analog power supply and analog voltage reference for the ADC and DAC peripherals, reset blocks, oscillator PLLs and the internal HSI and LSI buses. The references recommend using two capacitors: a 100 nF ceramic with a 1uF ceramic or tantallum. Additionally, for digital noise filtering, it is also recommended to connect VDDA to VDD using through a ferrite bead;
     - Pins 23 and 24, 35 and 36, 47 and 48 are digital supply pin pairs (VDD and VSS respectively for each pair). These should be connected with a single tantallum or ceramic capacitor of minimum 4.7uF (10uF typical recommended) and a 100nF ceramic capacitor for each pin.
-    - In the STM32F4 family, pin 22 is used as filters for the voltage regulator. **[13]** recommends using a 4.7uF ceramic capacitor with low ESR.
 
 <figure>
   <img src="../../images/joker_article/stm32f0x1x2x8_power.svg" width="600" align="middle"/>
   <figcaption><b> Figure 3. </b>  STM32F0x1/x2/x8 power supply schematic as recommended by STM. Source: [12].</figcaption>
 </figure>
 
+It must be noted that in the 48-pin version, counting all general-purpose pins (with PA10), the template has 22 pins supporting up to 121 keys (11 rows by 11 colums) or 96 keys in a six-row by sixteen-columns design, meaning it can be used to support up to a TKL keyboard matrix.
 
 ### 3.3 Ready-to-use KiCAD files
      
@@ -158,7 +180,6 @@ Here are listed the known compatible or incompatible MCUs and some description o
 
 Additionally, one must also make sure that all the power pins check. The MCUs compatible have VDD and VSS pins at pins 23/24, 35/36, 47/48; analog voltage reference pins are 8 and 9. Pins 1 is used as a battery voltage sensing and should be connected to VDD.
 
-
 ### 4.1 Known compatible families
 
 #### F0x2
@@ -169,7 +190,7 @@ Additionally, one must also make sure that all the power pins check. The MCUs co
     - *[STM32F072](https://www.st.com/resource/en/datasheet/stm32f072c8.pdf)*: STM32F072C(X)(Y) where (X) can be either 8 or B for 64 or 128kB of flash and (Y) can be T or U for LQFP or UFQFPN packages.
 - **General notes:** these microcontrollers are very nice to use because they need minimal external components: no EEPROM, no crystal, no USB resistor. The only populated components needed are the I2C pullup resistors R2 and R3 if any I2C device beyond the EEPROM is needed, like an ISSI RGB controller. Both STM32F072C8 and STM32F072CB versions are compatible and provenly work but the lower flash on the 8 version might be a problem specially with VIA. It should however prove to be enough for most keyboards with no fancy custom code.
     - **Avoid F042 and favour F072**: avoid using F042 for its very, very low flash sizes (16kB for STM32F042x4 and 32kB for STM32F042x6) which will not be enough for a firmware with VIA; in truth, the F042 series is just a toned-down version of F072 but with no price or availability counterpart. Highly favour the F072 series MCU as it tends to be cheaper and more available than most (in non-pandemic times at least...);
-    - **Integrated oscillator and "EEPROM"**: QMK implements an EEPROM-simulating algorithm, hence essentially it has an integrated EEPROM. This MCU also integrates as solid-state oscillator and crystal-less USB capabilities, so it also does not need a crystal oscillator. 
+    - **XTAL-less USB and integrated "EEPROM"**: QMK implements an EEPROM-simulating algorithm, hence essentially it has an integrated EEPROM. This MCU also integrates as solid-state oscillator with crystal-less USB capabilities, so it also does not need a crystal oscillator. 
 - **Leave unpopulated**
     - Crystal oscillator Y1 and load capacitors C2 and C3 (has internal oscillator);
     - External EEPROM (simulates internal EEPROM in its flash). The I2C pullup resistors R2 and R3 can be also unpopulated if no other I2C devices are needed;
@@ -302,7 +323,8 @@ Not available in 48-pin version.
 
 #### F303 (x6, x8, xD, xE)
 
-The xD, xE, x6 and x8 sub-families lack an USB peripheral, hence they do not communicate over USB at all. The xB and xC sub-families do have an USB and are supported.
+- **xE and xD sub-families:** not available in 48-pin version;
+- **x6 and x8 sub-families:** lack an USB peripheral, hence they do not communicate over USB at all.
 
 ## 5 Joker64 MCU compatibility list
 
@@ -355,3 +377,9 @@ Additionally, one must also make sure that all the power pins check. The MCUs co
 - **[14]** *USB On-The-Go Wikipedia article*. Available at its [Wikipedia page](https://en.wikipedia.org/wiki/USB_On-The-Go). Lasta ccessed october 3, 2021.
 
 - **[15]** *USB hardware and PCB guidelines using STM32 MCUs*. Available at [this link](https://www.st.com/resource/en/application_note/dm00296349-usb-hardware-and-pcb-guidelines-using-stm32-mcus-stmicroelectronics.pdf). Last accessed october 12, 2021.
+
+- **[16]** *Avalanche Breakdown Wikipedia page*. Available at [this link](https://en.wikipedia.org/wiki/Avalanche_breakdown). Last accesses october 23, 2021.
+
+- **[17]** *Frequency response of theoretical models of junction transistors*. By R.L. Pitchard, published in the IRE Transactions on Circuit Theory, vol.2, no.2, pp. 183-191 in june 1995. Available at [this link](https://ieeexplore.ieee.org/abstract/document/6373424). Last accessed october 23, 2021.
+
+- **[18]** *Uncertainty-added S-parameters of high power transistors*. By Ceylan, Osmar, Buber, Tekamul and Esposito Giampiero, published in IEEE Data Port Open-Access in july, 2020. Available at [this link](https://ieee-dataport.org/open-access/uncertainty-added-s-parameters-high-power-rf-transistors). Last accessed october 23, 2021.
