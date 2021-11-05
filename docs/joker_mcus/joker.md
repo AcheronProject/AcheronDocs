@@ -328,6 +328,15 @@ Not available in 48-pin version.
 
 ## 5 Joker64 MCU compatibility list
 
+### 5.1 Known compatible families
+
+#### F4x1
+
+#### L431
+
+#### L151
+
+#### L071
 
 ### 5.1 How to check if an MCU is supported by the Joker64 template
 - It is available in a 64-pin version, in LQFP-64 package which package code is "R";
