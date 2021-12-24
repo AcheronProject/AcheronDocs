@@ -10,11 +10,11 @@
 
 ---
 
-The STM32 family of microcontrollers offers a wide good variety of options when it comes to boot selection. The majority of STM32 devices are flashed at factory with a bootloader that is very permissive and complete; it allows for a wide variety of options when it comes to booting options, boot behaviors, in-system programming through I2C, SPI, serial communication and very good debug features.
+The STM32 family of microcontrollers offers a wide good variety of options when it comes to boot selection. The majority of STM32 devices are flashed at factory with a bootloader that is very permissive and complete; it allows for a wide variety of options when it comes to booting options, boot behaviours, in-system programming through I2C, SPI, serial communication and very good debug features.
 
 One of the most interesting aspects of working with these devices is the way STM tackled the boot selection process, that is, what portion of the memory is used for the stack pointer start. In STM32F0xx devices, there are basically four ways you can boot the MCU: main flash memory, main system memory, embedded SRAM memory, and an "empty check" option only available to STM32F04x and STM32F09x devices.
 
-This articule is written for the STM32F072 MCU that I use mainly in my boards. The [part 2](../reset_article_2/reset_article_2.md) will discuss the adaptation for other families of STM32 microcontrollers; however, all of those will take over from the principles, calculations and simulations in this article.
+This article is written for the STM32F072 MCU that I use mainly in my boards. The [part 2](../reset_article_2/reset_article_2.md) will discuss the adaptation for other families of STM32 microcontrollers; however, all of those will take over from the principles, calculations and simulations in this article.
 
 In this article I will detail the many possibilities there are for handling these boot options, and the design of a reset circuit that can reset the MCU simply or drive it to bootloader, using a single push button.
 
@@ -22,7 +22,7 @@ In this article I will detail the many possibilities there are for handling thes
 
 Embedded Engineering is fairly complicated shenanigans. It involved dominating technologies and procedures so complex that they need higher education to be fully mastered, and then make those very same technologies and procedures available and accessible to the general public which is very unkowledgeable about technology. Customers generally want a very simple solution to a very complex problem and, sometimes, the best product does not always win if it is not user-friendly -- Apple products being the master example for me, being much less powerful than the competitors in the same price range but light-years ahead in terms of user experience and usability.
 
-One of such problems is handling the reset event in an MCU. A microcontroller generally has several memory options, all of which can be invoked, operated, written and erased at runtime and all of which containing their particular use and place. From and end user's perspective, *we want it to just work*, but that's not how it goes in research and development. R&D is a very nonlinear process that requires full mastery of the system being worked on, which is again completely incompatible with user experience due to the general unkowledgeability of the end user.
+One of such problems is handling the reset event in an MCU. A microcontroller generally has several memory options, all of which can be invoked, operated, written and erased at runtime and all of which containing their particular use and place. From and end user's perspective, *we want it to just work*, but that's not how it goes in research and development. R&D is a very non-linear process that requires full mastery of the system being worked on, which is again completely incompatible with user experience due to the general ignorance of the end user.
 
 In this article I will detail the three possibilities we have to handle that problem in STM32F07x MCUs; each of the three ways have their pros and cons and, just like almost everything in PCB development, design choices have to be made.
 
@@ -35,7 +35,7 @@ The problem is twofold. First, the STM32 MCUs have several boot options and we n
 
 In STM32 MCUs, the user will basically use two boot regions. The first is the **main system memory**, which starts at address 0x1FFF in STM32F07x devices (see [1], section 6.3.14 for the addresses of the other devices in the family). The main system memory contains the bootloader program that is flashed by STM at the factory. One of the main reasons for the adoption of the STM32F072/071 devices is the USB DFU capability of their bootloader, that is, the possibility of upgrading the flash program memory from the USB peripheral. Devices without this capability need a dedicated communication, called In-System Programming or Serial Wire Debug for STM (SWD for short), to have their flash memory upgraded. This boot option is used when the user want to re-flash their keyboard, which is not often but still needed very seldomly.
 
-The second boot region that the end user willl need is the **main flash memory**, located at 0x08000000, where the operating firmware like QMK is to be flashed. Resetting the MCU into this are is what you would expect from the word *reset*. It stops execution and re-starts it from the beggining of the program, which can be needed in many cases such as if the keyboard firmware has stopped due to a bug or if the keyboard is simply showing erratic behavior, or after flashing the keyboard.
+The second boot region that the end user will need is the **main flash memory**, located at 0x08000000, where the operating firmware like QMK is to be flashed. Resetting the MCU into this are is what you would expect from the word *reset*. It stops execution and re-starts it from the beginning of the program, which can be needed in many cases such as if the keyboard firmware has stopped due to a bug or if the keyboard is simply showing erratic behaviour, or after flashing the keyboard.
 
 Booting from SRAM or the empty check are primarily development options which the end user will much, much rarely use; hence, we want to limit the boot options to system memory and flash memory. The problem then becomes: **how to develop a user-friendly way to make available the flash memory and system memory choices into an end product, which requires minimal knowledge about the system's intricacies and can still be reliable enough?**
 
@@ -48,7 +48,7 @@ The way we select the boot region in STM32F0xx devices are through external pins
   <figcaption><b> Figure 1. </b> Table of boot options for STM32F0xx devices. Source: [2].</figcaption>
 </figure>
 
-First of all, we can ignore the three bottom options as those are only available to STM32F04x and STM32F09x devices. Then for the three top options, we can ignore **BOOT_SEL** that is 1 for all these options and **nBOOT0** which is marked as an **x** meaning its value does not matter for these options. As for **nBOOT1**, we have to remember it comes factory-set as zero, meaning that if we simply don't mess with it, we can do both the options we wanted -- boot from system memory or boot from flash -- at the expense of not being able to start from SRAM which is very, very rare on an end-product occasion so not a big deal anyways.
+First of all, we can ignore the three bottom options as those are only available to STM32F04x and STM32F09x devices. Then for the three top options, we can ignore **BOOT_SEL** that is 1 for all these options and **nBOOT0** which is marked as an **x** meaning its value does not matter for these options. As for **nBOOT1**, we have to remember it comes factory-set as zero, meaning that if we simply don't mess with it, we can do both the options we wanted -- boot from system memory or boot from flash -- at the expense of not being able to start from SRAM which is very, very rare on an end-product occasion so not a big deal any-ways.
 
 In the end, we can reset into flash or go into DFU USB by only setting the value of the pin **BOOT0**: if it is high, the MCU goes into DFU and if it is low, it resets into flash.
 
@@ -77,7 +77,7 @@ On BluePill boards, this is done through a simple jumper selector.
   <figcaption><b> Figure 4. </b> Implementation of the vanilla reset circuit in the Blue Pill feathboards using a jumper and a push button.</figcaption>
 </figure>
 
-The vanilla circuit of figure 1 can be modified just a little bit to make it more reliable, by addding a 100R resistor in series with the nRST button to avoid fast voltage changes in its capacitor and adding a little 100n capacitor to BOOT0 to avoid any fast transients, since it is a CMOS-type input.
+The vanilla circuit of figure 1 can be modified just a little bit to make it more reliable, by adding a 100R resistor in series with the nRST button to avoid fast voltage changes in its capacitor and adding a little 100n capacitor to BOOT0 to avoid any fast transients, since it is a CMOS-type input.
 
 <figure>
   <img src="../../images/reset_article/vanilla_reset_gondo.svg" width="400" align="middle"/>
@@ -109,9 +109,9 @@ The circuit works wonders. It is fairly simple, does the job and requires few co
 
 ### 2.1 Improving over ishtob's circuit
 
-In order to add a reset-and-DFU capability to the circuit, I had to turn my eyes to the BOOT0 branch. The nRST branch was pretty much figured out, so what I had to do was invent a way to modulate wether BOOT0 will be low or high at the time instant the user releases the push button, which is when nRST gets back to one and the BOOT0 pin is sampled and the boot option decided.
+In order to add a reset-and-DFU capability to the circuit, I had to turn my eyes to the BOOT0 branch. The nRST branch was pretty much figured out, so what I had to do was invent a way to modulate whether BOOT0 will be low or high at the time instant the user releases the push button, which is when nRST gets back to one and the BOOT0 pin is sampled and the boot option decided.
 
-What I did was simple, yet complex. The addittion of a resistor between the diode and the BOOT0 branch will enable the RC circuit of BOOT0 to act as a timed charge RC circuit which voltage rises across time as the push button is maintained pressed.
+What I did was simple, yet complex. The addition of a resistor between the diode and the BOOT0 branch will enable the RC circuit of BOOT0 to act as a timed charge RC circuit which voltage rises across time as the push button is maintained pressed.
 
 <figure>
   <img src="../../images/reset_article/reset2.svg" width="600" align="middle"/>
@@ -122,14 +122,14 @@ Hence, the idea here is that the MCU boot option will be determined by how much 
 
 The form and charge/decay rates of the BOOT0 pin are given by the R1, R2 and C1 components. The bigger the R2 over R1 proportion, the faster the circuit charges and the bigger will be the steady-state voltage. The higher the capacitance, the slower the voltage charges. The challenge then becomes to finely tune the values so that the times needed are convenient. For instance, if the charge is too fast, the user will not be able to press and release the circuit fast enough to reset it, and the MCU will always bootload. If the charge is too slow, then the user will need to keep the button pressed for too long a time.
 
-To determine the exact times, first we need to know the logig level thresholds of the BOOT0 pin. In the MCU datasheet [3]_ one can see the following table:
+To determine the exact times, first we need to know the logic level thresholds of the BOOT0 pin. In the MCU datasheet [3]_ one can see the following table:
 
 <figure>
   <img src="../../images/reset_article/thresholds_table.svg" width="600" align="middle"/>
   <figcaption><b> Figure 7. </b> Datasheet table of minimum and maximum voltage logic level thresholds.</figcaption>
 </figure>
 
-The table shows that using a feeding voltage of 3.3b,  BOOT0 is considered low for voltages lower than 0.3 x 3.3 - 0.3 = 0.69V and high for voltages higher than 0.2 x 3.3 + 0.95 = 1.61V. The circuit of fogire 6 was simulated usin LTSpice XVII; the simulation results are detailed below.
+The table shows that using a feeding voltage of 3.3b,  BOOT0 is considered low for voltages lower than 0.3 x 3.3 - 0.3 = 0.69V and high for voltages higher than 0.2 x 3.3 + 0.95 = 1.61V. The circuit of figure 6 was simulated using LTSpice XVII; the simulation results are detailed below.
 
 <figure>
   <img src="../../images/reset_article/nominal_reset_plot.svg" width="800" align="middle"/>
@@ -140,9 +140,9 @@ The simulation shows that as the button is kept pressed, the voltage of BOOT0 cr
 
 ### 2.2 Considering components tolerances
 
-There is, however, an inherent flaw wih the design of the  the components used have tolerances which have to be accounted for; since these tolerances are considerable, the press timings will change with the real component values.
+There is, however, an inherent flaw with the design of the components used have tolerances which have to be accounted for; since these tolerances are considerable, the press timings will change with the real component values.
 
-Let us define that the resistors have a 5% tolerance and capacitors have a 20% tolerance. First of all, since the nRST branch of the circuit is just pulling nRST to the ground and very fast, there is not much analysis to do with component tolerances here. The real problem lies with the RC charginf circuit of BOOT0.
+Let us define that the resistors have a 5% tolerance and capacitors have a 20% tolerance. First of all, since the nRST branch of the circuit is just pulling nRST to the ground and very fast, there is not much analysis to do with component tolerances here. The real problem lies with the RC charging circuit of BOOT0.
 
 Consider then the three comparison cases:
 
@@ -155,7 +155,7 @@ Consider then the three comparison cases:
   <figcaption><b> Figure 9. </b> Time simulation of the circuit in figure 6 considering component tolerance-added "slow" and "fast" cases.</figcaption>
 </figure>
 
-Figure 9 shows the simulation of the three cases. The simulations show that the fastest time the circuit will cross the low logic levle maximum threshold is at approximately 0.75s, while the longest time the circuit will take to cross the high logic level minimum voltage is approximately 4.5 seconds. This means that by using the circuit of figure 7`, if the user presses the button for no more than 0.75 seconds the MCU is guaranteed to reset, and if he or she presses the button for longer than 4.5 seconds the MCU is guaranteed to DFU.
+Figure 9 shows the simulation of the three cases. The simulations show that the fastest time the circuit will cross the low logic level maximum threshold is at approximately 0.75s, while the longest time the circuit will take to cross the high logic level minimum voltage is approximately 4.5 seconds. This means that by using the circuit of figure 7`, if the user presses the button for no more than 0.75 seconds the MCU is guaranteed to reset, and if he or she presses the button for longer than 4.5 seconds the MCU is guaranteed to DFU.
 
 These times are, however, not to my liking. As can be seen in figure 11, the spread of timings between the curves is way too high. In order to solve that, I changed the tolerances of the resistors to 1% and the tolerance of the capacitor to 5%. 
 
@@ -396,7 +396,7 @@ That being said, four possibilities arise: the "vanilla" reset, the "improved re
 	- The BJT version might be just a tad pricey and less available, but has a huge advantage when it comes to variety. There are tons of different pre-biased BJT transistors in varying packages; not only it integrates the biasing resistors (which you have to add discretely to the MOSFET circuit), the 27000 component is only available in a SOT-23 package whereas one can find pre-biased BJTs in the tinies of packages;
 	- Both versions are perfectly interchangeable performance-wise, so use them at your discretion; myself (Gondolindrim) I highly favour the BJT version as I solder my prototypes at home, meaning I don't need to solder extra resistors. 
 - The "double MOSFET" circuit of figure 28 is the most user-friendly, because it implements the discharge needed for reliable re-operation of the BOOT0 charge-and-discharge mechanism -- the fact that the delayed discharge is performed means that the circuit is immediately discharged after button release, meaning the user can press the button rapidly and the circuit will work every time without problems, delivering the promise of a "truly single" action. This circuit substitutes the JFET circuit of figure 20; honestly, don't use these. JFETs are very particular components used in a small number of designs where they are absolutely needed; they are difficult to source and fairly expensive. Just don't.
-	- A big warning here is that, albeit the "improved reset" circuit having two interchangeable variants (BJT and MOSFET), this is not the case here. The fact of the matter is that the MOSFET is a much better electronic switch than the BJT is because the BJT is slow and needs a base current to work; this means that if a BJT is used, be it in the BOOT0 or the nRST portions of the circuit, the timins get messed up and it does not work as well.
+	- A big warning here is that, albeit the "improved reset" circuit having two interchangeable variants (BJT and MOSFET), this is not the case here. The fact of the matter is that the MOSFET is a much better electronic switch than the BJT is because the BJT is slow and needs a base current to work; this means that if a BJT is used, be it in the BOOT0 or the nRST portions of the circuit, the timings get messed up and it does not work as well.
 
 The usage of each circuit is of course at the discretion of the designer; my personal experience and opinion is that the vanilla circuit is fine for prototyping reasons or if the PCB you are designing is a personal project and not intended for mass production and selling. If the objective is user friendliness and mass selling, I definitely recommend using the JFET delayed discharge circuit. For 20 cents more you get a reliable single-action circuit that works as intended every time, as opposed to the "improved reset" that, albeit being single-action, can be misused if the user is not patient enough to wait 30 seconds for each action or is simply ignorant of its functioning. It is my opinion that a product should not be designed while supposing that the user knows its inner workings, hence why I recommend the delayed-discharge circuit.
 
@@ -406,7 +406,7 @@ Another possible question that arises is: are the tighter tolerance components o
 
 The usage of tighter component tolerances gives you two advantages.
 
-First, that the times tom reset and DFU are a little bit more reasonable -- to reset release under a second of press and to DFU hold for at least 3.8 seconds. The curse of the exponential growth characteristic of the charging circuit means that if you try to make the reset timing larger -- to a second, for instance -- the DFU timing will also be *much* longer; if you try to make the DFU timing shorter, the reset timing will be *much* shorter. This means that, with common tolerances, it is very difficult to adjust the reset and DFU timings because trying to adjust one will *exponentially* (literally) affect the other. With tighter tolerances, however, the change is still exponential; but since the parameter uncertainty is that much smaller, the effect is not that great.
+First, that the times to reset and DFU are a little bit more reasonable -- to reset release under a second of press and to DFU hold for at least 3.8 seconds. The curse of the exponential growth characteristic of the charging circuit means that if you try to make the reset timing larger -- to a second, for instance -- the DFU timing will also be *much* longer; if you try to make the DFU timing shorter, the reset timing will be *much* shorter. This means that, with common tolerances, it is very difficult to adjust the reset and DFU timings because trying to adjust one will *exponentially* (literally) affect the other. With tighter tolerances, however, the change is still exponential; but since the parameter uncertainty is that much smaller, the effect is not that great.
 
 To illustrate this advantage, imagine a common serial RC circuit with a constant voltage source $V_S$. Then the charge timing of the capacitor voltage is given by
 
@@ -428,7 +428,7 @@ Then through the propagation of uncertainty formulas, the uncertainty of $T$, th
 
 $$ \dfrac{\Delta T}{T_0} = \sqrt{\left(\dfrac{\Delta R}{R}\right)^2 + \left(\dfrac{\Delta C}{C}\right)^2} $$
 
-The keen reader might indetify this as a elliptic parabolloid in the $\Delta T$, $\Delta R$ and $\Delta C$ variables. This means that the time uncertainty $\Delta T$ grow *parabolically* with the resistor and capacitor uncertainties, which goes to show that the time uncertainty is very, very sensible to these quantities.
+The keen reader might identify this as a elliptic parabolloid in the $\Delta T$, $\Delta R$ and $\Delta C$ variables. This means that the time uncertainty $\Delta T$ grow *parabolically* with the resistor and capacitor uncertainties, which goes to show that the time uncertainty is very, very sensible to these quantities.
 
 The interested reader might also calculate the partial derivatives of the sensibilities of $\Delta T$ with respect to $\Delta R$ and $\Delta C$, which will prove the parabolic growth of the sensibility.
 
@@ -442,14 +442,14 @@ $$ \dfrac{\Delta R}{R} = 0.01,\ \dfrac{\Delta C}{C} = 0.05 $$
 
 Then the time uncertainty equals 5.10%.
 
-These calculations motivate the second advantage that this circuit gives you; this advantage is deeper and less visible, but much more important: reliability. Suppose that you are using the circuit with common tolerances in a 1000-unit production run. Since every PCB has different capacitanca and resistance values, each PCB has a different time charging curve; what I can guarantee is that this curve is at all times located between the "fast case" yellow curve and the "slow case" pink curve of figure figure 9, and that the charging times between PCBs will vary in a 20.62% margin. This means that the actual timings to reser and DFU can vary wildly between PCBs. On the other hand, if you use tighter tolerances, the charging curve will be confined between the fast and slow curves of figure figure 10, which are much closer together; hence the actual timings of each PCB will vary mildly (inside a 5.1% margin, which is much more tolerable), as opposed to the large variations you would get if you used the more common tolerances. The fact that the circuit is more predictable and less variable -- hence, more **reliable** -- means that the behavior of the circuit will be more uniform across all production units, that is, while the normal tolerance components will give each unit a very different timing, the tighter tolerance will make sure all PCB units will be under a very strict margin. This, in turn, makes sure that your product is much closer to specifications.
+These calculations motivate the second advantage that this circuit gives you; this advantage is deeper and less visible, but much more important: reliability. Suppose that you are using the circuit with common tolerances in a 1000-unit production run. Since every PCB has different capacitance and resistance values, each PCB has a different time charging curve; what I can guarantee is that this curve is at all times located between the "fast case" yellow curve and the "slow case" pink curve of figure figure 9, and that the charging times between PCBs will vary in a 20.62% margin. This means that the actual timings to reset and DFU can vary wildly between PCBs. On the other hand, if you use tighter tolerances, the charging curve will be confined between the fast and slow curves of figure figure 10, which are much closer together; hence the actual timings of each PCB will vary mildly (inside a 5.1% margin, which is much more tolerable), as opposed to the large variations you would get if you used the more common tolerances. The fact that the circuit is more predictable and less variable -- hence, more **reliable** -- means that the behaviour of the circuit will be more uniform across all production units, that is, while the normal tolerance components will give each unit a very different timing, the tighter tolerance will make sure all PCB units will be under a very strict margin. This, in turn, makes sure that your product is much closer to specifications.
 
 My opinion and experience on this matter are this: use component footprints so that the common tolerance and the tighter tolerance components share the same footprints; for instance, use a 1206 resistor and a 0805 capacitor footprint, as there are both 5% and 1% 1206 resistors just like 20% and 5% 0805 capacitors. That way you can keep prototype costs down by using the more common tolerances and, on the final more polished product, you use the tighter tolerances components because, at a large scale, the price per PCB will be increased marginally while the circuit will be much more reliable and user-friendly.
 
 ## References
 
-**[1]** *STM32F0x1/STM32F0x2/STM32F0x8 advanced ARM-based 32-bit MCUs series reference manual*. Available at [this link](https://www.st.com/resource/en/reference_manual/dm00031936-stm32f0x1stm32f0x2stm32f0x8-advanced-armbased-32bit-mcus-stmicroelectronics.pdf). Last accessed june 22, 2020.
+**[1]** *STM32F0x1/STM32F0x2/STM32F0x8 advanced ARM-based 32-bit MCUs series reference manual*. Available at [this link](https://www.st.com/resource/en/reference_manual/dm00031936-stm32f0x1stm32f0x2stm32f0x8-advanced-armbased-32bit-mcus-stmicroelectronics.pdf). Last accessed June 22, 2020.
 
-**[2]** *Getting started with STM32F0x1/x2/x8 hardware development*. Available at [this link](https://www.st.com/resource/en/application_note/dm00051986-getting-started-with-stm32f0x1x2x8-hardware-development-stmicroelectronics.pdf). Last accessed june 22, 2020.
+**[2]** *Getting started with STM32F0x1/x2/x8 hardware development*. Available at [this link](https://www.st.com/resource/en/application_note/dm00051986-getting-started-with-stm32f0x1x2x8-hardware-development-stmicroelectronics.pdf). Last accessed June 22, 2020.
 
-**[3]** *STM32F072xB / STM32F072x8 MCUs datasheet*. Available at [this link](https://www.st.com/resource/en/datasheet/stm32f072rb.pdf). Last accessed june 22, 2020.
+**[3]** *STM32F072xB / STM32F072x8 MCUs datasheet*. Available at [this link](https://www.st.com/resource/en/datasheet/stm32f072rb.pdf). Last accessed June 22, 2020.
