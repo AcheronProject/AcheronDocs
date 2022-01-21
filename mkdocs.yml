@@ -18,6 +18,7 @@ nav:
     - PCB repository:
          - Introduction to the Acheron PCBs: pcbs/intro_to_pcbs.md
          - Apollo87H: pcbs/apollo/apollo87h.md
+         - Freya: pcbs/freya/freya.md
     - Electric Symbols: electric_symbols/electric_symbols.md
     - Acheron Setup: acheron_setup/acheron_setup.md
 
