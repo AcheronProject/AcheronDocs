@@ -17,8 +17,9 @@ nav:
     - Alexandria: alexandria/alexandria.md
     - PCB repository:
          - Introduction to the Acheron PCBs: pcbs/intro_to_pcbs.md
-         - Apollo87H: pcbs/apollo/apollo87h.md
+         - Apollo: pcbs/apollo/apollo.md
          - Freya: pcbs/freya/freya.md
+         - SharkPCB: pcbs/shark/shark.md
     - Electric Symbols: electric_symbols/electric_symbols.md
     - Acheron Setup: acheron_setup/acheron_setup.md
 
