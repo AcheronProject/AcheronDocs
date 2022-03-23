@@ -1,7 +1,7 @@
 <p style="text-align:center">
   <a href="https://github.com/AcheronProject/SharkPCB"><img src="https://img.shields.io/badge/GitHub%20Repo-gray.svg?style=for-the-badge&logo=GitHub" height="100" /></a>
   <img src="https://img.shields.io/badge/Latest%20Release-Beta%20RC1-blue.svg?style=for-the-badge" height="100" />
-  <img src="https://img.shields.io/badge/Status-Rev%20Beta%20under%20testing-green.svg?style=for-the-badge" height="100" />
+  <img src="https://img.shields.io/badge/Status-Rev%20Beta%20Passing-green.svg?style=for-the-badge" height="100" />
 </p>
 
 # SharkPCB
@@ -31,6 +31,12 @@ The name comes from a dear friend of mine, Gustavo, who at the time did not have
 
 - Steve from WoodCables, who funded de project and made it grow bigger than I had never imagined;
 - Alan Pocklington, also known as u/ajp10304, who built a prototype himself and offered to test the preliminary software to hasten the GB and gave immense feedback on documentation and component positioning.
+
+## Availability
+
+Any one can manufacture and sell SharkPCBs using the [release Beta manufacturing files](https://github.com/AcheronProject/SharkPCB/releases/tag/beta-rc1).
+
+Before selling PCBs, please read the Acheron Open-Source Hardware License v1.4 under which Shark is released.
 
 ## Features
 
@@ -65,6 +71,22 @@ The idea to make a Open-Sourcea Hardware compliant board was that it could be wi
 In that sense, the Shark uses an STM32 microprocessor that can be programmed in many ways, be it through the QMK firmware, Arduino IDE or any ensemble of software able to flash an STM32.
 
 Also, following the customizable principle, all unused pins were exposed so that the user can add anything hardware-wise he or she wishes.
+
+## Compatible layouts
+
+<figure>
+  <img src="../../../images/shark/kle.svg" width="600" align="middle"/>
+</figure>
+
+## Revision Beta pictures
+
+<figure>
+  <img src="../../../images/shark/shark_beta_pic2.jpg" width="600" align="middle"/>
+</figure>
+
+<figure>
+  <img src="../../../images/shark/shark_beta_pic3.jpg" width="600" align="middle"/>
+</figure>
 
 ## Acknowledgements
 
