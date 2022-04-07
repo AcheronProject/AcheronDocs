@@ -90,9 +90,9 @@ Revision Gamma presents the same qualities and features as revision Beta but wit
 
 Revision Gamma, albeit following factory constraints, is not mass-manufacturable due to the shortage in silicon chips, mainly the ISSI RGB controller used. Revision Delta is being designed with the same constraints as Gamma, but using the SK6812 mini-E reverse-mounted intelligent RGB LEDs of revision Alpha and a 64-pin microcontroller topology due to the current shortage prices and availability constraints. Revision Delta will also feature a multi-STM-microcontroller design and all the features of revision Gamma (RGB and USB daughterboards support, removable USBC and so on).
 
-### [87H-T-SC Alpha-RC1] (under development)
+### [87H-T-SC Alpha-RC1](https://github.com/Gondolindrim/Apollo87H-T-SC) (under development)
 
-### [88H-T-SC Alpha-RC1] (under development)
+### [88H-T-SC Alpha-RC1](https://github.com/Gondolindrim/Apollo88H-T-SC) (under development)
 
 ## Copyright notice
 
