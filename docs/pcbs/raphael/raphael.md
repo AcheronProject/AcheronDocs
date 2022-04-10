@@ -21,6 +21,12 @@ The Raphael is a 60% PCB aimed at gummy mount applications like the Singa Unikor
 - ISO and ANSI enter
 - 6.25 and 7 units spacebar
 
+Below is an image of the supported layouts.
+
+<figure>
+  <img src="../../../images/raphael/raphael_kle.png" width="1000" align="middle"/>
+</figure>
+
 Additionally, Raphael also supports both on-board USB connector and a JST connector for USB daughterboard usage.
 
 ## Technical information
