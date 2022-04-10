@@ -19,7 +19,8 @@ nav:
          - Introduction to the Acheron PCBs: pcbs/intro_to_pcbs.md
          - Apollo: pcbs/apollo/apollo.md
          - Freya: pcbs/freya/freya.md
-         - SharkPCB: pcbs/shark/shark.md
+         - Shark: pcbs/shark/shark.md
+         - Raphael: pcbs/raphael/raphael.md
     - Electric Symbols: electric_symbols/electric_symbols.md
     - Acheron Setup: acheron_setup/acheron_setup.md
 
