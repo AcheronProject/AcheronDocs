@@ -44,7 +44,7 @@ The SharkPCB is a freely available, open-source 40% keyboard Printed Circuit Boa
 
 - 40% ortho layout with 19.00mm switch spacing;
 
-- A multi-STM32 MCU compliant topology known as the [Joker topology](../docs/joker_mcus/joker.md);
+- A multi-STM32 MCU compliant topology known as the [Joker topology](http://acheronproject.com/joker_mcus/joker/);
 
 - QMK/VIA firmware compatible;
 
