@@ -1,0 +1,85 @@
+Circuit: * Z:\home\alvaro\Desktop\AcheronProject\AcheronDocs\docs\optical\ltspice\active_optical.asc
+
+WARNING: Less than two connections to node 3.3V.  This node is used by V4.
+WARNING: Less than two connections to node HL.  This node is used by V7.
+WARNING: Less than two connections to node LL.  This node is used by V8.
+WARNING: Less than two connections to node SAMPLE.  This node is used by V3.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+Gmin = 0.000247786
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+Gmin = 0.000238415
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.0104167
+Gmin = 0.000235487
+vernier = 0.0138889
+Gmin = 0.000228451
+vernier = 0.0185185
+vernier = 0.0246913
+Gmin = 0.000217387
+vernier = 0.0329218
+vernier = 0.0438957
+Gmin = 0.000200963
+vernier = 0.0585276
+Gmin = 0.00017696
+vernier = 0.0780367
+vernier = 0.104049
+Gmin = 0.000143801
+vernier = 0.138732
+vernier = 0.184976
+Gmin = 0.000103712
+vernier = 0.246634
+Gmin = 6.13392e-005
+vernier = 0.328846
+vernier = 0.438461
+Gmin = 2.63247e-005
+vernier = 0.584614
+vernier = 0.779486
+Gmin = 7.11325e-006
+vernier = 1
+Gmin = 9.57e-007
+Gmin = 1.02757e-007
+Gmin = 1.10335e-008
+Gmin = 1.18471e-009
+Gmin = 1.27207e-010
+Gmin = 1.36588e-011
+Gmin = 1.4666e-012
+Gmin = 1.57475e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Heightened Def Con from 0.0001 to 0.0001
+
+risetime: v(row0_out)=v(hl) AT 8.92291e-006
+downtime: v(row0_out)=v(ll) AT 8.86106e-005
+average_current_5v: AVG(i(v2))=-0.00440145 FROM 0 TO 0.0004
+
+
+Date: Sun Jun 12 20:13:25 2022
+Total elapsed time: 18.120 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 112507
+traniter = 111163
+tranpoints = 38448
+accept = 29820
+rejected = 8629
+matrix size = 630
+fillins = 765
+solver = Alternate
+Thread vector: 70.7/38.7[10] 25.6/14.5[10] 14.9/3.9[10] 6.8/13.5[1]  2592/500
+Matrix Compiler1:    4233 opcodes  36.9/[21.2]/78.7
+Matrix Compiler2: 75.94 KB object code size  18.2/18.1/[7.9]
+

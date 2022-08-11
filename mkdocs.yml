@@ -13,6 +13,7 @@ nav:
         - A single-push reset circuit for STM32, part 1: reset_article_1/reset_article_1.md
         - A single-push reset circuit for STM32, part 2: reset_article_2/reset_article_2.md
         - A multi-MCU approach to keyboard PCB development: joker_mcus/joker.md
+        - On the design of hardware and software for optical switches: optical/optical.md
     - AOHL v1.4: AOHL14.md
     - Alexandria: alexandria/alexandria.md
     - PCB repository:
