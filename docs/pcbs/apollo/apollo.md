@@ -52,9 +52,11 @@ The Apollo is a family of tenkeyless (TKL) keyboard Printed Circuit Boards (PCB)
 
 ### Known incompatibilities
 
-- **ai03 KBD8X MKII**: ai03 open-sourced the PCB files for his KBD8X. Although Apollo's edges do fit inside the original PCB's, its connector is more protruded then the original PCB's.
+- **ai03 KBD8X MKII**: ai03 open-sourced the PCB files for his KBD8X. Although Apollo's edges do fit inside the original PCB's, its connector is more protruded than the original PCB's.
 
 - **PrismA18**: different layouts on the function row.
+
+- **MONOKEI x Hand Engineering Kage**: cutouts on 88H-T-SC are slightly misaligned with the ones on Kage's MNK88-T. It is possible to file down the 88H-T-SC to fit, but this is strongly not recommended.
 
 ## Acknowledgements
 
